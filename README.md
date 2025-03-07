@@ -184,9 +184,9 @@ npm start
 
 ## 📚 Documentation
 
-📌 UML Diagrams – Class and sequence diagrams for the system
-📌 ArchiMate Diagrams – Business, application, and technology layers
-📌 Video Presentation – 15-20 min overview covering system architecture
+📌 UML Diagrams – Class and sequence diagrams for the system <br>
+📌 ArchiMate Diagrams – Business, application, and technology layers<br>
+📌 Video Presentation – 15-20 min overview covering system architecture<br>
 
 ---
 
