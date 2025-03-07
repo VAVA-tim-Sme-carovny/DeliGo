@@ -10,11 +10,11 @@
 DeliGo/<br>
 ├── .github/               # GitHub workflows and issue templates<br>
 ├── src/                   # Source code directory<br>
-│  &nbsp; ├── main/              # Main application code<br>
-│  &nbsp; │  &nbsp; ├── java/com/deligo/  # Java package structure (Backend)<br>
-│ &nbsp;  │  &nbsp; ├── frontend/      # Frontend React application<br>
-│  &nbsp; │ &nbsp;  ├── resources/     # Configuration files<br>
-│ &nbsp;  ├── test/              # Unit and integration tests<br>
+&nbsp;│  &nbsp; ├── main/              # Main application code<br>
+&nbsp;│  &nbsp; │  &nbsp; ├── java/com/deligo/  # Java package structure (Backend)<br>
+&nbsp;│ &nbsp;  │  &nbsp; ├── frontend/      # Frontend React application<br>
+&nbsp;│  &nbsp; │ &nbsp;  ├── resources/     # Configuration files<br>
+&nbsp;│ &nbsp;  ├── test/              # Unit and integration tests<br>
 ├── docs/                  # Project documentation<br>
 ├── logs/                  # Log files<br>
 ├── config/                # Configuration files<br>
