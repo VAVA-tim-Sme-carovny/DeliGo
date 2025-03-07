@@ -1,8 +1,8 @@
-# 🏦 DeliGo - Financial Manager Application  
+# 🏦 DeliGo - Tracking system Application  
 
 ## 📌 Overview  
 
-**DeliGo** is a financial management application designed to help users track and manage their finances efficiently. It is built with a **Java backend (BE)**, a **React-based frontend (FE)**, and a **REST API** for seamless communication between the two. The project follows a **modular architecture**, allowing for independent development of components.  
+**DeliGo** is a Tracking system  designed to help staff track, order and manage their created orders. It is built with a **Java backend (BE)**, a **React-based frontend (FE)**, and a **REST API** for seamless communication between the two. The project follows a **modular architecture**, allowing for independent development of components.  
 
 ---
 
