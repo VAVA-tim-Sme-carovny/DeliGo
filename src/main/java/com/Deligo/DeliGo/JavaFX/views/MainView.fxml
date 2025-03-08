@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.Deligo.DeliGo.JavaFX.controllers.MainController">
+    <children>
+        <Label text="Welcome to DeliGo!" layoutX="50" layoutY="40"/>
+        <Button text="Click Me" layoutX="50" layoutY="80" fx:id="myButton"/>
+    </children>
+</AnchorPane>
