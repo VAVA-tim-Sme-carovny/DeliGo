@@ -12,7 +12,7 @@ DeliGo/<br>
 ├── src/                   # Source code directory<br>
 &nbsp;│  &nbsp; ├── main/              # Main application code<br>
 &nbsp;│  &nbsp; │  &nbsp; ├── java/com/deligo/  # Java package structure (Backend)<br>
-&nbsp;│ &nbsp;  │  &nbsp; ├── frontend/      # Frontend React application<br>
+&nbsp;│ &nbsp;  │  &nbsp; ├── frontend/      # Frontend JavaFX springboot application<br>
 &nbsp;│  &nbsp; │ &nbsp;  ├── resources/     # Configuration files<br>
 &nbsp;│ &nbsp;  ├── test/              # Unit and integration tests<br>
 ├── docs/                  # Project documentation<br>
