@@ -49,7 +49,7 @@ DeliGo follows a **layered architecture** that separates **business logic**, **d
 - Uses **Hibernate/JPA** for database management
 
 ### 🔹 Frontend (FE)
-- Built with **React.js**
+- Built with **JavaFX springboot**
 - Provides a **user-friendly interface** for managing finances
 - Sends and receives data via **REST API**
 - Uses **Redux** for state management
