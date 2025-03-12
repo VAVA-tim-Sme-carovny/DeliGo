@@ -1,0 +1,68 @@
+2025-03-06 15:34:45 [main] INFO  org.smecarovni.Main - Program started
+2025-03-06 15:34:45 [main] INFO  org.smecarovni.Main - Trying to create user Alice
+2025-03-06 15:34:45 [main] INFO  org.smecarovni.utils.ConfigLoader - ✅ Config loaded successfully.
+2025-03-06 15:34:45 [main] INFO  org.smecarovni.utils.ConfigLoader - 🔑 Retrieved configuration for key: 'db.url'
+2025-03-06 15:34:45 [main] INFO  org.smecarovni.utils.ConfigLoader - 🔑 Retrieved configuration for key: 'db.user'
+2025-03-06 15:34:45 [main] INFO  org.smecarovni.utils.ConfigLoader - 🔑 Retrieved configuration for key: 'db.password'
+2025-03-06 15:34:45 [main] INFO  org.smecarovni.db.DatabaseConnector - ✅ Connected to the database!
+2025-03-06 15:34:45 [main] ERROR org.smecarovni.dao.UserDAO - Error inserting user: Alice
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(alice@example.com) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.smecarovni.dao.UserDAO.createUser(UserDAO.java:20) ~[classes/:?]
+	at org.smecarovni.Main.main(Main.java:20) ~[classes/:?]
+2025-03-06 15:34:45 [main] ERROR org.smecarovni.exceptions.DatabaseException - Error inserting user
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(alice@example.com) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.smecarovni.dao.UserDAO.createUser(UserDAO.java:20) ~[classes/:?]
+	at org.smecarovni.Main.main(Main.java:20) ~[classes/:?]
+2025-03-06 15:34:45 [main] ERROR org.smecarovni.Main - Error during CRUD operations: 
+org.smecarovni.exceptions.DatabaseException: Error inserting user
+	at org.smecarovni.dao.UserDAO.createUser(UserDAO.java:26) ~[classes/:?]
+	at org.smecarovni.Main.main(Main.java:20) ~[classes/:?]
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "users_email_key"
+  Detail: Key (email)=(alice@example.com) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.smecarovni.dao.UserDAO.createUser(UserDAO.java:20) ~[classes/:?]
+	... 1 more
+2025-03-06 15:34:45 [main] INFO  org.smecarovni.db.DatabaseConnector - ✅ Database connection closed.
+2025-03-06 15:34:45 [main] INFO  org.smecarovni.Main - Database connection closed.
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.Main - Program started
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.Main - Trying to create user Alice
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.utils.ConfigLoader - ✅ Config loaded successfully.
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.utils.ConfigLoader - 🔑 Retrieved configuration for key: 'db.url'
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.utils.ConfigLoader - 🔑 Retrieved configuration for key: 'db.user'
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.utils.ConfigLoader - 🔑 Retrieved configuration for key: 'db.password'
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.db.DatabaseConnector - ✅ Connected to the database!
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.dao.UserDAO - ✅ User created: Alice
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.Main - Fetching users after creation
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.dao.UserDAO - 👤 4 | Alice | alice@example.com
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.Main - Updating user with ID 1
+2025-03-06 15:35:31 [main] WARN  org.smecarovni.dao.UserDAO - ⚠️ No user found with ID: 3
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.Main - Fetching users after update
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.dao.UserDAO - 👤 4 | Alice | alice@example.com
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.Main - Deleting user with ID 1
+2025-03-06 15:35:31 [main] WARN  org.smecarovni.dao.UserDAO - ⚠️ No user found with ID: 3
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.Main - Fetching users after deletion
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.dao.UserDAO - 👤 4 | Alice | alice@example.com
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.db.DatabaseConnector - ✅ Database connection closed.
+2025-03-06 15:35:31 [main] INFO  org.smecarovni.Main - Database connection closed.
