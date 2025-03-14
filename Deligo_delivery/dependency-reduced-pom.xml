@@ -27,7 +27,7 @@
           <mainClass>main.com.MainApp</mainClass>
           <options>
             <option>--module-path</option>
-            <option>/Users/user/Downloads/javafx-sdk-21.0.6/lib</option>
+            <option>lib</option>
             <option>--add-modules</option>
             <option>javafx.controls,javafx.fxml</option>
           </options>

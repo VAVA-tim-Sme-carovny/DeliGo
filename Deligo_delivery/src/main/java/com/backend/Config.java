@@ -11,32 +11,23 @@ public class Config {
         backend = be;
     }
 
-    public static Object routePost(String route, Object data) {
-        logger.info("Routing POST request: " + route);
+    public static Object routeGet(String route) {
+        logger.info("🔍 Routing GET request: " + route);
         switch (route) {
             case "/be/validateRequest":
-                return backend.getFeatureValidateRequest().validateEmployeeRequest(data);
+                return (backend != null) ? backend.getFeatureValidateRequest().validateEmployeeRequest(null) : "Backend not initialized!";
             default:
-                return "Unknown POST route: " + route;
+                return "❌ Unknown GET route: " + route;
         }
     }
 
-    public static Object routeGet(String route) {
-        logger.info("Routing GET request: " + route);
+    public static Object routePost(String route, Object data) {
+        logger.info("🔍 Routing POST request: " + route);
         switch (route) {
-            case "/be/status":
-                return "Backend is running!";
+            case "/be/validateRequest":
+                return (backend != null) ? backend.getFeatureValidateRequest().validateEmployeeRequest(data) : "Backend not initialized!";
             default:
-                return "Unknown GET route: " + route;
+                return "❌ Unknown POST route: " + route;
         }
-    }
-
-    private static Config instance;
-
-    public static Config getInstance() {
-        if (instance == null) {
-            instance = new Config();
-        }
-        return instance;
     }
 }

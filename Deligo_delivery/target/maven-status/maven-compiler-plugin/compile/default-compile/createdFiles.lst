@@ -8,6 +8,7 @@ com/backend/Backend.class
 com/frontend/Frontend.class
 com/core/TrackingService.class
 com/MainApp.class
+com/FrontendLauncher.class
 com/api/TrackingResource.class
 com/api/server/SimpleHttpServer.class
 com/api/controller/UserController.class

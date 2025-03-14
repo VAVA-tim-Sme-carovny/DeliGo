@@ -25,6 +25,16 @@
             <artifactId>javafx-media</artifactId>
             <version>21.0.6</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>21.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>21.0.6</version>
+        </dependency>
         <!-- JSON Handling -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -83,6 +93,8 @@
         </dependency>
     </dependencies>
 
+
+
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
@@ -107,7 +119,7 @@
                     <mainClass>main.com.MainApp</mainClass>
                     <options>
                         <option>--module-path</option>
-                        <option>/Users/user/Downloads/javafx-sdk-21.0.6/lib</option>
+                        <option>lib</option>
                         <option>--add-modules</option>
                         <option>javafx.controls,javafx.fxml</option>
                     </options>
