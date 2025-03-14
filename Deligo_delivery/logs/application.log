@@ -1,0 +1,31 @@
+2025-03-14 11:59:46 [main] INFO  main.com.MainApp - Starting REST API server...
+2025-03-14 11:59:46 [main] INFO  main.com.api.server.SimpleHttpServer - REST API started at http://localhost:8080/api/
+2025-03-14 11:59:46 [JavaFX Application Thread] INFO  main.com.MainApp - Frontend (JavaFX) started.
+2025-03-14 12:00:04 [main] INFO  main.com.MainApp - Starting REST API server...
+2025-03-14 12:00:04 [main] ERROR main.com.MainApp - Failed to start REST API server
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method) ~[?:?]
+	at sun.nio.ch.Net.bind(Net.java:565) ~[?:?]
+	at sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344) ~[?:?]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301) ~[?:?]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:89) ~[?:?]
+	at sun.net.httpserver.ServerImpl.<init>(ServerImpl.java:144) ~[jdk.httpserver:?]
+	at sun.net.httpserver.HttpServerImpl.<init>(HttpServerImpl.java:50) ~[jdk.httpserver:?]
+	at sun.net.httpserver.DefaultHttpServerProvider.createHttpServer(DefaultHttpServerProvider.java:35) ~[jdk.httpserver:?]
+	at com.sun.net.httpserver.HttpServer.create(HttpServer.java:152) ~[jdk.httpserver:?]
+	at main.com.api.server.SimpleHttpServer.startServer(SimpleHttpServer.java:16) ~[classes/:?]
+	at main.com.MainApp.startBackend(MainApp.java:44) [classes/:?]
+	at main.com.MainApp.main(MainApp.java:20) [classes/:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at com.sun.javafx.application.LauncherImpl.launchApplicationWithArgs(LauncherImpl.java:464) [javafx.graphics.jar:?]
+	at com.sun.javafx.application.LauncherImpl.launchApplication(LauncherImpl.java:364) [javafx.graphics.jar:?]
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at sun.launcher.LauncherHelper$FXHelper.main(LauncherHelper.java:1149) [?:?]
+2025-03-14 12:00:04 [JavaFX Application Thread] INFO  main.com.MainApp - Frontend (JavaFX) started.
+2025-03-14 12:15:44 [com.MainApp.main()] INFO  com.MainApp - Starting REST API server...
+2025-03-14 12:15:44 [com.MainApp.main()] INFO  com.api.server.SimpleHttpServer - REST API started at http://localhost:8080/api/
+2025-03-14 12:15:44 [JavaFX Application Thread] INFO  com.MainApp - Frontend (JavaFX) started.
+2025-03-14 12:15:58 [com.MainApp.main()] INFO  com.MainApp - Stopping backend services...
+2025-03-14 12:15:58 [com.MainApp.main()] INFO  com.api.server.SimpleHttpServer - REST API server stopped.
