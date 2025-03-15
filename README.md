@@ -16,30 +16,6 @@ When creating new branches, follow these naming patterns:
 
 ---
 
-## 🏗️ Backend and Frontend Architecture  
-
-DeliGo follows a **layered architecture** that separates **business logic**, **data persistence**, and **REST API communication**.  
-
-### 🔹 Backend (BE)
-- Written in **Java** with **Spring Boot**
-- Manages **business logic** and **database operations**
-- Handles **user authentication, transactions, and reporting**
-- Communicates with FE via **REST API**
-- Uses **Hibernate/JPA** for database management
-
-### 🔹 Frontend (FE)
-- Built with **JavaFX springboot**
-- Provides a **user-friendly interface** for managing finances
-- Sends and receives data via **REST API**
-- Uses **Redux** for state management
-
-### 🔹 REST API - Communication Layer
-- Facilitates secure **GET/POST** requests between FE and BE  
-- Configured with `Backend Config` and `Frontend Config`  
-- Does **not** process business logic, only **routes requests**  
-
----
-
 ## 📦 Dependency & Environment Versioning  
 
 DeliGo is built using **Maven** to manage dependencies and version control.
