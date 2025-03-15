@@ -6,27 +6,6 @@
 
 ---
 
-## 📁 Project Structure  
-DeliGo/<br>
-├── .github/               # GitHub workflows and issue templates<br>
-├── src/                   # Source code directory<br>
-&nbsp;│  &nbsp; ├── main/              # Main application code<br>
-&nbsp;│  &nbsp; │  &nbsp; ├── java/com/deligo/  # Java package structure (Backend)<br>
-&nbsp;│ &nbsp;  │  &nbsp; ├── com.deligo.Frontend/      # Frontend JavaFX springboot application<br>
-&nbsp;│  &nbsp; │ &nbsp;  ├── resources/     # Configuration files<br>
-&nbsp;│ &nbsp;  ├── test/              # Unit and integration tests<br>
-├── docs/                  # Project documentation<br>
-├── logs/                  # Log files<br>
-├── config/                # Configuration files<br>
-├── README.md              # Project documentation<br>
-├── .gitignore             # Git ignore rules<br>
-├── pom.xml                # Maven build file<br>
-├── mvnw, mvnw.cmd         # Maven wrapper scripts<br>
-├── LICENSE                # License file<br>
-├── CONTRIBUTING.md        # Contribution guidelines<br>
-
----
-
 ## 🔀 Branch Naming Convention  
 
 When creating new branches, follow these naming patterns:  
