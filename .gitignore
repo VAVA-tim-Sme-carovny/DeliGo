@@ -37,3 +37,4 @@ dependency-reduced-pom.xml
 !.idea/runConfigurations/
 !.idea/codeStyles/
 *.iml
+!Deligo_delivery.iml
