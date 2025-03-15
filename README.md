@@ -2,7 +2,7 @@
 
 ## 📌 Overview  
 
-**DeliGo** is a Tracking system  designed to help staff track, order and manage their created orders. It is built with a **Java backend (BE)**, a **Java FX springboot frontend (FE)**, and a **REST API** for seamless communication between the two. The project follows a **modular architecture**, allowing for independent development of components.  
+**DeliGo** is a Tracking system  designed to help staff track, order and manage their created orders. It is built with a **Java com.deligo.Backend (BE)**, a **Java FX springboot com.deligo.Frontend (FE)**, and a **REST API** for seamless communication between the two. The project follows a **modular architecture**, allowing for independent development of components.  
 
 ---
 
@@ -12,7 +12,7 @@ DeliGo/<br>
 ├── src/                   # Source code directory<br>
 &nbsp;│  &nbsp; ├── main/              # Main application code<br>
 &nbsp;│  &nbsp; │  &nbsp; ├── java/com/deligo/  # Java package structure (Backend)<br>
-&nbsp;│ &nbsp;  │  &nbsp; ├── frontend/      # Frontend JavaFX springboot application<br>
+&nbsp;│ &nbsp;  │  &nbsp; ├── com.deligo.Frontend/      # Frontend JavaFX springboot application<br>
 &nbsp;│  &nbsp; │ &nbsp;  ├── resources/     # Configuration files<br>
 &nbsp;│ &nbsp;  ├── test/              # Unit and integration tests<br>
 ├── docs/                  # Project documentation<br>
@@ -109,7 +109,7 @@ mvn test
 
 ---
 
-## 📝 Logging
+## 📝 com.deligo.Logging
 
 DeliGo implements structured logging using Log4J.
 
@@ -118,12 +118,12 @@ DeliGo implements structured logging using Log4J.
 - WARNING – Potential issues
 - SUCCESS – Successful operations
 
-### Logging Priorities
+### com.deligo.Logging Priorities
 - Low
 - Mid
 - High
 
-### Logging Sources
+### com.deligo.Logging Sources
 - RestApi
 - Persistence
 - BE
@@ -161,7 +161,7 @@ mvn spring-boot:run
 
 ### 3️⃣ Setup the Frontend
 ```sh
-cd frontend
+cd com.deligo.Frontend
 npm install
 npm start
 ```
