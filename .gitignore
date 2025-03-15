@@ -38,3 +38,5 @@ dependency-reduced-pom.xml
 !.idea/codeStyles/
 *.iml
 !Deligo_delivery.iml
+!.git/hooks/pre-push.sh
+!.git/hooks/pre-push.bat
