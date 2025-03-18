@@ -2,9 +2,9 @@
 
 ## 📌 Overview  
 
-**DeliGo** is a Tracking system  designed to help staff track, order and manage their created orders. It is built with a **Java com.deligo.Backend (BE)**, a **Java FX springboot com.deligo.Frontend (FE)**, and a **REST API** for seamless communication between the two. The project follows a **modular architecture**, allowing for independent development of components.  
+**DeliGo** is a Tracking system  designed to help staff track, order and manage their created orders. It is built with a **Java com.deligo.Backend (BE)**, a **Java FX (FE)**, and a **REST API** for seamless communication between the two. The project follows a **modular architecture**, allowing for independent development of components.  
 
-** For following project you will have to use explicitly Open JDK 21 or Oracle JDK 21  - other versions like Amazon Coretto wont work !!! Set all settings for you running Java version**
+**For following project you will have to use explicitly Open JDK 21 or Oracle JDK 21  - other versions like Amazon Coretto wont work !!! Set all settings for you running Java version**
 
 ---
 
