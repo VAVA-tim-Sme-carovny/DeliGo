@@ -4,7 +4,7 @@
 
 **DeliGo** is a Tracking system  designed to help staff track, order and manage their created orders. It is built with a **Java com.deligo.Backend (BE)**, a **Java FX springboot com.deligo.Frontend (FE)**, and a **REST API** for seamless communication between the two. The project follows a **modular architecture**, allowing for independent development of components.  
 
-** For following project you will have to use explicitly Open JDK 21 or Oracle JDK 21  - other versions like Amazon Coretto wont work !!!**
+** For following project you will have to use explicitly Open JDK 21 or Oracle JDK 21  - other versions like Amazon Coretto wont work !!! Set all settings for you running Java version**
 
 ---
 
@@ -20,10 +20,11 @@ When creating new branches, follow these naming patterns:
 
 ## Build profiles
 There will be 3 main profiles:
-### 🔹 Development Build
-### 🔹 BackEnd build
-### 🔹 FrontEnd build
+### - Development Build
+### - BackEnd build
+### - FrontEnd build
 
+You have to create these builds,  and for each build you have to set an absolute root to the DeliGo folder inside your computer !
 
 ---
 
@@ -38,13 +39,13 @@ OR
 - /usr/libexec/java_home -V
 
 If you are using OpenJKD23 or other use:
--brew uninstall openjdk
--brew install openjdk@21
+- brew uninstall openjdk
+- brew install openjdk@21
 
 To set correct version as default
--export JAVA_HOME=$(/usr/libexec/java_home -v 21)
--echo 'export JAVA_HOME=$(/usr/libexec/java_home -v 21)' >> ~/.zshrc
--source ~/.zshrc
+- export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+- echo 'export JAVA_HOME=$(/usr/libexec/java_home -v 21)' >> ~/.zshrc
+- source ~/.zshrc
 
 ### 🔹 Maven Profiles
 The `pom.xml` file defines four **build profiles**:  
@@ -82,6 +83,8 @@ javafx.controls,javafx.fxml
 ```
 
 # GitHub tutorial
+If you are trying to pull a branch, first push your current changes so you wont lose any progress and then pull the new one.
+
 check branch
 ```sh
 git status
@@ -118,7 +121,14 @@ test check
 
 ---
 
-## 🔄 3. GitHub & Git Configuration commands
+## 🛠 Improve File Watcher for Development
+Enable File Watcher in IntelliJ IDEA
+- File > Settings > Plugins > File Watcher (Enable it)
+- Set it up to auto-compile Java files
+
+---
+
+## 🔄 GitHub & Git Configuration commands
 GitHub now does not support password authentication for git fetch and git push. You must use SSH:
 
 ```sh
