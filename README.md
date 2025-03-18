@@ -70,6 +70,41 @@ Open jvm,config and correct path to your JavaFX (in system):
 javafx.controls,javafx.fxml
 ```
 
+# GitHub tutorial
+check branch
+```sh
+git status
+```
+fetch the lastest changes
+```sh
+git fetch
+```
+switch to main branch
+```sh
+git checkout main
+```
+merge latest changes
+```sh
+git merge origin/main
+```
+add and push changes
+```sh
+git add .
+git commit -m "Updated configurations and removed unnecessary files"
+git push origin main
+```
+
+# Problems with wrapper
+check mvn skript issues
+```sh
+chmod -x mvnw
+chmod +x .mvn/wrapper/maven-wrapper.jar
+```
+test check
+```sh
+./mvnw -v
+```
+
 ---
 
 ## 🔄 3. GitHub & Git Configuration
