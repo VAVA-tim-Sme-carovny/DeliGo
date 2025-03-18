@@ -20,6 +20,21 @@ When creating new branches, follow these naming patterns:
 
 DeliGo is built using **Maven** to manage dependencies and version control.
 
+# 🛠 Java version setup
+To check current version use:
+- java --version
+OR
+- /usr/libexec/java_home -V
+
+If you are using OpenJKD23 or other use:
+-brew uninstall openjdk
+-brew install openjdk@21
+
+To set correct version as default
+-export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+-echo 'export JAVA_HOME=$(/usr/libexec/java_home -v 21)' >> ~/.zshrc
+-source ~/.zshrc
+
 ### 🔹 Maven Profiles
 The `pom.xml` file defines four **build profiles**:  
 
@@ -45,56 +60,42 @@ All dependencies are locked using Maven’s dependency lock mechanism, generatin
 ### 🔹 Maven Wrapper
 DeliGo is executed via Maven Wrapper (`mvnw`) to ensure consistent builds across environments. Various profiles can be selected using `.bat` and `.sh` scripts.  
 
----
-
-## ✅ Testing  
-
-DeliGo implements **unit and integration testing** using **JUnit** and **Mockito**.  
-
-- **Unit tests** are located in `src/test/java/`  
-- **Test endpoints**:
-  - `POST /health`  
-  - `GET /health`  
-
-To run tests:  
+# Configure jvm.config
+Open jvm,config and correct path to your JavaFX (in system):
 
 ```sh
-mvn test
+--module-path
+"/Users/user/Desktop/skola/FIIT/4.semester/vava/DeliGo/lib"
+--add-modules
+javafx.controls,javafx.fxml
 ```
 
 ---
 
-## 📝 com.deligo.Logging
+## 🔄 3. GitHub & Git Configuration
+GitHub now does not support password authentication for git fetch and git push. You must use SSH:
 
-DeliGo implements structured logging using Log4J.
+```sh
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+Save it in : ~/.ssh/id_rsa
 
-### Log Categories
-- ERROR - Critical issues
-- WARNING – Potential issues
-- SUCCESS – Successful operations
 
-### com.deligo.Logging Priorities
-- Low
-- Mid
-- High
+Now add SSH key to your GitHub:
+```sh
+pbcopy < ~/.ssh/id_rsa.pub
+```
 
-### com.deligo.Logging Sources
-- RestApi
-- Persistence
-- BE
-- FE
-- Maven
+-Go to GitHub → Settings → SSH & GPG keys → New SSH Key
+-Paste the copied key and save it.
 
----
+Now check connection:
+-ssh -T git@github.com
 
-## 🔒 Security Measures
+Change remote to SHH:
+-git remote set-url origin git@github.com:VAVA-tim-Sme-carovny/DeliGo.git
 
-DeliGo follows security best practices, including:
-
-- User authentication via JWT tokens
-- Data encryption for sensitive transactions
-- OWASP ESAPI (planned) for input validation
-- Role-based access control for different user permissions
+# Git commands 
 
 ---
 
@@ -105,20 +106,6 @@ DeliGo follows security best practices, including:
 ```sh
 git clone https://github.com/yourusername/DeliGo.git
 cd DeliGo
-```
-
-### 2️⃣ Setup the Backend
-```sh
-cd src/main/java/com/deligo
-mvn clean install
-mvn spring-boot:run
-```
-
-### 3️⃣ Setup the Frontend
-```sh
-cd com.deligo.Frontend
-npm install
-npm start
 ```
 
 ---
