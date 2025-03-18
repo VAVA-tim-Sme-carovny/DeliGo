@@ -4,6 +4,8 @@
 
 **DeliGo** is a Tracking system  designed to help staff track, order and manage their created orders. It is built with a **Java com.deligo.Backend (BE)**, a **Java FX springboot com.deligo.Frontend (FE)**, and a **REST API** for seamless communication between the two. The project follows a **modular architecture**, allowing for independent development of components.  
 
+** For following project you will have to use explicitly Open JDK 21 or Oracle JDK 21  - other versions like Amazon Coretto wont work !!!**
+
 ---
 
 ## 🔀 Branch Naming Convention  
@@ -13,6 +15,15 @@ When creating new branches, follow these naming patterns:
 - `feature/<feature-name>` → For new features (e.g., `feature/user-auth`)  
 - `bugfix/<bug-description>` → For bug fixes (e.g., `bugfix/fix-login-error`)  
 - `hotfix/<urgent-fix>` → For urgent patches (e.g., `hotfix/urgent-patch`)  
+
+---
+
+## Build profiles
+There will be 3 main profiles:
+### 🔹 Development Build
+### 🔹 BackEnd build
+### 🔹 FrontEnd build
+
 
 ---
 
@@ -107,7 +118,7 @@ test check
 
 ---
 
-## 🔄 3. GitHub & Git Configuration
+## 🔄 3. GitHub & Git Configuration commands
 GitHub now does not support password authentication for git fetch and git push. You must use SSH:
 
 ```sh
@@ -115,8 +126,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 Save it in : ~/.ssh/id_rsa
 
-
-Now add SSH key to your GitHub:
+Now add SSH key to your GitHub (https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent):
 ```sh
 pbcopy < ~/.ssh/id_rsa.pub
 ```
@@ -130,13 +140,10 @@ Now check connection:
 Change remote to SHH:
 -git remote set-url origin git@github.com:VAVA-tim-Sme-carovny/DeliGo.git
 
-# Git commands 
 
----
+### 🛠️ Deployment Guide
 
-## 🛠️ Deployment Guide
-
-### 1️⃣ Clone the Repository
+1️⃣ Clone the Repository
 
 ```sh
 git clone https://github.com/yourusername/DeliGo.git
