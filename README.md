@@ -21,8 +21,8 @@ When creating new branches, follow these naming patterns:
 ## Build profiles
 There will be 3 main profiles:
 ### - Development Build
-### - BackEnd build
-### - FrontEnd build
+### - BackEnd Build
+### - FrontEnd Build
 
 You have to create these builds,  and for each build you have to set an absolute root to the DeliGo folder inside your computer !
 
