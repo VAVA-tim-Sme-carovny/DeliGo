@@ -1,5 +1,6 @@
 package com.deligo;
 
+import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Logging.LoggingManager;
 
@@ -10,9 +11,13 @@ import com.deligo.Backend.Backend;
 
 public class MainApp {
 
+    private static final String CONFIG_FILE = "config.yaml";
+
     public static void main(String[] args) {
 
         LoggingManager.initialize();
+
+        ConfigLoader config = new ConfigLoader(CONFIG_FILE);
 
         while (LoggingManager.getAdapter() == null) {
             try {
@@ -31,7 +36,7 @@ public class MainApp {
         Frontend frontend = null;
 
         try{
-            restApiServer = new RestAPIServer(logger);
+            restApiServer = new RestAPIServer(logger, config);
         }catch (Exception e){
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.REST_API ,"Rest Api didn't initialize properly: " + e.getMessage());
         }

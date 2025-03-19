@@ -1,9 +1,13 @@
 package com.deligo.RestApi;
 
+import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.FrontendConfig;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.Backend.BackendConfig;
+import com.deligo.RestApi.CentralServer.ConsulRegistration;
+import com.deligo.RestApi.Utils.HealthHandler;
+import com.deligo.RestApi.Utils.NetworkUtils;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -19,23 +23,29 @@ public class RestAPIServer {
     private static BackendConfig backendConfig;
     private static FrontendConfig frontendConfig;
     private static LoggingAdapter logger;
+    private static ConfigLoader deviceConfiguration;
 
     private final String BASE_URL = "http://localhost:8080/api";
 
-    public RestAPIServer(LoggingAdapter adapter) throws IOException {
+    public RestAPIServer(LoggingAdapter adapter, ConfigLoader config) throws IOException {
         logger = adapter;
         logger.log(LogType.INFO, LogPriority.HIGH, LogSource.REST_API, "Starting REST API Server");
 
-        // Inicializácia HTTP servera
+        deviceConfiguration = config;
+        logger.log(LogType.INFO, LogPriority.HIGH, LogSource.REST_API, "Configuration was loaded");
+
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/api", new RequestHandler(this));  // Pass reference to THIS
+
+//        server.createContext("/health", new HealthHandler(this));
+
         server.setExecutor(null);
         server.start();
 
         logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.REST_API, "REST API Server running on " + BASE_URL);
-
-        // Test endpointov po spustení
         runStartupTests();
+
+//        ConsulRegistration.registerService(deviceConfiguration.getDeviceId(), NetworkUtils.getLocalIpAddress() , 8080, config.getLoginRole());
     }
 
     public static void setBackendConfig(BackendConfig config) {

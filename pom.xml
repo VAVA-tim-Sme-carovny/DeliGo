@@ -62,6 +62,13 @@
             <artifactId>flyway-core</artifactId>
             <version>9.22.3</version>
         </dependency>
+
+        <!-- Yaml library import -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>2.2</version>
+        </dependency>
     </dependencies>
 
     <reporting>

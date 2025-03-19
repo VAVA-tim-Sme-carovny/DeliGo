@@ -8,6 +8,15 @@
 
 ---
 
+## Requiremetns
+   
+-Java openJDK 21 (not correto or any other version)
+   -Setup java to enviroment variable JAVA_HOME
+-Java FX 21 needs to be downloaded and it's path needs to be placed in jvm.conf
+- Make sure your Idea Intelij uses 21 version even in run configurations
+
+---
+
 ## 🔀 Branch Naming Convention  
 
 When creating new branches, follow these naming patterns:  
@@ -19,12 +28,10 @@ When creating new branches, follow these naming patterns:
 ---
 
 ## Build profiles
-There will be 3 main profiles:
-### - Development Build
-### - BackEnd Build
-### - FrontEnd Build
-
-You have to create these builds,  and for each build you have to set an absolute root to the DeliGo folder inside your computer !
+There are 3 main profiles:
+### - Development Build - Starts frontend and backend
+### - BackEnd Build - starts backend without frontend
+### - FrontEnd Build - starts frontend without backend
 
 ---
 
@@ -47,30 +54,12 @@ To set correct version as default
 - echo 'export JAVA_HOME=$(/usr/libexec/java_home -v 21)' >> ~/.zshrc
 - source ~/.zshrc
 
-### 🔹 Maven Profiles
-The `pom.xml` file defines four **build profiles**:  
-
-1. **Development (Single Component)**  
-   - Runs only BE or FE separately.  
-   - Uses `maven-failsafe-plugin`, `maven-checkstyle-plugin`, and `findbugs-maven-plugin`.  
-
-2. **Development (Full Application)**  
-   - Runs both BE and FE simultaneously.  
-   - Uses `maven-surefire-plugin` for testing.  
-
-3. **BuildDev**  
-   - Used for **internal development builds**.  
-   - Includes `maven-compiler-plugin` and `jacoco-maven-plugin`.  
-
-4. **BuildProd**  
-   - Used for **production-ready builds**.  
-   - Includes `maven-javadoc-plugin` and `maven-release-plugin`.  
 
 ### 🔹 Dependency Lock
 All dependencies are locked using Maven’s dependency lock mechanism, generating a `dependency-lock.json` file that is committed to GitHub.  
 
 ### 🔹 Maven Wrapper
-DeliGo is executed via Maven Wrapper (`mvnw`) to ensure consistent builds across environments. Various profiles can be selected using `.bat` and `.sh` scripts.  
+DeliGo is executed via Maven Wrapper (`mvnw`) to ensure consistent builds across environments.
 
 # Configure jvm.config
 Open jvm,config and correct path to your JavaFX (in system):
@@ -85,13 +74,15 @@ javafx.controls,javafx.fxml
 # GitHub tutorial
 If you are trying to pull a branch, first push your current changes so you wont lose any progress and then pull the new one.
 
+### PLEASE DO NOT PUSH ANYTHING TO MAIN BRANCH & ALWAYS MAKE SURE YOU ARE IN RIGHT BRANCH 
 check branch
 ```sh
 git status
 ```
-fetch the lastest changes
+pull the lastest changes
 ```sh
 git fetch
+git pull
 ```
 switch to main branch
 ```sh
@@ -105,8 +96,9 @@ add and push changes
 ```sh
 git add .
 git commit -m "Updated configurations and removed unnecessary files"
-git push origin main
+git push origin feature/XXX
 ```
+
 
 # Problems with wrapper
 check mvn skript issues
@@ -119,18 +111,8 @@ test check
 ./mvnw -v
 ```
 
----
-
-## 🛠 Improve File Watcher for Development
-Enable File Watcher in IntelliJ IDEA
-- File > Settings > Plugins > File Watcher (Enable it)
-- Set it up to auto-compile Java files
-
----
-
 ## 🔄 GitHub & Git Configuration commands
 GitHub now does not support password authentication for git fetch and git push. You must use SSH:
-
 ```sh
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```

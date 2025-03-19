@@ -31,12 +31,12 @@ bin/
 ### Ignore installed libraries ###
 lib
 target
-log/*
+logs/*
+
 dependency-reduced-pom.xml
 .idea/*
-!.idea/runConfigurations/
-!.idea/codeStyles/
 *.iml
-!Deligo_delivery.iml
-!.git/hooks/pre-push.sh
-!.git/hooks/pre-push.bat
+ssh-login.bat
+!.run
+Deligo_delivery.iml
+asd.json

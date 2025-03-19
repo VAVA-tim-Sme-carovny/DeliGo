@@ -1,0 +1,6 @@
+device:
+  id: C5
+login:
+  user: C5
+  roles: customer
+  status: True
