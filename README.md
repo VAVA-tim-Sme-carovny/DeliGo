@@ -10,9 +10,12 @@
 
 ## Requiremetns
    
--Java openJDK 21 (not correto or any other version)
-   -Setup java to enviroment variable JAVA_HOME
--Java FX 21 needs to be downloaded and it's path needs to be placed in jvm.conf
+- Java openJDK 21 (not correto or any other version)
+  
+ - Setup java to enviroment variable JAVA_HOME
+
+- Java FX 21 needs to be downloaded and it's path needs to be placed in jvm.conf
+
 - Make sure your Idea Intelij uses 21 version even in run configurations
 
 ---
