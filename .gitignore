@@ -40,3 +40,4 @@ ssh-login.bat
 !.run
 Deligo_delivery.iml
 asd.json
+!jvm.config

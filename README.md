@@ -14,8 +14,6 @@
   
  - Setup java to enviroment variable JAVA_HOME
 
-- Java FX 21 needs to be downloaded and it's path needs to be placed in jvm.conf
-
 - Make sure your Idea Intelij uses 21 version even in run configurations
 
 ---
@@ -63,16 +61,6 @@ All dependencies are locked using Maven’s dependency lock mechanism, generatin
 
 ### 🔹 Maven Wrapper
 DeliGo is executed via Maven Wrapper (`mvnw`) to ensure consistent builds across environments.
-
-# Configure jvm.config
-Open jvm,config and correct path to your JavaFX (in system):
-
-```sh
---module-path
-"/Users/user/Desktop/skola/FIIT/4.semester/vava/DeliGo/lib"
---add-modules
-javafx.controls,javafx.fxml
-```
 
 # GitHub tutorial
 If you are trying to pull a branch, first push your current changes so you wont lose any progress and then pull the new one.
