@@ -30,6 +30,7 @@ bin/
 
 ### Ignore installed libraries ###
 lib
+!javafx-sdk-21.0.2/*
 target
 logs/*
 
