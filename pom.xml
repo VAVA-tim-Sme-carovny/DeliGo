@@ -15,7 +15,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <javafx.version>21</javafx.version>
-        <!-- Predvolená hodnota; OS-profil ju prepíše na "win", "linux" alebo "mac" -->
+        <!-- Predvolená hodnota – OS profil ju prepíše na "win", "linux" alebo "mac" -->
         <javafx.classifier>win</javafx.classifier>
     </properties>
 
@@ -75,7 +75,7 @@
     </dependencies>
 
     <build>
-        <!-- Os-maven-plugin rozšírenie – automaticky deteguje aktuálny OS -->
+        <!-- Os-maven-plugin – automaticky deteguje aktuálny OS a nastaví vlastnosti (napr. os.detected.classifier) -->
         <extensions>
             <extension>
                 <groupId>kr.motd.maven</groupId>
@@ -93,8 +93,7 @@
                     <mainClass>com.deligo.MainApp</mainClass>
                 </configuration>
             </plugin>
-
-            <!-- Voliteľný exec-maven-plugin pre spustenie s ďalšími argumentami (napr. pre vývoj) -->
+            <!-- Exec Maven Plugin – voliteľný, ak chceš spúšťať s argumentami -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -110,7 +109,7 @@
     </build>
 
     <profiles>
-        <!-- Profil pre Windows – ak je detegovaný Windows, prepíše classifier na "win" -->
+        <!-- OS profily: Ak je spustený na Windows, Linux alebo macOS, prepíšu sa hodnoty pre JavaFX classifier -->
         <profile>
             <id>windows</id>
             <activation>
@@ -123,7 +122,6 @@
             </properties>
         </profile>
 
-        <!-- Profil pre Linux – ak je detegovaný Unix (Linux), prepíše classifier na "linux" -->
         <profile>
             <id>linux</id>
             <activation>
@@ -136,7 +134,6 @@
             </properties>
         </profile>
 
-        <!-- Profil pre macOS – ak je detegovaný Mac, prepíše classifier na "mac" -->
         <profile>
             <id>macos</id>
             <activation>
@@ -149,7 +146,7 @@
             </properties>
         </profile>
 
-        <!-- Vývojový profil (dev) – je aktívny automaticky -->
+        <!-- Vývojový profil (dev) – aktívny automaticky -->
         <profile>
             <id>dev</id>
             <activation>
@@ -157,7 +154,7 @@
             </activation>
             <build>
                 <plugins>
-                    <!-- Ak chceš spúšťať s exec-maven-plugin a argumentami -->
+                    <!-- Exec plugin pre vývojové spustenie s argumentmi -->
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
@@ -168,6 +165,120 @@
                                 <argument>--com.deligo.development</argument>
                             </arguments>
                         </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Backend Development Profile -->
+        <profile>
+            <id>be</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <configuration>
+                            <mainClass>com.deligo.MainApp</mainClass>
+                            <arguments>
+                                <argument>--com.deligo.backend</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>3.1.2</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <version>3.15.0</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- Frontend Development Profile -->
+        <profile>
+            <id>fe</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <configuration>
+                            <mainClass>com.deligo.MainApp</mainClass>
+                            <arguments>
+                                <argument>--com.deligo.frontend</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>3.1.2</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <version>3.15.0</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- BuildDev Profile -->
+        <profile>
+            <id>buildDev</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.11.0</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>3.1.2</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <version>3.15.0</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.1.0</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- BuildProd Profile -->
+        <profile>
+            <id>buildProd</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.11.0</version>
                     </plugin>
                 </plugins>
             </build>
