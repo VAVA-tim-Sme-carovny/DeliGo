@@ -15,6 +15,8 @@
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
+        <javafx.version>21</javafx.version>
+        <javafx.sdk.path>${project.basedir}/javafx-sdk-${java.version}</javafx.sdk.path>
     </properties>
 
     <dependencies>
@@ -35,19 +37,16 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>21</version>
-            <classifier>win</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>21</version>
-            <classifier>win</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
             <version>21</version>
-            <classifier>win</classifier>
         </dependency>
 
         <!-- Jakarta JAX-RS -->
@@ -90,51 +89,71 @@
         </plugins>
     </reporting>
 
-
     <profiles>
-        <!-- Backend Development Profile -->
+        <!-- Windows profile -->
         <profile>
-            <id>be</id>
+            <id>windows</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <os>
+                    <family>Windows</family>
+                </os>
             </activation>
-            <build>
-                <plugins>
+            <dependencies>
+                <dependency>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-controls</artifactId>
+                    <version>21</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-fxml</artifactId>
+                    <version>21</version>
+                </dependency>
+            </dependencies>
+        </profile>
 
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>3.1.0</version>
-                        <configuration>
-                            <mainClass>com.deligo.MainApp</mainClass>
-                            <arguments>
-                                <argument>--com.deligo.backend</argument>
-                            </arguments>
-                        </configuration>
-                    </plugin>
+        <!-- MacOS profile -->
+        <profile>
+            <id>macos</id>
+            <activation>
+                <os>
+                    <family>Mac</family>
+                </os>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-controls</artifactId>
+                    <version>21</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-fxml</artifactId>
+                    <version>21</version>
+                </dependency>
+            </dependencies>
+        </profile>
 
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>3.1.2</version>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-pmd-plugin</artifactId>
-                        <version>3.15.0</version>
-                    </plugin>
-
-
-
-
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-failsafe-plugin</artifactId>-->
-<!--                        <version>3.0.0</version>-->
-<!--                    </plugin>-->
-
-                </plugins>
-            </build>
+        <!-- Linux profile -->
+        <profile>
+            <id>linux</id>
+            <activation>
+                <os>
+                    <family>Linux</family>
+                </os>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-controls</artifactId>
+                    <version>21</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-fxml</artifactId>
+                    <version>21</version>
+                </dependency>
+            </dependencies>
         </profile>
 
         <!-- Frontend Development Profile -->
@@ -158,24 +177,29 @@
                         </configuration>
                     </plugin>
 
-
-                    <!-- Pluginy pre FE -->
                     <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>3.1.2</version>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-pmd-plugin</artifactId>
-                        <version>3.15.0</version>
+                        <groupId>org.openjfx</groupId>
+                        <artifactId>javafx-maven-plugin</artifactId>
+                        <version>0.0.8</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>compile</goal>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <mainClass>com.deligo.MainApp</mainClass>
+                                    <options>
+                                        <option>--module-path</option>
+                                        <option>${javafx.sdk.path}/lib</option>
+                                        <option>--add-modules</option>
+                                        <option>javafx.controls,javafx.fxml</option>
+                                    </options>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
 
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-failsafe-plugin</artifactId>-->
-<!--                        <version>3.0.0</version>-->
-<!--                    </plugin>-->
                 </plugins>
             </build>
         </profile>
@@ -201,8 +225,7 @@
                         </configuration>
                     </plugin>
 
-
-                    <!-- Pluginy pre dev -->
+                    <!-- Plugins pre dev -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
@@ -228,40 +251,25 @@
             <build>
                 <plugins>
                     <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.11.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0</version>
-                </plugin>
-<!--                <plugin>-->
-<!--                    <groupId>org.apache.maven.plugins</groupId>-->
-<!--                    <artifactId>maven-failsafe-plugin</artifactId>-->
-<!--                    <version>3.0.0</version>-->
-<!--                </plugin>-->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>3.1.2</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.15.0</version>
-                </plugin>
-<!--                <plugin>-->
-<!--                    <groupId>org.jacoco</groupId>-->
-<!--                    <artifactId>jacoco-maven-plugin</artifactId>-->
-<!--                    <version>0.8.7</version>-->
-<!--                </plugin>-->
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>3.1.0</version>
-                </plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.11.0</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>3.1.2</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <version>3.15.0</version>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
@@ -276,21 +284,6 @@
                         <artifactId>maven-compiler-plugin</artifactId>
                         <version>3.11.0</version>
                     </plugin>
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-dependency-plugin</artifactId>-->
-<!--                        <version>3.5.0</version>-->
-<!--                    </plugin>-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--                        <version>3.4.0</version>-->
-<!--                    </plugin>-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-release-plugin</artifactId>-->
-<!--                        <version>3.0.0-M1</version>-->
-<!--                    </plugin>-->
                 </plugins>
             </build>
         </profile>
