@@ -15,8 +15,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <javafx.version>21</javafx.version>
-        <!-- Predvolená hodnota – OS profil ju prepíše na "win", "linux" alebo "mac" -->
-        <javafx.classifier>win</javafx.classifier>
+        <!-- Predvolená hodnota – OS profil ju prepíše na, "win", "linux" alebo "mac" -->
     </properties>
 
     <dependencies>
@@ -114,13 +113,38 @@
             <id>windows</id>
             <activation>
                 <os>
-                    <family>Windows</family>
+                    <family>windows</family>
                 </os>
             </activation>
             <properties>
-                <javafx.classifier>win</javafx.classifier>
+                <javafx.classifier>windows-x86_64</javafx.classifier>
             </properties>
         </profile>
+
+        <profile>
+            <id>windows-x86</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <javafx.classifier>windows-x86</javafx.classifier>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>windows-arm64</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <javafx.classifier>windows-aarch64</javafx.classifier>
+            </properties>
+        </profile>
+
 
         <profile>
             <id>linux</id>
@@ -130,12 +154,25 @@
                 </os>
             </activation>
             <properties>
-                <javafx.classifier>linux</javafx.classifier>
+                <javafx.classifier>linux-x86_64</javafx.classifier>
             </properties>
         </profile>
 
         <profile>
-            <id>macos</id>
+            <id>linux-arm64</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <javafx.classifier>linux-aarch64</javafx.classifier>
+            </properties>
+        </profile>
+
+
+        <profile>
+            <id>mac</id>
             <activation>
                 <os>
                     <family>mac</family>
@@ -143,6 +180,18 @@
             </activation>
             <properties>
                 <javafx.classifier>mac</javafx.classifier>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>mac-arm64</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                </os>
+            </activation>
+            <properties>
+                <javafx.classifier>mac-aarch64</javafx.classifier>
             </properties>
         </profile>
 
