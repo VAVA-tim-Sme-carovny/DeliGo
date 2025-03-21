@@ -2,7 +2,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/maven-v4_0_0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.deligo</groupId>
     <artifactId>deligo-app</artifactId>
@@ -16,7 +15,8 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <javafx.version>21</javafx.version>
-        <javafx.sdk.path>${project.basedir}/javafx-sdk-${java.version}</javafx.sdk.path>
+        <!-- Predvolená hodnota; OS-profil ju prepíše na "win", "linux" alebo "mac" -->
+        <javafx.classifier>win</javafx.classifier>
     </properties>
 
     <dependencies>
@@ -32,21 +32,24 @@
             <version>2.20.0</version>
         </dependency>
 
-        <!-- JavaFX -->
+        <!-- JavaFX – Maven stiahne správne natívne knižnice podľa hodnoty classifier -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21</version>
+            <version>${javafx.version}</version>
+            <classifier>${javafx.classifier}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>21</version>
+            <version>${javafx.version}</version>
+            <classifier>${javafx.classifier}</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
-            <version>21</version>
+            <version>${javafx.version}</version>
+            <classifier>${javafx.classifier}</classifier>
         </dependency>
 
         <!-- Jakarta JAX-RS -->
@@ -56,19 +59,120 @@
             <version>3.1.0</version>
         </dependency>
 
+        <!-- Flyway -->
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
             <version>9.22.3</version>
         </dependency>
 
-        <!-- Yaml library import -->
+        <!-- SnakeYAML -->
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
             <version>2.2</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <!-- Os-maven-plugin rozšírenie – automaticky deteguje aktuálny OS -->
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.7.0</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <!-- JavaFX Maven Plugin – umožňuje spustiť aplikáciu priamo cez Maven -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>com.deligo.MainApp</mainClass>
+                </configuration>
+            </plugin>
+
+            <!-- Voliteľný exec-maven-plugin pre spustenie s ďalšími argumentami (napr. pre vývoj) -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.deligo.MainApp</mainClass>
+                    <arguments>
+                        <argument>--com.deligo.development</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!-- Profil pre Windows – ak je detegovaný Windows, prepíše classifier na "win" -->
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+            </activation>
+            <properties>
+                <javafx.classifier>win</javafx.classifier>
+            </properties>
+        </profile>
+
+        <!-- Profil pre Linux – ak je detegovaný Unix (Linux), prepíše classifier na "linux" -->
+        <profile>
+            <id>linux</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <javafx.classifier>linux</javafx.classifier>
+            </properties>
+        </profile>
+
+        <!-- Profil pre macOS – ak je detegovaný Mac, prepíše classifier na "mac" -->
+        <profile>
+            <id>macos</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                </os>
+            </activation>
+            <properties>
+                <javafx.classifier>mac</javafx.classifier>
+            </properties>
+        </profile>
+
+        <!-- Vývojový profil (dev) – je aktívny automaticky -->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <!-- Ak chceš spúšťať s exec-maven-plugin a argumentami -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <configuration>
+                            <mainClass>com.deligo.MainApp</mainClass>
+                            <arguments>
+                                <argument>--com.deligo.development</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <reporting>
         <plugins>
@@ -88,205 +192,4 @@
             </plugin>
         </plugins>
     </reporting>
-
-    <profiles>
-        <!-- Windows profile -->
-        <profile>
-            <id>windows</id>
-            <activation>
-                <os>
-                    <family>Windows</family>
-                </os>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-controls</artifactId>
-                    <version>21</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-fxml</artifactId>
-                    <version>21</version>
-                </dependency>
-            </dependencies>
-        </profile>
-
-        <!-- MacOS profile -->
-        <profile>
-            <id>macos</id>
-            <activation>
-                <os>
-                    <family>Mac</family>
-                </os>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-controls</artifactId>
-                    <version>21</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-fxml</artifactId>
-                    <version>21</version>
-                </dependency>
-            </dependencies>
-        </profile>
-
-        <!-- Linux profile -->
-        <profile>
-            <id>linux</id>
-            <activation>
-                <os>
-                    <family>Linux</family>
-                </os>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-controls</artifactId>
-                    <version>21</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.openjfx</groupId>
-                    <artifactId>javafx-fxml</artifactId>
-                    <version>21</version>
-                </dependency>
-            </dependencies>
-        </profile>
-
-        <!-- Frontend Development Profile -->
-        <profile>
-            <id>fe</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>3.1.0</version>
-                        <configuration>
-                            <mainClass>com.deligo.MainApp</mainClass>
-                            <arguments>
-                                <argument>--com.deligo.frontend</argument>
-                            </arguments>
-                        </configuration>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.openjfx</groupId>
-                        <artifactId>javafx-maven-plugin</artifactId>
-                        <version>0.0.8</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>compile</goal>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <mainClass>com.deligo.MainApp</mainClass>
-                                    <options>
-                                        <option>--module-path</option>
-                                        <option>${javafx.sdk.path}/lib</option>
-                                        <option>--add-modules</option>
-                                        <option>javafx.controls,javafx.fxml</option>
-                                    </options>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                </plugins>
-            </build>
-        </profile>
-
-        <!-- Development (Backend + Frontend) -->
-        <profile>
-            <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>3.1.0</version>
-                        <configuration>
-                            <mainClass>com.deligo.MainApp</mainClass>
-                            <arguments>
-                                <argument>--com.deligo.development</argument>
-                            </arguments>
-                        </configuration>
-                    </plugin>
-
-                    <!-- Plugins pre dev -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0</version>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>3.1.2</version>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-pmd-plugin</artifactId>
-                        <version>3.15.0</version>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <!-- BuildDev -->
-        <profile>
-            <id>buildDev</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.11.0</version>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.0.0</version>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>3.1.2</version>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-pmd-plugin</artifactId>
-                        <version>3.15.0</version>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <!-- BuildProd -->
-        <profile>
-            <id>buildProd</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.11.0</version>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-    </profiles>
 </project>
