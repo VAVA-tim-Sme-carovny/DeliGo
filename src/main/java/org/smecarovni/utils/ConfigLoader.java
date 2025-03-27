@@ -3,19 +3,26 @@ package org.smecarovni.utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 public class ConfigLoader {
-
     private static final Logger logger = LogManager.getLogger(ConfigLoader.class);
     private static final Properties properties = new Properties();
 
     static {
-        try (InputStream input = ConfigLoader.class.getClassLoader().getResourceAsStream("config.properties")) {
+        loadConfig();
+    }
+
+    private static void loadConfig() {
+        String configPath = System.getProperty("config.file"); // Možnosť načítať externý súbor
+        try (InputStream input = (configPath != null) ? new FileInputStream(configPath) :
+                ConfigLoader.class.getClassLoader().getResourceAsStream("config.properties")) {
+
             if (input == null) {
-                throw new IOException("❌ config.properties file not found in resources!");
+                throw new IOException("❌ config.properties file not found!");
             }
             properties.load(input);
             logger.info("✅ Config loaded successfully.");
@@ -26,11 +33,13 @@ public class ConfigLoader {
     }
 
     public static String get(String key) {
-        String value = properties.getProperty(key);
+        // Skús načítať z environment variables, ak neexistuje, tak z properties
+        String value = System.getenv(key);
+        if (value == null) {
+            value = properties.getProperty(key);
+        }
         if (value == null) {
             logger.warn("⚠️ Configuration key '{}' not found.", key);
-        } else {
-            logger.info("🔑 Retrieved configuration for key: '{}'", key);
         }
         return value;
     }

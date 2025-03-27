@@ -1,45 +1,65 @@
 package org.smecarovni;
 
 import org.smecarovni.dao.UserDAO;
-import org.smecarovni.db.DatabaseConnector;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.smecarovni.exceptions.DatabaseException;
+import org.mindrot.jbcrypt.BCrypt;
+import java.util.Scanner;
 
 public class Main {
 
-    private static final Logger logger = LogManager.getLogger(Main.class);
-
     public static void main(String[] args) {
-        logger.info("Program started");
-
         UserDAO userDAO = new UserDAO();
+        Scanner scanner = new Scanner(System.in);
 
-        // Test CRUD operácií
+        // Registrácia používateľa
+        System.out.println("Registrácia:");
+        System.out.print("Zadajte používateľské meno: ");
+        String username = scanner.nextLine();
+        System.out.print("Zadajte email: ");
+        String email = scanner.nextLine();
+        System.out.print("Zadajte heslo: ");
+        String rawPassword = scanner.nextLine();
+        String hashedPassword = hashPassword(rawPassword);
+
+        // Vytvorenie používateľa
         try {
-            logger.info("Trying to create user Alice");
-            userDAO.createUser("Alice", "alice@example.com");
-
-            logger.info("Fetching users after creation");
-            userDAO.getUsers();
-
-            logger.info("Updating user with ID 1");
-            userDAO.updateUser(3, "Alice Updated", "alice.updated@example.com");
-
-            logger.info("Fetching users after update");
-            userDAO.getUsers();
-
-            logger.info("Deleting user with ID 1");
-            userDAO.deleteUser(3);
-
-            logger.info("Fetching users after deletion");
-            userDAO.getUsers();
-
-        } catch (Exception e) {
-            logger.error("Error during CRUD operations: ", e);
-        } finally {
-            // Zavrieme spojenie s databázou
-            DatabaseConnector.close();
-            logger.info("Database connection closed.");
+            userDAO.createUser(username, email, hashedPassword);
+            System.out.println("Používateľ bol úspešne vytvorený.");
+        } catch (DatabaseException e) {
+            System.err.println("Chyba pri vytváraní používateľa: " + e.getMessage());
         }
+
+        // Prihlásenie používateľa
+        System.out.println("\nPrihlásenie:");
+        System.out.print("Zadajte používateľské meno: ");
+        String loginUsername = scanner.nextLine();
+        System.out.print("Zadajte heslo: ");
+        String loginPassword = scanner.nextLine();
+
+        // Overenie prihlasenia
+        int userId = userDAO.authenticateUser(loginUsername, loginPassword);
+        if (userId != -1) {
+            System.out.println("Úspešne ste prihlásení.");
+            // Admin môže upravovať roly iných používateľov
+            System.out.print("Zadajte id používateľa, ktorému chcete zmeniť rolu: ");
+            int targetUserId = Integer.parseInt(scanner.nextLine());
+            System.out.print("Zadajte novú rolu (admin, manager, customer, cook, waiter): ");
+            String newRole = scanner.nextLine();
+
+            try {
+                userDAO.updateUserRole(targetUserId, newRole, userId);  // Práva na zmenu roly len ak je admin
+                System.out.println("Rola bola úspešne zmenená.");
+            } catch (SecurityException e) {
+                System.err.println("Chyba: " + e.getMessage());
+            }
+        } else {
+            System.out.println("Nesprávne používateľské meno alebo heslo.");
+        }
+
+        scanner.close();
+    }
+
+    public static String hashPassword(String rawPassword) {
+        return BCrypt.hashpw(rawPassword, BCrypt.gensalt());
     }
 }
