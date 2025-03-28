@@ -1,91 +1,47 @@
 package com.deligo.Frontend;
 
-import com.deligo.Frontend.FeatureTestCommunication.FeatureTestCommunication;
+import com.deligo.ConfigLoader.ConfigLoader;
+import com.deligo.DatabaseManager.DatabaseManager;
+import com.deligo.Frontend.Controllers.FrontendController;
+import com.deligo.Frontend.Views.MainView;
 import com.deligo.Logging.Adapter.LoggingAdapter;
-import com.deligo.Model.BasicModels.LogPriority;
-import com.deligo.Model.BasicModels.LogSource;
-import com.deligo.Model.BasicModels.LogType;
 import com.deligo.RestApi.RestAPIServer;
-import javafx.application.Platform;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 
 public class Frontend {
 
-    private FeatureTestCommunication featureTestCommunication;
-    private RestAPIServer apiServer;
-    private LoggingAdapter logger;
+    private final RestAPIServer apiServer;
+    private final LoggingAdapter logger;
+    private final ConfigLoader config;
+    private final DatabaseManager databaseManager;
 
-    private Stage primaryStage;
-    private BorderPane rootLayout;
+    // Controller a View
+    private final FrontendController controller;
+    private final MainView mainView;
 
-    public Frontend(RestAPIServer apiServer, LoggingAdapter logger) {
+    public Frontend(RestAPIServer apiServer, LoggingAdapter logger, ConfigLoader config, DatabaseManager db) {
         this.apiServer = apiServer;
         this.logger = logger;
+        this.config = config;
+        this.databaseManager = db;
 
-        // Inject FrontendConfig to REST API
+        // Nastavíme FrontendConfig do REST API
         apiServer.setFrontendConfig(new FrontendConfig(this));
 
-        // Inicializácia funkcií / features
-        initializeFeatures();
+        // Vytvoríme Controller
+        controller = new FrontendController(this.apiServer, this.logger, this.config, this.databaseManager);
+        controller.initializeFeatures();
 
-        // Spustenie hlavného JavaFX okna
-        launchFrontendWindow();
+        // Vytvoríme View a spustíme okno
+        mainView = new MainView(this.controller, this.logger);
+        mainView.launchWindow();
     }
 
-    private void initializeFeatures() {
-        featureTestCommunication = new FeatureTestCommunication(apiServer, logger);
-
-        // Spusti test spojenia medzi FE a BE
-        featureTestCommunication.testConnection();
-
-        /* Pridávaj ďalšie featury tu */
+    // Ak potrebuješ prístup k controlleru z iných častí
+    public FrontendController getController() {
+        return controller;
     }
 
-    private void launchFrontendWindow() {
-        logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, "Starting Frontend Main Window...");
-
-        // JavaFX spúšťaj len v Platform.runLater
-        Platform.runLater(() -> {
-            try {
-                primaryStage = new Stage();
-                primaryStage.setTitle("DeliGo - Frontend");
-
-                initRootLayout();
-
-                primaryStage.show();
-
-                logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.FRONTEND, "Frontend Main Window launched successfully!");
-
-            } catch (Exception e) {
-                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Failed to launch Frontend Main Window: " + e.getMessage());
-                e.printStackTrace();
-            }
-        });
-    }
-
-    private void initRootLayout() {
-        rootLayout = new BorderPane();
-
-        // Príklad: Tu môžeš pridať komponenty, ktoré budú meniť obsah
-        // rootLayout.setCenter(featureTestCommunication.getSomeComponent());
-
-        Scene scene = new Scene(rootLayout, 900, 600);
-        primaryStage.setScene(scene);
-    }
-
-    // Prístup k Feature objektom
-    public FeatureTestCommunication getFeatureTestCommunication() {
-        return featureTestCommunication;
-    }
-
-    // Tu budeš mať getter/setter pre manipuláciu s layoutom
-    public BorderPane getRootLayout() {
-        return rootLayout;
-    }
-
-    public Stage getPrimaryStage() {
-        return primaryStage;
+    public MainView getMainView() {
+        return mainView;
     }
 }

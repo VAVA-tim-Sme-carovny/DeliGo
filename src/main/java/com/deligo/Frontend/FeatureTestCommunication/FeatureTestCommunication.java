@@ -1,16 +1,18 @@
 package com.deligo.Frontend.FeatureTestCommunication;
 
+import com.deligo.Backend.BaseFeature.BaseFeature;
+import com.deligo.ConfigLoader.ConfigLoader;
+import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.RestApi.RestAPIServer;
 
-public class FeatureTestCommunication {
+public class FeatureTestCommunication extends BaseFeature {
 
-    private final RestAPIServer restAPI;
     private final LoggingAdapter logger;
 
-    public FeatureTestCommunication(RestAPIServer restAPI, LoggingAdapter logger) {
-        this.restAPI = restAPI;
+    public FeatureTestCommunication(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer, DatabaseManager databaseManager) {
+        super(globalConfig, logger, restApiServer, databaseManager);
         this.logger = logger;
         this.runHealthCheck();
     }
@@ -23,7 +25,7 @@ public class FeatureTestCommunication {
         String payload = "TEST_CONNECTION";
 
         // Odoslanie POST požiadavky
-        String response = this.restAPI.sendPostRequest(fullUrl, payload);
+        String response = this.server.sendPostRequest(fullUrl, payload);
 
         if ("SUCCESS".equalsIgnoreCase(response)) {
             this.logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.FRONTEND, "FE -> BE communication test passed!");
@@ -36,10 +38,10 @@ public class FeatureTestCommunication {
         this.logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "Running REST API health checks from Frontend...");
 
         try {
-            String postResponse = this.restAPI.sendPostRequest("/health", "health-check");
+            String postResponse = this.server.sendPostRequest("/health", "health-check");
             this.logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "POST /health response: " + postResponse);
 
-            String getResponse = this.restAPI.sendGetRequest("/health");
+            String getResponse = this.server.sendGetRequest("/health");
             this.logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "GET /health response: " + getResponse);
 
             if (postResponse.contains("OK") && getResponse.contains("OK")) {

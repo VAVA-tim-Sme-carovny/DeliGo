@@ -10,7 +10,7 @@ public class FrontendConfig {
     public Object routePost(String route, String data) {
         switch (route) {
             case "/api/fe/sendForm":
-                frontend.getFeatureTestCommunication().testConnection();
+                frontend.getController().getFeatureTestCommunication().testConnection();
             default:
                 return "Unknown POST route: " + route;
         }

@@ -1,19 +1,42 @@
 package com.deligo.Backend;
 
+import com.deligo.ConfigLoader.ConfigLoader;
+import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.RestApi.RestAPIServer;
 import com.deligo.Backend.FeatureValidateTestConnection.FeatureValidateTestConnection;
 
+/**
+ * Class for backend Features
+ */
 public class Backend {
-    private final FeatureValidateTestConnection featureValidateTestConnection;
 
-    public Backend(RestAPIServer apiServer, LoggingAdapter logger) {
+    private final ConfigLoader config;
+
+    private final FeatureValidateTestConnection featureValidateTestConnection;
+//    Add feature.
+//    private final FeatureMyNewProcess featureMyNewProcess;
+
+
+
+    /**
+     * Creates Backend Instance for application
+     *
+     * @param apiServer Rest api server
+     * @param logger Logger manager
+     * @param config Config manager that returns and sets data in config file
+     */
+    public Backend(RestAPIServer apiServer, LoggingAdapter logger, ConfigLoader config, DatabaseManager db) {
+        this.config = config;
+
         apiServer.setBackendConfig(new BackendConfig(this));
 
-        /*Add here your feature*/
+        this.featureValidateTestConnection = new FeatureValidateTestConnection(config, logger, apiServer, db);
 
-        this.featureValidateTestConnection = new FeatureValidateTestConnection(logger, apiServer);
+//      Add feature.
+//      this.featureMyNewProcess = new FeatureMyNewProcess(logger, apiServer, this.config);
+
         logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.BECKEND, "Backend initialized correctly.");
 
     }
@@ -21,4 +44,12 @@ public class Backend {
     public FeatureValidateTestConnection getFeatureValidateTestConnection() {
         return featureValidateTestConnection;
     }
+
+//    Add feature.
+
+//    public FeatureMyNewProcess getFeatureMyNewProcess() {
+//        return featureMyNewProcess;
+//    }
+
+
 }

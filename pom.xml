@@ -15,7 +15,6 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <javafx.version>21</javafx.version>
-        <!-- Predvolená hodnota – OS profil ju prepíše na, "win", "linux" alebo "mac" -->
     </properties>
 
     <dependencies>
@@ -110,10 +109,10 @@
     <profiles>
         <!-- OS profily: Ak je spustený na Windows, Linux alebo macOS, prepíšu sa hodnoty pre JavaFX classifier -->
         <profile>
-            <id>windows</id>
+            <id>windows-x86_64</id>
             <activation>
                 <os>
-                    <family>windows</family>
+                    <family>windows-x86_64</family>
                 </os>
             </activation>
             <properties>
@@ -145,6 +144,17 @@
             </properties>
         </profile>
 
+        <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+            </activation>
+            <properties>
+                <javafx.classifier>win</javafx.classifier>
+            </properties>
+        </profile>
 
         <profile>
             <id>linux</id>
