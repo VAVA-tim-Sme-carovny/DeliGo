@@ -1,65 +1,47 @@
 package org.smecarovni;
 
-import org.smecarovni.dao.UserDAO;
+import org.smecarovni.dao.GenericDAO;
+import org.smecarovni.db.DatabaseConnector;
+import org.smecarovni.example.Login;
+import org.smecarovni.example.Register;
+import org.smecarovni.example.Users;
 import org.smecarovni.exceptions.DatabaseException;
-import org.mindrot.jbcrypt.BCrypt;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
-        UserDAO userDAO = new UserDAO();
-        Scanner scanner = new Scanner(System.in);
+            // Vytvorenie generického DAO pre User entitu
+            GenericDAO<Users> userDAO = new GenericDAO<>(Users.class, "users");
 
-        // Registrácia používateľa
-        System.out.println("Registrácia:");
-        System.out.print("Zadajte používateľské meno: ");
-        String username = scanner.nextLine();
-        System.out.print("Zadajte email: ");
-        String email = scanner.nextLine();
-        System.out.print("Zadajte heslo: ");
-        String rawPassword = scanner.nextLine();
-        String hashedPassword = hashPassword(rawPassword);
+            // Inštancia triedy Register a Login
+            Register register = new Register(userDAO);
+            Login login = new Login(userDAO);
 
-        // Vytvorenie používateľa
-        try {
-            userDAO.createUser(username, email, hashedPassword);
-            System.out.println("Používateľ bol úspešne vytvorený.");
-        } catch (DatabaseException e) {
-            System.err.println("Chyba pri vytváraní používateľa: " + e.getMessage());
-        }
+            // Interaktívny výber akcie
+            Scanner scanner = new Scanner(System.in);
+            while (true) {
+                System.out.println("\nVyberte akciu:");
+                System.out.println("1. Registrácia");
+                System.out.println("2. Prihlásenie");
+                System.out.println("3. Konec");
+                System.out.print("Zadajte voľbu: ");
+                int choice = Integer.parseInt(scanner.nextLine());
 
-        // Prihlásenie používateľa
-        System.out.println("\nPrihlásenie:");
-        System.out.print("Zadajte používateľské meno: ");
-        String loginUsername = scanner.nextLine();
-        System.out.print("Zadajte heslo: ");
-        String loginPassword = scanner.nextLine();
-
-        // Overenie prihlasenia
-        int userId = userDAO.authenticateUser(loginUsername, loginPassword);
-        if (userId != -1) {
-            System.out.println("Úspešne ste prihlásení.");
-            // Admin môže upravovať roly iných používateľov
-            System.out.print("Zadajte id používateľa, ktorému chcete zmeniť rolu: ");
-            int targetUserId = Integer.parseInt(scanner.nextLine());
-            System.out.print("Zadajte novú rolu (admin, manager, customer, cook, waiter): ");
-            String newRole = scanner.nextLine();
-
-            try {
-                userDAO.updateUserRole(targetUserId, newRole, userId);  // Práva na zmenu roly len ak je admin
-                System.out.println("Rola bola úspešne zmenená.");
-            } catch (SecurityException e) {
-                System.err.println("Chyba: " + e.getMessage());
+                if (choice == 1) {
+                    // Volanie registrácie
+                    register.registerUser();
+                } else if (choice == 2) {
+                    // Volanie prihlásenia
+                    login.loginUser();
+                } else if (choice == 3) {
+                    System.out.println("Ukončovanie aplikácie...");
+                    break;
+                } else {
+                    System.out.println("Neplatná voľba, skúste to znova.");
+                }
             }
-        } else {
-            System.out.println("Nesprávne používateľské meno alebo heslo.");
-        }
-
-        scanner.close();
-    }
-
-    public static String hashPassword(String rawPassword) {
-        return BCrypt.hashpw(rawPassword, BCrypt.gensalt());
     }
 }

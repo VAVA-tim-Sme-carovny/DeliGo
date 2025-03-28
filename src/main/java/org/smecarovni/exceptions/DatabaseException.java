@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 
 public class DatabaseException extends RuntimeException {
 
-    // Vytvorenie loggera pre túto triedu
     private static final Logger logger = LogManager.getLogger(DatabaseException.class);
 
     public DatabaseException(String message) {
