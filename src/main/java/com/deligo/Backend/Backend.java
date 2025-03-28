@@ -1,5 +1,6 @@
 package com.deligo.Backend;
 
+import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
@@ -15,6 +16,7 @@ public class Backend {
     private final ConfigLoader config;
 
     private final FeatureValidateTestConnection featureValidateTestConnection;
+    private final FeatureOrgDetails featureOrgDetails;
 //    Add feature.
 //    private final FeatureMyNewProcess featureMyNewProcess;
 
@@ -33,6 +35,7 @@ public class Backend {
         apiServer.setBackendConfig(new BackendConfig(this));
 
         this.featureValidateTestConnection = new FeatureValidateTestConnection(config, logger, apiServer, db);
+        this.featureOrgDetails = new FeatureOrgDetails(config, logger, apiServer, db);
 
 //      Add feature.
 //      this.featureMyNewProcess = new FeatureMyNewProcess(logger, apiServer, this.config);
@@ -43,6 +46,10 @@ public class Backend {
 
     public FeatureValidateTestConnection getFeatureValidateTestConnection() {
         return featureValidateTestConnection;
+    }
+
+    public FeatureOrgDetails getFeatureOrgDetails() {
+        return featureOrgDetails;
     }
 
 //    Add feature.
