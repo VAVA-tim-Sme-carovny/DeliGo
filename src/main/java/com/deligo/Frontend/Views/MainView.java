@@ -32,6 +32,7 @@ public class MainView {
 
     public void launchWindow() {
 
+        // Nastavíme predvolený jazyk na slovenčinu
         Locale.setDefault(new Locale("sk", "SK"));
 
         logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, "Starting Frontend Main Window...");
@@ -56,6 +57,7 @@ public class MainView {
         });
     }
 
+    // Inicializácia hlavného okna
     private void initRootLayout() {
         rootLayout = new BorderPane();
 
@@ -78,6 +80,7 @@ public class MainView {
             Scene scene = new Scene(rootLayout, 900, 600);
             primaryStage.setScene(scene);
 
+            //Minimálna velkosť okna
             primaryStage.setMinWidth(900);
             primaryStage.setMinHeight(600);
 
@@ -88,6 +91,7 @@ public class MainView {
         }
     }
 
+    // Funkcia na zmenu jazyka
     public void loadPage(String pageName) {
         try {
             // Získa aktuálne nastavený jazyk (napr. sk alebo en)

@@ -38,7 +38,7 @@
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" text="%bookTable" />
+                  <Button fx:id="bookTablePopup" onAction="#bookTableClick" mnemonicParsing="false" text="%bookTable" />
                </children>
             </HBox>
          </children>
@@ -72,7 +72,7 @@
                   <Insets right="10.0" top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" text="%info">
+            <Button fx:id="openInfoPopup" onAction="#handleInfoButtonClick" mnemonicParsing="false" text="%info">
                <GridPane.margin>
                   <Insets left="10.0" top="10.0" />
                </GridPane.margin>

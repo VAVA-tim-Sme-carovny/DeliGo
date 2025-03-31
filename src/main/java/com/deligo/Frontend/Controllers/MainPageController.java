@@ -5,7 +5,9 @@ import javafx.scene.control.Button;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -31,6 +33,8 @@ public class MainPageController {
     private Button btnEn;
 
 
+
+    // Metóda na zmenu jazyka
     private void switchLanguage(String langCode) {
         try {
             // Nastaví nový jazyk
@@ -64,8 +68,44 @@ public class MainPageController {
         goToCallService.setOnAction(event -> handleCallService());
     }
 
+
+
+    // Metóda na zavolanie obsluhy
     private void handleCallService() {
         System.out.println("Privolanie obsluhy...");
         // Tu môžeš pridať logiku na privolanie obsluhy (napr. zobraziť popup, poslať požiadavku, atď.)
     }
+
+
+    // Metóda na zobrazenie pop up infopanel okna
+    public void handleInfoButtonClick() {
+        try {
+            // Načítanie FXML súboru pre pop-up okno
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Frontend_fxml/info_pop_up.fxml"));
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.APPLICATION_MODAL); // Zabezpečí, že pop-up je modal (blokuje hlavné okno)
+            popupStage.initStyle(StageStyle.UNDECORATED);
+            popupStage.setScene(new Scene(loader.load()));
+            popupStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Metóda na zobrazenie pop up okna pre rezerváciu stola
+    public void bookTableClick() {
+        try {
+            // Načítanie FXML súboru pre pop-up okno
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Frontend_fxml/book_table_pop_up.fxml"));
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.APPLICATION_MODAL); // Zabezpečí, že pop-up je modal (blokuje hlavné okno)
+            popupStage.initStyle(StageStyle.UNDECORATED);
+            popupStage.setScene(new Scene(loader.load()));
+            popupStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
