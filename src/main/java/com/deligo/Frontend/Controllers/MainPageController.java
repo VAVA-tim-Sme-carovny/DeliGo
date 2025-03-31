@@ -107,5 +107,20 @@ public class MainPageController {
         }
     }
 
+    public void loginClick() {
+        try {
+            // Načítanie FXML súboru pre pop-up okno
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Frontend_fxml/login_and_register_pop_up.fxml"));
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.APPLICATION_MODAL); // Zabezpečí, že pop-up je modal (blokuje hlavné okno)
+            popupStage.initStyle(StageStyle.UNDECORATED);
+            popupStage.setScene(new Scene(loader.load()));
+            popupStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 }

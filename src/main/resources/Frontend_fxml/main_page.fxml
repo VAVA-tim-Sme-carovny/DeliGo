@@ -33,7 +33,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="%order" />
+                  <Button fx:id="loginAndRegister_Popup" onAction="#loginClick" mnemonicParsing="false" text="%order" />
                </children>
             </HBox>
             <HBox alignment="CENTER">
@@ -82,7 +82,7 @@
                   <Insets right="50.0" top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" text="%login" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+            <Button fx:id="loginAndRegisterPopup" onAction="#loginClick" mnemonicParsing="false" text="%login" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                <GridPane.margin>
                   <Insets right="90.0" top="10.0" />
                </GridPane.margin>
