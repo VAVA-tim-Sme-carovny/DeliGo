@@ -7,10 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.deligo.Frontend.Controllers.loginAndRegisterPopUpController">
+<BorderPane prefHeight="180.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.loginAndRegisterPopUpController">
    <top>
       <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -28,7 +25,10 @@
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Potvrdiť registráciu" />
+            <Label text="Potvrdiť registráciu">
+               <VBox.margin>
+                  <Insets top="-35.0" />
+               </VBox.margin></Label>
             <Button mnemonicParsing="false" text="Potvrdiť">
                <VBox.margin>
                   <Insets top="15.0" />

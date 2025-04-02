@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -86,7 +87,17 @@ public class MainPageController {
             popupStage.initModality(Modality.APPLICATION_MODAL); // Zabezpečí, že pop-up je modal (blokuje hlavné okno)
             popupStage.initStyle(StageStyle.UNDECORATED);
             popupStage.setScene(new Scene(loader.load()));
+
+
             popupStage.show();
+            //Centrovanie okna na stred main page
+            Stage primaryStage = (Stage) goToCallService.getScene().getWindow();
+            double centerX = primaryStage.getX() + primaryStage.getWidth() / 2;
+            double centerY = primaryStage.getY() + primaryStage.getHeight() / 2;
+            popupStage.setX(centerX - popupStage.getWidth() / 2);
+            popupStage.setY(centerY - popupStage.getHeight() / 2);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -101,7 +112,16 @@ public class MainPageController {
             popupStage.initModality(Modality.APPLICATION_MODAL); // Zabezpečí, že pop-up je modal (blokuje hlavné okno)
             popupStage.initStyle(StageStyle.UNDECORATED);
             popupStage.setScene(new Scene(loader.load()));
+
             popupStage.show();
+            //Centrovanie okna na stred main page
+            Stage primaryStage = (Stage) goToCallService.getScene().getWindow();
+            double centerX = primaryStage.getX() + primaryStage.getWidth() / 2;
+            double centerY = primaryStage.getY() + primaryStage.getHeight() / 2;
+            popupStage.setX(centerX - popupStage.getWidth() / 2);
+            popupStage.setY(centerY - popupStage.getHeight() / 2);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -115,12 +135,43 @@ public class MainPageController {
             popupStage.initModality(Modality.APPLICATION_MODAL); // Zabezpečí, že pop-up je modal (blokuje hlavné okno)
             popupStage.initStyle(StageStyle.UNDECORATED);
             popupStage.setScene(new Scene(loader.load()));
+
+
             popupStage.show();
+            //Centrovanie okna na stred main page
+            Stage primaryStage = (Stage) goToCallService.getScene().getWindow();
+            double centerX = primaryStage.getX() + primaryStage.getWidth() / 2;
+            double centerY = primaryStage.getY() + primaryStage.getHeight() / 2;
+            popupStage.setX(centerX - popupStage.getWidth() / 2);
+            popupStage.setY(centerY - popupStage.getHeight() / 2);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+//TEST SRANDA NA VELKOST OKNA
+   /* public void handleInfoButtonClick() {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Frontend_fxml/info_pop_up.fxml"));
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL); // Zabezpečí, že pop-up je modal (blokuje hlavné okno)
+        popupStage.initStyle(StageStyle.UNDECORATED);
+
+        // Načítanie scény
+        BorderPane root = loader.load();
+
+        // Pridanie Border okraja
+        root.setStyle("-fx-border-color: black; -fx-border-width: 2px; -fx-padding: 10px;");
+
+        // Nastavenie scény s týmto rootom
+        popupStage.setScene(new Scene(root));
+        popupStage.show();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}*/
 
 
 }

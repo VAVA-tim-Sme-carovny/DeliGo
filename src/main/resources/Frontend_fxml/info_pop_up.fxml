@@ -8,15 +8,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-   <BorderPane prefHeight="400.0" prefWidth="600.0"
-               xmlns="http://javafx.com/javafx/23.0.1"
-               xmlns:fx="http://javafx.com/fxml/1"
-               fx:controller="com.deligo.Frontend.Controllers.infoPopUpController">
+<BorderPane prefHeight="450.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.infoPopUpController">
    <top>
       <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="closeButton" onAction="#closePopup" mnemonicParsing="false" text="exit">
+            <Button fx:id="closeButton" mnemonicParsing="false" onAction="#closePopup" text="exit">
                <HBox.margin>
                   <Insets right="10.0" top="10.0" />
                </HBox.margin>
