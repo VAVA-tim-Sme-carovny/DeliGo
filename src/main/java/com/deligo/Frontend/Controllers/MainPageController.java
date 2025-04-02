@@ -129,27 +129,28 @@ public class MainPageController {
 
     public void loginClick() {
         try {
-            // Načítanie FXML súboru pre pop-up okno
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Frontend_fxml/login_and_register_pop_up.fxml"));
             Stage popupStage = new Stage();
-            popupStage.initModality(Modality.APPLICATION_MODAL); // Zabezpečí, že pop-up je modal (blokuje hlavné okno)
+            popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.initStyle(StageStyle.UNDECORATED);
             popupStage.setScene(new Scene(loader.load()));
 
+            // nastav vlastníka na hlavné okno (veľmi dôležité pre ďalší krok)
+            Stage primaryStage = (Stage) goToCallService.getScene().getWindow();
+            popupStage.initOwner(primaryStage);
 
             popupStage.show();
-            //Centrovanie okna na stred main page
-            Stage primaryStage = (Stage) goToCallService.getScene().getWindow();
+
+            // centrovanie
             double centerX = primaryStage.getX() + primaryStage.getWidth() / 2;
             double centerY = primaryStage.getY() + primaryStage.getHeight() / 2;
             popupStage.setX(centerX - popupStage.getWidth() / 2);
             popupStage.setY(centerY - popupStage.getHeight() / 2);
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
 //TEST SRANDA NA VELKOST OKNA
    /* public void handleInfoButtonClick() {
@@ -172,6 +173,5 @@ public class MainPageController {
         e.printStackTrace();
     }
 }*/
-
 
 }

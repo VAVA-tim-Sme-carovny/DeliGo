@@ -75,7 +75,7 @@
                 </GridPane>
                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="366.0">
                     <children>
-                        <Button mnemonicParsing="false" text="Prihlásiť" />
+                        <Button fx:id="loginButton" onAction="#openOrderMenu" mnemonicParsing="false" text="Prihlásiť" />
                         <Label text="alebo">
                             <VBox.margin>
                                 <Insets top="10.0" />
