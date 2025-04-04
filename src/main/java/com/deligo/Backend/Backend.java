@@ -2,7 +2,6 @@ package com.deligo.Backend;
 
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
 import com.deligo.ConfigLoader.ConfigLoader;
-import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.RestApi.RestAPIServer;
@@ -29,13 +28,13 @@ public class Backend {
      * @param logger Logger manager
      * @param config Config manager that returns and sets data in config file
      */
-    public Backend(RestAPIServer apiServer, LoggingAdapter logger, ConfigLoader config, DatabaseManager db) {
+    public Backend(RestAPIServer apiServer, LoggingAdapter logger, ConfigLoader config) {
         this.config = config;
 
         apiServer.setBackendConfig(new BackendConfig(this));
 
-        this.featureValidateTestConnection = new FeatureValidateTestConnection(config, logger, apiServer, db);
-        this.featureOrgDetails = new FeatureOrgDetails(config, logger, apiServer, db);
+        this.featureValidateTestConnection = new FeatureValidateTestConnection(config, logger, apiServer);
+        this.featureOrgDetails = new FeatureOrgDetails(config, logger, apiServer);
 
 //      Add feature.
 //      this.featureMyNewProcess = new FeatureMyNewProcess(logger, apiServer, this.config);

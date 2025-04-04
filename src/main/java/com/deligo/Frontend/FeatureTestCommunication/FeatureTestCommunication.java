@@ -2,7 +2,6 @@ package com.deligo.Frontend.FeatureTestCommunication;
 
 import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.ConfigLoader.ConfigLoader;
-import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.RestApi.RestAPIServer;
@@ -11,8 +10,8 @@ public class FeatureTestCommunication extends BaseFeature {
 
     private final LoggingAdapter logger;
 
-    public FeatureTestCommunication(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer, DatabaseManager databaseManager) {
-        super(globalConfig, logger, restApiServer, databaseManager);
+    public FeatureTestCommunication(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
+        super(globalConfig, logger, restApiServer);
         this.logger = logger;
         this.runHealthCheck();
     }

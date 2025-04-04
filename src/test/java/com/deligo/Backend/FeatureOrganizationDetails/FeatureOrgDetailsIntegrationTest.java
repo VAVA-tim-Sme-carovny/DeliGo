@@ -1,7 +1,6 @@
 package com.deligo.Backend.FeatureOrganizationDetails;
 
 import com.deligo.ConfigLoader.ConfigLoader;
-import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Logging.LoggingManager;
 import com.deligo.Model.Response;
@@ -24,7 +23,7 @@ public class FeatureOrgDetailsIntegrationTest extends com.deligo.Backend.BaseFea
     @BeforeEach
     void setUpFeature() {
         // Vytvoríme novú inštanciu FeatureOrgDetails s už inicializovanými závislosťami
-        featureOrgDetails = new FeatureOrgDetails(configLoader, logger, restApiServer, dbManager);
+        featureOrgDetails = new FeatureOrgDetails(configLoader, logger, restApiServer);
     }
 
     @AfterAll

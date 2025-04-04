@@ -1,6 +1,5 @@
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
 import com.deligo.ConfigLoader.ConfigLoader;
-import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Logging.LoggingManager;
 import com.deligo.Model.Response;
@@ -19,7 +18,6 @@ public class FeatureOrgDetailsIntegrationTest {
     private static LoggingAdapter logger;
     private static ConfigLoader configLoader;
     private static RestAPIServer restApiServer;
-    private static DatabaseManager dbManager;
     private static FeatureOrgDetails featureOrgDetails;
     private static Gson gson = new Gson();
 
@@ -49,10 +47,9 @@ public class FeatureOrgDetailsIntegrationTest {
         assertNotNull(restApiServer, "RestAPIServer should be created");
 
         // 4. DatabaseManager - buď reálny, alebo minimálny
-        dbManager = new DatabaseManager();
 
         // 5. Vytvorenie inštancie FeatureOrgDetails
-        featureOrgDetails = new FeatureOrgDetails(configLoader, logger, restApiServer, dbManager);
+        featureOrgDetails = new FeatureOrgDetails(configLoader, logger, restApiServer);
         assertNotNull(featureOrgDetails, "FeatureOrgDetails should be created");
     }
 

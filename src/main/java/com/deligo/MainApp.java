@@ -1,7 +1,6 @@
 package com.deligo;
 
 import com.deligo.ConfigLoader.ConfigLoader;
-import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.DatabaseManager.dao.GenericDAO;
 import com.deligo.DatabaseManager.example.Users;
 import com.deligo.Logging.Adapter.LoggingAdapter;
@@ -26,7 +25,6 @@ public class MainApp {
         LoggingManager.initialize();
 
         ConfigLoader config = new ConfigLoader(CONFIG_FILE);
-        DatabaseManager db = new DatabaseManager();
 
         while (LoggingManager.getAdapter() == null) {
             try {
@@ -65,7 +63,7 @@ public class MainApp {
                     logger.log(LogType.INFO, null, null, "Starting backend mode");
 
                     try{
-                        backend = new Backend(restApiServer, logger, config, db);
+                        backend = new Backend(restApiServer, logger, config);
                     }catch (Exception e) {
                         logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, "Backend didn't initialize properly: " + e.getMessage());
                     }
@@ -75,7 +73,7 @@ public class MainApp {
                     logger.log(LogType.INFO, null, null, "Starting frontend mode");
 
                     try{
-                        frontend = new Frontend(restApiServer, logger, config, db);
+                        frontend = new Frontend(restApiServer, logger, config);
                     }catch (Exception e) {
                         logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, "Frontend didn't initialize properly: " + e.getMessage());
                     }
@@ -84,13 +82,13 @@ public class MainApp {
                 case "--com.deligo.development":
                     logger.log(LogType.INFO, null, null, "Starting development mode");
                     try{
-                        backend = new Backend(restApiServer, logger, config, db);
+                        backend = new Backend(restApiServer, logger, config);
                     }catch (Exception e) {
                         logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, "Backend didn't initialize properly: " + e.getMessage());
                     }
 
                     try{
-                        frontend = new Frontend(restApiServer, logger, config, db);
+                        frontend = new Frontend(restApiServer, logger, config);
                     }catch (Exception e) {
                         logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, "Frontend didn't initialize properly: " + e.getMessage());
                     }

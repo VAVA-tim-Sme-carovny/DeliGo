@@ -3,7 +3,6 @@ package com.deligo.Backend.FeatureMyNewProcess;
 import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.Backend.FeatureOrganizationDetails.OrgDetailsMessages;
 import com.deligo.ConfigLoader.ConfigLoader;
-import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
@@ -19,8 +18,8 @@ import java.util.regex.Pattern;
 
 public class FeatureMyNewProcess extends BaseFeature {
 
-    public FeatureMyNewProcess(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer, DatabaseManager db) {
-        super(globalConfig, logger, restApiServer, db);
+    public FeatureMyNewProcess(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
+        super(globalConfig, logger, restApiServer);
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, MyNewProcessMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
 

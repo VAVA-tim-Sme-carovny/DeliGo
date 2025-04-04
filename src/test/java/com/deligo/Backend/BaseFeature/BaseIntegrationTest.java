@@ -1,7 +1,6 @@
 package com.deligo.Backend.BaseFeature;
 
 import com.deligo.ConfigLoader.ConfigLoader;
-import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Logging.LoggingManager;
 import com.deligo.RestApi.RestAPIServer;
@@ -15,7 +14,6 @@ public abstract class BaseIntegrationTest {
     protected static LoggingAdapter logger;
     protected static ConfigLoader configLoader;
     protected static RestAPIServer restApiServer;
-    protected static DatabaseManager dbManager;
 
     @BeforeAll
     public static void init() throws IOException {
@@ -39,7 +37,6 @@ public abstract class BaseIntegrationTest {
         restApiServer = new RestAPIServer(logger, configLoader);
 
         // Inicializácia databázového manažéra – môže byť dummy, ak zatiaľ nepoužívaš reálnu DB
-        dbManager = new DatabaseManager();
     }
 
     @AfterAll
