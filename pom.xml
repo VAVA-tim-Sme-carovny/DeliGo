@@ -80,6 +80,26 @@
             <scope>test</scope>
         </dependency>
 
+
+<!--        Database dependencies-->
+
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>6.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.2</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -178,7 +198,7 @@
         </profile>
 
         <profile>
-            <id>linux</id>
+            <id>linux-x86_64</id>
             <activation>
                 <os>
                     <family>unix</family>

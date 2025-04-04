@@ -2,6 +2,8 @@ package com.deligo;
 
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.DatabaseManager.DatabaseManager;
+import com.deligo.DatabaseManager.dao.GenericDAO;
+import com.deligo.DatabaseManager.example.Users;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Logging.LoggingManager;
 
@@ -10,12 +12,17 @@ import com.deligo.RestApi.RestAPIServer;
 import com.deligo.Frontend.Frontend;
 import com.deligo.Backend.Backend;
 
+
 public class MainApp {
 
+
+
     private static final String CONFIG_FILE = "src/main/resources/config.yaml";
+//    GenericDAO<Users> userDAO = new GenericDAO<>(Users.class, "users");
 
     public static void main(String[] args) {
 
+//        GenericDAO<Users> userDAO = new GenericDAO<>(Users.class, "users");
         LoggingManager.initialize();
 
         ConfigLoader config = new ConfigLoader(CONFIG_FILE);
