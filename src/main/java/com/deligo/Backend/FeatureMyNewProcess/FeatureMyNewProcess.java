@@ -21,7 +21,7 @@ public class FeatureMyNewProcess extends BaseFeature {
 
     public FeatureMyNewProcess(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer, DatabaseManager db) {
         super(globalConfig, logger, restApiServer, db);
-        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, MyNewProcessMessages.PROCESS_NAME.getMessage(this.getClass().getName()));
+        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, MyNewProcessMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
 
     //Add here your new functions

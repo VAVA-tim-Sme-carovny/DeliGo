@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LoggingWindow {
 
@@ -20,34 +21,39 @@ public class LoggingWindow {
 
     private ComboBox<LogType> typeFilter;
     private ComboBox<LogSource> sourceFilter;
+    private TextField searchField;
 
     private List<LogRecord> allLogs = new ArrayList<>();
 
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("📝 com.deligo.Logging Window");
+        primaryStage.setTitle("📝 Logging Window");
 
         logContainer = new VBox(5);
-
         scrollPane = new ScrollPane(logContainer);
         scrollPane.setFitToWidth(true);
         scrollPane.vvalueProperty().bind(logContainer.heightProperty());
 
         BorderPane root = new BorderPane();
 
-        // Filters
         typeFilter = new ComboBox<>();
-        typeFilter.getItems().add(null); // null = zobrazí všetky typy (žiadny filter)
-        typeFilter.getItems().addAll(LogType.ERROR, LogType.WARNING, LogType.SUCCESS);
+        typeFilter.getItems().add(null);
+        typeFilter.getItems().addAll(LogType.values());
         typeFilter.setValue(null);
 
         sourceFilter = new ComboBox<>();
-        sourceFilter.getItems().add(null); // null = zobrazí všetky source
-        sourceFilter.getItems().addAll(LogSource.REST_API, LogSource.BECKEND, LogSource.FRONTEND, LogSource.MAVEN);
+        sourceFilter.getItems().add(null);
+        sourceFilter.getItems().addAll(LogSource.values());
         sourceFilter.setValue(null);
 
+        searchField = new TextField();
+        searchField.setPromptText("Search logs...");
+
+        typeFilter.setOnAction(e -> applyFilters());
+        sourceFilter.setOnAction(e -> applyFilters());
+        searchField.textProperty().addListener((obs, oldVal, newVal) -> applyFilters());
+
         typeFilter.setCellFactory(lv -> new ListCell<>() {
-            @Override
-            protected void updateItem(LogType item, boolean empty) {
+            @Override protected void updateItem(LogType item, boolean empty) {
                 super.updateItem(item, empty);
                 setText((empty || item == null) ? "All Types" : item.name());
             }
@@ -55,15 +61,18 @@ public class LoggingWindow {
         typeFilter.setButtonCell(typeFilter.getCellFactory().call(null));
 
         sourceFilter.setCellFactory(lv -> new ListCell<>() {
-            @Override
-            protected void updateItem(LogSource item, boolean empty) {
+            @Override protected void updateItem(LogSource item, boolean empty) {
                 super.updateItem(item, empty);
                 setText((empty || item == null) ? "All Sources" : item.name());
             }
         });
         sourceFilter.setButtonCell(sourceFilter.getCellFactory().call(null));
 
-        HBox filterBar = new HBox(10, new Label("Type:"), typeFilter, new Label("Source:"), sourceFilter);
+        HBox filterBar = new HBox(10,
+                new Label("Type:"), typeFilter,
+                new Label("Source:"), sourceFilter,
+                new Label("Search:"), searchField
+        );
         filterBar.setPadding(new Insets(10));
 
         root.setTop(filterBar);
@@ -80,7 +89,20 @@ public class LoggingWindow {
             allLogs.add(record);
 
             if (matchesFilter(record)) {
-                logContainer.getChildren().add(buildLogLine(record));
+                logContainer.getChildren().add(createLogNode(record));
+            }
+        });
+    }
+
+    private void applyFilters() {
+        Platform.runLater(() -> {
+            logContainer.getChildren().clear();
+            List<LogRecord> filtered = allLogs.stream()
+                    .filter(this::matchesFilter)
+                    .collect(Collectors.toList());
+
+            for (LogRecord r : filtered) {
+                logContainer.getChildren().add(createLogNode(r));
             }
         });
     }
@@ -88,49 +110,41 @@ public class LoggingWindow {
     private boolean matchesFilter(LogRecord record) {
         LogType selectedType = typeFilter.getValue();
         LogSource selectedSource = sourceFilter.getValue();
+        String query = searchField.getText().toLowerCase();
 
-        boolean typeMatch = selectedType == null || record.type == selectedType;
-        boolean sourceMatch = selectedSource == null || record.source == selectedSource;
+        boolean typeMatches = (selectedType == null || record.getType() == selectedType);
+        boolean sourceMatches = (selectedSource == null || record.getSource() == selectedSource);
+        boolean textMatches = query.isEmpty() || record.getMessage().toLowerCase().contains(query);
 
-        return typeMatch && sourceMatch;
+        return typeMatches && sourceMatches && textMatches;
     }
 
-    private void filterLogs() {
-        logContainer.getChildren().clear();
-
-        for (LogRecord record : allLogs) {
-            if (matchesFilter(record)) {
-                logContainer.getChildren().add(buildLogLine(record));
-            }
-        }
-    }
-
-    private TextFlow buildLogLine(LogRecord record) {
+    private TextFlow createLogNode(LogRecord record) {
         TextFlow logLine = new TextFlow();
 
-        Text timeText = new Text(record.timestamp + " ");
+        Text timeText = new Text(record.getTimestamp() + " ");
         timeText.setStyle("-fx-font-weight: bold;");
 
-        Text typeText = new Text("[" + record.type.name() + "]");
-        typeText.setFill(getColorForLogType(record.type));
+        Text typeText = new Text("[" + record.getType().name() + "]");
+        typeText.setFill(getColorForLogType(record.getType()));
         typeText.setStyle("-fx-font-weight: bold; ");
 
         logLine.getChildren().addAll(timeText, typeText, new Text(" "));
 
-        if (record.priority != null) {
-            Text priorityText = new Text("[" + record.priority.name() + "]");
-            priorityText.setFill(getColorForLogPriority(record.priority));
+        if (record.getPriority() != null) {
+            Text priorityText = new Text("[" + record.getPriority().name() + "]");
+            priorityText.setFill(getColorForLogPriority(record.getPriority()));
             priorityText.setStyle("-fx-font-weight: bold; ");
             logLine.getChildren().addAll(priorityText, new Text(" "));
         }
 
-        if (record.source != null) {
-            Text sourceText = new Text("[" + record.source.name() + "]");
+        if (record.getSource() != null) {
+            Text sourceText = new Text("[" + record.getSource().name() + "]");
             sourceText.setStyle("-fx-font-weight: bold;");
             logLine.getChildren().addAll(sourceText, new Text(" "));
         }
 
-        Text msgText = new Text(": " + record.message);
+        Text msgText = new Text(": " + record.getMessage());
         logLine.getChildren().add(msgText);
 
         return logLine;
@@ -154,11 +168,11 @@ public class LoggingWindow {
     }
 
     private static class LogRecord {
-        String timestamp;
-        String message;
-        LogType type;
-        LogPriority priority;
-        LogSource source;
+        private final String timestamp;
+        private final String message;
+        private final LogType type;
+        private final LogPriority priority;
+        private final LogSource source;
 
         public LogRecord(String timestamp, String message, LogType type, LogPriority priority, LogSource source) {
             this.timestamp = timestamp;
@@ -167,5 +181,11 @@ public class LoggingWindow {
             this.priority = priority;
             this.source = source;
         }
+
+        public String getTimestamp() { return timestamp; }
+        public String getMessage() { return message; }
+        public LogType getType() { return type; }
+        public LogPriority getPriority() { return priority; }
+        public LogSource getSource() { return source; }
     }
 }
