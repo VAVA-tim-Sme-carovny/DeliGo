@@ -1,7 +1,7 @@
-package com.deligo.Backend.FeatureMyNewProcess;
+package com.deligo.Backend.FeatureUserRegister;
 
 public enum MyNewProcessMessages {
-    PROCESS_NAME("FeatureMyNewProcess Started", "FeatureMyNewProcess Started");
+    PROCESS_NAME("FeatureUserRegister Started", "FeatureUserRegister Started");
 
 
     private final String skMessage;

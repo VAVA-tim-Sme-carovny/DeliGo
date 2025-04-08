@@ -1,4 +1,4 @@
-package com.deligo.Backend.FeatureMyNewProcess;
+package com.deligo.Backend.FeatureUserRegister;
 
 import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.Backend.FeatureOrganizationDetails.OrgDetailsMessages;
@@ -16,13 +16,16 @@ import com.google.gson.JsonSyntaxException;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class FeatureMyNewProcess extends BaseFeature {
+public class FeatureUserRegister extends BaseFeature {
 
-    public FeatureMyNewProcess(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
+    public FeatureUserRegister(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
         super(globalConfig, logger, restApiServer);
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, MyNewProcessMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
 
     //Add here your new functions
+    public String createAccount(String jsonData){
+        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "Processing account creation request.");
 
+    }
 }
