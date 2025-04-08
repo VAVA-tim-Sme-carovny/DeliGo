@@ -24,4 +24,12 @@ public class BasicModels {
         MAVEN
     }
 
+    public enum Roles {
+        BASIC,
+        ADMIN,
+        CREATE_ORDER,
+        EDIT_ORDER,
+        CHANGE_ORDER_STATE
+    }
+
 }

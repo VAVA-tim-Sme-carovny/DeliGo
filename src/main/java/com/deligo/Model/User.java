@@ -1,19 +1,28 @@
 package com.deligo.Model;
 
+import java.util.ArrayList;
 import java.util.List;
+import com.deligo.Model.BasicModels.Roles;
 
-public class Users {
+public class User {
     private int id;
     private String username;
     private String password;
-    private List<String> role;
+    private String role = "";
 
-    public Users() {}
+    public User() {}
 
-    public Users(String username, String email, String password, List<String> role) {
+    public User(String username, String password, List<Roles> role) {
         this.username = username;
         this.password = password;
-        this.role = role;
+        for (Roles r : role) {
+            if(this.role.isEmpty()) {
+                this.role = r.toString();
+            }
+            else {
+                this.role = this.role.concat("," + r.toString());
+            }
+        }
     }
 
     // Getters and Setters
@@ -42,21 +51,30 @@ public class Users {
         this.password = password;
     }
 
-    public List<String> getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(List<String> role) {
+    public List<Roles> getUserRoles() {
+        List<Roles> rolesList = new ArrayList<>();
+        if (role == null || role.isEmpty()) {
+            return rolesList;
+        }
+
+        String[] parts = role.split(",");
+        for (String part : parts) {
+            Roles r = Roles.valueOf(part.trim());
+            if (r != null) {
+                rolesList.add(r);
+            }
+        }
+
+        return rolesList;
+    }
+
+    public void setRole(String role) {
         this.role = role;
     }
 
-    @Override
-    public String toString() {
-        return "registerData{" +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                "role=" + role +
-                '}';
-    }
 }
 

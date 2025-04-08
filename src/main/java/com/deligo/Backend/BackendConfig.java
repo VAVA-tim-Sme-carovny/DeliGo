@@ -18,6 +18,8 @@ public class BackendConfig {
                 return backend.getFeatureValidateTestConnection().validateTestConnection(data);
             case "/api/be/updateLanguage":
                 BaseFeature.updateLanguage(config);
+            case "/api/be/register":
+                return backend.getFeatureUserRegister().createAccount(data);
             default:
                 return "Unknown POST route: " + route;
         }
