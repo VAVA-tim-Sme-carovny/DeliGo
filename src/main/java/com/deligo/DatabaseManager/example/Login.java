@@ -3,7 +3,6 @@ import com.deligo.DatabaseManager.dao.GenericDAO;
 import com.deligo.DatabaseManager.exceptions.DatabaseException;
 import org.mindrot.jbcrypt.BCrypt;
 
-import java.sql.SQLException;
 import java.util.Optional;
 import java.util.Scanner;
 

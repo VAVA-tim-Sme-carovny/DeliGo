@@ -3,12 +3,11 @@ package com.deligo.Backend.FeatureUserRegister;
 import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.DatabaseManager.dao.GenericDAO;
-import com.deligo.DatabaseManager.example.Users;
 import com.deligo.DatabaseManager.exceptions.DatabaseException;
 import com.deligo.Model.RegisterData;
 import com.deligo.Model.Response;
-import com.google.gson.Gson;
 import com.deligo.Model.User;
+import com.google.gson.Gson;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
@@ -18,7 +17,6 @@ import com.deligo.RestApi.RestAPIServer;
 import com.google.gson.JsonSyntaxException;
 import org.mindrot.jbcrypt.BCrypt;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +32,15 @@ public class FeatureUserRegister extends BaseFeature {
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, UserRegisterMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
 
-    //Add here your new functions
+    /**
+     *
+     * @param jsonData JSON reťazec s údajmi, ktorý obsahuje:
+     *      *                 - username: String
+     *      *                 - password: String
+     *      *                 - roles: Array of strings
+     *      *                 - tag: Empty Array
+     * @return JSON odpoveď s message a status (200 pre úspech, 500 pre chybu)
+     */
     public String createAccount(String jsonData){
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "Processing account creation request.");
 
@@ -44,7 +50,7 @@ public class FeatureUserRegister extends BaseFeature {
             user = gson.fromJson(jsonData, RegisterData.class);
         }
         catch (JsonSyntaxException e) {
-            String msg = UserRegisterMessages.INVALID_JSON.getMessage(this.getLanguage()) + e.getMessage();
+            String msg = UserRegisterMessages.INVALID_JSON.getMessage(this.getLanguage(), e.getMessage());
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
             return gson.toJson(new Response(msg, 500));
         }
@@ -55,18 +61,23 @@ public class FeatureUserRegister extends BaseFeature {
         List<String> roles = user.getRoles();
 
         //Validácia rolý
-        List<Roles> roleEnums = new ArrayList<>();
-        for (String roleString : roles) {
+        String rolesAsString = "";
+        for (String r : roles) {
             try {
-                Roles role = Roles.valueOf(roleString);
-                roleEnums.add(role);
+                Roles role = Roles.fromString(r);
+                if(rolesAsString.isEmpty()) {
+                    rolesAsString = role.getRoleName();
+                }
+                else {
+                    rolesAsString = rolesAsString.concat("," + role.getRoleName());
+                }
             } catch (IllegalArgumentException e) {
-                String msg = UserRegisterMessages.INVALID_ROLE.getMessage(this.getLanguage());
+                String msg = UserRegisterMessages.INVALID_ROLE.getMessage(this.getLanguage(), e.getMessage());
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
                 return gson.toJson(new Response(msg, 500));
             }
         }
-        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "Parsed roles: " + roleEnums);
+        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "Parsed roles: " + rolesAsString);
 
         //Validácia či user existuje v databaze
         Optional<User> userOpt = userDAO.findOneByField("username", username);
@@ -77,7 +88,7 @@ public class FeatureUserRegister extends BaseFeature {
         }
 
         // Vloženie nového používateľa
-        User newUser = new User(username, hashedPassword, roleEnums);
+        User newUser = new User(username, hashedPassword, rolesAsString);
         try {
             userDAO.insert(newUser);
             logger.log(
@@ -101,4 +112,6 @@ public class FeatureUserRegister extends BaseFeature {
     private String hashPassword(String rawPassword) {
         return BCrypt.hashpw(rawPassword, BCrypt.gensalt());
     }
+
+
 }

@@ -20,14 +20,12 @@ public class Register {
         System.out.println("Registrácia:");
         System.out.print("Zadajte používateľské meno: ");
         String username = scanner.nextLine();
-        System.out.print("Zadajte email: ");
-        String email = scanner.nextLine();
         System.out.print("Zadajte heslo: ");
         String rawPassword = scanner.nextLine();
         String hashedPassword = hashPassword(rawPassword);
 
         // Vytvorenie používateľa
-        Users newUser = new Users(username, email, hashedPassword, "customer");
+        Users newUser = new Users(username, hashedPassword, "customer");
 
         // Vloženie nového používateľa
         try {

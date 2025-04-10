@@ -12,17 +12,18 @@ public class User {
 
     public User() {}
 
-    public User(String username, String password, List<Roles> role) {
+    public User(String username, String password, String role) {
         this.username = username;
         this.password = password;
-        for (Roles r : role) {
+        this.role = role;
+        /*for (Roles r : role) {
             if(this.role.isEmpty()) {
                 this.role = r.toString();
             }
             else {
                 this.role = this.role.concat("," + r.toString());
             }
-        }
+        }*/
     }
 
     // Getters and Setters
@@ -55,7 +56,7 @@ public class User {
         return role;
     }
 
-    public List<Roles> getUserRoles() {
+    /*public List<Roles> getUserRoles() {
         List<Roles> rolesList = new ArrayList<>();
         if (role == null || role.isEmpty()) {
             return rolesList;
@@ -70,7 +71,7 @@ public class User {
         }
 
         return rolesList;
-    }
+    }*/
 
     public void setRole(String role) {
         this.role = role;

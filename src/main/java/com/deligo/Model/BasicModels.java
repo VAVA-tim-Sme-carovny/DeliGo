@@ -29,7 +29,20 @@ public class BasicModels {
         ADMIN,
         CREATE_ORDER,
         EDIT_ORDER,
-        CHANGE_ORDER_STATE
+        CHANGE_ORDER_STATE;
+
+        public String getRoleName() {
+            return this.name().toLowerCase();
+        }
+
+        public static Roles fromString(String text) {
+            for (Roles role : Roles.values()) {
+                if (role.getRoleName().equalsIgnoreCase(text)) {
+                    return role;
+                }
+            }
+            throw new IllegalArgumentException(text);
+        }
     }
 
 }
