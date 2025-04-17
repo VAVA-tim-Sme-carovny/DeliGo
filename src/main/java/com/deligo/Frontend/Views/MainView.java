@@ -1,7 +1,6 @@
 package com.deligo.Frontend.Views;
 
 import com.deligo.Frontend.Controllers.FrontendController;
-import com.deligo.Frontend.Controllers.TopBarController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
