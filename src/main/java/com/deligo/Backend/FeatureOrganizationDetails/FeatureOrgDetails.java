@@ -2,7 +2,6 @@ package com.deligo.Backend.FeatureOrganizationDetails;
 
 import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.ConfigLoader.ConfigLoader;
-import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.Model.OrgDetails;
@@ -22,8 +21,8 @@ public class FeatureOrgDetails extends BaseFeature {
 
     private Gson gson = new Gson();
 
-    public FeatureOrgDetails(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer, DatabaseManager db) {
-        super(globalConfig, logger, restApiServer, db);
+    public FeatureOrgDetails(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
+        super(globalConfig, logger, restApiServer);
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "FeatureOrgDetails Started.");
     }
 

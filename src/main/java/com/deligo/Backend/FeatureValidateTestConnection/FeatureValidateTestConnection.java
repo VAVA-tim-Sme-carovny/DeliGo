@@ -2,15 +2,14 @@ package com.deligo.Backend.FeatureValidateTestConnection;
 
 import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.ConfigLoader.ConfigLoader;
-import com.deligo.DatabaseManager.DatabaseManager;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.RestApi.RestAPIServer;
 
 public class FeatureValidateTestConnection extends BaseFeature {
 
-    public FeatureValidateTestConnection(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer, DatabaseManager db) {
-        super(globalConfig, logger, restApiServer, db);
+    public FeatureValidateTestConnection(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
+        super(globalConfig, logger, restApiServer);
         this.runHealthCheck();
     }
 

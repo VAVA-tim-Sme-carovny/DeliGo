@@ -1,4 +1,5 @@
-import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
+package com.deligo.Backend.FeatureOrganizationDetails;
+
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Logging.LoggingManager;
@@ -7,50 +8,22 @@ import com.deligo.RestApi.RestAPIServer;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FeatureOrgDetailsIntegrationTest {
+public class FeatureOrgDetailsIntegrationTest extends com.deligo.Backend.BaseFeature.BaseIntegrationTest {
 
-    private static LoggingAdapter logger;
-    private static ConfigLoader configLoader;
-    private static RestAPIServer restApiServer;
-    private static FeatureOrgDetails featureOrgDetails;
     private static Gson gson = new Gson();
+    private FeatureOrgDetails featureOrgDetails;
 
-    @BeforeAll
-    static void setUp() throws IOException {
-        // 1. Inicializácia reálneho logovacieho systému
-        LoggingManager.initialize();
-        // Predpokladáme, že LoggingManager.getAdapter() vráti reálny logger
-        logger = LoggingManager.getAdapter();
-        while (LoggingManager.getAdapter() == null) {
-            try {
-                System.out.println("Waiting for LoggingManager initialization...");
-                Thread.sleep(400); // 300 ms delay
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        // 2. Inicializácia reálneho ConfigLoader
-        //    Povedzme, že config.yaml máš v resources/ alebo inde
-        configLoader = new ConfigLoader("src/main/resources/config.yaml");
-        assertNotNull(configLoader, "ConfigLoader should be created");
-
-        // 3. Spustenie reálneho RestAPIServer
-        //    Bude počúvať na porte 8080, alebo ak upravíš kód, tak na inom porte
-        restApiServer = new RestAPIServer(logger, configLoader);
-        assertNotNull(restApiServer, "RestAPIServer should be created");
-
-        // 4. DatabaseManager - buď reálny, alebo minimálny
-
-        // 5. Vytvorenie inštancie FeatureOrgDetails
+    @BeforeEach
+    void setUpFeature() {
+        // Vytvoríme novú inštanciu FeatureOrgDetails s už inicializovanými závislosťami
         featureOrgDetails = new FeatureOrgDetails(configLoader, logger, restApiServer);
-        assertNotNull(featureOrgDetails, "FeatureOrgDetails should be created");
     }
 
     @AfterAll
