@@ -40,9 +40,15 @@ public class LoggingAdapter {
 
         // Log do konzoly
         switch (type) {
-            case ERROR -> logger.error(formattedMessage);
-            case WARNING -> logger.warn(formattedMessage);
-            case SUCCESS -> logger.info(formattedMessage);
+            case ERROR:
+                logger.error(formattedMessage);
+                break;
+            case WARNING:
+                logger.warn(formattedMessage);
+                break;
+            case SUCCESS:
+                logger.info(formattedMessage);
+                break;
         }
 
         // Log do GUI
