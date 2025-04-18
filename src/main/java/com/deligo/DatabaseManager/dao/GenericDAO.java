@@ -75,7 +75,7 @@ public class GenericDAO<T> {
     // Získanie všetkých záznamov (SELECT *)
     public List<T> getAll() {
         List<T> results = new ArrayList<>();
-        String sql = "SELECT * FROM " + entityClass.getSimpleName().toLowerCase();
+        String sql = "SELECT * FROM " + tableName;
 
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
@@ -96,7 +96,7 @@ public class GenericDAO<T> {
 
     // Nájdite záznam podľa ID
     public Optional<T> getById(int id) {
-        String sql = "SELECT * FROM " + entityClass.getSimpleName().toLowerCase() + " WHERE id = ?";
+        String sql = "SELECT * FROM " + tableName + " WHERE id = ?";
 
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -170,7 +170,7 @@ public class GenericDAO<T> {
 
     // Získanie počtu záznamov v tabuľke
     public int count() {
-        String sql = "SELECT COUNT(*) FROM " + entityClass.getSimpleName().toLowerCase();
+        String sql = "SELECT COUNT(*) FROM " + tableName;
 
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
@@ -192,7 +192,7 @@ public class GenericDAO<T> {
     // Vyhľadanie podľa konkrétneho poľa (napr. rola)
     public List<T> findByField(String fieldName, Object value) {
         List<T> results = new ArrayList<>();
-        String sql = "SELECT * FROM " + entityClass.getSimpleName().toLowerCase() + " WHERE " + fieldName + " = ?";
+        String sql = "SELECT * FROM " + tableName + " WHERE " + fieldName + " = ?";
 
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -214,7 +214,7 @@ public class GenericDAO<T> {
 
     // Vyhľadanie unikátneho záznamu podľa konkrétneho poľa (napr. username)
     public Optional<T> findOneByField(String fieldName, Object value) {
-        String sql = "SELECT * FROM " + entityClass.getSimpleName().toLowerCase() + " WHERE " + fieldName + " = ? LIMIT 1";
+        String sql = "SELECT * FROM " + tableName + " WHERE " + fieldName + " = ? LIMIT 1";
 
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
