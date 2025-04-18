@@ -1,18 +1,23 @@
 package com.deligo.Frontend.Views;
 
 import com.deligo.Frontend.Controllers.FrontendController;
+import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
 import com.deligo.Model.BasicModels.LogType;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-/**
- * JavaFX "View" pre hlavné okno frontendu.
- */
+import java.io.File;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
+
 public class MainView {
 
     private final FrontendController controller;
@@ -27,6 +32,10 @@ public class MainView {
     }
 
     public void launchWindow() {
+
+        // Nastavíme predvolený jazyk na slovenčinu
+        Locale.setDefault(new Locale("sk", "SK"));
+
         logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, "Starting Frontend Main Window...");
 
         // Spúšťame JavaFX kód
@@ -50,9 +59,60 @@ public class MainView {
     }
 
     private void initRootLayout() {
-        rootLayout = new BorderPane();
+        try {
+            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
 
-        Scene scene = new Scene(rootLayout, 900, 600);
-        primaryStage.setScene(scene);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
+
+            // ✅ Vytvoríme vlastný controller (lebo nemáme fx:controller vo FXML)
+            MainPageController controller = new MainPageController(
+                    this.controller.getConfig(),
+                    this.logger,
+                    this.controller.getApiServer()
+            );
+            loader.setController(controller); // Musí byť pred loader.load()
+
+            Parent root = loader.load(); // až teraz načítame view
+            rootLayout = (BorderPane) root;
+
+            // ✅ Môžeme volať metódy na controlleri
+            controller.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
+            controller.loadMainContent("/Views/Content/MainContentPanel.fxml");
+
+            Scene scene = new Scene(rootLayout, 900, 600);
+            primaryStage.setScene(scene);
+
+            primaryStage.setTitle("DeliGo - Frontend");
+            primaryStage.setMinWidth(900);
+            primaryStage.setMinHeight(600);
+            primaryStage.show();
+
+        } catch (Exception e) {
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
+                    "Failed to load Main View: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
+
+
+//    // Funkcia na zmenu jazyka
+//    public void loadPage(String pageName) {
+//        try {
+//            // Získa aktuálne nastavený jazyk (napr. sk alebo en)
+//            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
+//
+//            // Načíta FXML s lokalizačným bundle
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
+//            Parent page = loader.load();
+//
+//            // Nastaví FXML do stredu rozloženia
+//            rootLayout.setCenter(page);
+//
+//        } catch (Exception e) {
+//            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
+//                    "Failed to load " + pageName + " FXML: " + e.getMessage());
+//            e.printStackTrace();
+//        }
+//    }
+
 }

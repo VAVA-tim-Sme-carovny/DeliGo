@@ -17,7 +17,7 @@ public class ConfigLoader {
     }
 
     private static void loadConfig() {
-        String configPath = System.getProperty("config.file"); // Možnosť načítať externý súbor
+        String configPath = System.getProperty("config.properties"); // Možnosť načítať externý súbor
         try (InputStream input = (configPath != null) ? new FileInputStream(configPath) :
                 ConfigLoader.class.getClassLoader().getResourceAsStream("config.properties")) {
 

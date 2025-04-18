@@ -5,8 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="Added reporting profile">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/InitializableWithParent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainTopPanelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/bookTablePopUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/infoPopUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/loginAndRegisterPopUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Helpers/CustomControllerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Model/RegisterData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/LoginPanel.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/MainContentPanel.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/info_pop_up.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Controllers/MainTopPanelController.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Controllers/ReturnHomeController.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/book_table_pop_up.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/confirm_registration_pop_up.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/main_view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/order_menu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_en.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_sk.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/deligo/Backend/FeatureUserRegistration/FeatureUserRegistrationIntegrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/Backend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/Backend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/BackendConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/BackendConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureValidateTestConnection/FeatureValidateTestConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureValidateTestConnection/FeatureValidateTestConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/DatabaseManager/utils/ConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/DatabaseManager/utils/ConfigLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FrontendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FrontendController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Frontend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Frontend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Views/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Model/BasicModels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Model/BasicModels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -40,6 +72,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.FeatureOrgDetailsIntegrationTest.testUpdateOrgDetailsInvalidPhone.executor": "Run",
+    "JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles.executor": "Run",
     "Maven.Backend.executor": "Run",
     "Maven.Development.executor": "Run",
     "Maven.FrontEnd.executor": "Run",
@@ -73,9 +106,11 @@
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources\Views\Content" />
+      <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources\Views" />
+      <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Views" />
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo" />
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources" />
-      <recent name="C:\Users\richa\Documents\DeliGo" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.deligo.Backend.BaseFeature" />
@@ -87,7 +122,23 @@
       <recent name="com.deligo.Frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.reporting">
+  <component name="RunManager" selected="Maven.Development">
+    <configuration name="FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DeliGo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.deligo.Backend.FeatureUserRegistration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.deligo.Backend.FeatureUserRegistration" />
+      <option name="MAIN_CLASS_NAME" value="com.deligo.Backend.FeatureUserRegistration.FeatureUserRegistrationIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateAccountInvalidRoles" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="reporting" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -150,12 +201,18 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles" />
       <item itemvalue="Maven.reporting" />
       <item itemvalue="Maven.Development" />
       <item itemvalue="Maven.test" />
       <item itemvalue="Maven.FrontEnd" />
       <item itemvalue="Maven.Backend" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

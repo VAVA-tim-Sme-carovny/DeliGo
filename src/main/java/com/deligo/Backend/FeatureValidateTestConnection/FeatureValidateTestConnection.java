@@ -5,6 +5,7 @@ import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.RestApi.RestAPIServer;
+import org.json.JSONObject;
 
 public class FeatureValidateTestConnection extends BaseFeature {
 
@@ -48,4 +49,21 @@ public class FeatureValidateTestConnection extends BaseFeature {
             throw new RuntimeException("REST API health check failed from Backend: " + e.getMessage());
         }
     }
+
+
+    public String testLogin(Object data) {
+        this.log(LogType.INFO, LogPriority.HIGH, LogSource.BECKEND, "Login request received: " + data);
+
+        // Simulovaný dummy response
+        JSONObject response = new JSONObject();
+        response.put("username", "demoUser");
+        response.put("roles", new String[]{"admin", "user"});
+        response.put("message", "Vitaj demoUser");
+        response.put("status", 200);
+
+        this.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.BECKEND, "Returning login response: " + response.toString());
+
+        return response.toString();
+    }
+
 }
