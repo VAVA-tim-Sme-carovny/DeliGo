@@ -42,3 +42,4 @@ ssh-login.bat
 Deligo_delivery.iml
 asd.json
 !jvm.config
+!./*/workspace.xml
