@@ -1,5 +1,8 @@
 package com.deligo.Frontend.Controllers.OrderPage;
 
+import com.deligo.Frontend.Controllers.InitializableWithParent;
+import com.deligo.Frontend.Controllers.MainPage.MainPageController;
+import com.deligo.Logging.Adapter.LoggingAdapter;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,11 +14,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderCartController {
+public class OrderCartController implements InitializableWithParent {
 
     @FXML private VBox cartItemsContainer;
     @FXML private Label totalPriceLabel;
     @FXML private Button confirmBtn;
+
+    private LoggingAdapter logger;
+    private MainPageController mainPageController;
+
+    public OrderCartController(LoggingAdapter logger, MainPageController mainPageController) {
+        this.logger = logger;
+        this.mainPageController = mainPageController;
+    }
 
     private final List<Food> dummyOrder = List.of(
             new Food("Burger", 4.50),
@@ -26,15 +37,20 @@ public class OrderCartController {
 
     private final List<CartItemController> itemControllers = new ArrayList<>();
 
-    public void initialize() {
+    @Override
+    public void initializeWithParent(Object parentController) {
+        this.mainPageController = (MainPageController) parentController;
+
         for (Food food : dummyOrder) {
             addItemToCart(food);
         }
 
-        confirmBtn.setOnAction(e -> {
-            System.out.println("✅ Objednávka potvrdená");
-            // implementuj logiku odoslania neskôr
-        });
+        if (confirmBtn != null) {
+            confirmBtn.setOnAction(e -> {
+                System.out.println("✅ Objednávka potvrdená");
+                // implementuj logiku odoslania neskôr
+            });
+        }
 
         recalculateTotal();
     }
