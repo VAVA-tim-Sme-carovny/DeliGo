@@ -7,9 +7,11 @@ import com.deligo.Model.BasicModels.LogSource;
 import com.deligo.Model.BasicModels.LogType;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.util.Locale;
@@ -62,15 +64,45 @@ public class MainView {
 
         try {
 
+<<<<<<< Updated upstream
             loadPage("main_page");
+=======
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
+
+            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+
+            // ✅ Vytvoríme vlastný controller (lebo nemáme fx:controller vo FXML)
+            MainPageController controller = new MainPageController(
+                    this.controller.getConfig(),
+                    this.logger,
+                    this.controller.getApiServer()
+            );
+            loader.setController(controller); // Musí byť pred loader.load()
+
+            Parent root = loader.load(); // až teraz načítame view
+            rootLayout = (BorderPane) root;
+
+            // ✅ Môžeme volať metódy na controlleri
+            controller.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
+            controller.loadMainContent("/Views/Content/MainContentPanel.fxml");
+>>>>>>> Stashed changes
 
             // Create and set the scene
             Scene scene = new Scene(rootLayout, 900, 600);
             primaryStage.setScene(scene);
 
+<<<<<<< Updated upstream
             //Minimálna velkosť okna
             primaryStage.setMinWidth(900);
             primaryStage.setMinHeight(600);
+=======
+            primaryStage.setTitle("DeliGo - Frontend");
+            primaryStage.setX(screenBounds.getMinX());
+            primaryStage.setY(screenBounds.getMinY());
+            primaryStage.setWidth(screenBounds.getWidth());
+            primaryStage.setHeight(screenBounds.getHeight());
+            primaryStage.show();
+>>>>>>> Stashed changes
 
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
