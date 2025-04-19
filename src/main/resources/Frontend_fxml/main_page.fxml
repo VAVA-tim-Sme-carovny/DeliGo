@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.MainPageController">
+<BorderPane fx:id="mainPageBackground" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.MainPageController" stylesheets="@styles.css">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Názov reštaurácie">
+                  <Label text="Mekdonal" fx:id="restaurantName">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -30,7 +30,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="loginAndRegister_Popup" mnemonicParsing="false" onAction="#loginClick" text="%order" />
+                  <Button fx:id="order" mnemonicParsing="false" onAction="#loginClick" text="%order" />
                </children>
             </HBox>
             <HBox alignment="CENTER">
@@ -67,17 +67,17 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="btnEn" alignment="CENTER" mnemonicParsing="false" onAction="#switchToEnglish" text="EN" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+            <Button fx:id="btnEn" alignment="CENTER" mnemonicParsing="false" onAction="#switchToEnglish" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                <GridPane.margin>
                   <Insets right="15.0" top="15.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="openInfoPopup" mnemonicParsing="false" onAction="#handleInfoButtonClick" text="%info">
+            <Button fx:id="openInfoPopup" mnemonicParsing="false" onAction="#handleInfoButtonClick" text="&#xe88e;">
                <GridPane.margin>
-                  <Insets left="15.0" top="15.0" />
+                  <Insets left="15.0" top="30.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="btnSk" mnemonicParsing="false" onAction="#switchToSlovak" text="SK" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+            <Button fx:id="btnSk" mnemonicParsing="false" onAction="#switchToSlovak"  GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                <GridPane.margin>
                   <Insets right="55.0" top="15.0" />
                </GridPane.margin>

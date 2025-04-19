@@ -61,18 +61,7 @@ public class MainView {
         rootLayout = new BorderPane();
 
         try {
-            // Load custom top bar (navigation bar)
-            /*FXMLLoader topBarLoader = new FXMLLoader(getClass().getResource("/Frontend_fxml/top_bar.fxml"));
-            Parent topBar = topBarLoader.load();
 
-            // Get the controller for top bar and set the MainView reference
-            TopBarController topBarController = topBarLoader.getController();
-            topBarController.setMainView(this);
-
-            // Set the top bar in the BorderPane
-            rootLayout.setTop(topBar);*/
-
-            // Set initial content (page 1)
             loadPage("main_page");
 
             // Create and set the scene
