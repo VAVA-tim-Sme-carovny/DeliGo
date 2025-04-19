@@ -1,0 +1,10 @@
+device:
+  id: "C5"
+  language: "sk"
+login:
+  user: "C5"
+  roles: "customer"
+  tags:
+    - customer
+    - admin
+  status: False

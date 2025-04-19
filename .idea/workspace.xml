@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="Added reporting profile">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="Added reporting profile" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -29,6 +27,16 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -40,6 +48,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.FeatureOrgDetailsIntegrationTest.testUpdateOrgDetailsInvalidPhone.executor": "Run",
+    "JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles.executor": "Run",
     "Maven.Backend.executor": "Run",
     "Maven.Development.executor": "Run",
     "Maven.FrontEnd.executor": "Run",
@@ -49,9 +58,11 @@
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.MainApp.executor": "Run",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/richa/Documents/DeliGo/src/main/java/com/deligo",
@@ -72,9 +83,11 @@
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo" />
-      <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources" />
-      <recent name="C:\Users\richa\Documents\DeliGo" />
+      <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\resources\Views\Content" />
+      <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\java\com\deligo\Frontend\Controllers" />
+      <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources\Views\Content" />
+      <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources\Views" />
+      <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Views" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.deligo.Backend.BaseFeature" />
@@ -86,7 +99,34 @@
       <recent name="com.deligo.Frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.reporting">
+  <component name="RunManager" selected="Maven.FrontEnd">
+    <configuration name="FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DeliGo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.deligo.Backend.FeatureUserRegistration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.deligo.Backend.FeatureUserRegistration" />
+      <option name="MAIN_CLASS_NAME" value="com.deligo.Backend.FeatureUserRegistration.FeatureUserRegistrationIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateAccountInvalidRoles" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="reporting" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -149,18 +189,23 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Maven.reporting" />
-      <item itemvalue="Maven.Development" />
-      <item itemvalue="Maven.test" />
-      <item itemvalue="Maven.FrontEnd" />
+      <item itemvalue="JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles" />
       <item itemvalue="Maven.Backend" />
+      <item itemvalue="Maven.Development" />
+      <item itemvalue="Maven.FrontEnd" />
+      <item itemvalue="Maven.reporting" />
+      <item itemvalue="Maven.test" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
@@ -289,8 +334,7 @@
     <MESSAGE value="Added database module" />
     <MESSAGE value="Deleted Database Manager From constructor" />
     <MESSAGE value="Added reporting profile" />
-    <MESSAGE value="ffsfs" />
-    <option name="LAST_COMMIT_MESSAGE" value="ffsfs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added reporting profile" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
