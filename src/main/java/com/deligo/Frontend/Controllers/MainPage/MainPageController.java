@@ -37,6 +37,9 @@ public class MainPageController extends BaseFeature {
     @FXML
     private VBox controllerPanel;
 
+    @FXML
+    private VBox rightPanel;
+
 
 
 
@@ -127,6 +130,32 @@ public class MainPageController extends BaseFeature {
             e.printStackTrace();
         }
     }
+
+    public void loadRightPanel(String fxmlPath) {
+        try {
+            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath), bundle);
+            loader.setControllerFactory(
+                    new CustomControllerFactory(this, this.logger, this.server, this.globalConfig)
+            );
+            Node node = loader.load();
+
+            Object controller = loader.getController();
+            if (controller instanceof InitializableWithParent) {
+                ((InitializableWithParent) controller).initializeWithParent(this);
+            }
+
+            rightPanel.getChildren().clear();
+            rightPanel.getChildren().add(node);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 
     public RestAPIServer getServer() {
         return this.server;

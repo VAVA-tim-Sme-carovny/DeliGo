@@ -25,5 +25,9 @@
     <bottom>
         <VBox fx:id="bottomPanel" />
     </bottom>
+
+    <right>
+        <VBox fx:id="rightPanel" />
+    </right>
 </BorderPane>
 

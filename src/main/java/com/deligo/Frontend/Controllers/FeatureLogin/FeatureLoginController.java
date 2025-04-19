@@ -55,6 +55,7 @@ public class FeatureLoginController implements InitializableWithParent {
 
 //             ‼️ Otvorim objednavkome menu bez logiky
                 mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
+                mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
 
 
                 String username = usernameField.getText();

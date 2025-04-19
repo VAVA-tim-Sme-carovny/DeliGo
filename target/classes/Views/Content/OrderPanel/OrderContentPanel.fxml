@@ -24,11 +24,7 @@
       </ScrollPane>
    </center>
    <bottom>
-      <Button mnemonicParsing="false" text="Zobraziť objednávku" BorderPane.alignment="BOTTOM_RIGHT">
-         <BorderPane.margin>
-            <Insets bottom="15.0" right="15.0" top="5.0" />
-         </BorderPane.margin>
-      </Button>
+
    </bottom>
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">

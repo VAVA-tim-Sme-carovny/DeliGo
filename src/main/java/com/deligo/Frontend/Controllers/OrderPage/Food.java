@@ -11,4 +11,12 @@ public class Food {
         this.category = category;
         this.imagePath = imagePath;
     }
+
+    public Food(String name, double price) {
+        this(name, price, null, null);
+    }
+
+    public String getName() { return name; }
+    public double getPrice() { return price; }
+
 }

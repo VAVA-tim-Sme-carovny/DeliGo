@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+
+<HBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.deligo.Frontend.Controllers.OrderPage.CartItemController"
+      spacing="10" alignment="CENTER_LEFT"
+      style="-fx-border-color: lightgray; -fx-padding: 10"
+      prefWidth="300">
+
+    <Label fx:id="itemNameLabel" text="Burger" />
+    <Label fx:id="itemPriceLabel" text="4,50 €" />
+
+    <Region fx:id="spacer" HBox.hgrow="ALWAYS" prefWidth="10" maxWidth="Infinity"/>
+
+    <Button fx:id="removeBtn" text="❌" />
+</HBox>

@@ -44,10 +44,12 @@ com\deligo\MainApp.class
 com\deligo\Model\BasicModels.class
 com\deligo\RestApi\Handlers\BackendHandler.class
 com\deligo\Backend\FeatureOrganizationDetails\OrgDetailsMessages.class
+com\deligo\Frontend\Controllers\OrderPage\OrderCartController.class
 com\deligo\Frontend\Controllers\InitializableWithParent.class
 com\deligo\Logging\Config\LoggerConfig.class
 com\deligo\Frontend\Controllers\MainPage\MainPageController.class
 com\deligo\Frontend\Views\MainView.class
+com\deligo\Frontend\Controllers\OrderPage\CartItemController.class
 com\deligo\Logging\Gui\LoggingWindow$1.class
 com\deligo\Frontend\Frontend.class
 com\deligo\DatabaseManager\exceptions\DatabaseException.class

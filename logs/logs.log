@@ -255,3 +255,718 @@
 2025-04-19 23:09:13 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
 2025-04-19 23:09:13 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
 2025-04-19 23:09:13 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:14:52 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:14:52 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:14:52 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:14:52 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:14:52 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:14:52 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:14:52 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:14:52 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:14:52 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:14:52 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:14:52 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:14:52 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:14:52 [INFO] : Starting frontend mode
+2025-04-19 23:14:52 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:14:52 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:14:52 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:14:52 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:14:52 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:14:52 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:14:52 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:14:52 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:14:52 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:14:52 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:14:52 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:14:52 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:14:52 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:14:52 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:14:52 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:14:52 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:14:56 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:14:57 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:14:57 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:14:57 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:14:57 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:15:31 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-19 23:16:17 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:16:17 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:16:17 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:16:17 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:16:17 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:16:17 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:16:17 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:16:17 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:16:17 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:16:17 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:16:17 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:16:17 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:16:17 [INFO] : Starting frontend mode
+2025-04-19 23:16:17 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:16:17 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:16:17 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:16:17 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:16:17 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:16:17 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:16:17 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:16:17 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:16:17 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:16:17 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:16:17 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:16:17 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:16:17 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:16:17 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:16:18 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:16:18 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:16:21 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:16:22 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:16:22 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:16:22 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:16:22 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:16:25 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-19 23:25:17 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:25:17 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:25:17 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:25:17 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:25:17 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:25:18 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:25:18 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:25:18 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:25:18 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:25:18 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:25:18 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:25:18 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:25:18 [INFO] : Starting frontend mode
+2025-04-19 23:25:18 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:25:18 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:25:18 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:25:18 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:25:18 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:25:18 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:25:18 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:25:18 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:25:18 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:25:18 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:25:18 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:25:18 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:25:18 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:25:18 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:25:18 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:25:18 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:25:19 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:26:02 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:26:02 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:26:02 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:26:02 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:26:02 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:26:02 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:26:02 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:26:02 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:26:02 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:26:02 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:26:02 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:26:02 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:26:02 [INFO] : Starting frontend mode
+2025-04-19 23:26:02 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:26:02 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:26:02 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:26:02 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:26:02 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:26:02 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:26:02 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:26:02 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:26:02 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:26:02 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:26:02 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:26:02 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:26:02 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:26:02 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:26:02 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:26:02 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:26:05 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:26:06 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:26:06 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:26:06 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:26:06 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:28:07 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:28:07 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:28:07 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:28:07 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:28:07 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:28:07 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:28:07 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:28:07 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:28:07 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:28:07 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:28:07 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:28:07 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:28:07 [INFO] : Starting frontend mode
+2025-04-19 23:28:07 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:28:07 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:28:07 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:28:07 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:28:07 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:28:07 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:28:07 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:28:07 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:28:07 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:28:07 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:28:07 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:28:07 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:28:07 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:28:07 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:28:07 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:28:07 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:28:15 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:28:16 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:28:16 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:28:16 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:28:16 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:33:03 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:33:03 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:33:03 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:33:03 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:33:03 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:33:03 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:33:03 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:33:03 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:33:03 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:33:03 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:33:03 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:33:03 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:33:03 [INFO] : Starting frontend mode
+2025-04-19 23:33:03 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:33:03 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:33:03 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:33:03 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:33:03 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:33:03 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:33:03 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:33:03 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:33:03 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:33:03 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:33:03 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:33:03 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:33:03 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:33:03 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:33:03 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:33:04 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:33:05 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:33:06 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:33:06 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:33:06 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:33:06 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:33:16 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-19 23:33:16 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:33:18 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:33:18 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:33:18 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:33:18 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:36:47 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:36:47 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:36:47 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:36:47 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:36:47 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:36:47 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:36:47 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:36:47 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:36:47 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:36:47 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:36:47 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:36:47 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:36:47 [INFO] : Starting frontend mode
+2025-04-19 23:36:47 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:36:47 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:36:47 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:36:47 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:36:47 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:36:47 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:36:47 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:36:47 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:36:47 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:36:47 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:36:47 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:36:47 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:36:47 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:36:47 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:36:47 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:36:48 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:36:49 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:36:50 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:36:50 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:36:50 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:36:50 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:40:31 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:40:31 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:40:31 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:40:31 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:40:31 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:40:31 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:40:31 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:40:31 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:40:31 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:40:31 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:40:31 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:40:31 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:40:31 [INFO] : Starting frontend mode
+2025-04-19 23:40:31 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:40:31 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:40:31 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:40:31 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:40:31 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:40:31 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:40:31 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:40:31 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:40:31 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:40:31 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:40:31 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:40:31 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:40:31 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:40:31 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:40:32 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:40:32 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:40:32 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:40:33 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:40:33 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:40:33 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:40:33 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:41:21 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:41:21 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:41:21 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:41:21 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:41:21 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:41:21 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:41:21 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:41:21 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:41:21 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:41:21 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:41:21 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:41:21 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:41:21 [INFO] : Starting frontend mode
+2025-04-19 23:41:21 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:41:21 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:41:21 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:41:21 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:41:21 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:41:21 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:41:21 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:41:21 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:41:21 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:41:21 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:41:21 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:41:21 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:41:21 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:41:21 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:41:21 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:41:21 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:41:24 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:41:25 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:41:25 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:41:25 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:41:25 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:41:44 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:41:44 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:41:44 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:41:44 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:41:44 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:41:44 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:41:44 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:41:44 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:41:44 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:41:44 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:41:44 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:41:44 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:41:44 [INFO] : Starting frontend mode
+2025-04-19 23:41:44 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:41:44 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:41:44 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:41:44 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:41:44 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:41:44 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:41:44 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:41:44 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:41:44 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:41:44 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:41:44 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:41:44 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:41:44 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:41:44 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:41:44 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:41:44 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:41:45 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:41:46 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:41:46 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:41:46 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:41:46 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:42:11 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:42:11 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:42:11 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:42:11 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:42:11 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:42:11 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:42:11 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:42:11 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:42:11 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:42:11 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:42:11 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:42:11 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:42:11 [INFO] : Starting frontend mode
+2025-04-19 23:42:11 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:42:11 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:42:11 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:42:11 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:42:11 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:42:11 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:42:11 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:42:11 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:42:11 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:42:11 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:42:11 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:42:11 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:42:11 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:42:11 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:42:11 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:42:11 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:42:12 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:42:14 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:42:14 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:42:14 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:42:14 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:46:27 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:46:27 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:46:27 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:46:27 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:46:27 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:46:27 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:46:27 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:46:27 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:46:27 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:46:27 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:46:27 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:46:27 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:46:27 [INFO] : Starting frontend mode
+2025-04-19 23:46:27 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:46:27 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:46:27 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:46:27 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:46:27 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:46:27 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:46:27 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:46:27 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:46:27 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:46:27 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:46:27 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:46:27 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:46:27 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:46:27 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:46:27 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:46:27 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:46:28 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:46:29 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:46:29 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:46:29 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:46:29 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:47:23 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:47:23 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:47:23 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:47:23 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:47:23 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:47:23 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:47:23 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:47:23 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:47:23 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:47:23 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:47:23 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:47:23 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:47:23 [INFO] : Starting frontend mode
+2025-04-19 23:47:23 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:47:23 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:47:23 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:47:23 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:47:23 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:47:23 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:47:23 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:47:23 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:47:23 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:47:23 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:47:23 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:47:23 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:47:23 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:47:23 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:47:23 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:47:23 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:47:24 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:47:25 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:47:25 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:47:25 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:47:25 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:47:43 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:47:43 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:47:43 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:47:43 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:47:43 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:47:43 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:47:43 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:47:43 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:47:43 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:47:43 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:47:43 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:47:43 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:47:43 [INFO] : Starting frontend mode
+2025-04-19 23:47:43 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:47:43 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:47:43 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:47:43 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:47:43 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:47:43 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:47:43 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:47:43 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:47:43 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:47:43 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:47:43 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:47:43 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:47:43 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:47:43 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:47:43 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:47:43 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:47:47 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:47:47 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-19 23:47:49 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:47:50 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:47:50 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:47:50 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:47:50 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:49:37 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:49:37 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:49:37 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:49:37 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:49:37 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:49:37 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:49:37 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:49:37 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:49:37 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:49:37 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:49:37 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:49:37 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:49:37 [INFO] : Starting frontend mode
+2025-04-19 23:49:37 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:49:37 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:49:37 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:49:37 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:49:37 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:49:37 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:49:37 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:49:37 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:49:37 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:49:37 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:49:37 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:49:37 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:49:37 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:49:37 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:49:37 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:49:37 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:49:39 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:49:40 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:49:40 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:49:40 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:49:40 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:50:23 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:50:23 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:50:23 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:50:23 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:50:23 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:50:23 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:50:23 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:50:23 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:50:23 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:50:23 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:50:23 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:50:23 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:50:23 [INFO] : Starting frontend mode
+2025-04-19 23:50:23 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:50:23 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:50:23 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:50:23 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:50:23 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:50:23 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:50:23 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:50:23 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:50:23 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:50:23 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:50:23 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:50:23 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:50:23 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:50:23 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:50:23 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:50:23 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:50:25 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:50:26 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:50:26 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:50:26 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:50:26 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:52:12 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:52:12 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:52:12 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:52:12 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:52:12 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:52:12 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:52:12 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:52:12 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:52:12 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:52:12 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:52:12 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:52:12 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:52:12 [INFO] : Starting frontend mode
+2025-04-19 23:52:12 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:52:12 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:52:12 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:52:12 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:52:12 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:52:12 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:52:12 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:52:12 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:52:12 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:52:12 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:52:12 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:52:12 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:52:12 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:52:12 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:52:12 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:52:12 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:52:13 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:52:15 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:52:15 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:52:15 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:52:15 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:52:39 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:52:39 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:52:39 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:52:39 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:52:39 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:52:39 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:52:39 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:52:39 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:52:39 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:52:39 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:52:39 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:52:39 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:52:39 [INFO] : Starting frontend mode
+2025-04-19 23:52:39 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:52:39 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:52:39 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:52:39 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:52:39 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:52:39 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:52:39 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:52:39 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:52:39 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:52:39 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:52:39 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:52:39 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:52:39 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:52:39 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:52:39 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:52:39 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:52:40 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:52:41 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:52:41 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:52:41 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:52:41 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:53:46 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:53:46 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:53:46 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:53:46 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:53:46 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:53:46 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:53:46 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:53:46 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:53:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:53:46 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:53:46 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:53:46 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:53:46 [INFO] : Starting frontend mode
+2025-04-19 23:53:46 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:53:46 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:53:46 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:53:46 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:53:46 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:53:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:53:46 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:53:46 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:53:46 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:53:46 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:53:46 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:53:46 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:53:46 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:53:46 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:53:46 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:53:47 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:53:56 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:53:58 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:53:58 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:53:58 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:53:58 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-19 23:58:50 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-19 23:58:50 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-19 23:58:50 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-19 23:58:50 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-19 23:58:50 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-19 23:58:50 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:58:50 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:58:50 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-19 23:58:50 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:58:50 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:58:50 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-19 23:58:50 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-19 23:58:50 [INFO] : Starting frontend mode
+2025-04-19 23:58:50 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-19 23:58:50 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-19 23:58:50 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-19 23:58:50 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:58:50 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-19 23:58:50 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-19 23:58:50 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-19 23:58:50 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-19 23:58:50 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-19 23:58:50 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-19 23:58:50 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-19 23:58:50 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-19 23:58:50 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-19 23:58:50 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-19 23:58:51 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-19 23:58:51 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-19 23:58:52 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-19 23:58:53 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-19 23:58:53 [INFO] : POST to http://localhost:8080/api/be/login/employee responded with code: 200
+2025-04-19 23:58:53 [INFO] [MIDDLE] [FRONTEND] : Login response: Backend not configured!
+2025-04-19 23:58:53 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 00:00:21 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 00:00:21 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-20 00:00:21 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-20 00:00:21 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 00:00:21 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-20 00:00:21 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-20 00:00:21 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-20 00:00:21 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-20 00:00:21 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-20 00:00:21 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-20 00:00:21 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-20 00:00:21 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 00:00:21 [INFO] : Starting frontend mode
+2025-04-20 00:00:21 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-20 00:00:21 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-20 00:00:21 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-20 00:00:21 [INFO] : POST to http://localhost:8080/api/health responded with code: 200
+2025-04-20 00:00:21 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-20 00:00:21 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-20 00:00:21 [INFO] : GET to http://localhost:8080/api/health responded with code: 200
+2025-04-20 00:00:21 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-20 00:00:21 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 00:00:21 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-20 00:00:21 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-20 00:00:21 [INFO] : POST to http://localhost:8080/api/be/testConnection responded with code: 200
+2025-04-20 00:00:21 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 00:00:21 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-20 00:00:21 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-20 00:00:21 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!

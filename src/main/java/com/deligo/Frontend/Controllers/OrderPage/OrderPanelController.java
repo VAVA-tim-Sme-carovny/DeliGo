@@ -50,7 +50,7 @@ public class OrderPanelController {
         try {
             for (Food food : foodList) {
                 if (food.category.equals(category)) {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Content/OrderPanel/Item.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Content/OrderPanel/OrderItem.fxml"));
                     Node foodNode = loader.load();
 
                     ItemController controller = loader.getController();
