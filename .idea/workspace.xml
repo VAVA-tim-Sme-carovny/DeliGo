@@ -52,7 +52,6 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.MainApp.executor": "Run",
-    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/richa/Documents/DeliGo/src/main/java/com/deligo",
@@ -290,7 +289,8 @@
     <MESSAGE value="Added database module" />
     <MESSAGE value="Deleted Database Manager From constructor" />
     <MESSAGE value="Added reporting profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added reporting profile" />
+    <MESSAGE value="ffsfs" />
+    <option name="LAST_COMMIT_MESSAGE" value="ffsfs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
