@@ -1,6 +1,7 @@
 package com.deligo.Frontend.Views;
 
 import com.deligo.Frontend.Controllers.FrontendController;
+import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
@@ -14,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -58,18 +60,14 @@ public class MainView {
         });
     }
 
-    // Inicializácia hlavného okna
     private void initRootLayout() {
-        rootLayout = new BorderPane();
-
         try {
 
-<<<<<<< Updated upstream
-            loadPage("main_page");
-=======
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
-
             Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+
+            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
 
             // ✅ Vytvoríme vlastný controller (lebo nemáme fx:controller vo FXML)
             MainPageController controller = new MainPageController(
@@ -85,50 +83,43 @@ public class MainView {
             // ✅ Môžeme volať metódy na controlleri
             controller.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
             controller.loadMainContent("/Views/Content/MainContentPanel.fxml");
->>>>>>> Stashed changes
 
-            // Create and set the scene
             Scene scene = new Scene(rootLayout, 900, 600);
             primaryStage.setScene(scene);
 
-<<<<<<< Updated upstream
-            //Minimálna velkosť okna
-            primaryStage.setMinWidth(900);
-            primaryStage.setMinHeight(600);
-=======
             primaryStage.setTitle("DeliGo - Frontend");
             primaryStage.setX(screenBounds.getMinX());
             primaryStage.setY(screenBounds.getMinY());
             primaryStage.setWidth(screenBounds.getWidth());
             primaryStage.setHeight(screenBounds.getHeight());
             primaryStage.show();
->>>>>>> Stashed changes
 
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
-                    "Failed to load MainPage FXML: " + e.getMessage());
+                    "Failed to load Main View: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
-    // Funkcia na zmenu jazyka
-    public void loadPage(String pageName) {
-        try {
-            // Získa aktuálne nastavený jazyk (napr. sk alebo en)
-            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
 
-            // Načíta FXML s lokalizačným bundle
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Frontend_fxml/" + pageName.toLowerCase().replace(" ", "_") + ".fxml"), bundle);
-            Parent page = loader.load();
-
-            // Nastaví FXML do stredu rozloženia
-            rootLayout.setCenter(page);
-
-        } catch (Exception e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
-                    "Failed to load " + pageName + " FXML: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
+//    // Funkcia na zmenu jazyka
+//    public void loadPage(String pageName) {
+//        try {
+//            // Získa aktuálne nastavený jazyk (napr. sk alebo en)
+//            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
+//
+//            // Načíta FXML s lokalizačným bundle
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
+//            Parent page = loader.load();
+//
+//            // Nastaví FXML do stredu rozloženia
+//            rootLayout.setCenter(page);
+//
+//        } catch (Exception e) {
+//            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
+//                    "Failed to load " + pageName + " FXML: " + e.getMessage());
+//            e.printStackTrace();
+//        }
+//    }
 
 }

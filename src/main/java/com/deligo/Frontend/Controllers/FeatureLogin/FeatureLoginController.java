@@ -53,7 +53,7 @@ public class FeatureLoginController implements InitializableWithParent {
         if (loginButton != null) {
             loginButton.setOnAction(event -> {
 
-//              Otvorim objednavkome menu bez logiky
+//             ‼️ Otvorim objednavkome menu bez logiky
                 mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
 
 

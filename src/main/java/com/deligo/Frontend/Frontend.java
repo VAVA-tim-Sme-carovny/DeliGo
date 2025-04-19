@@ -41,4 +41,5 @@ public class Frontend {
     public MainView getMainView() {
         return mainView;
     }
+
 }
