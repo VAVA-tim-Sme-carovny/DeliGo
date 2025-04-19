@@ -151,20 +151,31 @@ public class LoggingWindow {
     }
 
     private javafx.scene.paint.Color getColorForLogType(LogType type) {
-        return switch (type) {
-            case ERROR -> javafx.scene.paint.Color.RED;
-            case WARNING -> javafx.scene.paint.Color.ORANGE;
-            case SUCCESS -> javafx.scene.paint.Color.GREEN;
-            case INFO -> javafx.scene.paint.Color.BLUE;
-        };
+        switch (type) {
+            case ERROR:
+                return javafx.scene.paint.Color.RED;
+            case WARNING:
+                return javafx.scene.paint.Color.ORANGE;
+            case SUCCESS:
+                return javafx.scene.paint.Color.GREEN;
+            case INFO:
+                return javafx.scene.paint.Color.BLUE;
+            default:
+                return javafx.scene.paint.Color.BLACK;
+        }
     }
 
     private javafx.scene.paint.Color getColorForLogPriority(LogPriority priority) {
-        return switch (priority) {
-            case LOW -> javafx.scene.paint.Color.BLUE;
-            case MIDDLE -> javafx.scene.paint.Color.ORANGE;
-            case HIGH -> javafx.scene.paint.Color.PURPLE;
-        };
+        switch (priority) {
+            case LOW:
+                return javafx.scene.paint.Color.BLUE;
+            case MIDDLE:
+                return javafx.scene.paint.Color.ORANGE;
+            case HIGH:
+                return javafx.scene.paint.Color.PURPLE;
+            default:
+                return javafx.scene.paint.Color.GRAY;
+        }
     }
 
     private static class LogRecord {

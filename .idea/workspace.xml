@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="Added reporting profile">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev/main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2u581oeglMeWs4r4VYPYNNY762E" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.FeatureOrgDetailsIntegrationTest.testUpdateOrgDetailsInvalidPhone.executor": "Run",
+    "Maven.Backend.executor": "Run",
+    "Maven.Development.executor": "Run",
+    "Maven.FrontEnd.executor": "Run",
+    "Maven.Test.executor": "Run",
+    "Maven.deligo-app [clean].executor": "Run",
+    "Maven.reporting.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.MainApp.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/richa/Documents/DeliGo/src/main/java/com/deligo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3725329",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo" />
+      <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources" />
+      <recent name="C:\Users\richa\Documents\DeliGo" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.deligo.Backend.BaseFeature" />
+      <recent name="com.deligo.Backend.FeatureOrganizationDetails" />
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.deligo.Backend.FeatureMyNewProcess" />
+      <recent name="com.deligo.Frontend" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Maven.reporting">
+    <configuration name="reporting" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="compile" />
+                <option value="site" />
+                <option value="-Preport" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Maven.reporting" />
+      <item itemvalue="Maven.Development" />
+      <item itemvalue="Maven.test" />
+      <item itemvalue="Maven.FrontEnd" />
+      <item itemvalue="Maven.Backend" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="" />
+      <created>1741526864252</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741526864252</updated>
+      <workItem from="1741526864882" duration="206000" />
+      <workItem from="1742033527546" duration="7124000" />
+      <workItem from="1742040966198" duration="9471000" />
+      <workItem from="1742050684837" duration="13827000" />
+      <workItem from="1742064629647" duration="9818000" />
+      <workItem from="1742079174798" duration="1874000" />
+      <workItem from="1742208772624" duration="4378000" />
+      <workItem from="1742305522580" duration="12175000" />
+      <workItem from="1742341483859" duration="3527000" />
+      <workItem from="1742345319233" duration="12000" />
+      <workItem from="1742465739404" duration="334000" />
+      <workItem from="1742468686734" duration="1794000" />
+      <workItem from="1742550281053" duration="5308000" />
+      <workItem from="1742565903013" duration="25000" />
+      <workItem from="1742565943550" duration="15000" />
+      <workItem from="1742566008795" duration="12862000" />
+      <workItem from="1742742611244" duration="1684000" />
+      <workItem from="1742830921598" duration="4186000" />
+      <workItem from="1743011006425" duration="634000" />
+      <workItem from="1743094450673" duration="2219000" />
+      <workItem from="1743100593041" duration="13519000" />
+      <workItem from="1743149336593" duration="11446000" />
+      <workItem from="1743166269249" duration="5058000" />
+      <workItem from="1743175582885" duration="722000" />
+      <workItem from="1743761063706" duration="6261000" />
+      <workItem from="1744748057597" duration="155000" />
+      <workItem from="1744748225974" duration="256000" />
+      <workItem from="1744873572346" duration="2782000" />
+      <workItem from="1744876381120" duration="7964000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added profiles to pom.xml">
+      <option name="closed" value="true" />
+      <created>1742582683545</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742582683545</updated>
+    </task>
+    <task id="LOCAL-00002" summary="New development version. Organization changes in RestApi and add switch language">
+      <option name="closed" value="true" />
+      <created>1743152557056</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743152557056</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added part of Feature Organization Details">
+      <option name="closed" value="true" />
+      <created>1743156289046</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743156289046</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added template for Feature and Testing">
+      <option name="closed" value="true" />
+      <created>1743158659298</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743158659298</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Backup">
+      <option name="closed" value="true" />
+      <created>1743761543882</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743761543882</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added database module">
+      <option name="closed" value="true" />
+      <created>1743763448253</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743763448253</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Deleted Database Manager From constructor">
+      <option name="closed" value="true" />
+      <created>1743765079034</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743765079034</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added reporting profile">
+      <option name="closed" value="true" />
+      <created>1744975875030</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744975875030</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added reporting profile">
+      <option name="closed" value="true" />
+      <created>1744976049342</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744976049342</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added profiles to pom.xml" />
+    <MESSAGE value="New development version. Organization changes in RestApi and add switch language" />
+    <MESSAGE value="Added part of Feature Organization Details" />
+    <MESSAGE value="Added template for Feature and Testing" />
+    <MESSAGE value="Backup" />
+    <MESSAGE value="Added database module" />
+    <MESSAGE value="Deleted Database Manager From constructor" />
+    <MESSAGE value="Added reporting profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added reporting profile" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
