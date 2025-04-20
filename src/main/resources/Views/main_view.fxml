@@ -6,7 +6,7 @@
 
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.geometry.Insets?>
-<BorderPane xmlns="http://javafx.com/javafx/21.0.1"
+<BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
             prefWidth="800.0" prefHeight="600.0">
 
@@ -23,7 +23,7 @@
     </center>
 
     <bottom>
-        <VBox fx:id="bottomPanel" />
+        <AnchorPane fx:id="bottomPanel" />
     </bottom>
 
     <right>

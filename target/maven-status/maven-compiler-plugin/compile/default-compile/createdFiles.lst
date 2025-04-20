@@ -21,6 +21,7 @@ com\deligo\DatabaseManager\dao\GenericDAO.class
 com\deligo\DatabaseManager\example\Login.class
 com\deligo\ConfigLoader\ConfigLoader.class
 com\deligo\Frontend\FrontendConfig.class
+com\deligo\Frontend\Controllers\Employee\Admin\AdminMenuController.class
 com\deligo\Frontend\Controllers\OrderPage\ItemController.class
 com\deligo\RestApi\RestAPIServer.class
 com\deligo\Backend\BackendConfig.class

@@ -3,6 +3,7 @@ package com.deligo.Frontend.Controllers.Employee;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
+import com.deligo.Model.BasicModels;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
@@ -13,6 +14,9 @@ public class EmployeeTopPanelController implements InitializableWithParent {
 
     @FXML
     private HBox buttonContainer;
+
+    @FXML
+    private Button HomeBtn;
 
     private LoggingAdapter logger;
 
@@ -35,6 +39,7 @@ public class EmployeeTopPanelController implements InitializableWithParent {
             if (userRoles.contains("employee") || userRoles.contains("admin")) {
                 Button orderButton = new Button("Objednávky");
                 orderButton.setOnAction(e -> {
+                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND, "Opening order panel");
                     mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
                     mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
                     mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
@@ -45,10 +50,22 @@ public class EmployeeTopPanelController implements InitializableWithParent {
             if (userRoles.contains("admin")) {
                 Button adminButton = new Button("Admin Panel");
                 adminButton.setOnAction(e -> {
-                    mainPageController.loadMainContent("/Views/Content/AdminPanel/AdminContentPanel.fxml");
-                    mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND, "Opening admin panel");
+                    mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
+                    mainPageController.loadMainContent("/Views/Content/AdminPanel/AdminMenuContentPanel.fxml");
+
                 });
                 buttonContainer.getChildren().add(adminButton);
+            }
+
+
+            if (HomeBtn != null) {
+                HomeBtn.setOnAction(event -> {
+                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Returning to main page");
+                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
+                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
+                    mainPageController.clearRightPanel();
+                });
             }
         }
     }

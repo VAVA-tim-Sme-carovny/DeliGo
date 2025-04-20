@@ -37,6 +37,9 @@ public class MainPageController extends BaseFeature {
     @FXML
     private VBox rightPanel;
 
+    @FXML
+    private AnchorPane bottomPanel;
+
 
 
 
@@ -103,8 +106,7 @@ public class MainPageController extends BaseFeature {
         }
     }
 
-    @FXML
-    private VBox bottomPanel;
+
 
     public void loadBottomPanel(String fxmlPath) {
         try {
@@ -123,10 +125,17 @@ public class MainPageController extends BaseFeature {
             bottomPanel.getChildren().clear();
             bottomPanel.getChildren().add(node);
 
+            // 🔽 Ukotvenie do AnchorPane, aby sa BorderPane roztiahol cez celú plochu
+            AnchorPane.setTopAnchor(node, 0.0);
+            AnchorPane.setBottomAnchor(node, 0.0);
+            AnchorPane.setLeftAnchor(node, 0.0);
+            AnchorPane.setRightAnchor(node, 0.0);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     public void loadRightPanel(String fxmlPath) {
         try {
@@ -153,6 +162,10 @@ public class MainPageController extends BaseFeature {
 
     public void clearRightPanel() {
         rightPanel.getChildren().clear();
+    }
+
+    public void clearBottomPanel() {
+        bottomPanel.getChildren().clear();
     }
 
 
