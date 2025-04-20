@@ -55,8 +55,11 @@ public class FeatureLoginController implements InitializableWithParent {
             loginButton.setOnAction(event -> {
 
 //             ‼️ Otvorim objednavkome menu bez logiky
-                mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
-                mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
+//            mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
+//            mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
+            mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+            mainPageController.loadMainContent("/Views/Controllers/EmployeeTopPanelController.fxml");
+
 
 
                 String username = usernameField.getText();

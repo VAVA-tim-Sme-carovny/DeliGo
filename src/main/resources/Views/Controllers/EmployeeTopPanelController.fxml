@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.deligo.Frontend.Controllers.Employee.EmployeeTopPanelController">
+
+   <center>
+      <HBox fx:id="buttonContainer" spacing="15" BorderPane.alignment="TOP_CENTER"/>
+   </center>
+</BorderPane>
