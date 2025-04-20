@@ -21,7 +21,7 @@ public class ItemController implements InitializableWithParent {
     private LoggingAdapter logger;
 
     // ✅ Nutné pre FXMLLoader
-    public ItemController() {}
+
 
 
 

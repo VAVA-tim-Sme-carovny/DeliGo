@@ -28,7 +28,7 @@
             </GridPane.margin>
         </Button>
 
-        <Button text="%info" fx:id="openInfo" mnemonicParsing="false">
+        <Button text="%info" fx:id="openInfoBtn" mnemonicParsing="false">
             <GridPane.margin>
                 <Insets left="15.0" />
             </GridPane.margin>

@@ -279,3 +279,157 @@
 2025-04-20 00:47:56 ERROR GlobalLogger:44 - 2025-04-20 00:47:56 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
 2025-04-20 00:47:56 INFO  GlobalLogger:50 - 2025-04-20 00:47:56 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
 2025-04-20 00:47:59 ERROR GlobalLogger:44 - 2025-04-20 00:47:59 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 18:46:46 INFO  GlobalLogger:50 - 2025-04-20 18:46:46 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 18:46:46 INFO  GlobalLogger:50 - 2025-04-20 18:46:46 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 18:46:46 INFO  GlobalLogger:50 - 2025-04-20 18:46:46 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 18:46:46 INFO  GlobalLogger:50 - 2025-04-20 18:46:46 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 18:46:46 ERROR GlobalLogger:44 - 2025-04-20 18:46:46 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 18:46:47 INFO  GlobalLogger:50 - 2025-04-20 18:46:47 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 18:53:46 INFO  GlobalLogger:50 - 2025-04-20 18:53:46 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 18:53:47 INFO  GlobalLogger:50 - 2025-04-20 18:53:47 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 18:53:47 INFO  GlobalLogger:50 - 2025-04-20 18:53:47 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 18:53:47 INFO  GlobalLogger:50 - 2025-04-20 18:53:47 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 18:53:47 ERROR GlobalLogger:44 - 2025-04-20 18:53:47 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 18:53:47 INFO  GlobalLogger:50 - 2025-04-20 18:53:47 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:02:00 INFO  GlobalLogger:50 - 2025-04-20 19:02:00 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:02:00 INFO  GlobalLogger:50 - 2025-04-20 19:02:00 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:02:00 INFO  GlobalLogger:50 - 2025-04-20 19:02:00 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:02:00 INFO  GlobalLogger:50 - 2025-04-20 19:02:00 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:02:00 ERROR GlobalLogger:44 - 2025-04-20 19:02:00 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:02:00 INFO  GlobalLogger:50 - 2025-04-20 19:02:00 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:13:58 INFO  GlobalLogger:50 - 2025-04-20 19:13:58 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:13:58 INFO  GlobalLogger:50 - 2025-04-20 19:13:58 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:13:59 INFO  GlobalLogger:50 - 2025-04-20 19:13:59 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:13:59 INFO  GlobalLogger:50 - 2025-04-20 19:13:59 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:13:59 ERROR GlobalLogger:44 - 2025-04-20 19:13:59 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:13:59 INFO  GlobalLogger:50 - 2025-04-20 19:13:59 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:14:48 INFO  GlobalLogger:50 - 2025-04-20 19:14:48 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:14:49 INFO  GlobalLogger:50 - 2025-04-20 19:14:49 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:14:49 INFO  GlobalLogger:50 - 2025-04-20 19:14:49 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:14:49 INFO  GlobalLogger:50 - 2025-04-20 19:14:49 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:14:49 ERROR GlobalLogger:44 - 2025-04-20 19:14:49 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:14:49 INFO  GlobalLogger:50 - 2025-04-20 19:14:49 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:19:20 INFO  GlobalLogger:50 - 2025-04-20 19:19:20 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:19:20 INFO  GlobalLogger:50 - 2025-04-20 19:19:20 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:19:20 INFO  GlobalLogger:50 - 2025-04-20 19:19:20 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:19:20 INFO  GlobalLogger:50 - 2025-04-20 19:19:20 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:19:20 ERROR GlobalLogger:44 - 2025-04-20 19:19:20 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:19:20 INFO  GlobalLogger:50 - 2025-04-20 19:19:20 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:19:30 ERROR GlobalLogger:44 - 2025-04-20 19:19:30 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 19:20:41 INFO  GlobalLogger:50 - 2025-04-20 19:20:41 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:20:41 INFO  GlobalLogger:50 - 2025-04-20 19:20:41 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:20:42 INFO  GlobalLogger:50 - 2025-04-20 19:20:42 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:20:42 INFO  GlobalLogger:50 - 2025-04-20 19:20:42 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:20:42 ERROR GlobalLogger:44 - 2025-04-20 19:20:42 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:20:42 INFO  GlobalLogger:50 - 2025-04-20 19:20:42 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:20:46 ERROR GlobalLogger:44 - 2025-04-20 19:20:46 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 19:21:17 INFO  GlobalLogger:50 - 2025-04-20 19:21:17 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:21:17 INFO  GlobalLogger:50 - 2025-04-20 19:21:17 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:21:17 INFO  GlobalLogger:50 - 2025-04-20 19:21:17 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:21:17 INFO  GlobalLogger:50 - 2025-04-20 19:21:17 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:21:17 ERROR GlobalLogger:44 - 2025-04-20 19:21:17 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:21:17 INFO  GlobalLogger:50 - 2025-04-20 19:21:17 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:21:20 ERROR GlobalLogger:44 - 2025-04-20 19:21:20 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 19:21:34 ERROR GlobalLogger:44 - 2025-04-20 19:21:34 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 19:21:41 ERROR GlobalLogger:44 - 2025-04-20 19:21:41 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 19:25:16 INFO  GlobalLogger:50 - 2025-04-20 19:25:16 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:25:16 INFO  GlobalLogger:50 - 2025-04-20 19:25:16 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:25:16 INFO  GlobalLogger:50 - 2025-04-20 19:25:16 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:25:16 INFO  GlobalLogger:50 - 2025-04-20 19:25:16 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:25:16 ERROR GlobalLogger:44 - 2025-04-20 19:25:16 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:25:16 INFO  GlobalLogger:50 - 2025-04-20 19:25:16 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:25:22 ERROR GlobalLogger:44 - 2025-04-20 19:25:22 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 19:25:25 ERROR GlobalLogger:44 - 2025-04-20 19:25:25 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 19:25:33 ERROR GlobalLogger:44 - 2025-04-20 19:25:33 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 19:26:10 INFO  GlobalLogger:50 - 2025-04-20 19:26:10 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:26:10 INFO  GlobalLogger:50 - 2025-04-20 19:26:10 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:26:10 INFO  GlobalLogger:50 - 2025-04-20 19:26:10 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:26:10 INFO  GlobalLogger:50 - 2025-04-20 19:26:10 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:26:10 ERROR GlobalLogger:44 - 2025-04-20 19:26:10 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:26:10 INFO  GlobalLogger:50 - 2025-04-20 19:26:10 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:38:56 INFO  GlobalLogger:50 - 2025-04-20 19:38:56 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:38:56 INFO  GlobalLogger:50 - 2025-04-20 19:38:56 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:38:56 INFO  GlobalLogger:50 - 2025-04-20 19:38:56 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:38:56 INFO  GlobalLogger:50 - 2025-04-20 19:38:56 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:38:56 ERROR GlobalLogger:44 - 2025-04-20 19:38:56 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:38:56 INFO  GlobalLogger:50 - 2025-04-20 19:38:56 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:46:25 INFO  GlobalLogger:50 - 2025-04-20 19:46:25 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:46:25 INFO  GlobalLogger:50 - 2025-04-20 19:46:25 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:46:25 INFO  GlobalLogger:50 - 2025-04-20 19:46:25 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:46:25 INFO  GlobalLogger:50 - 2025-04-20 19:46:25 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:46:25 ERROR GlobalLogger:44 - 2025-04-20 19:46:25 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:46:25 INFO  GlobalLogger:50 - 2025-04-20 19:46:25 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 19:46:35 INFO  GlobalLogger:50 - 2025-04-20 19:46:35 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 19:46:35 INFO  GlobalLogger:50 - 2025-04-20 19:46:35 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 19:46:35 INFO  GlobalLogger:50 - 2025-04-20 19:46:35 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 19:46:35 INFO  GlobalLogger:50 - 2025-04-20 19:46:35 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 19:46:35 ERROR GlobalLogger:44 - 2025-04-20 19:46:35 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 19:46:35 INFO  GlobalLogger:50 - 2025-04-20 19:46:35 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 20:14:10 INFO  GlobalLogger:50 - 2025-04-20 20:14:10 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 20:14:10 INFO  GlobalLogger:50 - 2025-04-20 20:14:10 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 20:14:10 INFO  GlobalLogger:50 - 2025-04-20 20:14:10 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 20:14:10 INFO  GlobalLogger:50 - 2025-04-20 20:14:10 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 20:14:10 ERROR GlobalLogger:44 - 2025-04-20 20:14:10 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 20:14:10 INFO  GlobalLogger:50 - 2025-04-20 20:14:10 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 20:14:14 ERROR GlobalLogger:44 - 2025-04-20 20:14:14 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 20:48:46 INFO  GlobalLogger:50 - 2025-04-20 20:48:46 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 20:48:46 INFO  GlobalLogger:50 - 2025-04-20 20:48:46 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 20:48:46 INFO  GlobalLogger:50 - 2025-04-20 20:48:46 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 20:48:46 INFO  GlobalLogger:50 - 2025-04-20 20:48:46 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 20:48:46 ERROR GlobalLogger:44 - 2025-04-20 20:48:46 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 20:48:46 INFO  GlobalLogger:50 - 2025-04-20 20:48:46 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 20:48:50 ERROR GlobalLogger:44 - 2025-04-20 20:48:50 [ERROR] [HIGH] [FRONTEND] : Login failed: Backend not configured!
+2025-04-20 20:52:25 INFO  GlobalLogger:50 - 2025-04-20 20:52:25 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 20:52:25 INFO  GlobalLogger:50 - 2025-04-20 20:52:25 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 20:52:25 INFO  GlobalLogger:50 - 2025-04-20 20:52:25 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 20:52:25 INFO  GlobalLogger:50 - 2025-04-20 20:52:25 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 20:52:25 ERROR GlobalLogger:44 - 2025-04-20 20:52:25 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 20:52:25 INFO  GlobalLogger:50 - 2025-04-20 20:52:25 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 20:53:38 INFO  GlobalLogger:50 - 2025-04-20 20:53:38 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 20:53:38 INFO  GlobalLogger:50 - 2025-04-20 20:53:38 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 20:53:38 INFO  GlobalLogger:50 - 2025-04-20 20:53:38 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 20:53:38 INFO  GlobalLogger:50 - 2025-04-20 20:53:38 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 20:53:38 ERROR GlobalLogger:44 - 2025-04-20 20:53:38 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 20:53:39 INFO  GlobalLogger:50 - 2025-04-20 20:53:39 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 20:54:48 INFO  GlobalLogger:50 - 2025-04-20 20:54:48 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 20:54:48 INFO  GlobalLogger:50 - 2025-04-20 20:54:48 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 20:54:48 INFO  GlobalLogger:50 - 2025-04-20 20:54:48 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 20:54:48 INFO  GlobalLogger:50 - 2025-04-20 20:54:48 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 20:54:48 ERROR GlobalLogger:44 - 2025-04-20 20:54:48 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 20:54:48 INFO  GlobalLogger:50 - 2025-04-20 20:54:48 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 20:56:30 INFO  GlobalLogger:50 - 2025-04-20 20:56:30 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 20:56:30 INFO  GlobalLogger:50 - 2025-04-20 20:56:30 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 20:56:30 INFO  GlobalLogger:50 - 2025-04-20 20:56:30 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 20:56:30 INFO  GlobalLogger:50 - 2025-04-20 20:56:30 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 20:56:30 ERROR GlobalLogger:44 - 2025-04-20 20:56:30 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 20:56:30 INFO  GlobalLogger:50 - 2025-04-20 20:56:30 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 20:56:54 INFO  GlobalLogger:50 - 2025-04-20 20:56:54 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 20:56:54 INFO  GlobalLogger:50 - 2025-04-20 20:56:54 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 20:56:54 INFO  GlobalLogger:50 - 2025-04-20 20:56:54 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 20:56:54 INFO  GlobalLogger:50 - 2025-04-20 20:56:54 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 20:56:54 ERROR GlobalLogger:44 - 2025-04-20 20:56:54 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 20:56:54 INFO  GlobalLogger:50 - 2025-04-20 20:56:54 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 20:58:54 INFO  GlobalLogger:50 - 2025-04-20 20:58:54 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 20:58:54 INFO  GlobalLogger:50 - 2025-04-20 20:58:54 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 20:58:54 INFO  GlobalLogger:50 - 2025-04-20 20:58:54 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 20:58:54 INFO  GlobalLogger:50 - 2025-04-20 20:58:54 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 20:58:54 ERROR GlobalLogger:44 - 2025-04-20 20:58:54 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 20:58:54 INFO  GlobalLogger:50 - 2025-04-20 20:58:54 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 20:59:17 INFO  GlobalLogger:50 - 2025-04-20 20:59:17 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 20:59:17 INFO  GlobalLogger:50 - 2025-04-20 20:59:17 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 20:59:17 INFO  GlobalLogger:50 - 2025-04-20 20:59:17 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 20:59:17 INFO  GlobalLogger:50 - 2025-04-20 20:59:17 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 20:59:17 ERROR GlobalLogger:44 - 2025-04-20 20:59:17 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 20:59:18 INFO  GlobalLogger:50 - 2025-04-20 20:59:18 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 21:04:07 INFO  GlobalLogger:50 - 2025-04-20 21:04:07 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 21:04:07 INFO  GlobalLogger:50 - 2025-04-20 21:04:07 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 21:04:07 INFO  GlobalLogger:50 - 2025-04-20 21:04:07 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 21:04:07 INFO  GlobalLogger:50 - 2025-04-20 21:04:07 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 21:04:07 ERROR GlobalLogger:44 - 2025-04-20 21:04:07 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 21:04:07 INFO  GlobalLogger:50 - 2025-04-20 21:04:07 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-20 21:05:37 INFO  GlobalLogger:50 - 2025-04-20 21:05:37 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-20 21:05:37 INFO  GlobalLogger:50 - 2025-04-20 21:05:37 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8080/api
+2025-04-20 21:05:37 INFO  GlobalLogger:50 - 2025-04-20 21:05:37 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-20 21:05:37 INFO  GlobalLogger:50 - 2025-04-20 21:05:37 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-20 21:05:37 ERROR GlobalLogger:44 - 2025-04-20 21:05:37 [ERROR] [HIGH] [FRONTEND] : FE -> BE communication test failed! Response: Backend not configured!
+2025-04-20 21:05:37 INFO  GlobalLogger:50 - 2025-04-20 21:05:37 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!

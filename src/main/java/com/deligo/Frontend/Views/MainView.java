@@ -15,7 +15,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -82,7 +81,7 @@ public class MainView {
 
             // ✅ Môžeme volať metódy na controlleri
             controller.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-            controller.loadMainContent("/Views/Content/MainContentPanel.fxml");
+            controller.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
 
             Scene scene = new Scene(rootLayout, 900, 600);
             primaryStage.setScene(scene);

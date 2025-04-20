@@ -8,10 +8,7 @@ import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.RestApi.RestAPIServer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.Node;
 import java.io.IOException;
@@ -46,7 +43,7 @@ public class MainPageController extends BaseFeature {
     public void initialize() {
         this.logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, " MainPageController.initialize() called");
 
-        loadMainContent("/Views/Content/MainContentPanel.fxml");
+        loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
         loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
     }
 
@@ -154,6 +151,9 @@ public class MainPageController extends BaseFeature {
         }
     }
 
+    public void clearRightPanel() {
+        rightPanel.getChildren().clear();
+    }
 
 
 

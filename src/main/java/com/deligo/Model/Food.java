@@ -1,4 +1,4 @@
-package com.deligo.Frontend.Controllers.OrderPage;
+package com.deligo.Model;
 public class Food {
     public String name;
     public double price;

@@ -3,6 +3,7 @@ package com.deligo.Frontend.Controllers.OrderPage;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
+import com.deligo.Model.Food;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

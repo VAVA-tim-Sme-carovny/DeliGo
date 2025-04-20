@@ -19,9 +19,11 @@ import java.util.ResourceBundle;
 public class MainTopPanelController implements InitializableWithParent {
 
     @FXML private Button openLogin;
-    @FXML private Button openInfo;
+    @FXML private Button openInfoBtn;
     @FXML private Button btnEn;
     @FXML private Button btnSk;
+
+
 
     private MainPageController mainController;
 
@@ -39,13 +41,15 @@ public class MainTopPanelController implements InitializableWithParent {
         if (btnEn != null) btnEn.setOnAction(e -> this.switchLanguage("en"));
         if (openLogin != null) openLogin.setOnAction(e -> {
             logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "Open login");
-            mainController.loadMainContent("/Views/Content/LoginContentPanel.fxml");
+            mainController.loadMainContent("/Views/Content/MainPanel/LoginContentPanel.fxml");
             mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
         });
-        if (openInfo != null) openInfo.setOnAction(e -> {
-            mainController.loadMainContent("/Views/Content/InfoPanel.fxml");
+        if (openInfoBtn != null) openInfoBtn.setOnAction(e -> {
+            mainController.loadMainContent("/Views/Content/MainPanel/InfoContentPanel.fxml");
             mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
         });
+
+
     }
 
 
@@ -90,7 +94,7 @@ public class MainTopPanelController implements InitializableWithParent {
 
     public void handleInfoButtonClick() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Content/info_pop_up.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Content/InfoContentPanel.fxml"));
             Stage popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.initStyle(StageStyle.UNDECORATED);

@@ -1,5 +1,6 @@
 com\deligo\RestApi\Utils\NetworkUtils.class
 com\deligo\Logging\LoggingManager.class
+com\deligo\Frontend\Controllers\MainPage\MainPanelController.class
 com\deligo\RestApi\Handlers\FrontendHandler.class
 com\deligo\Backend\FeatureMyNewProcess\FeatureMyNewProcess.class
 com\deligo\DatabaseManager\example\Register.class
@@ -34,12 +35,12 @@ com\deligo\Logging\Adapter\LoggingAdapter.class
 com\deligo\DatabaseManager\example\Login.class
 com\deligo\ConfigLoader\ConfigLoader.class
 com\deligo\Model\OrgDetails.class
-com\deligo\Frontend\Controllers\OrderPage\Food.class
 com\deligo\Frontend\FrontendConfig.class
 com\deligo\Frontend\Controllers\OrderPage\ItemController.class
 com\deligo\Frontend\Helpers\CustomControllerFactory.class
 com\deligo\RestApi\RestAPIServer.class
 com\deligo\Backend\BackendConfig.class
+com\deligo\Model\Food.class
 com\deligo\MainApp.class
 com\deligo\Model\BasicModels.class
 com\deligo\RestApi\Handlers\BackendHandler.class

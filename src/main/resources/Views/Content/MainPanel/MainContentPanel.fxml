@@ -10,7 +10,8 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 <AnchorPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1">
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.deligo.Frontend.Controllers.MainPage.MainPanelController">
     <children>
         <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
@@ -31,13 +32,15 @@
 
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Button text="%order" />
+                        <Button text="%order"
+                        fx:id="OrderBtn"/>
                     </children>
                 </HBox>
 
                 <HBox alignment="CENTER">
                     <children>
-                        <Button text="%bookTable" />
+                        <Button text="%bookTable"
+                        fx:id="BookTableBtn"/>
                     </children>
                 </HBox>
             </children>

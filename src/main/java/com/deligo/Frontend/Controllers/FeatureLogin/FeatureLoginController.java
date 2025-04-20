@@ -46,8 +46,9 @@ public class FeatureLoginController implements InitializableWithParent {
 
         if(btnHome != null) btnHome.setOnAction(event -> {
             this.logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Returning to main page");
-            mainPageController.loadMainContent("/Views/Content/MainContentPanel.fxml");
+            mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
             mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
+            mainPageController.clearRightPanel();
         });
 
         if (loginButton != null) {
@@ -72,7 +73,7 @@ public class FeatureLoginController implements InitializableWithParent {
                 if (response.contains("\"status\":200")) {
                     logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.FRONTEND, "Login successful!");
                     // Ak chceš, napríklad prepni scénu:
-                    mainPageController.loadMainContent("/Views/Content/MainContentPanel.fxml");
+                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
                     mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
                 } else {
                     logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Login failed: " + response);
