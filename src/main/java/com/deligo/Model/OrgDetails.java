@@ -3,6 +3,7 @@ package com.deligo.Model;
 import java.util.List;
 
 public class OrgDetails {
+    private int id;
     private List<List<String>> openingTimes;
     private String phoneNumber;
     private String mail;
@@ -30,6 +31,14 @@ public class OrgDetails {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.mail = email; // Make sure 'email' field exists in your class
+    }
+    
+    public int getId() {
+        return id; // Make sure 'id' field exists in your class
     }
 
     public String getMail() {
