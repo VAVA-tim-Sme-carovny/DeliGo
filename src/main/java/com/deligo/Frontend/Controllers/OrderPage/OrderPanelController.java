@@ -3,6 +3,7 @@ package com.deligo.Frontend.Controllers.OrderPage;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
+import com.deligo.Model.BasicModels;
 import com.deligo.Model.Food;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -49,11 +50,36 @@ public class OrderPanelController implements InitializableWithParent {
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
-        if (btnCat1 != null) btnCat1.setOnAction(e -> showCategory("Kat. 1"));
-        if (btnCat2 != null) btnCat2.setOnAction(e -> showCategory("Kat. 2"));
-        if (btnCat3 != null) btnCat3.setOnAction(e -> showCategory("Kat. 3"));
-        if (btnCat4 != null) btnCat4.setOnAction(e -> showCategory("Kat. 4"));
-        if (btnCat5 != null) btnCat5.setOnAction(e -> showCategory("Kat. 5"));
+        if (btnCat1 != null) {
+            btnCat1.setOnAction(e -> {
+                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Category opened: Kat. 1");
+                showCategory("Kat. 1");
+            });
+        }
+        if (btnCat2 != null) {
+            btnCat2.setOnAction(e -> {
+                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Category opened: Kat. 2");
+                showCategory("Kat. 2");
+            });
+        }
+        if (btnCat3 != null) {
+            btnCat3.setOnAction(e -> {
+                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Category opened: Kat. 3");
+                showCategory("Kat. 3");
+            });
+        }
+        if (btnCat4 != null) {
+            btnCat4.setOnAction(e -> {
+                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Category opened: Kat. 4");
+                showCategory("Kat. 4");
+            });
+        }
+        if (btnCat5 != null) {
+            btnCat5.setOnAction(e -> {
+                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Category opened: Kat. 5");
+                showCategory("Kat. 5");
+            });
+        }
 
         showCategory("Kat. 1"); // predvolene zobrazenie
     }
@@ -70,6 +96,7 @@ public class OrderPanelController implements InitializableWithParent {
                     controller.setFoodData(food.name, food.price, food.imagePath, () -> {
                         // Dummy callback zatiaľ
                         System.out.println("🛒 Pridané do košíka: " + food.name);
+                        this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Food added to cart: " + food.name);
                     });
 
                     contentArea.getChildren().add(foodNode);

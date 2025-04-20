@@ -2,6 +2,7 @@ package com.deligo.Frontend.Controllers.MainPage;
 
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Logging.Adapter.LoggingAdapter;
+import com.deligo.Model.BasicModels;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import org.yaml.snakeyaml.Yaml;
@@ -32,6 +33,7 @@ public class MainPanelController implements InitializableWithParent {
 
         if (BookTableBtn != null) {
             BookTableBtn.setOnAction(event -> {
+                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Opening BookTable menu");
                 mainPageController.loadMainContent("/Views/Content/MainPanel/BookTableContentPanel.fxml");
                 mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
                 mainPageController.clearRightPanel(); // Ak máš pravý panel, vyčisti ho
@@ -58,11 +60,13 @@ public class MainPanelController implements InitializableWithParent {
 
                     if (deviceId != null && !deviceId.isEmpty()) {
                         // ID existuje – otvoriť objednávkové menu
+                        this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Opening Order menu");
                         mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
                         mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
                         mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
                     } else {
                         // ID neexistuje – presmerovať na prihlasovacie menu
+                        this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Opening Login menu");
                         mainPageController.loadMainContent("/Views/Content/LoginContentPanel.fxml");
                         mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
                     }

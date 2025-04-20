@@ -3,6 +3,7 @@ package com.deligo.Frontend.Controllers.OrderPage;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
+import com.deligo.Model.BasicModels;
 import com.deligo.Model.Food;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,6 +49,7 @@ public class OrderCartController implements InitializableWithParent {
 
         if (confirmBtn != null) {
             confirmBtn.setOnAction(e -> {
+                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Order confirmed");
                 System.out.println("✅ Objednávka potvrdená");
                 // implementuj logiku odoslania neskôr
             });
@@ -66,7 +68,7 @@ public class OrderCartController implements InitializableWithParent {
                 cartItemsContainer.getChildren().remove(node);
                 itemControllers.remove(controller);
                 recalculateTotal();
-            });
+            }, this.logger);
 
             itemControllers.add(controller);
             cartItemsContainer.getChildren().add(node);
