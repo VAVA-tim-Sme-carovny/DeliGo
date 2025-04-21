@@ -58,7 +58,8 @@ public class FeatureLoginController implements InitializableWithParent {
 //            mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
 //            mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
             mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
-            mainPageController.loadMainContent("/Views/Content/AdminPanel/StatisticsContentPanel.fxml");
+            mainPageController.loadLeftPanel("/Views/Content/EmployeePanel/OrdersLeftPanel.fxml");
+            mainPageController.clearContentPanel();
 
 
 

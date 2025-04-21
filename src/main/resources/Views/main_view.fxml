@@ -29,5 +29,9 @@
     <right>
         <VBox fx:id="rightPanel" />
     </right>
+
+    <left>
+        <AnchorPane fx:id="leftPanel" />
+    </left>
 </BorderPane>
 

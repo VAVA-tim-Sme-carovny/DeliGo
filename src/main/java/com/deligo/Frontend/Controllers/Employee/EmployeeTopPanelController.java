@@ -40,9 +40,9 @@ public class EmployeeTopPanelController implements InitializableWithParent {
                 Button orderButton = new Button("Objednávky");
                 orderButton.setOnAction(e -> {
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND, "Opening order panel");
-                    mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
-                    mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
-                    mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+                    mainPageController.loadLeftPanel("/Views/Content/EmployeePanel/OrdersLeftPanel.fxml");
+                    mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
+                    mainPageController.clearContentPanel();
                 });
                 buttonContainer.getChildren().add(orderButton);
             }
@@ -53,6 +53,7 @@ public class EmployeeTopPanelController implements InitializableWithParent {
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND, "Opening admin panel");
                     mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
                     mainPageController.loadMainContent("/Views/Content/AdminPanel/AdminMenuContentPanel.fxml");
+                    mainPageController.clearLeftPanel();
 
                 });
                 buttonContainer.getChildren().add(adminButton);
@@ -65,6 +66,7 @@ public class EmployeeTopPanelController implements InitializableWithParent {
                     mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
                     mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
                     mainPageController.clearRightPanel();
+                    mainPageController.clearLeftPanel();
                 });
             }
         }

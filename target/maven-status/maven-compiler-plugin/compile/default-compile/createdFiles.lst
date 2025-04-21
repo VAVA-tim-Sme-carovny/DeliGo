@@ -13,6 +13,7 @@ com\deligo\Model\BasicModels$LogPriority.class
 com\deligo\Logging\Gui\LoggingWindow$2.class
 com\deligo\Backend\FeatureValidateTestConnection\FeatureValidateTestConnection.class
 com\deligo\RestApi\CentralServer\ConsulRegistration.class
+com\deligo\Frontend\Controllers\Employee\OrderDetailController.class
 com\deligo\Frontend\Controllers\Employee\EmployeeTopPanelController.class
 com\deligo\DatabaseManager\db\DatabaseConnector.class
 com\deligo\Logging\Gui\LoggingWindow$3.class
@@ -34,7 +35,9 @@ com\deligo\RestApi\Utils\NetworkUtils.class
 com\deligo\RestApi\Handlers\FrontendHandler.class
 com\deligo\Logging\Adapter\LoggingAdapter$1.class
 com\deligo\DatabaseManager\example\Users.class
+com\deligo\Frontend\Controllers\Employee\OrdersLeftController$Order.class
 com\deligo\DatabaseManager\utils\ConfigLoader.class
+com\deligo\Frontend\Controllers\Employee\OrdersLeftController.class
 com\deligo\Backend\Backend.class
 com\deligo\RestApi\Utils\RequestUtils.class
 com\deligo\Model\BasicModels$LogSource.class

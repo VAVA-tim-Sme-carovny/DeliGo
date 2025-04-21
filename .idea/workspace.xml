@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="Pridany top panel pre zamestnancov">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/AdminMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/AdminPanel/AdminMenuContentPanel.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/AdminPanel/EditTablesContentPanel.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/AdminPanel/StatisticsContentPanel.fxml" afterDir="false" />
+    <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="pridane admin menu">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/OrderDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/OrdersLeftController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/EmployeePanel/OrderDetailContentPanel.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/EmployeePanel/OrdersLeftPanel.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logs.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/EmployeeTopPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/EmployeeTopPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/Controllers/EmployeeTopPanelController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/Controllers/EmployeeTopPanelController.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Views/main_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/main_view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Views/main_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/main_view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/MainPage/MainPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/MainPage/MainPageController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
@@ -32,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,40 +59,40 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.FeatureOrgDetailsIntegrationTest.testUpdateOrgDetailsInvalidPhone.executor": "Run",
-    "JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles.executor": "Run",
-    "Maven.Backend.executor": "Run",
-    "Maven.Development.executor": "Run",
-    "Maven.FrontEnd.executor": "Run",
-    "Maven.Test.executor": "Run",
-    "Maven.deligo-app [clean].executor": "Run",
-    "Maven.reporting.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.MainApp.executor": "Run",
-    "git-widget-placeholder": "dev/gui",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/miso4/Desktop/DeliGo/src/main/resources/Views/Content/MainPanel",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3725329",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.FeatureOrgDetailsIntegrationTest.testUpdateOrgDetailsInvalidPhone.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Backend.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Development.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FrontEnd.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.deligo-app [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.reporting.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/gui&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/miso4/Desktop/DeliGo/src/main/resources/Views/Content/MainPanel&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3725329&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\resources\Views\Content\MainPanel" />
@@ -402,7 +399,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745183701034</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="pridane admin menu">
+      <option name="closed" value="true" />
+      <created>1745189255736</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1745189255736</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +430,8 @@
     <MESSAGE value="Spojazdnene tlacitka na hlavnom menu" />
     <MESSAGE value="Pridane logovanie" />
     <MESSAGE value="Pridany top panel pre zamestnancov" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pridany top panel pre zamestnancov" />
+    <MESSAGE value="pridane admin menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="pridane admin menu" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

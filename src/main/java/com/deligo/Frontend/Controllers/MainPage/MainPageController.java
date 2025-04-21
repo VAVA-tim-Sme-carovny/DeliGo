@@ -11,6 +11,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.Node;
+
+import java.awt.*;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -39,6 +41,9 @@ public class MainPageController extends BaseFeature {
 
     @FXML
     private AnchorPane bottomPanel;
+
+    @FXML
+    private AnchorPane leftPanel;
 
 
 
@@ -160,12 +165,44 @@ public class MainPageController extends BaseFeature {
         }
     }
 
+
+    public void loadLeftPanel(String fxmlPath) {
+        try {
+            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath), bundle);
+            loader.setControllerFactory(
+                    new CustomControllerFactory(this, this.logger, this.server, this.globalConfig)
+            );
+            Node node = loader.load();
+
+            Object controller = loader.getController();
+            if (controller instanceof InitializableWithParent) {
+                ((InitializableWithParent) controller).initializeWithParent(this);
+            }
+
+            leftPanel.getChildren().clear();
+            leftPanel.getChildren().add(node);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void clearRightPanel() {
         rightPanel.getChildren().clear();
     }
 
     public void clearBottomPanel() {
         bottomPanel.getChildren().clear();
+    }
+
+    public void clearLeftPanel() {
+        leftPanel.getChildren().clear();
+    }
+
+    public void clearContentPanel() {
+        mainContent.getChildren().clear();
     }
 
 
