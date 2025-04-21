@@ -47,6 +47,7 @@ public class MainTopPanelController implements InitializableWithParent {
         if (openInfoBtn != null) openInfoBtn.setOnAction(e -> {
             mainController.loadMainContent("/Views/Content/MainPanel/InfoContentPanel.fxml");
             mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+            mainController.clearBottomPanel();
         });
 
 

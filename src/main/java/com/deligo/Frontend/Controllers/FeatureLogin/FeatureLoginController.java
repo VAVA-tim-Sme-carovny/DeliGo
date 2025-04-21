@@ -48,6 +48,7 @@ public class FeatureLoginController implements InitializableWithParent {
             this.logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Returning to main page");
             mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
             mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
+            mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
             mainPageController.clearRightPanel();
         });
 
@@ -60,6 +61,7 @@ public class FeatureLoginController implements InitializableWithParent {
             mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
             mainPageController.loadLeftPanel("/Views/Content/EmployeePanel/OrdersLeftPanel.fxml");
             mainPageController.clearContentPanel();
+            mainPageController.clearBottomPanel();
 
 
 

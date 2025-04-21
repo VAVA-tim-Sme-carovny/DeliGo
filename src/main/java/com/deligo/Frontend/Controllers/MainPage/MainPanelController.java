@@ -37,6 +37,7 @@ public class MainPanelController implements InitializableWithParent {
                 mainPageController.loadMainContent("/Views/Content/MainPanel/BookTableContentPanel.fxml");
                 mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
                 mainPageController.clearRightPanel(); // Ak máš pravý panel, vyčisti ho
+                mainPageController.clearBottomPanel(); // Ak máš dolný panel, vyčisti ho
             });
         }
 
@@ -64,11 +65,13 @@ public class MainPanelController implements InitializableWithParent {
                         mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
                         mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
                         mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+                        mainPageController.clearBottomPanel(); // Ak máš dolný panel, vyčisti ho
                     } else {
                         // ID neexistuje – presmerovať na prihlasovacie menu
                         this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Opening Login menu");
                         mainPageController.loadMainContent("/Views/Content/LoginContentPanel.fxml");
                         mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+                        mainPageController.clearBottomPanel(); // Ak máš pravý panel, vyčisti ho
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

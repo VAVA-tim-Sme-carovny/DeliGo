@@ -4,10 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="pridane menu pre zamestnanca">
+    <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="mensie upravy">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainBottomPanelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Controllers/MainBottomPanelController.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/CssImages/en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/CssImages/sk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/MainBottomPanelController.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/MainContentPanel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/MainTopPanelController.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/Controllers/ReturnHomeController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/Controllers/ReturnHomeController.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logs.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainTopPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainTopPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Views/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/Content/MainPanel/MainContentPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/MainPanel/MainContentPanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/Controllers/MainTopPanelController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/Controllers/MainTopPanelController.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/Controllers/MainTopPanelController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/Controllers/MainTopPanelController.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/MainPage/MainPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/MainPage/MainPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +106,11 @@
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\resources\Views\CssImages" />
+      <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\resources\css" />
+      <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\resources" />
       <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\resources\Views\Content\AdminPanel" />
       <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\resources\Views\Controllers" />
-      <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\resources\Views\Content\MainPanel" />
-      <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\resources\Views\FoodImages" />
-      <recent name="C:\Users\miso4\Desktop\DeliGo\src\main\resources\Views\Content" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.deligo.Backend.BaseFeature" />
@@ -404,7 +422,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745250062761</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="mensie upravy">
+      <option name="closed" value="true" />
+      <created>1745250252439</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1745250252439</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +455,8 @@
     <MESSAGE value="Pridany top panel pre zamestnancov" />
     <MESSAGE value="pridane admin menu" />
     <MESSAGE value="pridane menu pre zamestnanca" />
-    <option name="LAST_COMMIT_MESSAGE" value="pridane menu pre zamestnanca" />
+    <MESSAGE value="mensie upravy" />
+    <option name="LAST_COMMIT_MESSAGE" value="mensie upravy" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

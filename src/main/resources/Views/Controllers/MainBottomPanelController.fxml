@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.deligo.Frontend.Controllers.MainPage.MainBottomPanelController"
+            stylesheets="@/css/MainPage/MainBottomPanelController.css"
+            id="bottomPanelBackground">
+
+    <children>
+        <Button text="%callStaff"
+                fx:id="callStaffBtn"
+                AnchorPane.rightAnchor="20.0"
+                AnchorPane.bottomAnchor="20.0"/>
+    </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined');
+
+#bottomPanelBackground {
+    -fx-background-color: #15191e;
+}
+
+/*Privolať obsluhu tlačitko*/
+#callStaffBtn {
+    -fx-font-family: 'Roboto Condensed', sans-serif;
+    -fx-background-color: #ff1a1a;
+    -fx-text-fill: #15191e;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 7px 17px;
+    -fx-background-radius: 5px;
+    -fx-transition: -fx-scale-x 0.3s ease, -fx-scale-y 0.3s ease, -fx-background-color 0.3s ease; /* prechod efektu */
+}
+
+
+#callStaffBtn:hover {
+    -fx-scale-x: 1.1;  /* zväčší tlačidlo na šírku o 10% */
+    -fx-scale-y: 1.1;  /* zväčší tlačidlo na výšku o 10% */
+    -fx-background-color: #ff1a1a;  /* tmavšie modré pozadie pri hoveri */
+}

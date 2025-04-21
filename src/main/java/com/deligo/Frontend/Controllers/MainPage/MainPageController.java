@@ -53,6 +53,7 @@ public class MainPageController extends BaseFeature {
 
         loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
         loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
+        loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
     }
 
 
@@ -130,7 +131,7 @@ public class MainPageController extends BaseFeature {
             bottomPanel.getChildren().clear();
             bottomPanel.getChildren().add(node);
 
-            // 🔽 Ukotvenie do AnchorPane, aby sa BorderPane roztiahol cez celú plochu
+            // 🔧 Ukotvenie pre AnchorPane
             AnchorPane.setTopAnchor(node, 0.0);
             AnchorPane.setBottomAnchor(node, 0.0);
             AnchorPane.setLeftAnchor(node, 0.0);

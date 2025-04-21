@@ -44,6 +44,7 @@ com\deligo\Model\BasicModels$LogSource.class
 com\deligo\Backend\BaseFeature\BaseFeature.class
 com\deligo\Frontend\Controllers\OrderPage\OrderPanelController.class
 com\deligo\Model\Response.class
+com\deligo\Frontend\Controllers\MainPage\MainBottomPanelController.class
 com\deligo\Frontend\Controllers\FeatureLogin\FeatureLoginController.class
 com\deligo\DatabaseManager\DatabaseManager.class
 com\deligo\Backend\FeatureMyNewProcess\MyNewProcessMessages.class

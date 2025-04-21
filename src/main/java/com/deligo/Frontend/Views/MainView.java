@@ -61,9 +61,6 @@ public class MainView {
 
     private void initRootLayout() {
         try {
-
-            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-
             ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
@@ -76,21 +73,19 @@ public class MainView {
             );
             loader.setController(controller); // Musí byť pred loader.load()
 
-            Parent root = loader.load(); // až teraz načítame view
+            Parent root = loader.load();
             rootLayout = (BorderPane) root;
 
             // ✅ Môžeme volať metódy na controlleri
             controller.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
             controller.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
 
-            Scene scene = new Scene(rootLayout, 900, 600);
+            // Nastav fixnú veľkosť okna
+            Scene scene = new Scene(rootLayout, 1920, 1080);
             primaryStage.setScene(scene);
-
             primaryStage.setTitle("DeliGo - Frontend");
-            primaryStage.setX(screenBounds.getMinX());
-            primaryStage.setY(screenBounds.getMinY());
-            primaryStage.setWidth(screenBounds.getWidth());
-            primaryStage.setHeight(screenBounds.getHeight());
+            primaryStage.setResizable(false); // Zakáže zmenu veľkosti okna
+            primaryStage.centerOnScreen();    // Vycentruje okno na obrazovku
             primaryStage.show();
 
         } catch (Exception e) {
@@ -99,6 +94,7 @@ public class MainView {
             e.printStackTrace();
         }
     }
+
 
 
 //    // Funkcia na zmenu jazyka
