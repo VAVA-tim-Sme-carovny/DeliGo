@@ -20,6 +20,8 @@ public class BackendConfig {
                 BaseFeature.updateLanguage(config);
             case "/api/be/register":
                 return backend.getFeatureUserRegister().createAccount(data);
+            case "/api/be/login/employee":
+                return backend.getFeatureUserLogin().loginEmployee(data);
             default:
                 return "Unknown POST route: " + route;
         }

@@ -1,6 +1,7 @@
 package com.deligo.Backend;
 
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
+import com.deligo.Backend.FeatureUserLogin.FeatureUserLogin;
 import com.deligo.Backend.FeatureUserRegister.FeatureUserRegister;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.DatabaseManager.dao.GenericDAO;
@@ -21,6 +22,7 @@ public class Backend {
     private final FeatureOrgDetails featureOrgDetails;
 //    Add feature.
     private final FeatureUserRegister featureUserRegister;
+    private final FeatureUserLogin featureUserLogin;
 
 
 
@@ -41,6 +43,7 @@ public class Backend {
 
 //      Add feature.
         this.featureUserRegister = new FeatureUserRegister(config, logger, apiServer, new GenericDAO<>(User.class, "users"));
+        this.featureUserLogin = new FeatureUserLogin(config, logger, apiServer, new GenericDAO<>(User.class, "users"));
 
         logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.BECKEND, "Backend initialized correctly.");
 
@@ -61,4 +64,7 @@ public class Backend {
     }
 
 
+    public FeatureUserLogin getFeatureUserLogin() {
+        return featureUserLogin;
+    }
 }
