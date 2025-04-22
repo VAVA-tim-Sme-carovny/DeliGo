@@ -10,7 +10,8 @@ public enum UserLoginMessages {
     ACCOUNT_LOCKED("Účet je zablokovaný", "Account is locked"),
     SUCCESS("Vitaj %s!", "Welcome %s!"),
     DB_ERROR("Chyba pri načítaní z databázy", "Error retrieving from database"),
-    TOKEN_GENERATION_FAILED("Zlyhalo generovanie tokenu", "Token generation failed");
+    TOKEN_GENERATION_FAILED("Zlyhalo generovanie tokenu", "Token generation failed"),
+    ALREADY_LOGED_IN("Už ste prihlásený na inom zariadení", "User already logged in");
 
     private final String skMessage;
     private final String enMessage;

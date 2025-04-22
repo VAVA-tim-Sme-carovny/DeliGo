@@ -29,6 +29,21 @@ public class FeatureUserLogin extends BaseFeature {
         logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, UserLoginMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
 
+    /**
+     * Spracováva prihlásenie používateľa na základe JSON údajov.
+     *
+     * 1. Pokúsi sa deserializovať JSON vstup do objektu LoginData.
+     * 2. Overí, či používateľ so zadaným menom existuje v databáze.
+     * 3. Overí správnosť hesla pomocou BCrypt.
+     * 4. Skontroluje, či už nie je používateľ označený ako prihlásený.
+     * 5. Ak je všetko v poriadku, vráti úspešnú odpoveď so stavom 200 a rolami používateľa.
+     *
+     * V prípade chyby (neplatný JSON, neexistujúci používateľ, nesprávne heslo, alebo opätovné prihlásenie)
+     * sa vráti chybová správa a príslušný HTTP stavový kód (napr. 500).
+     *
+     * @param jsonData JSON reťazec obsahujúci prihlasovacie údaje (meno a heslo)
+     * @return JSON odpoveď vo forme LoginResponse (obsahuje username, role, správu a status)
+     */
     public String loginEmployee(String jsonData){
 
         LoginData loginData;
@@ -61,19 +76,22 @@ public class FeatureUserLogin extends BaseFeature {
             return gson.toJson(new LoginResponse("", Collections.emptyList() , msg, 500));
         }
 
+        if (globalConfig.getConfigValue("login", "status", boolean.class)) {
+            String msg = UserLoginMessages.ALREADY_LOGED_IN.getMessage(this.getLanguage());
+            logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, msg);
+            return gson.toJson(new LoginResponse("", Collections.emptyList() , msg, 500));
+        }
+
 
 
         String msg = UserLoginMessages.SUCCESS.getMessage(this.getLanguage(), username);
         logger.log(BasicModels.LogType.SUCCESS, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, msg);
 
         List<String> role = Arrays.asList(user.getRole().split(","));
+        globalConfig.updateConfigValue("login", "status", true);
 
         return gson.toJson(new LoginResponse(user.getUsername(), role , msg, 200));
-
     }
 
-    private String hashPassword(String rawPassword) {
-        return BCrypt.hashpw(rawPassword, BCrypt.gensalt());
-    }
 
 }
