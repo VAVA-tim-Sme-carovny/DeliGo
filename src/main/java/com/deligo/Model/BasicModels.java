@@ -45,4 +45,21 @@ public class BasicModels {
         }
     }
 
+    public enum OrderState {
+        PENDING("pending"),
+        PREPARING("preparing"),
+        READY("ready"),
+        DONE("done");
+
+        private final String value;
+
+        OrderState(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    }
+
 }

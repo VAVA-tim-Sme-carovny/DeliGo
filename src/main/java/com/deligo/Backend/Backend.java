@@ -43,7 +43,7 @@ public class Backend {
 
 //      Add feature.
         this.featureUserRegister = new FeatureUserRegister(config, logger, apiServer, new GenericDAO<>(User.class, "users"));
-        this.featureUserLogin = new FeatureUserLogin(config, logger, apiServer, new GenericDAO<>(User.class, "users"));
+        this.featureUserLogin = new FeatureUserLogin(config, logger, apiServer);
 
         logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.BECKEND, "Backend initialized correctly.");
 

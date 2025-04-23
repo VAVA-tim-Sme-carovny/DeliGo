@@ -1,6 +1,8 @@
 package com.deligo.Backend.FeatureUserLogin;
 
 import com.deligo.DatabaseManager.dao.GenericDAO;
+import com.deligo.Model.DeviceLoginResponse;
+import com.deligo.Model.LoginResponse;
 import com.deligo.Model.Response;
 import com.deligo.Model.User;
 import com.google.gson.Gson;
@@ -19,7 +21,7 @@ public class FeatureUserLoginIntegrationTest extends com.deligo.Backend.BaseFeat
     @BeforeEach
     void setUpFeature() {
         // Vytvoríme novú inštanciu FeatureOrgDetails s už inicializovanými závislosťami
-        featureUserLogin = new FeatureUserLogin(configLoader, logger, restApiServer, new GenericDAO<>(User.class, "users"));
+        featureUserLogin = new FeatureUserLogin(configLoader, logger, restApiServer);
     }
 
     @AfterAll
@@ -35,7 +37,7 @@ public class FeatureUserLoginIntegrationTest extends com.deligo.Backend.BaseFeat
                 "  \"password\": \"macock\"\n" +
                 "}";
         String responseJson = featureUserLogin.loginEmployee(jsonData);
-        Response response = gson.fromJson(responseJson, Response.class);
+        LoginResponse response = gson.fromJson(responseJson, LoginResponse.class);
 
         assertEquals(200, response.getStatus(), "Expected status 200 for valid input");
         assertTrue(response.getMessage().contains("Vitaj"),
@@ -46,7 +48,7 @@ public class FeatureUserLoginIntegrationTest extends com.deligo.Backend.BaseFeat
     void loginEmployeeInvalidJSON() {
         String jsonData = "invalid json";
         String responseJson = featureUserLogin.loginEmployee(jsonData);
-        Response response = gson.fromJson(responseJson, Response.class);
+        LoginResponse response = gson.fromJson(responseJson, LoginResponse.class);
 
         assertEquals(500, response.getStatus(), "Expected status 500 for invalid JSON");
         assertTrue(response.getMessage().contains("Neplatný formát JSON"),
@@ -60,11 +62,31 @@ public class FeatureUserLoginIntegrationTest extends com.deligo.Backend.BaseFeat
                 "  \"password\": \"macock\"\n" +
                 "}";
         String responseJson = featureUserLogin.loginEmployee(jsonData);
-        Response response = gson.fromJson(responseJson, Response.class);
+        LoginResponse response = gson.fromJson(responseJson, LoginResponse.class);
 
         assertEquals(500, response.getStatus(), "Expected status 500 for invalid Username");
         assertTrue(response.getMessage().contains("nebol nájdený"),
                 "Expected error message for username not found");
+    }
+
+    @Test
+    void loginCustomerValidInput() {
+        String responseJson = featureUserLogin.loginCustomer();
+        DeviceLoginResponse response = gson.fromJson(responseJson, DeviceLoginResponse.class);
+
+        assertEquals(200, response.getStatus(), "Expected status 200 for valid input");
+        assertTrue(response.getMessage().contains("Vitaj!"),
+                "Údaje pre prihlásenie sú správne.");
+    }
+
+    @Test
+    void logoutEmployee(){
+        String responseJson = featureUserLogin.logout();
+        DeviceLoginResponse response = gson.fromJson(responseJson, DeviceLoginResponse.class);
+
+        assertEquals(200, response.getStatus(), "Expected status 200 for valid input");
+        assertTrue(response.getMessage().contains("Úspešné odhlásenie!"),
+                "Používateľ bol odhlásený.");
     }
 
 }
