@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="443.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.FeatureLogin.FeatureLoginController">
+
+    <center>
+        <VBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" spacing="10">
+                    <Label text="Meno:" />
+                    <TextField fx:id="usernameField" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="10">
+                    <Label text="Heslo:" />
+                    <PasswordField fx:id="passwordField" />
+                </HBox>
+                <Button fx:id="loginButton" text="Prihlásiť" />
+            </children>
+        </VBox>
+    </center>
+
+    <!-- Zvyšné panely (napr. <top>, <left>, atď) môžu ostať, ak ich potrebuješ -->
+</BorderPane>

@@ -8,12 +8,13 @@ import com.deligo.Model.BasicModels.LogSource;
 import com.deligo.Model.BasicModels.LogType;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -72,19 +73,19 @@ public class MainView {
             );
             loader.setController(controller); // Musí byť pred loader.load()
 
-            Parent root = loader.load(); // až teraz načítame view
+            Parent root = loader.load();
             rootLayout = (BorderPane) root;
 
             // ✅ Môžeme volať metódy na controlleri
             controller.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-            controller.loadMainContent("/Views/Content/MainContentPanel.fxml");
+            controller.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
 
-            Scene scene = new Scene(rootLayout, 900, 600);
+            // Nastav fixnú veľkosť okna
+            Scene scene = new Scene(rootLayout, 1920, 1080);
             primaryStage.setScene(scene);
-
             primaryStage.setTitle("DeliGo - Frontend");
-            primaryStage.setMinWidth(900);
-            primaryStage.setMinHeight(600);
+            primaryStage.setResizable(false); // Zakáže zmenu veľkosti okna
+            primaryStage.centerOnScreen();    // Vycentruje okno na obrazovku
             primaryStage.show();
 
         } catch (Exception e) {
@@ -93,6 +94,7 @@ public class MainView {
             e.printStackTrace();
         }
     }
+
 
 
 //    // Funkcia na zmenu jazyka

@@ -4,7 +4,6 @@ import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
-import com.deligo.RestApi.RestAPIServer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -47,7 +46,6 @@ public class FeatureLoginController implements InitializableWithParent {
 
         if(btnHome != null) btnHome.setOnAction(event -> {
             this.logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Returning to main page");
-            mainPageController.loadMainContent("/Views/Content/MainContentPanel.fxml");
             mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
         });
 
@@ -67,7 +65,6 @@ public class FeatureLoginController implements InitializableWithParent {
                 if (response.contains("\"status\":200")) {
                     logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.FRONTEND, "Login successful!");
                     // Ak chceš, napríklad prepni scénu:
-                    mainPageController.loadMainContent("/Views/Content/MainContentPanel.fxml");
                     mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
                 } else {
                     logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Login failed: " + response);

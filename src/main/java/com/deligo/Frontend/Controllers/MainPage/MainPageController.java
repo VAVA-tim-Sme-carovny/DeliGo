@@ -40,7 +40,6 @@ public class MainPageController extends BaseFeature {
     public void initialize() {
         this.logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, " MainPageController.initialize() called");
 
-        loadMainContent("/Views/Content/MainContentPanel.fxml");
         loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
     }
 
@@ -76,7 +75,6 @@ public class MainPageController extends BaseFeature {
             ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath), bundle);
 
-
             loader.setControllerFactory(
                     new CustomControllerFactory(this, this.logger, this.server, this.globalConfig)
             );
@@ -90,7 +88,6 @@ public class MainPageController extends BaseFeature {
             mainContent.getChildren().add(node);
 
             AnchorPane.setTopAnchor(node, 0.0);
-            AnchorPane.setRightAnchor(node, 0.0);
             AnchorPane.setBottomAnchor(node, 0.0);
             AnchorPane.setLeftAnchor(node, 0.0);
 
@@ -99,8 +96,6 @@ public class MainPageController extends BaseFeature {
         }
     }
 
-    @FXML
-    private VBox bottomPanel;
 
     public void loadBottomPanel(String fxmlPath) {
         try {
