@@ -18,11 +18,6 @@ public class BackendConfig {
                 return backend.getFeatureValidateTestConnection().validateTestConnection(data);
             case "/api/be/updateLanguage":
                 BaseFeature.updateLanguage(config);
-            case "/api/be/register":
-                return backend.getFeatureUserRegister().createAccount(data);
-            //TODO - vymazat testovaci endpoint pre frontend
-            case "/api/be/login/employee":
-                return backend.getFeatureValidateTestConnection().testLogin(data);
             default:
                 return "Unknown POST route: " + route;
         }
