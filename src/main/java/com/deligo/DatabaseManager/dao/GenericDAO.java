@@ -17,9 +17,6 @@ public class GenericDAO<T> {
     private static final Logger logger = LogManager.getLogger(Class.class);
     private final String tableName;
 
-    public GenericDAO(Class<T> entityClass) {
-        this(entityClass, entityClass.getSimpleName().toLowerCase()); // Predvolený názov tabuľky je názov triedy
-    }
 
     public GenericDAO(Class<T> entityClass, String tableName) {
         this.entityClass = entityClass;

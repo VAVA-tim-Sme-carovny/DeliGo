@@ -24,7 +24,6 @@ public class BasicModels {
         MAVEN
     }
 
-
     public enum Roles {
         BASIC,
         ADMIN,
@@ -43,6 +42,23 @@ public class BasicModels {
                 }
             }
             throw new IllegalArgumentException(text);
+        }
+    }
+
+    public enum OrderState {
+        PENDING("pending"),
+        PREPARING("preparing"),
+        READY("ready"),
+        DONE("done");
+
+        private final String value;
+
+        OrderState(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
         }
     }
 

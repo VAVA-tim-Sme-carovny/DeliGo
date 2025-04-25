@@ -1,11 +1,15 @@
 package com.deligo.Backend;
 
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
+import com.deligo.Backend.FeatureUserLogin.FeatureUserLogin;
+import com.deligo.Backend.FeatureUserRegister.FeatureUserRegister;
 import com.deligo.ConfigLoader.ConfigLoader;
+import com.deligo.DatabaseManager.dao.GenericDAO;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.RestApi.RestAPIServer;
 import com.deligo.Backend.FeatureValidateTestConnection.FeatureValidateTestConnection;
+import com.deligo.Model.User;
 
 /**
  * Class for backend Features
@@ -17,7 +21,8 @@ public class Backend {
     private final FeatureValidateTestConnection featureValidateTestConnection;
     private final FeatureOrgDetails featureOrgDetails;
 //    Add feature.
-//    private final FeatureMyNewProcess featureMyNewProcess;
+    private final FeatureUserRegister featureUserRegister;
+    private final FeatureUserLogin featureUserLogin;
 
 
 
@@ -37,7 +42,8 @@ public class Backend {
         this.featureOrgDetails = new FeatureOrgDetails(config, logger, apiServer);
 
 //      Add feature.
-//      this.featureMyNewProcess = new FeatureMyNewProcess(logger, apiServer, this.config);
+        this.featureUserRegister = new FeatureUserRegister(config, logger, apiServer, new GenericDAO<>(User.class, "users"));
+        this.featureUserLogin = new FeatureUserLogin(config, logger, apiServer);
 
         logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.BECKEND, "Backend initialized correctly.");
 
@@ -53,9 +59,12 @@ public class Backend {
 
 //    Add feature.
 
-//    public FeatureMyNewProcess getFeatureMyNewProcess() {
-//        return featureMyNewProcess;
-//    }
+    public FeatureUserRegister getFeatureUserRegister() {
+        return featureUserRegister;
+    }
 
 
+    public FeatureUserLogin getFeatureUserLogin() {
+        return featureUserLogin;
+    }
 }
