@@ -34,6 +34,8 @@ public class FeatureOrderManagement extends BaseFeature {
         this.orderDAO = new GenericDAO<>(Order.class, "orders");
         this.orderItemDAO = new GenericDAO<>(OrderItem.class, "order_items");
         this.menuItemDAO = new GenericDAO<>(MenuItem.class, "menu_items");
+        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, 
+                OrderManagementMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
 
     // Vytvorenie objednávky
@@ -43,7 +45,7 @@ public class FeatureOrderManagement extends BaseFeature {
             Map<String, Object> requestData = gson.fromJson(json, mapType);
             
             Integer userId = requestData.get("userId") != null ? ((Number) requestData.get("userId")).intValue() : null;
-            int tableId = ((Number) requestData.get("tableId")).intValue();
+            Integer tableId = ((Number) requestData.get("tableId")).intValue();
             String deviceId = (String) requestData.get("deviceId");
             String note = (String) requestData.get("note");
             
@@ -54,8 +56,8 @@ public class FeatureOrderManagement extends BaseFeature {
                 (userId == null && deviceId == null) ||
                 items == null || items.isEmpty()) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        "Invalid request format");
-                return gson.toJson(new Response("Invalid request format", 400));
+                        OrderManagementMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrderManagementMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()), 400));
             }
 
             Order order = new Order();
@@ -81,17 +83,17 @@ public class FeatureOrderManagement extends BaseFeature {
                 }
 
                 logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.BECKEND,
-                        "Order created successfully");
-                return gson.toJson(new Response("Order created successfully", 200));
+                        OrderManagementMessages.ORDER_CREATED_SUCCESS.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrderManagementMessages.ORDER_CREATED_SUCCESS.getMessage(this.getLanguage()), 200));
             } else {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        "Failed to create order");
-                return gson.toJson(new Response("Failed to create order", 500));
+                        OrderManagementMessages.ORDER_CREATED_FAILED.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrderManagementMessages.ORDER_CREATED_FAILED.getMessage(this.getLanguage()), 500));
             }
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error creating order: " + e.getMessage());
-            return gson.toJson(new Response("Error creating order: " + e.getMessage(), 500));
+                    OrderManagementMessages.ORDER_CREATED_FAILED.getMessage(this.getLanguage()) + ": " + e.getMessage());
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_CREATED_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -110,8 +112,8 @@ public class FeatureOrderManagement extends BaseFeature {
             Optional<Order> optionalOrder = orderDAO.getById(orderId);
             if (optionalOrder.isEmpty()) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        "Order not found");
-                return gson.toJson(new Response("Order not found", 404));
+                        OrderManagementMessages.ORDER_NOT_FOUND.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrderManagementMessages.ORDER_NOT_FOUND.getMessage(this.getLanguage()), 404));
             }
 
             Order order = optionalOrder.get();
@@ -121,8 +123,8 @@ public class FeatureOrderManagement extends BaseFeature {
             long timeDifference = now.getTime() - order.getCreatedAt().getTime();
             if (timeDifference > 120000) { // 2 minutes
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        "Order update deadline expired");
-                return gson.toJson(new Response("Order update deadline expired", 400));
+                        OrderManagementMessages.ORDER_UPDATE_DEADLINE_EXPIRED.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATE_DEADLINE_EXPIRED.getMessage(this.getLanguage()), 400));
             }
 
             // Vymažem existujúce položky objednávky
@@ -148,12 +150,12 @@ public class FeatureOrderManagement extends BaseFeature {
             orderDAO.update(orderId, order);
 
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    "Order updated successfully");
-            return gson.toJson(new Response("Order updated successfully", 200));
+                    OrderManagementMessages.ORDER_UPDATE_SUCCESS.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATE_SUCCESS.getMessage(this.getLanguage()), 200));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error updating order");
-            return gson.toJson(new Response("Error updating order", 500));
+                    OrderManagementMessages.ORDER_UPDATE_FAILED.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATE_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -167,8 +169,8 @@ public class FeatureOrderManagement extends BaseFeature {
             Optional<Order> optionalOrder = orderDAO.getById(orderId);
             if (optionalOrder.isEmpty()) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        "Order not found");
-                return gson.toJson(new Response("Order not found", 404));
+                        OrderManagementMessages.ORDER_NOT_FOUND.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrderManagementMessages.ORDER_NOT_FOUND.getMessage(this.getLanguage()), 404));
             }
 
             Order order = optionalOrder.get();
@@ -176,12 +178,12 @@ public class FeatureOrderManagement extends BaseFeature {
             order.setItems(items);
 
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    "Order retrieved successfully");
+                    OrderManagementMessages.ORDER_UPDATED_SUCCESS.getMessage(this.getLanguage()));
             return gson.toJson(new Response(gson.toJson(order), 200));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error retrieving order");
-            return gson.toJson(new Response("Error retrieving order", 500));
+                    OrderManagementMessages.ORDER_UPDATED_FAILED.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATED_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -200,12 +202,12 @@ public class FeatureOrderManagement extends BaseFeature {
             }
 
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    "Orders retrieved successfully");
+                    OrderManagementMessages.ORDER_UPDATED_SUCCESS.getMessage(this.getLanguage()));
             return gson.toJson(new Response(gson.toJson(orders), 200));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error retrieving orders");
-            return gson.toJson(new Response("Error retrieving orders", 500));
+                    OrderManagementMessages.ORDER_UPDATED_FAILED.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATED_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -218,12 +220,12 @@ public class FeatureOrderManagement extends BaseFeature {
             List<MenuItem> items = menuItemDAO.findByField("category", category);
             
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    "Menu items retrieved successfully");
+                    OrderManagementMessages.ORDER_ITEM_ADDED_SUCCESS.getMessage(this.getLanguage()));
             return gson.toJson(new Response(gson.toJson(items), 200));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error retrieving menu items");
-            return gson.toJson(new Response("Error retrieving menu items", 500));
+                    OrderManagementMessages.ORDER_ITEM_ADDED_FAILED.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_ITEM_ADDED_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -238,12 +240,12 @@ public class FeatureOrderManagement extends BaseFeature {
                 .collect(Collectors.toList());
             
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    "Categories retrieved successfully");
+                    OrderManagementMessages.ORDER_ITEM_ADDED_SUCCESS.getMessage(this.getLanguage()));
             return gson.toJson(new Response(gson.toJson(categories), 200));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error retrieving categories");
-            return gson.toJson(new Response("Error retrieving categories", 500));
+                    OrderManagementMessages.ORDER_ITEM_ADDED_FAILED.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_ITEM_ADDED_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -257,12 +259,12 @@ public class FeatureOrderManagement extends BaseFeature {
             }
             
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    "Pending orders retrieved successfully");
+                    OrderManagementMessages.ORDER_UPDATED_SUCCESS.getMessage(this.getLanguage()));
             return gson.toJson(new Response(gson.toJson(orders), 200));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error retrieving pending orders");
-            return gson.toJson(new Response("Error retrieving pending orders", 500));
+                    OrderManagementMessages.ORDER_UPDATED_FAILED.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATED_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -278,8 +280,8 @@ public class FeatureOrderManagement extends BaseFeature {
             Optional<Order> optionalOrder = orderDAO.getById(orderId);
             if (optionalOrder.isEmpty()) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        "Order not found");
-                return gson.toJson(new Response("Order not found", 404));
+                        OrderManagementMessages.ORDER_NOT_FOUND.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrderManagementMessages.ORDER_NOT_FOUND.getMessage(this.getLanguage()), 404));
             }
 
             Order order = optionalOrder.get();
@@ -287,12 +289,12 @@ public class FeatureOrderManagement extends BaseFeature {
             orderDAO.update(order.getId(), order);
 
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    "Order status updated successfully");
-            return gson.toJson(new Response("Order status updated successfully", 200));
+                    OrderManagementMessages.ORDER_UPDATED_SUCCESS.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATED_SUCCESS.getMessage(this.getLanguage()), 200));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error updating order status");
-            return gson.toJson(new Response("Error updating order status", 500));
+                    OrderManagementMessages.ORDER_UPDATED_FAILED.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATED_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -306,8 +308,8 @@ public class FeatureOrderManagement extends BaseFeature {
             Optional<Order> optionalOrder = orderDAO.getById(orderId);
             if (optionalOrder.isEmpty()) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        "Order not found");
-                return gson.toJson(new Response("Order not found", 404));
+                        OrderManagementMessages.ORDER_NOT_FOUND.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrderManagementMessages.ORDER_NOT_FOUND.getMessage(this.getLanguage()), 404));
             }
 
             Order order = optionalOrder.get();
@@ -315,12 +317,12 @@ public class FeatureOrderManagement extends BaseFeature {
             orderDAO.update(order.getId(), order);
 
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    "Order marked as delivered successfully");
-            return gson.toJson(new Response("Order marked as delivered successfully", 200));
+                    OrderManagementMessages.ORDER_UPDATED_SUCCESS.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATED_SUCCESS.getMessage(this.getLanguage()), 200));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error marking order as delivered");
-            return gson.toJson(new Response("Error marking order as delivered", 500));
+                    OrderManagementMessages.ORDER_UPDATED_FAILED.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATED_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -334,8 +336,8 @@ public class FeatureOrderManagement extends BaseFeature {
             Optional<Order> optionalOrder = orderDAO.getById(orderId);
             if (optionalOrder.isEmpty()) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        "Order not found");
-                return gson.toJson(new Response("Order not found", 404));
+                        OrderManagementMessages.ORDER_NOT_FOUND.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrderManagementMessages.ORDER_NOT_FOUND.getMessage(this.getLanguage()), 404));
             }
 
             Order order = optionalOrder.get();
@@ -345,8 +347,8 @@ public class FeatureOrderManagement extends BaseFeature {
             long timeDifference = now.getTime() - order.getCreatedAt().getTime();
             if (timeDifference > 120000) { // 2 minutes
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        "Order cancellation deadline expired");
-                return gson.toJson(new Response("Order cancellation deadline expired", 400));
+                        OrderManagementMessages.ORDER_UPDATE_DEADLINE_EXPIRED.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrderManagementMessages.ORDER_UPDATE_DEADLINE_EXPIRED.getMessage(this.getLanguage()), 400));
             }
 
             // Delete order items
@@ -359,12 +361,12 @@ public class FeatureOrderManagement extends BaseFeature {
             orderDAO.delete(orderId);
 
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    "Order cancelled successfully");
-            return gson.toJson(new Response("Order cancelled successfully", 200));
+                    OrderManagementMessages.ORDER_DELETED_SUCCESS.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_DELETED_SUCCESS.getMessage(this.getLanguage()), 200));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error cancelling order");
-            return gson.toJson(new Response("Error cancelling order", 500));
+                    OrderManagementMessages.ORDER_DELETED_FAILED.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrderManagementMessages.ORDER_DELETED_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 }
