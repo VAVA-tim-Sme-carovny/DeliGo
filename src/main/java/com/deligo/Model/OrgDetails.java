@@ -17,6 +17,14 @@ public class OrgDetails {
         this.mail = mail;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public List<List<String>> getOpeningTimes() {
         return openingTimes;
     }
@@ -37,10 +45,6 @@ public class OrgDetails {
         this.mail = email; // Make sure 'email' field exists in your class
     }
     
-    public int getId() {
-        return id; // Make sure 'id' field exists in your class
-    }
-
     public String getMail() {
         return mail;
     }
@@ -52,7 +56,8 @@ public class OrgDetails {
     @Override
     public String toString() {
         return "OrgDetails{" +
-                "openingTimes=" + openingTimes +
+                "id=" + id +
+                ", openingTimes=" + openingTimes +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", mail='" + mail + '\'' +
                 '}';

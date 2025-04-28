@@ -16,9 +16,98 @@ public class BackendConfig {
             return new Response(backend.getFeatureValidateTestConnection().validateTestConnection(requestBody), 200);
         }
 
+        // Info Board paths
+        if (path.equals("/info-board/update")) {
+            return new Response(backend.getFeatureOrgDetails().updateOrgDetails(requestBody), 200);
+        }
+
+        // FeatureOrderManagement paths -- Noveeeeeeeeee
+        if (path.equals("/orders/create")) {
+            return new Response(backend.getFeatureOrderManagement().createOrder(requestBody), 200);
+        }
+        if (path.equals("/orders/update")) {
+            return new Response(backend.getFeatureOrderManagement().updateOrder(requestBody), 200);
+        }
+        if (path.equals("/orders/update-status")) {
+            return new Response(backend.getFeatureOrderManagement().updateOrderStatus(requestBody), 200);
+        }
+        if (path.equals("/orders/get")) {
+            return new Response(backend.getFeatureOrderManagement().getOrderById(requestBody), 200);
+        }
+        if (path.equals("/orders/table")) {
+            return new Response(backend.getFeatureOrderManagement().getOrdersByTable(requestBody), 200);
+        }
+        if (path.equals("/menu/category")) {
+            return new Response(backend.getFeatureOrderManagement().getMenuByCategory(requestBody), 200);
+        }
+        if (path.equals("/menu/categories")) {
+            return new Response(backend.getFeatureOrderManagement().getCategories(requestBody), 200);
+        }
+        if (path.equals("/orders/pending")) {
+            return new Response(backend.getFeatureOrderManagement().getPendingOrders(requestBody), 200);
+        }
+        if (path.equals("/orders/delivered")) {
+            return new Response(backend.getFeatureOrderManagement().markOrderAsDelivered(requestBody), 200);
+        }
+        if (path.equals("/orders/cancel")) {
+            return new Response(backend.getFeatureOrderManagement().cancelOrder(requestBody), 200);
+        }
+
+        // FeatureTableReservation paths -- Noveeeeeeeeee
+        if (path.equals("/reservations/create")) {
+            return new Response(backend.getFeatureTableReservation().createReservation(requestBody), 200);
+        }
+        if (path.equals("/reservations/update-status")) {
+            return new Response(backend.getFeatureTableReservation().updateReservationStatus(requestBody), 200);
+        }
+        if (path.equals("/reservations/get")) {
+            return new Response(backend.getFeatureTableReservation().getReservationById(requestBody), 200);
+        }
+        if (path.equals("/reservations/user")) {
+            return new Response(backend.getFeatureTableReservation().getReservationsByUser(requestBody), 200);
+        }
+        if (path.equals("/reservations/table")) {
+            return new Response(backend.getFeatureTableReservation().getReservationsByTable(requestBody), 200);
+        }
+        if (path.equals("/reservations/cancel")) {
+            return new Response(backend.getFeatureTableReservation().cancelReservation(requestBody), 200);
+        }
+        if (path.equals("/reservations/available-tables")) {
+            return new Response(backend.getFeatureTableReservation().getAvailableTables(requestBody), 200);
+        }
+
+        // FeatureReview paths -- Noveeeeeeeeee
+        if (path.equals("/reviews/add")) {
+            return new Response(backend.getFeatureReview().addReview(requestBody), 200);
+        }
+        if (path.equals("/reviews/update")) {
+            return new Response(backend.getFeatureReview().updateReview(requestBody), 200);
+        }
+        if (path.equals("/reviews/delete")) {
+            return new Response(backend.getFeatureReview().removeReview(requestBody), 200);
+        }
+        if (path.equals("/reviews/get-by-user")) {
+            return new Response(backend.getFeatureReview().getUserReviews(requestBody), 200);
+        }
+        if (path.equals("/reviews/get-by-menu-item")) {
+            return new Response(backend.getFeatureReview().getReviewsByMenuItem(requestBody), 200);
+        }
+        if (path.equals("/reviews/get-by-id")) {
+            return new Response(backend.getFeatureReview().getReviewById(requestBody), 200);
+        }
+        if (path.equals("/reviews/get-all")) {
+            return new Response(backend.getFeatureReview().getAllReviews(requestBody), 200);
+        }
+
         // FeatureOrgDetails paths
         if (path.equals("/org-details")) {
-            return new Response(backend.getFeatureUserManagement().updateOrgDetails(requestBody), 200);
+            return new Response(backend.getFeatureOrgDetails().getOrgDetails(), 200);
+        }
+        if (path.equals("/opening-hours")) {
+            return new Response(backend.getFeatureOrgDetails().getOpeningHours(), 200);
+        }
+        if (path.equals("/org-details/update")) {
+            return new Response(backend.getFeatureOrgDetails().updateOrgDetails(requestBody), 200);
         }
 
         // FeatureStatistics paths
@@ -104,7 +193,20 @@ public class BackendConfig {
     }
 
     public Response routeGet(String path) {
+        // Info Board paths
+        if (path.equals("/info-board")) {
+            return new Response(backend.getFeatureOrgDetails().getOrgDetails(), 200);
+        }
+        if (path.equals("/info-board/opening-hours")) {
+            return new Response(backend.getFeatureOrgDetails().getOpeningHours(), 200);
+        }
+
         // Handle GET requests for all features
+        
+        // FeatureReview paths -- Noveeeeeeeeee
+        if (path.equals("/reviews/getAll")) {
+            return new Response(backend.getFeatureReview().getAllReviews("{}"), 200);
+        }
         
         // FeatureStatistics paths
         if (path.equals("/statistics/getAll")) {
