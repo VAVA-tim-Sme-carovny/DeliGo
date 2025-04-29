@@ -114,6 +114,12 @@
             <artifactId>json</artifactId>
             <version>20230227</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.2</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -149,14 +155,14 @@
             </plugin>
 
             <!-- Maven Surefire Plugin na spúšťanie testov -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <useSystemClassLoader>false</useSystemClassLoader>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>3.1.2</version>-->
+<!--                <configuration>-->
+<!--                    <useSystemClassLoader>false</useSystemClassLoader>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
 
 
             <plugin>

@@ -1,4 +1,4 @@
-package com.deligo.Backend.FeatureUserRegister;
+package com.deligo.Backend.FeatureUserRegistration;
 
 import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.ConfigLoader.ConfigLoader;
@@ -61,26 +61,28 @@ public class FeatureUserRegister extends BaseFeature {
         List<String> roles = user.getRoles();
 
         //Validácia rolý
-        String rolesAsString = "";
-        for (String r : roles) {
-            try {
-                Roles role = Roles.fromString(r);
-                if(rolesAsString.isEmpty()) {
-                    rolesAsString = role.getRoleName();
-                }
-                else {
-                    rolesAsString = rolesAsString.concat("," + role.getRoleName());
-                }
-            } catch (IllegalArgumentException e) {
-                String msg = UserRegisterMessages.INVALID_ROLE.getMessage(this.getLanguage(), e.getMessage());
-                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
-                return gson.toJson(new Response(msg, 500));
-            }
-        }
+        String rolesAsString = "testing-role";
+//        for (String r : roles) {
+//            try {
+//                Roles role = Roles.fromString(r);
+//                if(rolesAsString.isEmpty()) {
+//                    rolesAsString = role.getRoleName();
+//                }
+//                else {
+//                    rolesAsString = rolesAsString.concat("," + role.getRoleName());
+//                }
+//            } catch (IllegalArgumentException e) {
+//                String msg = UserRegisterMessages.INVALID_ROLE.getMessage(this.getLanguage(), e.getMessage());
+//                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
+//                return gson.toJson(new Response(msg, 500));
+//            }
+//        }
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "Parsed roles: " + rolesAsString);
 
         //Validácia či user existuje v databaze
         Optional<User> userOpt = userDAO.findOneByField("username", username);
+        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "UserOpt: " + userOpt);
+
         if (userOpt.isPresent()) {
             String msg = UserRegisterMessages.USER_NAME_EXISTS.getMessage(this.getLanguage());
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
@@ -95,7 +97,7 @@ public class FeatureUserRegister extends BaseFeature {
                     LogType.INFO,
                     LogPriority.MIDDLE,
                     LogSource.BECKEND,
-                    "Creating user - Username: " + username + ", Roles: " + newUser.getRole()
+                    "Creating user - Username: " + username + ", Roles: " + newUser.getRoles() // TODO fixnut getrole a get roles
             );
         } catch (DatabaseException e) {
             String msg = UserRegisterMessages.DB_ERROR.getMessage(this.getLanguage()) + e.getMessage();

@@ -1,8 +1,12 @@
 package com.deligo.Backend;
 
+import com.deligo.Backend.FeatureMenuManagement.FeatureMenuManagement;
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
+import com.deligo.Backend.FeatureStatistics.FeatureStatistics;
+import com.deligo.Backend.FeatureTableStructure.FeatureTableStructure;
 import com.deligo.Backend.FeatureUserLogin.FeatureUserLogin;
-import com.deligo.Backend.FeatureUserRegister.FeatureUserRegister;
+import com.deligo.Backend.FeatureUserManagement.FeatureUserManagement;
+import com.deligo.Backend.FeatureUserRegistration.FeatureUserRegister;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.DatabaseManager.dao.GenericDAO;
 import com.deligo.Logging.Adapter.LoggingAdapter;
@@ -24,6 +28,11 @@ public class Backend {
     private final FeatureUserRegister featureUserRegister;
     private final FeatureUserLogin featureUserLogin;
 
+    //Admin features
+    private final FeatureStatistics featureStatistics;
+    private final FeatureTableStructure featureTableStructure;
+    private final FeatureMenuManagement featureMenuManagement;
+    private final FeatureUserManagement featureUserManagement;
 
 
     /**
@@ -41,6 +50,11 @@ public class Backend {
         this.featureValidateTestConnection = new FeatureValidateTestConnection(config, logger, apiServer);
         this.featureOrgDetails = new FeatureOrgDetails(config, logger, apiServer);
 
+        this.featureStatistics = new FeatureStatistics(config, logger, apiServer);
+        this.featureTableStructure = new FeatureTableStructure(config, logger, apiServer);
+        this.featureMenuManagement = new FeatureMenuManagement(config, logger, apiServer);
+        this.featureUserManagement = new FeatureUserManagement(config, logger, apiServer);
+
 //      Add feature.
         this.featureUserRegister = new FeatureUserRegister(config, logger, apiServer, new GenericDAO<>(User.class, "users"));
         this.featureUserLogin = new FeatureUserLogin(config, logger, apiServer);
@@ -57,12 +71,26 @@ public class Backend {
         return featureOrgDetails;
     }
 
-//    Add feature.
 
+    //Admin Features
+    public FeatureStatistics getFeatureStatistics() {
+        return featureStatistics;
+    }
+
+    public FeatureTableStructure getFeatureTableStructure() {
+        return featureTableStructure;
+    }
     public FeatureUserRegister getFeatureUserRegister() {
         return featureUserRegister;
     }
 
+    public FeatureMenuManagement getFeatureMenuManagement() {
+        return featureMenuManagement;
+    }
+
+    public FeatureUserManagement getFeatureUserManagement() {
+        return featureUserManagement;
+    }
 
     public FeatureUserLogin getFeatureUserLogin() {
         return featureUserLogin;

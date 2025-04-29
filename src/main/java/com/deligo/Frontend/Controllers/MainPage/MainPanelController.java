@@ -1,14 +1,15 @@
 package com.deligo.Frontend.Controllers.MainPage;
 
+import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Logging.Adapter.LoggingAdapter;
-import com.deligo.Model.BasicModels;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.InputStream;
 import java.util.Map;
+import com.deligo.Model.BasicModels.*;
 
 public class MainPanelController implements InitializableWithParent {
 
@@ -20,11 +21,12 @@ public class MainPanelController implements InitializableWithParent {
 
     private MainPageController mainPageController;
     private LoggingAdapter logger;
+    private ConfigLoader configLoader;
 
-    public MainPanelController(LoggingAdapter logger, MainPageController mainPageController) {
+    public MainPanelController(LoggingAdapter logger, MainPageController mainPageController, ConfigLoader configLoader) {
         this.logger = logger;
         this.mainPageController = mainPageController;
-
+        this.configLoader = configLoader;
     }
 
     @Override
@@ -33,7 +35,7 @@ public class MainPanelController implements InitializableWithParent {
 
         if (BookTableBtn != null) {
             BookTableBtn.setOnAction(event -> {
-                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Opening BookTable menu");
+                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening BookTable menu");
                 mainPageController.loadMainContent("/Views/Content/MainPanel/BookTableContentPanel.fxml");
                 mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
                 mainPageController.clearRightPanel(); // Ak máš pravý panel, vyčisti ho
@@ -47,31 +49,26 @@ public class MainPanelController implements InitializableWithParent {
         if (OrderBtn != null) {
             OrderBtn.setOnAction(event -> {
                 try {
-                    Yaml yaml = new Yaml();
-                    InputStream inputStream = getClass().getResourceAsStream("/config.yaml");
+                    String deviceId = configLoader.getConfigValue("device", "id", String.class);
+                    String user = configLoader.getConfigValue("login", "user", String.class);
+                    String role = configLoader.getConfigValue("login", "roles", String.class);
 
-                    if (inputStream == null) {
-                        System.out.println("⚠️ Konfiguračný súbor sa nenašiel.");
-                        return;
-                    }
-
-                    Map<String, Object> config = yaml.load(inputStream);
-                    Map<String, Object> device = (Map<String, Object>) config.get("device");
-                    String deviceId = device != null ? (String) device.get("id") : null;
-
-                    if (deviceId != null && !deviceId.isEmpty()) {
-                        // ID existuje – otvoriť objednávkové menu
-                        this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Opening Order menu");
-                        mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
-                        mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
-                        mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
-                        mainPageController.clearBottomPanel(); // Ak máš dolný panel, vyčisti ho
+                    if(deviceId != null && !deviceId.isEmpty()){
+                        String response = mainPageController.getServer().sendPostRequest("api/be/login/customer", null);
+                        if(response.contains("\"status\":500")){
+                            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "There is still one order for this table. Contact waitress!");
+                            // TODO Spravit popup pre spravu
+                        }else{
+                            this.openOrderMenu();
+                        }
+                    } else if (user != null && !user.isEmpty() && role.equals("customer")) {
+                        logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Order menu");
+                        this.openOrderMenu();
                     } else {
-                        // ID neexistuje – presmerovať na prihlasovacie menu
-                        this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Opening Login menu");
+                        logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Login menu");
                         mainPageController.loadMainContent("/Views/Content/LoginContentPanel.fxml");
                         mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
-                        mainPageController.clearBottomPanel(); // Ak máš pravý panel, vyčisti ho
+                        mainPageController.clearBottomPanel();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -79,5 +76,12 @@ public class MainPanelController implements InitializableWithParent {
             });
         }
 
+    }
+
+    private void openOrderMenu(){
+        mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
+        mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
+        mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+        mainPageController.clearBottomPanel();
     }
 }

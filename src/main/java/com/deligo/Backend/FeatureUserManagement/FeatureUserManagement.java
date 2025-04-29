@@ -95,8 +95,8 @@ public class FeatureUserManagement extends BaseFeature {
             }
             
             // Aktualizácia rolí a značiek
-            user.setRoles(roles);
-            user.setTags(tags);
+            user.setRoles("roles"); //TODO FIxnut
+//            user.setTags(tags);
             
             // Aktualizácia používateľa v databáze
             userDAO.update(user.getId(), user);
@@ -186,9 +186,9 @@ public class FeatureUserManagement extends BaseFeature {
                 Map<String, Object> sanitizedUser = new HashMap<>();
                 sanitizedUser.put("id", user.getId());
                 sanitizedUser.put("username", user.getUsername());
-                sanitizedUser.put("email", user.getEmail());
+//                sanitizedUser.put("email", user.getEmail());
                 sanitizedUser.put("roles", user.getRoles());
-                sanitizedUser.put("tags", user.getTags());
+//                sanitizedUser.put("tags", user.getTags());
                 return sanitizedUser;
             }).collect(Collectors.toList());
             

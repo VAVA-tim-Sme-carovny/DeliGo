@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.List;
+import com.deligo.Model.BasicModels.*;
 
 
 public class FeatureUserLogin extends BaseFeature {
@@ -26,7 +27,7 @@ public class FeatureUserLogin extends BaseFeature {
 
         this.userDAO =  new GenericDAO<>(User.class, "users");
         this.orderDAO = new GenericDAO<>(Order.class, "orders");
-        logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, UserLoginMessages.PROCESS_NAME.getMessage(this.getLanguage()));
+        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, UserLoginMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
 
     /**
@@ -40,15 +41,15 @@ public class FeatureUserLogin extends BaseFeature {
 
         for (Order order : orderOpt) {
             String status = order.getStatus();
-            if (!status.equals(BasicModels.OrderState.DONE.getValue())) {
+            if (!status.equals(OrderState.DONE.getValue())) {
                 String msg = UserLoginMessages.ACTIVE_ORDER.getMessage(this.getLanguage());
-                logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.BECKEND, msg);
+                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
                 return gson.toJson(new DeviceLoginResponse(deviceID, msg, 500));
             }
         }
 
         String msg = UserLoginMessages.WELCOME_MESSAGE.getMessage(this.getLanguage());
-        logger.log(BasicModels.LogType.SUCCESS, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, msg);
+        logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.BECKEND, msg);
         return gson.toJson(new DeviceLoginResponse(deviceID, msg, 200));
     }
 
@@ -77,7 +78,7 @@ public class FeatureUserLogin extends BaseFeature {
         }
         catch (JsonSyntaxException e){
             String msg = UserLoginMessages.INVALID_JSON.getMessage(this.getLanguage(), e.getMessage());
-            logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.BECKEND, msg);
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
             return gson.toJson(new LoginResponse("", Collections.emptyList() , msg, 500));
         }
 
@@ -88,7 +89,7 @@ public class FeatureUserLogin extends BaseFeature {
         Optional<User> userOpt = userDAO.findOneByField("username", username);
         if (userOpt.isEmpty()) {
             String msg = UserLoginMessages.USER_NOT_FOUND.getMessage(this.getLanguage(), username);
-            logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, msg);
+            logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.BECKEND, msg);
             return gson.toJson(new LoginResponse("", Collections.emptyList() , msg, 500));
         }
 
@@ -96,7 +97,7 @@ public class FeatureUserLogin extends BaseFeature {
         User user = userOpt.get();
         if (!BCrypt.checkpw(password, user.getPassword())) {
             String msg = UserLoginMessages.INVALID_CREDENTIALS.getMessage(this.getLanguage());
-            logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, msg);
+            logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.BECKEND, msg);
             return gson.toJson(new LoginResponse("", Collections.emptyList() , msg, 500));
         }
 
@@ -106,19 +107,19 @@ public class FeatureUserLogin extends BaseFeature {
         // java.lang.RuntimeException: Config value for key status is not of type boolean
         if (globalConfig.getConfigValue("login", "status", String.class).equals("true")) {
             String msg = UserLoginMessages.ALREADY_LOGED_IN.getMessage(this.getLanguage());
-            logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, msg);
+            logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.BECKEND, msg);
             return gson.toJson(new LoginResponse("", Collections.emptyList() , msg, 500));
         }
 
 
-        List<String> role = Arrays.asList(user.getRole().split(","));
+        String role = user.getRoles();
         globalConfig.updateConfigValue("login", "user", username);
-        globalConfig.updateConfigValue("login", "status", "true");
+        globalConfig.updateConfigValue("login", "status", true);
         globalConfig.updateConfigValue("login", "role", role);
 
         String msg = UserLoginMessages.SUCCESS.getMessage(this.getLanguage(), username);
-        logger.log(BasicModels.LogType.SUCCESS, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, msg);
-        return gson.toJson(new LoginResponse(user.getUsername(), role , msg, 200));
+        logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.BECKEND, msg);
+        return gson.toJson(new Response("User was successfully registered", 200));
     }
 
     /**
@@ -132,13 +133,13 @@ public class FeatureUserLogin extends BaseFeature {
         //overenie či je používateľ prihlásený
         if (userStatus.equals("false")) {
             String msg = UserLoginMessages.NOT_LOGGED_IN.getMessage(this.getLanguage());
-            logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, msg);
+            logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.BECKEND, msg);
             return gson.toJson(new Response(msg, 500));
         }
 
         globalConfig.updateConfigValue("login", "status", "false");
         String msg = UserLoginMessages.LOGOUT_MESSAGE.getMessage(this.getLanguage());
-        logger.log(BasicModels.LogType.SUCCESS, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.BECKEND, msg);
+        logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.BECKEND, msg);
         return gson.toJson(new Response(msg, 200));
     }
 

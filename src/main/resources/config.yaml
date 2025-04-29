@@ -1,10 +1,10 @@
 device:
-  id: "C5"
+  id: null
   language: "sk"
 login:
-  user: "C5"
+  user: "asdfg"
   roles: "customer"
   tags:
     - customer
     - admin
-  status: "false"
+  status: false

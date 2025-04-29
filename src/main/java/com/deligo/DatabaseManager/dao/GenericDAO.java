@@ -26,10 +26,16 @@ public class GenericDAO<T> {
     // Získaj pripojenie z DatabaseConnector
     private Connection getConnection() {
         try {
-            return DatabaseConnector.getConnection();
+            logger.info("👉 Attempting to get a database connection...");
+            Connection conn = DatabaseConnector.getConnection();
+            logger.info("✅ Successfully obtained a database connection: {}", conn);
+            return conn;
         } catch (SQLException e) {
-            logger.error("Chyba pri získavaní pripojenia k databáze: {}", e.getMessage());
-            throw new DatabaseException("Chyba pri získavaní pripojenia k databáze", e);
+            logger.error("❌ SQL Exception while obtaining database connection:", e);
+            throw new DatabaseException("SQL error while obtaining database connection", e);
+        } catch (Exception e) {
+            logger.error("❌ Unexpected error while obtaining database connection:", e);
+            throw new DatabaseException("Unexpected error while obtaining database connection", e);
         }
     }
 

@@ -44,6 +44,9 @@ public class ConfigLoader {
         Map<String, Object> section = (Map<String, Object>) config.get(mainKey);
         if (section != null) {
             Object value = section.get(elementKey);
+            if (value == null) {
+                return null;
+            }
             if (type.isInstance(value)) {
                 return (T) value;
             } else {

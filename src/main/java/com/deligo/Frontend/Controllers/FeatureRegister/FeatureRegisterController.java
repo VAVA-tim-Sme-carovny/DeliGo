@@ -1,27 +1,20 @@
-package com.deligo.Frontend.Controllers.FeatureLogin;
+package com.deligo.Frontend.Controllers.FeatureRegister;
 
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
-import com.deligo.Model.BasicModels.*;
+import com.deligo.Model.BasicModels.LogPriority;
+import com.deligo.Model.BasicModels.LogSource;
+import com.deligo.Model.BasicModels.LogType;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class FeatureLoginController implements InitializableWithParent {
-
-
-
+public class FeatureRegisterController implements InitializableWithParent {
     @FXML
     private Button btnHome;
-//    @FXML
-//    private Button loginButton;
-//    @FXML
-//    private Button openOrderMenu;
-//    @FXML
-//    private Button openRegisterWindowPopup;
-
     private LoggingAdapter logger;
     private MainPageController mainPageController;
 
@@ -33,10 +26,10 @@ public class FeatureLoginController implements InitializableWithParent {
     private PasswordField passwordField;
 
     @FXML
-    private Button loginButton;
+    private Button registerButton;
 
 
-    public FeatureLoginController(LoggingAdapter logger, MainPageController mainPageController) {
+    public FeatureRegisterController(LoggingAdapter logger, MainPageController mainPageController) {
         this.logger = logger;
         this.mainPageController = mainPageController;
     }
@@ -52,31 +45,29 @@ public class FeatureLoginController implements InitializableWithParent {
             mainPageController.clearRightPanel();
         });
 
-        if (loginButton != null) {
-            loginButton.setOnAction(event -> {
+        if (registerButton != null) {
+            registerButton.setOnAction(event -> {
                 String username = usernameField.getText();
                 String password = passwordField.getText();
 
                 String json = String.format("{\"username\":\"%s\", \"password\":\"%s\"}", username, password);
 
-                String response = mainPageController.getServer().sendPostRequest("/be/login", json);
+                String response = mainPageController.getServer().sendPostRequest("/be/register", json);
 
-                logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "Login response: " + response);
+                logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "Registration response: " + response);
 
                 if (response.contains("\"status\":200")) {
                     logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.FRONTEND, "Login successful!");
-                    mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
-                    mainPageController.loadLeftPanel("/Views/Content/EmployeePanel/OrdersLeftPanel.fxml");
-                    mainPageController.clearContentPanel();
-                    mainPageController.clearBottomPanel();
-                } else {
                     mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
                     mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-                    mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
-                    mainPageController.clearRightPanel();
+                } else {
+                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Registration failed!");
+//                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
+//                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
+//                    mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
+//                    mainPageController.clearRightPanel();
                 }
             });
         }
-
     }
 }

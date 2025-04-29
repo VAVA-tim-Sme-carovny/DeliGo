@@ -1,4 +1,4 @@
-package com.deligo.Backend.FeatureUserRegister;
+package com.deligo.Backend.FeatureUserRegistration;
 
 public enum UserRegisterMessages {
     PROCESS_NAME("Spracovanie požiadavky na registráciu používateľa", "Processing user registration request"),

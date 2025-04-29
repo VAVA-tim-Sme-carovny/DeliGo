@@ -7,6 +7,7 @@ import com.deligo.Model.BasicModels.*;
 import com.deligo.Backend.BackendConfig;
 import com.deligo.RestApi.CentralServer.ConsulRegistration;
 import com.deligo.RestApi.Handlers.*;
+import com.deligo.RestApi.Utils.NetworkUtils;
 import com.deligo.RestApi.Utils.RequestUtils;
 import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
@@ -20,12 +21,12 @@ public class RestAPIServer {
     private static LoggingAdapter logger;
     private static ConfigLoader deviceConfiguration;
 
-    private final String BASE_URL;
-    private final int port;
+    private String BASE_URL;
+    private int port;
     private HttpServer server;
 
     public RestAPIServer(LoggingAdapter adapter, ConfigLoader config) throws IOException {
-        this(adapter, config, 8080);
+        this(adapter, config, 8085);
     }
 
     public RestAPIServer(LoggingAdapter adapter, ConfigLoader config, int port) throws IOException {
@@ -51,7 +52,10 @@ public class RestAPIServer {
         logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.REST_API, "REST API Server running on " + BASE_URL);
         runStartupTests();
 
-//        ConsulRegistration.registerService(deviceConfiguration.getDeviceId(), NetworkUtils.getLocalIpAddress(), port, config.getLoginRole());
+//        ConsulRegistration.registerService(
+//                deviceConfiguration.getConfigValue("device","id", String.class),         // → "C5"
+//                NetworkUtils.getLocalIpAddress(), port,
+//                deviceConfiguration.getConfigValue("login","roles", String.class));
     }
     
     /**
@@ -143,6 +147,7 @@ public class RestAPIServer {
 
 
     public String sendPostRequest(String endpoint, String jsonData) {
+        logger.log(LogType.INFO,LogPriority.HIGH, LogSource.REST_API, "Sending POST request to " + BASE_URL + endpoint + " with JSON data: " + jsonData);
         return RequestUtils.sendPostRequest(BASE_URL + endpoint, jsonData, logger);
     }
 

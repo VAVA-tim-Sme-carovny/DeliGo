@@ -17,11 +17,8 @@ public class MainApp {
 
 
     private static final String CONFIG_FILE = "src/main/resources/config.yaml";
-//    GenericDAO<Users> userDAO = new GenericDAO<>(Users.class, "users");
-
     public static void main(String[] args) {
 
-//        GenericDAO<Users> userDAO = new GenericDAO<>(Users.class, "users");
         LoggingManager.initialize();
 
         ConfigLoader config = new ConfigLoader(CONFIG_FILE);

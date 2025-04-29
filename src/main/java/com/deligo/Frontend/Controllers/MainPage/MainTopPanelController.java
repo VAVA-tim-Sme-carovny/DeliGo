@@ -19,8 +19,12 @@ import java.util.ResourceBundle;
 public class MainTopPanelController implements InitializableWithParent {
 
     @FXML private Button openLogin;
+    @FXML private Button openRegister;
+    @FXML private Button openInfoBtn;
     @FXML private Button btnEn;
     @FXML private Button btnSk;
+
+
 
     private MainPageController mainController;
 
@@ -38,15 +42,27 @@ public class MainTopPanelController implements InitializableWithParent {
         if (btnEn != null) btnEn.setOnAction(e -> this.switchLanguage("en"));
         if (openLogin != null) openLogin.setOnAction(e -> {
             logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "Open login");
+            mainController.loadMainContent("/Views/Content/MainPanel/LoginContentPanel.fxml");
             mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
         });
+        if (openInfoBtn != null) openInfoBtn.setOnAction(e -> {
+            mainController.loadMainContent("/Views/Content/MainPanel/InfoContentPanel.fxml");
             mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+            mainController.clearBottomPanel();
         });
+
+        if (openRegister != null) openRegister.setOnAction(e -> {
+            mainController.loadMainContent("/Views/Content/MainPanel/RegisterContentPanel.fxml");
+            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+            mainController.clearBottomPanel();
+        });
+
+
     }
 
 
 
-        @FXML
+    @FXML
     private void switchToEnglish() {
         System.out.println("Klik na EN");
         switchLanguage("en");
@@ -86,6 +102,7 @@ public class MainTopPanelController implements InitializableWithParent {
 
     public void handleInfoButtonClick() {
         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Content/InfoContentPanel.fxml"));
             Stage popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.initStyle(StageStyle.UNDECORATED);
@@ -108,6 +125,7 @@ public class MainTopPanelController implements InitializableWithParent {
 
     public void loginClick() {
         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Frontend_fxml/LoginContentPanel.fxml"));
             Stage popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.initStyle(StageStyle.UNDECORATED);

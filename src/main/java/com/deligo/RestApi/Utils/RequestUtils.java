@@ -11,12 +11,14 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class RequestUtils {
-
     public static String sendPostRequest(String targetUrl, String jsonData, LoggingAdapter logger) {
+        final int TIMEOUT = 10000;
         HttpURLConnection connection = null;
         try {
             URL url = new URL(targetUrl);
             connection = (HttpURLConnection) url.openConnection();
+            connection.setConnectTimeout(TIMEOUT);
+            connection.setReadTimeout(TIMEOUT);
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json; utf-8");
             connection.setDoOutput(true);

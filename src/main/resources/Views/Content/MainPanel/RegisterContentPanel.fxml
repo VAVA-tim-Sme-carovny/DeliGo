@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="443.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.FeatureLogin.FeatureLoginController">
+<BorderPane prefHeight="443.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.FeatureRegister.FeatureRegisterController">
 
     <center>
         <VBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">
@@ -21,10 +21,8 @@
                     <Label text="Heslo:" />
                     <PasswordField fx:id="passwordField" />
                 </HBox>
-                <Button fx:id="loginButton" text="Prihlásiť" />
+                <Button fx:id="registerButton" text="Register" />
             </children>
         </VBox>
     </center>
-
-    <!-- Zvyšné panely (napr. <top>, <left>, atď) môžu ostať, ak ich potrebuješ -->
 </BorderPane>

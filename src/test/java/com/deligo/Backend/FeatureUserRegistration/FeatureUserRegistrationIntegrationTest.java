@@ -1,16 +1,10 @@
 package com.deligo.Backend.FeatureUserRegistration;
 
-import com.deligo.Backend.FeatureUserRegister.FeatureUserRegister;
-import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.DatabaseManager.dao.GenericDAO;
-import com.deligo.Logging.Adapter.LoggingAdapter;
-import com.deligo.Logging.LoggingManager;
 import com.deligo.Model.Response;
 import com.deligo.Model.User;
-import com.deligo.RestApi.RestAPIServer;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
