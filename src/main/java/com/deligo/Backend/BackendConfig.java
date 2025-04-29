@@ -26,12 +26,27 @@ public class BackendConfig {
                 return backend.getFeatureUserLogin().loginEmployee(data);
             case "/api/be/logout":
                 return backend.getFeatureUserLogin().logout();
+            case "/api/be/order/notify":
+                return backend.getFeatureOrderProcessing().notifyNewOrder(Integer.parseInt(data));
+            case "/api/be/order/confirm":
+                return backend.getFeatureOrderProcessing().confirmOrder(data);
+            case "/api/be/order/reject":
+                return backend.getFeatureOrderProcessing().rejectOrder(data);
+            case "/api/be/order/item/prepared":
+                return backend.getFeatureOrderProcessing().markItemAsPrepared(data);
+            case "/api/be/order/item/delivered":
+                return backend.getFeatureOrderProcessing().markItemAsDelivered(data);
             default:
                 return "Unknown POST route: " + route;
         }
     }
 
     public Object routeGet(String route) {
-        return "Backend GET response (unused in test connection)";
+        switch (route) {
+            case "/api/be/order/items/ready":
+                return backend.getFeatureOrderProcessing().getReadyItems();
+            default:
+                return "Unknown GET route: " + route;
+        }
     }
 }

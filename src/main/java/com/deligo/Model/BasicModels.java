@@ -49,6 +49,7 @@ public class BasicModels {
         PENDING("pending"),
         PREPARING("preparing"),
         READY("ready"),
+        DELIVERED("delivered"),
         DONE("done");
 
         private final String value;

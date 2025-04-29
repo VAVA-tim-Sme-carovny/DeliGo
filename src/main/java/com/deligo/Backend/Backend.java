@@ -1,6 +1,7 @@
 package com.deligo.Backend;
 
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
+import com.deligo.Backend.FeatureOrderProcessing.FeatureOrderProcessing;
 import com.deligo.Backend.FeatureUserLogin.FeatureUserLogin;
 import com.deligo.Backend.FeatureUserRegister.FeatureUserRegister;
 import com.deligo.ConfigLoader.ConfigLoader;
@@ -23,6 +24,7 @@ public class Backend {
 //    Add feature.
     private final FeatureUserRegister featureUserRegister;
     private final FeatureUserLogin featureUserLogin;
+    private final FeatureOrderProcessing featureOrderProcessing;
 
 
 
@@ -44,6 +46,7 @@ public class Backend {
 //      Add feature.
         this.featureUserRegister = new FeatureUserRegister(config, logger, apiServer, new GenericDAO<>(User.class, "users"));
         this.featureUserLogin = new FeatureUserLogin(config, logger, apiServer);
+        this.featureOrderProcessing = new FeatureOrderProcessing(config, logger, apiServer);
 
         logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.BECKEND, "Backend initialized correctly.");
 
@@ -66,5 +69,9 @@ public class Backend {
 
     public FeatureUserLogin getFeatureUserLogin() {
         return featureUserLogin;
+    }
+
+    public FeatureOrderProcessing getFeatureOrderProcessing() {
+        return featureOrderProcessing;
     }
 }
