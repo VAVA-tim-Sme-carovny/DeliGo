@@ -14,69 +14,60 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-
 import java.lang.reflect.Type;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-
 /**
  * FeatureReview implementuje funkcionalitu pre správu recenzií.
  * Poskytuje metódy na získanie, pridanie a aktualizáciu recenzií.
  */
 
-
 public class FeatureReview extends BaseFeature {
-private final Gson gson;
-private final GenericDAO<Review> reviewDAO;
+    private final Gson gson;
+    private final GenericDAO<Review> reviewDAO;
 
     public FeatureReview(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
         super(globalConfig, logger, restApiServer);
         this.gson = new Gson();
         this.reviewDAO = new GenericDAO<>(Review.class, "ratings");
+        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, 
+                ReviewMessages.PROCES_NAME.getMessage(this.getLanguage()));
     }
-
 
     public String addReview(String json) {
         try {
             Review review = gson.fromJson(json, Review.class);
             
-            // Validácia požiadavky pre pridanie recenzie
             if (review.getUserId() <= 0 || review.getMenuItemId() <= 0 || review.getRating() < 1 || review.getRating() > 5 || review.getComment() == null || review.getComment().isEmpty()) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                         ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-                return gson.toJson(new Response("Invalid request format", 400));
+                return gson.toJson(new Response(ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()), 400));
             }
 
-            // Ak to je správne tak nastaví čas
             review.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-
             int id = reviewDAO.insert(review);
 
-            // Ak id je väčšie ako 0, znamená to, že recenzia bola úspešne pridaná
             if (id > 0) {
                 logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.BECKEND,
                         ReviewMessages.REVIEW_SUCCESS.getMessage(this.getLanguage()));
-                return gson.toJson(new Response("Item added successfully", 200));
-            } // Ak nie tak vráti to chybu
-            else {
+                return gson.toJson(new Response(ReviewMessages.REVIEW_SUCCESS.getMessage(this.getLanguage()), 200));
+            } else {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                         ReviewMessages.REVIEW_FAILED.getMessage(this.getLanguage()));
-                return gson.toJson(new Response("Error adding item", 500));
+                return gson.toJson(new Response(ReviewMessages.REVIEW_FAILED.getMessage(this.getLanguage()), 500));
             }
 
         } catch (JsonSyntaxException e) {
-            // Chyba pri parsovaní JSON
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                     ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-            return gson.toJson(new Response("Invalid request format", 400));
+            return gson.toJson(new Response(ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()), 400));
         } catch (Exception e) {
-            // Iné chyby
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    ReviewMessages.REVIEW_SUCCESS.getMessage(this.getLanguage()) + ": " + e.getMessage());
-            return gson.toJson(new Response("Error adding item: " + e.getMessage(), 500));
+                    ReviewMessages.REVIEW_FAILED.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(ReviewMessages.REVIEW_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -87,30 +78,31 @@ private final GenericDAO<Review> reviewDAO;
             Integer reviewId = requestData.get("reviewId");
 
             if (reviewId == null || reviewId <= 0 || reviewId.toString().isEmpty()) {
-                return gson.toJson(new Response("Invalid review ID", 400));
+                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                        ReviewMessages.INVALID_REVIEW_ID.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(ReviewMessages.INVALID_REVIEW_ID.getMessage(this.getLanguage()), 400));
             }
 
             reviewDAO.delete(reviewId);
-            return gson.toJson(new Response("Review deleted successfully", 200));
+            logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
+                    ReviewMessages.REVIEW_DELETE_SUCCESS.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(ReviewMessages.REVIEW_DELETE_SUCCESS.getMessage(this.getLanguage()), 200));
 
         } catch (JsonSyntaxException e) {
-            // Chyba pri parsovaní JSON
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                     ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-            return gson.toJson(new Response("Invalid request format", 400));
+            return gson.toJson(new Response(ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()), 400));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error deleting review: " + e.getMessage());
-            return gson.toJson(new Response("Error deleting review", 500));
+                    ReviewMessages.REVIEW_DELETE_ERROR.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(ReviewMessages.REVIEW_DELETE_ERROR.getMessage(this.getLanguage()), 500));
         }
     }
 
     public String updateReview(String json) {
         try {
-            // Deserializácia JSON na objekt Review
             Review updatedReview = gson.fromJson(json, Review.class);
 
-            // Validácia požiadavky pre aktualizáciu recenzie
             if (updatedReview.getId() <= 0 || updatedReview.getUserId() <= 0 || 
                 updatedReview.getMenuItemId() <= 0 || updatedReview.getRating() < 1 || 
                 updatedReview.getRating() > 5 || updatedReview.getComment() == null || 
@@ -118,26 +110,24 @@ private final GenericDAO<Review> reviewDAO;
                 
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                         ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-                return gson.toJson(new Response("Invalid review data", 400));
+                return gson.toJson(new Response(ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()), 400));
             }
             
-            // Zmení čas na aktuálny čas
             updatedReview.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-            
-            // Aktualizuje recenziu
             reviewDAO.update(updatedReview.getId(), updatedReview);
 
-            // Ak to je správne tak sa to logguje
-            return gson.toJson(new Response("Review updated successfully", 200));
+            logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
+                    ReviewMessages.REVIEW_UPDATE_SUCCESS.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(ReviewMessages.REVIEW_UPDATE_SUCCESS.getMessage(this.getLanguage()), 200));
             
         } catch (JsonSyntaxException e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                     ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-            return gson.toJson(new Response("Invalid request format", 400));
+            return gson.toJson(new Response(ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()), 400));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error updating review: " + e.getMessage());
-            return gson.toJson(new Response("Error updating review: " + e.getMessage(), 500));
+                    ReviewMessages.REVIEW_UPDATE_ERROR.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(ReviewMessages.REVIEW_UPDATE_ERROR.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -148,21 +138,22 @@ private final GenericDAO<Review> reviewDAO;
             Integer menuItemId = requestData.get("menuItemId");
 
             if (menuItemId == null || menuItemId <= 0 || menuItemId.toString().isEmpty()) {
-                return gson.toJson(new Response("Invalid menu item ID", 400));
+                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                        ReviewMessages.INVALID_REVIEW_ID.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(ReviewMessages.INVALID_REVIEW_ID.getMessage(this.getLanguage()), 400));
             }
 
             List<Review> reviews = reviewDAO.findByField("menu_item_id", menuItemId.toString());
             return gson.toJson(new Response(gson.toJson(reviews), 200));
 
         } catch (JsonSyntaxException e) {
-            // Chyba pri parsovaní JSON
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                     ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-            return gson.toJson(new Response("Invalid request format", 400));
+            return gson.toJson(new Response(ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()), 400));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error retrieving reviews: " + e.getMessage());
-            return gson.toJson(new Response("Error retrieving reviews", 500));
+                    ReviewMessages.REVIEW_NOT_FOUND.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(ReviewMessages.REVIEW_NOT_FOUND.getMessage(this.getLanguage()), 500));
         }
     }
     
@@ -173,7 +164,9 @@ private final GenericDAO<Review> reviewDAO;
             Integer userId = requestData.get("userId");
 
             if (userId == null || userId <= 0 || userId.toString().isEmpty()) {
-                return gson.toJson(new Response("Invalid user ID", 400));
+                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                        ReviewMessages.INVALID_REVIEW_ID.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(ReviewMessages.INVALID_REVIEW_ID.getMessage(this.getLanguage()), 400));
             }
 
             List<Review> reviews = reviewDAO.findByField("user_id", userId.toString());
@@ -182,23 +175,24 @@ private final GenericDAO<Review> reviewDAO;
         } catch (JsonSyntaxException e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                     ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-            return gson.toJson(new Response("Invalid request format", 400));
+            return gson.toJson(new Response(ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()), 400));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error retrieving user reviews: " + e.getMessage());
-            return gson.toJson(new Response("Error retrieving user reviews", 500));
+                    ReviewMessages.REVIEW_NOT_FOUND_FOR_USER.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(ReviewMessages.REVIEW_NOT_FOUND_FOR_USER.getMessage(this.getLanguage()), 500));
         }
     }
 
     public String getReviewById(String json) {
-
         try {
             Type mapType = new TypeToken<Map<String, Integer>>() {}.getType();
             Map<String, Integer> requestData = gson.fromJson(json, mapType);
             Integer reviewId = requestData.get("reviewId");
 
             if (reviewId == null || reviewId <= 0) {
-                return gson.toJson(new Response("Invalid review ID", 400));
+                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                        ReviewMessages.INVALID_REVIEW_ID.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(ReviewMessages.INVALID_REVIEW_ID.getMessage(this.getLanguage()), 400));
             }
 
             Optional<Review> reviewOptional = reviewDAO.getById(reviewId);
@@ -206,32 +200,36 @@ private final GenericDAO<Review> reviewDAO;
             if (reviewOptional.isPresent()) {
                 return gson.toJson(new Response(gson.toJson(reviewOptional.get()), 200));
             } else {
-                return gson.toJson(new Response("Review not found", 404));
+                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                        ReviewMessages.REVIEW_NOT_FOUND.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(ReviewMessages.REVIEW_NOT_FOUND.getMessage(this.getLanguage()), 404));
             }
 
         } catch (JsonSyntaxException e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                     ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-            return gson.toJson(new Response("Invalid request format", 400));
+            return gson.toJson(new Response(ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()), 400));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error retrieving review: " + e.getMessage());
-            return gson.toJson(new Response("Error retrieving review", 500));
+                    ReviewMessages.REVIEW_NOT_FOUND.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(ReviewMessages.REVIEW_NOT_FOUND.getMessage(this.getLanguage()), 500));
         }
     }
 
     public String getAllReviews(String json) {
         try {
             List<Review> reviews = reviewDAO.getAll();
+            logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.BECKEND,
+                    ReviewMessages.REVIEW_SUCCESS.getMessage(this.getLanguage()));
             return gson.toJson(new Response(gson.toJson(reviews), 200));
         } catch (JsonSyntaxException e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                     ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-            return gson.toJson(new Response("Invalid request format", 400));
+            return gson.toJson(new Response(ReviewMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()), 400));
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Error retrieving all reviews: " + e.getMessage());
-            return gson.toJson(new Response("Error retrieving all reviews", 500));
+                    ReviewMessages.REVIEW_NOT_FOUND.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(ReviewMessages.REVIEW_NOT_FOUND.getMessage(this.getLanguage()), 500));
         }
     }
 }

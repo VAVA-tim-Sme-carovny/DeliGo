@@ -11,10 +11,6 @@ public class TableReservation {
     private LocalDateTime createdAt;
     private String status; // PENDING, CONFIRMED, DENIED, CANCELLED
 
-    public TableReservation() {
-        this.createdAt = LocalDateTime.now();
-    }
-
     public TableReservation(int userId, int tableId, LocalDateTime reservedFrom, LocalDateTime reservedTo) {
         this.userId = userId;
         this.tableId = tableId;

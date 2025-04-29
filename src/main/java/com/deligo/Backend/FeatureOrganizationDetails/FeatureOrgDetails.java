@@ -27,7 +27,8 @@ public class FeatureOrgDetails extends BaseFeature {
     public FeatureOrgDetails(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
         super(globalConfig, logger, restApiServer);
         this.orgDetailsDAO = new GenericDAO<>(OrgDetails.class);
-        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "FeatureOrgDetails Started.");
+        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, 
+                OrgDetailsMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
 
     /**
@@ -39,8 +40,8 @@ public class FeatureOrgDetails extends BaseFeature {
             Optional<OrgDetails> detailsOpt = orgDetailsDAO.getById(1); // Assuming there's only one organization
             if (detailsOpt.isEmpty()) {
                 logger.log(LogType.WARNING, LogPriority.MIDDLE, LogSource.BECKEND, 
-                    "No organization details found in database");
-                return gson.toJson(new Response("No organization details found", 404));
+                    OrgDetailsMessages.OPENING_TIMES_NOT_PROVIDED.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrgDetailsMessages.OPENING_TIMES_NOT_PROVIDED.getMessage(this.getLanguage()), 404));
             }
 
             OrgDetails details = detailsOpt.get();
@@ -49,16 +50,16 @@ public class FeatureOrgDetails extends BaseFeature {
             List<List<String>> openingTimes = details.getOpeningTimes();
             if (openingTimes == null || openingTimes.isEmpty()) {
                 logger.log(LogType.WARNING, LogPriority.MIDDLE, LogSource.BECKEND, 
-                    "No opening hours found in organization details");
-                return gson.toJson(new Response("No opening hours found", 404));
+                    OrgDetailsMessages.OPENING_TIMES_NOT_PROVIDED.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrgDetailsMessages.OPENING_TIMES_NOT_PROVIDED.getMessage(this.getLanguage()), 404));
             }
 
             // Return the complete organization details including opening hours
             return gson.toJson(details);
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, 
-                "Error getting organization details: " + e.getMessage());
-            return gson.toJson(new Response("Error getting organization details", 500));
+                OrgDetailsMessages.DB_ERROR.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrgDetailsMessages.DB_ERROR.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -71,20 +72,20 @@ public class FeatureOrgDetails extends BaseFeature {
             Optional<OrgDetails> detailsOpt = orgDetailsDAO.getById(1); // Assuming there's only one organization
             if (detailsOpt.isEmpty()) {
                 logger.log(LogType.WARNING, LogPriority.MIDDLE, LogSource.BECKEND, 
-                    "No organization details found in database");
-                return gson.toJson(new Response("No organization details found", 404));
+                    OrgDetailsMessages.OPENING_TIMES_NOT_PROVIDED.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(OrgDetailsMessages.OPENING_TIMES_NOT_PROVIDED.getMessage(this.getLanguage()), 404));
             }
 
             OrgDetails details = detailsOpt.get();
             List<List<String>> openingTimes = details.getOpeningTimes();
             if (openingTimes == null || openingTimes.isEmpty()) {
-                return gson.toJson(new Response("No opening hours found", 404));
+                return gson.toJson(new Response(OrgDetailsMessages.OPENING_TIMES_NOT_PROVIDED.getMessage(this.getLanguage()), 404));
             }
             return gson.toJson(openingTimes);
         } catch (Exception e) {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, 
-                "Error getting opening hours: " + e.getMessage());
-            return gson.toJson(new Response("Error getting opening hours", 500));
+                OrgDetailsMessages.DB_ERROR.getMessage(this.getLanguage()));
+            return gson.toJson(new Response(OrgDetailsMessages.DB_ERROR.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -97,13 +98,13 @@ public class FeatureOrgDetails extends BaseFeature {
      * @return JSON odpoveď s message a status (200 pre úspech, 500 pre chybu)
      */
     public String updateOrgDetails(String jsonData) {
-        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "Processing organization details update request.");
+        logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, OrgDetailsMessages.PROCESS_NAME.getMessage(this.getLanguage()));
 
         OrgDetails details;
         try {
             details = gson.fromJson(jsonData, OrgDetails.class);
         } catch (JsonSyntaxException e) {
-            String msg = OrgDetailsMessages.INVALID_JSON.getMessage(this.getLanguage()) + e.getMessage();
+            String msg = OrgDetailsMessages.INVALID_JSON.getMessage(this.getLanguage(), e.getMessage());
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
             return gson.toJson(new Response(msg, 500));
         }
@@ -135,7 +136,8 @@ public class FeatureOrgDetails extends BaseFeature {
                 }
             }
         } else {
-            logger.log(LogType.WARNING, LogPriority.MIDDLE, LogSource.BECKEND, "Opening times not provided.");
+            logger.log(LogType.WARNING, LogPriority.MIDDLE, LogSource.BECKEND, 
+                OrgDetailsMessages.OPENING_TIMES_NOT_PROVIDED.getMessage(this.getLanguage()));
         }
 
         try {
@@ -160,5 +162,4 @@ public class FeatureOrgDetails extends BaseFeature {
             return gson.toJson(new Response(msg, 500));
         }
     }
-
 }

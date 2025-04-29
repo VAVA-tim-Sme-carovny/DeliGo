@@ -19,16 +19,6 @@ public class Order {
         this.updatedAt = new Timestamp(System.currentTimeMillis());
     }
 
-    public Order(Integer userId, int tableId, String deviceId, String status, String note) {
-        this.userId = userId;
-        this.tableId = tableId;
-        this.deviceId = deviceId;
-        this.status = status;
-        this.note = note;
-        this.createdAt = new Timestamp(System.currentTimeMillis());
-        this.updatedAt = new Timestamp(System.currentTimeMillis());
-    }
-
     public int getId() {
         return id;
     }
