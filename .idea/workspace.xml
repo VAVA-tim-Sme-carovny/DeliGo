@@ -4,72 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="pridany kosik na objednane jedla">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/DatabaseManager/PostgresTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureRegister/FeatureRegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/MainPanel/RegisterContentPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="mergovanie">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Views/Controllers/EmployeeTopPanel.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.run/Development.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.run/Development.run.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/Backend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/Backend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/BackendConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/BackendConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureUserLogin/FeatureUserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureUserLogin/FeatureUserLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureUserManagement/FeatureUserManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureUserManagement/FeatureUserManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureUserRegister/FeatureUserRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureUserRegistration/FeatureUserRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureUserRegister/UserRegisterMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureUserRegistration/UserRegisterMessages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/ConfigLoader/ConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/ConfigLoader/ConfigLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/DatabaseManager/dao/GenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/DatabaseManager/dao/GenericDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/DatabaseManager/db/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/DatabaseManager/db/DatabaseConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/DatabaseManager/utils/ConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/DatabaseManager/utils/ConfigLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/AdminMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/AdminMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/EmployeeTopPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/EmployeeTopPanelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/OrdersLeftController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/OrdersLeftController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureRegister/FeatureRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureRegister/FeatureRegisterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPanelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainTopPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainTopPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/RestApi/CentralServer/ConsulRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/RestApi/CentralServer/ConsulRegistration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/RestApi/RestAPIServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/RestApi/RestAPIServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/RestApi/Utils/RequestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/RestApi/Utils/RequestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Views/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/Controllers/EmployeeTopPanelController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/Controllers/EmployeeTopPanelController.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Views/Controllers/MainTopPanelController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/Controllers/MainTopPanelController.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/main_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/main_view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages_sk.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_sk.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/deligo/Backend/FeatureUserRegistration/FeatureUserRegistrationIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/deligo/Backend/FeatureUserRegistration/FeatureUserRegistrationIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/Content/LoginContentPanel.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/Content/OrderPanel.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/Content/OrderPanel/Item.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Views/Controllers/MainTopPanelController.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/Controllers/MainTopPanelController.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Backend/Backend.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Backend/Backend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Backend/BackendConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Backend/BackendConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Backend/FeatureMyNewProcess/FeatureMyNewProcess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Backend/FeatureMyNewProcess/MyNewProcessMessages.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Backend/FeatureValidateTestConnection/FeatureValidateTestConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Backend/FeatureValidateTestConnection/FeatureValidateTestConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/ConfigLoader/ConfigLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/ConfigLoader/ConfigLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/dao/GenericDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/dao/GenericDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/db/DatabaseConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/db/DatabaseConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/example/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/example/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/example/Register.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/example/Register.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/example/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/example/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/utils/ConfigLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/utils/ConfigLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/MainPage/MainTopPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/MainPage/MainTopPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Model/BasicModels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Model/BasicModels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Model/OrgDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Model/OrgDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/RestApi/CentralServer/ConsulRegistration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/RestApi/CentralServer/ConsulRegistration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/RestApi/RestAPIServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/RestApi/RestAPIServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/RestApi/Utils/RequestUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/RestApi/Utils/RequestUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/messages_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages_sk.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/messages_sk.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -110,50 +72,50 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.PostgresTest.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.FeatureOrgDetailsIntegrationTest.testUpdateOrgDetailsInvalidPhone.executor": "Run",
-    "JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles.executor": "Run",
-    "Maven.Backend.executor": "Run",
-    "Maven.Development.executor": "Run",
-    "Maven.FrontEnd.executor": "Run",
-    "Maven.Test.executor": "Run",
-    "Maven.deligo-app [clean].executor": "Run",
-    "Maven.reporting.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.MainApp.executor": "Run",
-    "git-widget-placeholder": "dev/main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/richa/Documents/DeliGo/src/main/java/com/deligo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3725329",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.PostgresTest.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.FeatureOrgDetailsIntegrationTest.testUpdateOrgDetailsInvalidPhone.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Backend.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Development.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.FrontEnd.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.deligo-app [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.reporting.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev/main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/richa/Documents/DeliGo/src/main/java/com/deligo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3725329&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources\Views\Controllers" />
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources\Views\Content" />
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources\Views" />
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Views" />
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo" />
-      <recent name="C:\Users\richa\Documents\DeliGo\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.deligo.Backend.BaseFeature" />
@@ -282,7 +244,8 @@
       <workItem from="1744873572346" duration="2782000" />
       <workItem from="1744876381120" duration="7964000" />
       <workItem from="1745496777156" duration="9093000" />
-      <workItem from="1745919738355" duration="20448000" />
+      <workItem from="1745919738355" duration="31109000" />
+      <workItem from="1746023693288" duration="984000" />
     </task>
     <task id="LOCAL-00001" summary="Added profiles to pom.xml">
       <option name="closed" value="true" />
@@ -356,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744976049342</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="mergovanie">
+      <option name="closed" value="true" />
+      <created>1745944581331</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745944581331</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +342,8 @@
     <MESSAGE value="Added database module" />
     <MESSAGE value="Deleted Database Manager From constructor" />
     <MESSAGE value="Added reporting profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added reporting profile" />
+    <MESSAGE value="mergovanie" />
+    <option name="LAST_COMMIT_MESSAGE" value="mergovanie" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

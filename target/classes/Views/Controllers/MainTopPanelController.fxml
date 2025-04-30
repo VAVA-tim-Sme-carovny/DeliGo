@@ -53,5 +53,11 @@
                 <Insets right="205.0" />
             </GridPane.margin>
         </Button>
+
+        <Button text="Logout" GridPane.columnIndex="1" GridPane.halignment="RIGHT" fx:id="logoutBtn" mnemonicParsing="false">
+            <GridPane.margin>
+                <Insets right="265.0" />
+            </GridPane.margin>
+        </Button>
     </children>
 </GridPane>

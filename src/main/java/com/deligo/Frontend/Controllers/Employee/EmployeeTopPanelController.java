@@ -1,34 +1,35 @@
 package com.deligo.Frontend.Controllers.Employee;
 
+import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import com.deligo.Model.BasicModels.*;
 import javafx.scene.layout.HBox;
 
 import java.util.List;
 
 public class EmployeeTopPanelController implements InitializableWithParent {
 
-    @FXML
-    private HBox buttonContainer;
-
-    @FXML
-    private Button HomeBtn;
+    @FXML private Button logoutBtn;
+    @FXML private Button ordersButton;
+    @FXML private Button adminButton;
 
     private LoggingAdapter logger;
-
+    private ConfigLoader configLoader;
     private MainPageController mainPageController;
 
     // Dummy roly pre testovanie
     private final List<String> userRoles = List.of("employee", "admin");
 
 
-    public EmployeeTopPanelController(LoggingAdapter logger, MainPageController mainPageController) {
+    public EmployeeTopPanelController(LoggingAdapter logger, MainPageController mainPageController, ConfigLoader configLoader) {
         this.logger = logger;
         this.mainPageController = mainPageController;
+        this.configLoader = configLoader;
     }
 
     @Override
@@ -36,39 +37,30 @@ public class EmployeeTopPanelController implements InitializableWithParent {
         if (parentController instanceof MainPageController) {
             this.mainPageController = (MainPageController) parentController;
 
-            if (userRoles.contains("employee") || userRoles.contains("admin")) {
-                Button orderButton = new Button("Objednávky");
-                orderButton.setOnAction(e -> {
-                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND, "Opening order panel");
-                    mainPageController.loadLeftPanel("/Views/Content/EmployeePanel/OrdersLeftPanel.fxml");
-                    mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
-                    mainPageController.clearContentPanel();
-                });
-                buttonContainer.getChildren().add(orderButton);
+            String role = configLoader.getConfigValue("login", "role", String.class);
+
+            if (role != null && role.contains("admin")) {
+                adminButton.setVisible(true);
             }
 
-            if (userRoles.contains("admin")) {
-                Button adminButton = new Button("Admin Panel");
-                adminButton.setOnAction(e -> {
-                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND, "Opening admin panel");
-                    mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
-                    mainPageController.loadMainContent("/Views/Content/AdminPanel/AdminMenuContentPanel.fxml");
-                    mainPageController.clearLeftPanel();
+            ordersButton.setOnAction(event -> {
+                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Current Orders view");
+                mainPageController.loadMainContent("/Views/Content/OrderPanel/CurrentOrdersPanel.fxml", false);
+            });
 
-                });
-                buttonContainer.getChildren().add(adminButton);
-            }
+            adminButton.setOnAction(event -> {
+                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Admin Panel");
+                mainPageController.loadMainContent("/Views/Content/AdminPanel/AdminContentPanel.fxml", false);
+            });
 
-
-            if (HomeBtn != null) {
-                HomeBtn.setOnAction(event -> {
-                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Returning to main page");
-                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
-                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-                    mainPageController.clearRightPanel();
-                    mainPageController.clearLeftPanel();
-                });
-            }
+            logoutBtn.setOnAction(event -> {
+                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Logging out");
+                String response = mainPageController.getServer().sendPostRequest("/be/logout", null);
+                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Logout successful!");
+                mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
+                mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
+                mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml", false);
+            });
         }
     }
 }

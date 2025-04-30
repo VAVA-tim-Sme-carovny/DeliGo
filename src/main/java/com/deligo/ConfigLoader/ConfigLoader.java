@@ -47,11 +47,20 @@ public class ConfigLoader {
             if (value == null) {
                 return null;
             }
+
+            // Priama zhoda typu
             if (type.isInstance(value)) {
                 return (T) value;
-            } else {
-                throw new RuntimeException("Config value for key " + elementKey + " is not of type " + type.getName());
             }
+
+            // Špeciálny prípad: boolean
+            if (type == Boolean.class && value instanceof String) {
+                return (T) Boolean.valueOf((String) value);
+            } else if (type == Boolean.class && value instanceof Boolean) {
+                return (T) value;
+            }
+
+            throw new RuntimeException("Config value for key " + elementKey + " is not of type " + type.getName() + ". Actual type: " + value.getClass().getName());
         }
         return null;
     }

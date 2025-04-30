@@ -51,13 +51,16 @@ public class MainPageController extends BaseFeature {
     public void initialize() {
         this.logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, " MainPageController.initialize() called");
 
-        loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
-        loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-        loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
+        loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
+        loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
+        loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml", false);
     }
 
 
-    public void loadControllerPanel(String fxmlPath) {
+    public void loadControllerPanel(String fxmlPath, boolean deleteAll) {
+        if(deleteAll) {
+            this.clearAll();
+        }
         try {
             ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath), bundle);
@@ -83,7 +86,10 @@ public class MainPageController extends BaseFeature {
     /**
      * Načíta obsah do hlavného panela (center content)
      */
-    public void loadMainContent(String fxmlPath) {
+    public void loadMainContent(String fxmlPath, boolean deleteAll) {
+        if(deleteAll) {
+            this.clearAll();
+        }
         try {
             ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath), bundle);
@@ -114,7 +120,10 @@ public class MainPageController extends BaseFeature {
 
 
 
-    public void loadBottomPanel(String fxmlPath) {
+    public void loadBottomPanel(String fxmlPath, boolean deleteAll) {
+        if(deleteAll) {
+            this.clearAll();
+        }
         try {
             ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath), bundle);
@@ -143,7 +152,10 @@ public class MainPageController extends BaseFeature {
     }
 
 
-    public void loadRightPanel(String fxmlPath) {
+    public void loadRightPanel(String fxmlPath, boolean deleteAll) {
+        if(deleteAll) {
+            this.clearAll();
+        }
         try {
             ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath), bundle);
@@ -167,7 +179,10 @@ public class MainPageController extends BaseFeature {
     }
 
 
-    public void loadLeftPanel(String fxmlPath) {
+    public void loadLeftPanel(String fxmlPath, boolean deleteAll) {
+        if(deleteAll) {
+            this.clearAll();
+        }
         try {
             ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath), bundle);
@@ -188,6 +203,13 @@ public class MainPageController extends BaseFeature {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void clearAll() {
+        rightPanel.getChildren().clear();
+        bottomPanel.getChildren().clear();
+        leftPanel.getChildren().clear();
+        mainContent.getChildren().clear();
     }
 
     public void clearRightPanel() {
