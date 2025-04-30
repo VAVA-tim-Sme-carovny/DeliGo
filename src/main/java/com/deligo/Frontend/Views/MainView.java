@@ -77,8 +77,8 @@ public class MainView {
             rootLayout = (BorderPane) root;
 
             // ✅ Môžeme volať metódy na controlleri
-            controller.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-            controller.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
+            controller.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
+            controller.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
 
             // Nastav fixnú veľkosť okna
             Scene scene = new Scene(rootLayout, 1920, 1080);

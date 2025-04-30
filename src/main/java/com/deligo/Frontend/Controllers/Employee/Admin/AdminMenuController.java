@@ -36,27 +36,27 @@ public class AdminMenuController implements InitializableWithParent {
 
         if (staticticsBtn != null) staticticsBtn.setOnAction(event -> {
             this.logger.log(com.deligo.Model.BasicModels.LogType.INFO, com.deligo.Model.BasicModels.LogPriority.LOW, com.deligo.Model.BasicModels.LogSource.FRONTEND, "Opening statistics menu");
-            mainPageController.loadMainContent("/Views/Content/AdminPanel/StatisticsContentPanel.fxml");
+            mainPageController.loadMainContent("/Views/Content/AdminPanel/StatisticsContentPanel.fxml", false);
         });
 
         if (editTablesBtn != null) editTablesBtn.setOnAction(event -> {
             this.logger.log(com.deligo.Model.BasicModels.LogType.INFO, com.deligo.Model.BasicModels.LogPriority.LOW, com.deligo.Model.BasicModels.LogSource.FRONTEND, "Opening edit tables menu");
-            mainPageController.loadMainContent("/Views/Content/AdminPanel/EditTablesContentPanel.fxml");
+            mainPageController.loadMainContent("/Views/Content/AdminPanel/EditTablesContentPanel.fxml", false);
         });
 
         if (editFoodMenuBtn != null) editFoodMenuBtn.setOnAction(event -> {
             this.logger.log(com.deligo.Model.BasicModels.LogType.INFO, com.deligo.Model.BasicModels.LogPriority.LOW, com.deligo.Model.BasicModels.LogSource.FRONTEND, "Opening edit food menu");
-            mainPageController.loadMainContent("/Views/Content/AdminPanel/EditFoodMenuContentPanel.fxml");
+            mainPageController.loadMainContent("/Views/Content/AdminPanel/EditFoodMenuContentPanel.fxml", false);
         });
 
         if (editEmployeesBtn != null) editEmployeesBtn.setOnAction(event -> {
             this.logger.log(com.deligo.Model.BasicModels.LogType.INFO, com.deligo.Model.BasicModels.LogPriority.LOW, com.deligo.Model.BasicModels.LogSource.FRONTEND, "Opening edit employees menu");
-            mainPageController.loadMainContent("/Views/Content/AdminPanel/EditEmployeesContentPanel.fxml");
+            mainPageController.loadMainContent("/Views/Content/AdminPanel/EditEmployeesContentPanel.fxml", false);
         });
 
         if (editInfoBtn != null) editInfoBtn.setOnAction(event -> {
             this.logger.log(com.deligo.Model.BasicModels.LogType.INFO, com.deligo.Model.BasicModels.LogPriority.LOW, com.deligo.Model.BasicModels.LogSource.FRONTEND, "Opening edit info menu");
-            mainPageController.loadMainContent("/Views/Content/AdminPanel/EditInfoContentPanel.fxml");
+            mainPageController.loadMainContent("/Views/Content/AdminPanel/EditInfoContentPanel.fxml", false);
         });
 
 

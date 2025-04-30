@@ -39,9 +39,9 @@ public class FeatureRegisterController implements InitializableWithParent {
 
         if(btnHome != null) btnHome.setOnAction(event -> {
             this.logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Returning to main page");
-            mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
-            mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-            mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
+            mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
+            mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
+            mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml", false);
             mainPageController.clearRightPanel();
         });
 
@@ -58,8 +58,8 @@ public class FeatureRegisterController implements InitializableWithParent {
 
                 if (response.contains("\"status\":200")) {
                     logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.FRONTEND, "Login successful!");
-                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
-                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
+                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
+                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
                 } else {
                     logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Registration failed!");
 //                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");

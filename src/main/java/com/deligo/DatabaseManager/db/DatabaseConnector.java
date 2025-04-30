@@ -41,11 +41,11 @@ public class DatabaseConnector {
             config.setConnectionTimeout(3000);
             config.setConnectionTestQuery("SELECT 1");
 
-            logger.info("🔍 JDBC URL: {}", config.getJdbcUrl());
-            logger.info("🔍 DB User: {}", config.getUsername());
+//            logger.info("🔍 JDBC URL: {}", config.getJdbcUrl());
+//            logger.info("🔍 DB User: {}", config.getUsername());
 
             dataSource = new HikariDataSource(config);
-            logger.info("✅ HikariCP initialized successfully.");
+//            logger.info("✅ HikariCP initialized successfully.");
 
         } catch (Exception e) {
             logger.error("❌ Failed to initialize HikariCP: {}", e.getMessage(), e);
@@ -60,11 +60,11 @@ public class DatabaseConnector {
         try {
             Connection conn = dataSource.getConnection();
             long duration = System.currentTimeMillis() - start;
-            logger.info("✅ Connection obtained in {} ms: {}", duration, conn);
+//            logger.info("✅ Connection obtained in {} ms: {}", duration, conn);
             return conn;
         } catch (SQLException e) {
             long duration = System.currentTimeMillis() - start;
-            logger.error("❌ Failed to obtain connection after {} ms", duration, e);
+//            logger.error("❌ Failed to obtain connection after {} ms", duration, e);
             throw e;
         }
     }

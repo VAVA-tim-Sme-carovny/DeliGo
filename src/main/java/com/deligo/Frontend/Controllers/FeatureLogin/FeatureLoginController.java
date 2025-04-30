@@ -1,5 +1,6 @@
 package com.deligo.Frontend.Controllers.FeatureLogin;
 
+import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
@@ -24,6 +25,7 @@ public class FeatureLoginController implements InitializableWithParent {
 
     private LoggingAdapter logger;
     private MainPageController mainPageController;
+    private ConfigLoader configLoader;
 
 
     @FXML
@@ -36,9 +38,10 @@ public class FeatureLoginController implements InitializableWithParent {
     private Button loginButton;
 
 
-    public FeatureLoginController(LoggingAdapter logger, MainPageController mainPageController) {
+    public FeatureLoginController(LoggingAdapter logger, MainPageController mainPageController, ConfigLoader configLoader) {
         this.logger = logger;
         this.mainPageController = mainPageController;
+        this.configLoader = configLoader;
     }
     @Override
     public void initializeWithParent(Object parentController) {
@@ -46,10 +49,9 @@ public class FeatureLoginController implements InitializableWithParent {
 
         if(btnHome != null) btnHome.setOnAction(event -> {
             this.logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Returning to main page");
-            mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
-            mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-            mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
-            mainPageController.clearRightPanel();
+            mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
+            mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
+            mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml", false);
         });
 
         if (loginButton != null) {
@@ -59,21 +61,36 @@ public class FeatureLoginController implements InitializableWithParent {
 
                 String json = String.format("{\"username\":\"%s\", \"password\":\"%s\"}", username, password);
 
-                String response = mainPageController.getServer().sendPostRequest("/be/login", json);
+                String response = mainPageController.getServer().sendPostRequest("/be/login/employee", json);
 
                 logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "Login response: " + response);
 
                 if (response.contains("\"status\":200")) {
                     logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.FRONTEND, "Login successful!");
-                    mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
-                    mainPageController.loadLeftPanel("/Views/Content/EmployeePanel/OrdersLeftPanel.fxml");
-                    mainPageController.clearContentPanel();
-                    mainPageController.clearBottomPanel();
+                    String user = configLoader.getConfigValue("login", "user", String.class);
+                    String role = configLoader.getConfigValue("login", "role", String.class);
+
+                    if(user != null && !user.isEmpty() && role.equals("customer")){
+                        mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml", false);
+                        mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml", false);
+                        mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
+                        mainPageController.clearBottomPanel();
+                    }else{
+                        mainPageController.clearContentPanel();
+                        mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanel.fxml", false);
+                    }
+//                    mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
+//                    mainPageController.loadLeftPanel("/Views/Content/EmployeePanel/OrdersLeftPanel.fxml");
+//                    mainPageController.clearContentPanel();
+//                    mainPageController.clearBottomPanel();
                 } else {
-                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
-                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-                    mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
-                    mainPageController.clearRightPanel();
+                    //TODO Warning popup
+                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Invalid credentials!");
+                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, response);
+//                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
+//                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
+//                    mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
+//                    mainPageController.clearRightPanel();
                 }
             });
         }

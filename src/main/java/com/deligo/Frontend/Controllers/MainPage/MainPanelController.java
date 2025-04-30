@@ -36,8 +36,8 @@ public class MainPanelController implements InitializableWithParent {
         if (BookTableBtn != null) {
             BookTableBtn.setOnAction(event -> {
                 logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening BookTable menu");
-                mainPageController.loadMainContent("/Views/Content/MainPanel/BookTableContentPanel.fxml");
-                mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+                mainPageController.loadMainContent("/Views/Content/MainPanel/BookTableContentPanel.fxml", false);
+                mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
                 mainPageController.clearRightPanel(); // Ak máš pravý panel, vyčisti ho
                 mainPageController.clearBottomPanel(); // Ak máš dolný panel, vyčisti ho
             });
@@ -51,7 +51,7 @@ public class MainPanelController implements InitializableWithParent {
                 try {
                     String deviceId = configLoader.getConfigValue("device", "id", String.class);
                     String user = configLoader.getConfigValue("login", "user", String.class);
-                    String role = configLoader.getConfigValue("login", "roles", String.class);
+                    String role = configLoader.getConfigValue("login", "role", String.class);
 
                     if(deviceId != null && !deviceId.isEmpty()){
                         String response = mainPageController.getServer().sendPostRequest("api/be/login/customer", null);
@@ -66,8 +66,8 @@ public class MainPanelController implements InitializableWithParent {
                         this.openOrderMenu();
                     } else {
                         logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Login menu");
-                        mainPageController.loadMainContent("/Views/Content/LoginContentPanel.fxml");
-                        mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+                        mainPageController.loadMainContent("/Views/Content/MainPanel/LoginContentPanel.fxml", false);
+                        mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
                         mainPageController.clearBottomPanel();
                     }
                 } catch (Exception e) {
@@ -79,9 +79,9 @@ public class MainPanelController implements InitializableWithParent {
     }
 
     private void openOrderMenu(){
-        mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml");
-        mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml");
-        mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+        mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml", false);
+        mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml", false);
+        mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
         mainPageController.clearBottomPanel();
     }
 }

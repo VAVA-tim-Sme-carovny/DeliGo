@@ -1,5 +1,6 @@
 package com.deligo.Frontend.Controllers.MainPage;
 
+import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
@@ -21,6 +22,7 @@ public class MainTopPanelController implements InitializableWithParent {
     @FXML private Button openLogin;
     @FXML private Button openRegister;
     @FXML private Button openInfoBtn;
+    @FXML private Button logoutBtn;
     @FXML private Button btnEn;
     @FXML private Button btnSk;
 
@@ -29,33 +31,68 @@ public class MainTopPanelController implements InitializableWithParent {
     private MainPageController mainController;
 
     private LoggingAdapter logger;
+    private ConfigLoader configLoader;
 
-    public MainTopPanelController(LoggingAdapter logger) {
+    public MainTopPanelController(LoggingAdapter logger, ConfigLoader configLoader) {
         this.logger = logger;
+        this.configLoader = configLoader;
     }
 
     @Override
     public void initializeWithParent(Object parentController) {
         this.mainController = (MainPageController) parentController;
+        String user = configLoader.getConfigValue("login", "user", String.class);
+        String role = configLoader.getConfigValue("login", "role", String.class);
+        String deviceId = configLoader.getConfigValue("device", "id", String.class);
+
 
         if (btnSk != null) btnSk.setOnAction(e -> this.switchLanguage("sk"));
         if (btnEn != null) btnEn.setOnAction(e -> this.switchLanguage("en"));
         if (openLogin != null) openLogin.setOnAction(e -> {
             logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "Open login");
-            mainController.loadMainContent("/Views/Content/MainPanel/LoginContentPanel.fxml");
-            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+            mainController.loadMainContent("/Views/Content/MainPanel/LoginContentPanel.fxml", false);
+            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
         });
         if (openInfoBtn != null) openInfoBtn.setOnAction(e -> {
-            mainController.loadMainContent("/Views/Content/MainPanel/InfoContentPanel.fxml");
-            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+            mainController.loadMainContent("/Views/Content/MainPanel/InfoContentPanel.fxml", false);
+            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
             mainController.clearBottomPanel();
         });
 
         if (openRegister != null) openRegister.setOnAction(e -> {
-            mainController.loadMainContent("/Views/Content/MainPanel/RegisterContentPanel.fxml");
-            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml");
+            mainController.loadMainContent("/Views/Content/MainPanel/RegisterContentPanel.fxml", false);
+            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
             mainController.clearBottomPanel();
         });
+
+        if (logoutBtn != null) {
+            logoutBtn.setOnAction(e -> {
+                logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, "User clicked logout");
+
+                mainController.getServer().sendPostRequest("/be/logout", null);
+                // Reloadni hlavný panel (alebo choď na login)
+                mainController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
+                mainController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
+            });
+        }
+        if (user != null && !user.isEmpty() && role != null && !role.isEmpty()) {
+            openLogin.setVisible(false);
+            openRegister.setVisible(false);
+            logoutBtn.setVisible(true);
+
+        } else if (deviceId != null && !deviceId.isEmpty()) {
+            openLogin.setVisible(true);
+            openRegister.setVisible(false);
+            logoutBtn.setVisible(false);
+
+        } else {
+            openLogin.setVisible(true);
+            openRegister.setVisible(true);
+            logoutBtn.setVisible(false);
+        }
+
+
+
 
 
     }

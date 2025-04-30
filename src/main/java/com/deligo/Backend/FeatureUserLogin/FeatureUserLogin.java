@@ -69,7 +69,7 @@ public class FeatureUserLogin extends BaseFeature {
      * @return JSON odpoveď vo forme LoginResponse (obsahuje username, role, správu a status)
      */
     public String loginEmployee(String jsonData){
-
+        logger.log(LogType.INFO, LogPriority.HIGH, LogSource.BECKEND, "Starting login");
         LoginData loginData;
 
         //validácia json súboru
@@ -102,10 +102,7 @@ public class FeatureUserLogin extends BaseFeature {
         }
 
         //overenie, či používateľ nie je prihlásený
-        //TODO: Niekto by akože mohol configloader poriešiť aby som nemusel načítavať boolean ako string a porovnávať
-        // ho so stringom "true", ĎAKUJEM
-        // java.lang.RuntimeException: Config value for key status is not of type boolean
-        if (globalConfig.getConfigValue("login", "status", String.class).equals("true")) {
+        if (globalConfig.getConfigValue("login", "status", Boolean.class) == true) {
             String msg = UserLoginMessages.ALREADY_LOGED_IN.getMessage(this.getLanguage());
             logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.BECKEND, msg);
             return gson.toJson(new LoginResponse("", Collections.emptyList() , msg, 500));
@@ -119,7 +116,7 @@ public class FeatureUserLogin extends BaseFeature {
 
         String msg = UserLoginMessages.SUCCESS.getMessage(this.getLanguage(), username);
         logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.BECKEND, msg);
-        return gson.toJson(new Response("User was successfully registered", 200));
+        return gson.toJson(new Response(msg, 200));
     }
 
     /**
@@ -128,16 +125,18 @@ public class FeatureUserLogin extends BaseFeature {
      * @return JSON odpoveď vo forme Response (správu a status)
      */
     public String logout(){
-        String userStatus = globalConfig.getConfigValue("login", "status", String.class);
+        Boolean userStatus = globalConfig.getConfigValue("login", "status", Boolean.class);
 
         //overenie či je používateľ prihlásený
-        if (userStatus.equals("false")) {
+        if (!userStatus) {
             String msg = UserLoginMessages.NOT_LOGGED_IN.getMessage(this.getLanguage());
             logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.BECKEND, msg);
             return gson.toJson(new Response(msg, 500));
         }
 
-        globalConfig.updateConfigValue("login", "status", "false");
+        globalConfig.updateConfigValue("login", "status", false);
+        globalConfig.updateConfigValue("login", "user", null);
+        globalConfig.updateConfigValue("login", "role", null);
         String msg = UserLoginMessages.LOGOUT_MESSAGE.getMessage(this.getLanguage());
         logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.BECKEND, msg);
         return gson.toJson(new Response(msg, 200));

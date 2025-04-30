@@ -10625,3 +10625,1758 @@
 2025-04-29 17:44:28 [INFO] : POST to http://localhost:8085/api/be/register responded with code: 200
 2025-04-29 17:44:28 [INFO] [MIDDLE] [FRONTEND] : Registration response: {"message":"Používateľ bol úspešne registrovaný","status":200}
 2025-04-29 17:44:28 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 19:16:16 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 19:16:16 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 19:16:16 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 19:16:16 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:16:16 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:16:16 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 19:16:16 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 19:16:16 [INFO] : Starting development mode
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 19:16:16 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:16:16 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:16:16 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 19:16:16 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 19:16:16 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 19:16:16 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 19:16:16 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:16:16 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:16:16 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:16:16 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:16:16 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 19:16:16 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 19:16:16 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 19:16:16 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 19:16:16 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 19:16:16 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 19:16:16 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 19:16:16 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 19:16:16 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 19:16:16 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 19:16:16 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 19:16:17 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 19:16:18 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 19:25:53 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/register with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:25:53 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/register
+2025-04-29 19:25:53 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:25:53 [INFO] [MIDDLE] [BECKEND] : Processing account creation request.
+2025-04-29 19:25:53 [INFO] [MIDDLE] [BECKEND] : Parsed roles: testing-role
+2025-04-29 19:25:54 [INFO] [MIDDLE] [BECKEND] : UserOpt: Optional.empty
+2025-04-29 19:25:54 [INFO] [MIDDLE] [BECKEND] : Creating user - Username: richard, Roles: testing-role
+2025-04-29 19:25:54 [INFO] [HIGH] [BECKEND] : Používateľ bol úspešne registrovaný
+2025-04-29 19:25:54 [INFO] : POST to http://localhost:8085/api/be/register responded with code: 200
+2025-04-29 19:25:54 [INFO] [MIDDLE] [FRONTEND] : Registration response: {"message":"Používateľ bol úspešne registrovaný","status":200}
+2025-04-29 19:25:54 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 19:26:08 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:26:14 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:26:14 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:26:14 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:26:14 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:26:14 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:26:14 [ERROR] : POST request to http://localhost:8085/api/be/login/employee failed: Unexpected end of file from server
+2025-04-29 19:26:14 [INFO] [MIDDLE] [FRONTEND] : Login response: POST request failed: Unexpected end of file from server
+2025-04-29 19:26:14 [ERROR] [HIGH] [FRONTEND] : Invalid credentials!
+2025-04-29 19:26:30 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:26:30 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:26:30 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:26:30 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:26:30 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:26:30 [ERROR] : POST request to http://localhost:8085/api/be/login/employee failed: Unexpected end of file from server
+2025-04-29 19:26:30 [INFO] [MIDDLE] [FRONTEND] : Login response: POST request failed: Unexpected end of file from server
+2025-04-29 19:26:30 [ERROR] [HIGH] [FRONTEND] : Invalid credentials!
+2025-04-29 19:27:38 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 19:27:38 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 19:27:38 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 19:27:38 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:27:38 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:27:38 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 19:27:38 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 19:27:38 [INFO] : Starting development mode
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 19:27:38 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:27:38 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:27:38 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 19:27:38 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 19:27:38 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 19:27:38 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 19:27:38 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:27:38 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:27:38 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:27:38 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:27:38 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 19:27:38 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 19:27:38 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 19:27:38 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 19:27:38 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 19:27:38 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 19:27:38 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 19:27:38 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 19:27:38 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 19:27:38 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 19:27:38 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 19:27:39 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 19:27:40 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 19:27:47 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:27:58 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:27:58 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:27:58 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:27:59 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:27:59 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:27:59 [ERROR] : POST request to http://localhost:8085/api/be/login/employee failed: Unexpected end of file from server
+2025-04-29 19:27:59 [INFO] [MIDDLE] [FRONTEND] : Login response: POST request failed: Unexpected end of file from server
+2025-04-29 19:27:59 [ERROR] [HIGH] [FRONTEND] : Invalid credentials!
+2025-04-29 19:27:59 [ERROR] [HIGH] [FRONTEND] : POST request failed: Unexpected end of file from server
+2025-04-29 19:28:56 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:28:56 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:28:56 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:28:57 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:28:57 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:28:57 [ERROR] : POST request to http://localhost:8085/api/be/login/employee failed: Unexpected end of file from server
+2025-04-29 19:28:57 [INFO] [MIDDLE] [FRONTEND] : Login response: POST request failed: Unexpected end of file from server
+2025-04-29 19:28:57 [ERROR] [HIGH] [FRONTEND] : Invalid credentials!
+2025-04-29 19:28:57 [ERROR] [HIGH] [FRONTEND] : POST request failed: Unexpected end of file from server
+2025-04-29 19:29:19 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 19:29:19 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 19:29:19 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 19:29:19 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 19:29:19 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 19:29:19 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:29:20 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:29:20 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 19:29:20 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:29:20 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:29:20 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 19:29:20 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 19:29:20 [INFO] : Starting development mode
+2025-04-29 19:29:20 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 19:29:20 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:29:20 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:29:20 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 19:29:20 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:29:20 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 19:29:20 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 19:29:20 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 19:29:20 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 19:29:20 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 19:29:20 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:29:20 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:29:20 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:29:20 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 19:29:20 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:29:20 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:29:20 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 19:29:20 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 19:29:20 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 19:29:20 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 19:29:20 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 19:29:20 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 19:29:20 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 19:29:20 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 19:29:20 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 19:29:20 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 19:29:20 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 19:29:20 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 19:29:21 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 19:29:25 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:29:36 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:29:36 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:29:36 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:29:37 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:29:37 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:29:37 [ERROR] : POST request to http://localhost:8085/api/be/login/employee failed: Unexpected end of file from server
+2025-04-29 19:29:37 [INFO] [MIDDLE] [FRONTEND] : Login response: POST request failed: Unexpected end of file from server
+2025-04-29 19:29:37 [ERROR] [HIGH] [FRONTEND] : Invalid credentials!
+2025-04-29 19:29:37 [ERROR] [HIGH] [FRONTEND] : POST request failed: Unexpected end of file from server
+2025-04-29 19:31:34 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 19:31:34 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 19:31:34 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 19:31:34 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:31:34 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:31:34 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 19:31:34 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 19:31:34 [INFO] : Starting development mode
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 19:31:34 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:31:34 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:31:34 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 19:31:34 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 19:31:34 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 19:31:34 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 19:31:34 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:31:34 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:31:34 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:31:34 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:31:34 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 19:31:34 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 19:31:34 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 19:31:34 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 19:31:34 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 19:31:34 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 19:31:34 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 19:31:34 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 19:31:34 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 19:31:34 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 19:31:34 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 19:31:35 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 19:31:36 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 19:33:11 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 19:33:11 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 19:33:11 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 19:33:11 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:33:11 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:33:11 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 19:33:11 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 19:33:11 [INFO] : Starting development mode
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 19:33:11 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:33:11 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:33:11 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 19:33:11 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 19:33:11 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 19:33:11 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 19:33:11 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:33:11 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:33:11 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:33:11 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:33:11 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 19:33:11 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 19:33:11 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 19:33:11 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 19:33:11 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 19:33:11 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 19:33:11 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 19:33:11 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 19:33:11 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 19:33:11 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 19:33:11 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 19:33:12 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 19:33:13 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 19:35:05 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:35:13 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:35:13 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:35:13 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:35:13 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 19:35:28 [ERROR] : POST request to http://localhost:8085/api/be/login/employee failed: Read timed out
+2025-04-29 19:35:29 [INFO] [MIDDLE] [FRONTEND] : Login response: POST request failed: Read timed out
+2025-04-29 19:35:29 [ERROR] [HIGH] [FRONTEND] : Invalid credentials!
+2025-04-29 19:35:29 [ERROR] [HIGH] [FRONTEND] : POST request failed: Read timed out
+2025-04-29 19:38:27 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 19:38:27 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 19:38:27 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 19:38:27 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:38:27 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:38:27 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 19:38:27 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 19:38:27 [INFO] : Starting development mode
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 19:38:27 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:38:27 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:38:27 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 19:38:27 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 19:38:27 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 19:38:27 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 19:38:27 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:38:27 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:38:27 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:38:27 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:38:27 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 19:38:27 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 19:38:27 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 19:38:27 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 19:38:27 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 19:38:27 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 19:38:27 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 19:38:27 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 19:38:27 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 19:38:27 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 19:38:27 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 19:38:27 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 19:38:28 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 19:38:34 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:38:40 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:38:40 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:38:40 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:38:40 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 19:38:56 [ERROR] : POST request to http://localhost:8085/api/be/login/employee failed: Read timed out
+2025-04-29 19:38:56 [INFO] [MIDDLE] [FRONTEND] : Login response: POST request failed: Read timed out
+2025-04-29 19:38:56 [ERROR] [HIGH] [FRONTEND] : Invalid credentials!
+2025-04-29 19:38:56 [ERROR] [HIGH] [FRONTEND] : POST request failed: Read timed out
+2025-04-29 19:39:59 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj richard!
+2025-04-29 19:40:33 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:40:33 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:40:33 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:40:33 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 19:40:43 [ERROR] : POST request to http://localhost:8085/api/be/login/employee failed: Read timed out
+2025-04-29 19:40:43 [INFO] [MIDDLE] [FRONTEND] : Login response: POST request failed: Read timed out
+2025-04-29 19:40:43 [ERROR] [HIGH] [FRONTEND] : Invalid credentials!
+2025-04-29 19:40:43 [ERROR] [HIGH] [FRONTEND] : POST request failed: Read timed out
+2025-04-29 19:40:43 [ERROR] [MIDDLE] [BECKEND] : Už ste prihlásený na inom zariadení
+2025-04-29 19:43:22 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:43:22 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:43:22 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:43:22 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 19:43:24 [ERROR] [MIDDLE] [BECKEND] : Už ste prihlásený na inom zariadení
+2025-04-29 19:43:24 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 19:43:24 [INFO] [MIDDLE] [FRONTEND] : Login response: {"username":"","roles":[],"message":"Už ste prihlásený na inom zariadení","status":500}
+2025-04-29 19:43:24 [ERROR] [HIGH] [FRONTEND] : Invalid credentials!
+2025-04-29 19:43:24 [ERROR] [HIGH] [FRONTEND] : {"username":"","roles":[],"message":"Už ste prihlásený na inom zariadení","status":500}
+2025-04-29 19:44:03 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 19:44:03 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 19:44:03 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 19:44:03 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:44:03 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:44:03 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 19:44:03 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 19:44:03 [INFO] : Starting development mode
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 19:44:03 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:44:03 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:44:03 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 19:44:03 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 19:44:03 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 19:44:03 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 19:44:03 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:44:03 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:44:03 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:44:03 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:44:03 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 19:44:03 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 19:44:03 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 19:44:03 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 19:44:03 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 19:44:03 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 19:44:03 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 19:44:03 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 19:44:03 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 19:44:03 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 19:44:03 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 19:44:03 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 19:44:04 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 19:44:09 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:44:15 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:44:15 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:44:15 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:44:15 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 19:44:16 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj richard!
+2025-04-29 19:44:16 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 19:44:16 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 19:44:16 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 19:48:03 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 19:48:03 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 19:48:03 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 19:48:04 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:48:04 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:48:04 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 19:48:04 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 19:48:04 [INFO] : Starting development mode
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 19:48:04 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:48:04 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:48:04 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 19:48:04 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 19:48:04 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 19:48:04 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 19:48:04 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:48:04 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:48:04 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:48:04 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:48:04 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 19:48:04 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 19:48:04 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 19:48:04 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 19:48:04 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 19:48:04 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 19:48:04 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 19:48:04 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 19:48:04 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 19:48:04 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 19:48:04 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 19:48:04 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 19:48:05 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 19:48:25 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:48:30 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:48:30 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:48:30 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:48:30 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 19:48:31 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj richard!
+2025-04-29 19:48:31 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 19:48:31 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 19:48:31 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 19:48:41 [INFO] [LOW] [FRONTEND] : Item removed from cart: Burger
+2025-04-29 19:48:42 [INFO] [LOW] [FRONTEND] : Item removed from cart: Cheeseburger
+2025-04-29 19:48:42 [INFO] [LOW] [FRONTEND] : Item removed from cart: Big Mac
+2025-04-29 19:48:43 [INFO] [LOW] [FRONTEND] : Item removed from cart: Fries
+2025-04-29 19:48:45 [INFO] [LOW] [FRONTEND] : Food added to cart: Big Mac
+2025-04-29 19:48:48 [INFO] [LOW] [FRONTEND] : Food added to cart: Big Mac
+2025-04-29 19:48:48 [INFO] [LOW] [FRONTEND] : Food added to cart: Big Mac
+2025-04-29 19:48:49 [INFO] [LOW] [FRONTEND] : Food added to cart: Big Mac
+2025-04-29 19:48:49 [INFO] [LOW] [FRONTEND] : Food added to cart: Big Mac
+2025-04-29 19:48:49 [INFO] [LOW] [FRONTEND] : Food added to cart: Big Mac
+2025-04-29 19:48:49 [INFO] [LOW] [FRONTEND] : Food added to cart: Big Mac
+2025-04-29 19:48:49 [INFO] [LOW] [FRONTEND] : Food added to cart: Big Mac
+2025-04-29 19:48:49 [INFO] [LOW] [FRONTEND] : Food added to cart: Big Mac
+2025-04-29 19:49:02 [INFO] [LOW] [FRONTEND] : Category opened: Kat. 2
+2025-04-29 19:49:05 [INFO] [LOW] [FRONTEND] : Food added to cart: Fries
+2025-04-29 19:49:07 [INFO] [LOW] [FRONTEND] : Food added to cart: Fries
+2025-04-29 19:49:09 [INFO] [LOW] [FRONTEND] : Order confirmed
+2025-04-29 19:49:12 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 19:50:54 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:50:59 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 19:51:01 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:51:07 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 19:51:23 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 19:51:34 [INFO] [LOW] [FRONTEND] : Opening BookTable menu
+2025-04-29 19:51:57 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 19:52:37 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 19:52:37 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 19:52:37 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 19:52:37 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 19:52:37 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 19:52:37 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:52:37 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:52:37 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 19:52:37 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:52:37 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:52:37 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 19:52:37 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 19:52:37 [INFO] : Starting development mode
+2025-04-29 19:52:37 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 19:52:37 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 19:52:37 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:52:37 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:52:37 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:52:37 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 19:52:37 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:52:37 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:52:37 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 19:52:37 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 19:52:37 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 19:52:38 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 19:52:38 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 19:52:38 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 19:52:38 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 19:52:38 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 19:52:38 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 19:52:38 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 19:52:38 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 19:52:38 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 19:52:38 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:52:38 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:52:38 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:52:38 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 19:52:38 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:52:38 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:52:38 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 19:52:38 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 19:52:38 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 19:52:38 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 19:52:38 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 19:52:38 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 19:52:38 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 19:52:38 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 19:52:38 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 19:52:38 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 19:52:38 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 19:52:38 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 19:52:39 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 19:52:59 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:53:12 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:53:12 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:53:12 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:53:12 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 19:53:13 [ERROR] [MIDDLE] [BECKEND] : Už ste prihlásený na inom zariadení
+2025-04-29 19:53:13 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 19:53:13 [INFO] [MIDDLE] [FRONTEND] : Login response: {"username":"","roles":[],"message":"Už ste prihlásený na inom zariadení","status":500}
+2025-04-29 19:53:13 [ERROR] [HIGH] [FRONTEND] : Invalid credentials!
+2025-04-29 19:53:13 [ERROR] [HIGH] [FRONTEND] : {"username":"","roles":[],"message":"Už ste prihlásený na inom zariadení","status":500}
+2025-04-29 19:53:42 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 19:53:42 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 19:53:42 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 19:53:42 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:53:42 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:53:42 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 19:53:42 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 19:53:42 [INFO] : Starting development mode
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 19:53:42 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:53:42 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:53:42 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 19:53:42 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 19:53:42 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 19:53:42 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 19:53:42 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 19:53:42 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:53:42 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 19:53:42 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 19:53:42 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 19:53:42 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 19:53:42 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 19:53:42 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 19:53:42 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 19:53:42 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 19:53:42 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 19:53:42 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 19:53:42 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 19:53:42 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 19:53:42 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 19:53:42 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 19:53:43 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 19:53:51 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 19:53:53 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 19:54:00 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 19:54:00 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 19:54:00 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 19:54:00 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 19:54:00 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj richard!
+2025-04-29 19:54:00 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 19:54:00 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 19:54:00 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 19:54:16 [INFO] [LOW] [FRONTEND] : Food added to cart: Cheeseburger
+2025-04-29 19:54:18 [INFO] [LOW] [FRONTEND] : Food added to cart: Big Mac
+2025-04-29 19:54:27 [INFO] [LOW] [FRONTEND] : Order confirmed
+2025-04-29 19:54:37 [INFO] [LOW] [FRONTEND] : Item removed from cart: Fries
+2025-04-29 19:54:39 [INFO] [LOW] [FRONTEND] : Item removed from cart: Big Mac
+2025-04-29 19:54:40 [INFO] [LOW] [FRONTEND] : Order confirmed
+2025-04-29 19:54:43 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 19:54:57 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 20:44:39 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 20:44:39 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 20:44:39 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 20:44:39 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 20:44:39 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 20:44:39 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:44:40 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:44:40 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 20:44:40 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:44:40 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:44:40 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 20:44:40 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 20:44:40 [INFO] : Starting development mode
+2025-04-29 20:44:40 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 20:44:40 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:44:40 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:44:40 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 20:44:40 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:44:40 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 20:44:40 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 20:44:40 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 20:44:40 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 20:44:40 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 20:44:40 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:44:40 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:44:40 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:44:40 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 20:44:40 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:44:40 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:44:40 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 20:44:40 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 20:44:40 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 20:44:40 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 20:44:40 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 20:44:40 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 20:44:40 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 20:44:40 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 20:44:40 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 20:44:40 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 20:44:40 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 20:44:40 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 20:44:41 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 20:48:33 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 20:48:33 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 20:48:33 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 20:48:34 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:48:34 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:48:34 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 20:48:34 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 20:48:34 [INFO] : Starting development mode
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 20:48:34 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:48:34 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:48:34 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 20:48:34 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 20:48:34 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 20:48:34 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 20:48:34 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:48:34 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:48:34 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:48:34 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:48:34 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 20:48:34 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 20:48:34 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 20:48:34 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 20:48:34 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 20:48:34 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 20:48:34 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 20:48:34 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 20:48:34 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 20:48:34 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 20:48:34 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 20:48:34 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 20:48:35 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 20:50:07 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 20:50:07 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 20:50:07 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 20:50:07 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:50:07 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:50:07 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 20:50:07 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 20:50:07 [INFO] : Starting development mode
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 20:50:07 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:50:07 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:50:07 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 20:50:07 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 20:50:07 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 20:50:07 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 20:50:07 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:50:07 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:07 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:50:07 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:07 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 20:50:07 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 20:50:07 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 20:50:07 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 20:50:07 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 20:50:07 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 20:50:07 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 20:50:07 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 20:50:07 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 20:50:07 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 20:50:07 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 20:50:07 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 20:50:08 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 20:50:47 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 20:50:47 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 20:50:47 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 20:50:47 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:50:47 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:50:47 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 20:50:47 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 20:50:47 [INFO] : Starting development mode
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 20:50:47 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:50:47 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:50:47 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 20:50:47 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 20:50:47 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 20:50:47 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 20:50:47 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:50:47 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:47 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:50:47 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:50:47 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 20:50:47 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 20:50:47 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 20:50:47 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 20:50:47 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 20:50:47 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 20:50:47 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 20:50:47 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 20:50:47 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 20:50:47 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 20:50:47 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 20:50:47 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 20:50:48 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 20:50:51 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 20:50:55 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 20:51:01 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 20:51:01 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 20:51:01 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 20:51:01 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 20:51:01 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj richard!
+2025-04-29 20:51:01 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 20:51:01 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 20:51:01 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 20:51:04 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 20:51:46 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 20:51:46 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 20:51:46 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 20:51:46 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:51:46 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:51:46 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 20:51:46 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 20:51:46 [INFO] : Starting development mode
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 20:51:46 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:51:46 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:51:46 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 20:51:46 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 20:51:46 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 20:51:46 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 20:51:46 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:51:46 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:51:46 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:51:46 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:51:46 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 20:51:46 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 20:51:46 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 20:51:46 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 20:51:46 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 20:51:46 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 20:51:46 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 20:51:46 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 20:51:46 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 20:51:46 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 20:51:46 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 20:51:46 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 20:51:47 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 20:51:49 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 20:51:51 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 20:51:57 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 20:51:57 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 20:51:57 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 20:51:57 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 20:51:58 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj richard!
+2025-04-29 20:51:58 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 20:51:58 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 20:51:58 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 20:51:59 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 20:52:03 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 20:52:06 [INFO] [LOW] [FRONTEND] : Opening Login menu
+2025-04-29 20:52:18 [INFO] [LOW] [FRONTEND] : Opening Login menu
+2025-04-29 20:52:31 [INFO] [LOW] [FRONTEND] : Opening Login menu
+2025-04-29 20:52:56 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 20:52:58 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 20:53:48 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 20:53:48 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 20:53:48 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 20:53:48 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:53:48 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:53:48 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 20:53:48 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 20:53:48 [INFO] : Starting development mode
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 20:53:48 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:53:48 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:53:48 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 20:53:48 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 20:53:48 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 20:53:48 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 20:53:48 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:53:48 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:53:48 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:53:48 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:53:48 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 20:53:48 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 20:53:48 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 20:53:48 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 20:53:48 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 20:53:48 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 20:53:48 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 20:53:48 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 20:53:48 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 20:53:48 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 20:53:48 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 20:53:48 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 20:53:50 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 20:53:52 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 20:53:57 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 20:53:57 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 20:53:57 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 20:53:57 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 20:53:58 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj richard!
+2025-04-29 20:53:58 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 20:53:58 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 20:53:58 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 20:53:59 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 20:54:01 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 20:54:06 [INFO] [LOW] [FRONTEND] : Opening Login menu
+2025-04-29 20:57:59 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 20:57:59 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 20:57:59 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 20:57:59 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:57:59 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:57:59 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 20:57:59 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 20:57:59 [INFO] : Starting development mode
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 20:57:59 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:57:59 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:57:59 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 20:57:59 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 20:57:59 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 20:57:59 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 20:57:59 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 20:57:59 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:57:59 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 20:57:59 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 20:57:59 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 20:57:59 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 20:57:59 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 20:57:59 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 20:57:59 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 20:57:59 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 20:57:59 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 20:57:59 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 20:57:59 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 20:57:59 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 20:57:59 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 20:57:59 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 20:58:01 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 20:58:03 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 20:58:12 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 20:58:12 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 20:58:12 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 20:58:12 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 20:58:12 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj richard!
+2025-04-29 20:58:12 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 20:58:12 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 20:58:12 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 20:58:13 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 20:58:15 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 20:58:18 [INFO] [LOW] [FRONTEND] : Opening Login menu
+2025-04-29 21:01:47 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 21:01:47 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 21:01:47 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 21:01:47 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 21:01:47 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 21:01:47 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:01:47 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:01:47 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 21:01:47 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:01:47 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:01:47 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 21:01:47 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 21:01:47 [INFO] : Starting development mode
+2025-04-29 21:01:47 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 21:01:47 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 21:01:47 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:01:47 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:01:47 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:01:47 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 21:01:47 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:01:47 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:01:47 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 21:01:47 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 21:01:48 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 21:01:48 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 21:01:48 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 21:01:48 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 21:01:48 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 21:01:48 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 21:01:48 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 21:01:48 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 21:01:48 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 21:01:48 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 21:01:48 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:01:48 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:01:48 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:01:48 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 21:01:48 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:01:48 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:01:48 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 21:01:48 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 21:01:48 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 21:01:48 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 21:01:48 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 21:01:48 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 21:01:48 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 21:01:48 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 21:01:48 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 21:01:48 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 21:01:48 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 21:01:48 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 21:01:49 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 21:01:51 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 21:01:56 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-29 21:01:56 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 21:01:56 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-29 21:01:56 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 21:01:57 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj richard!
+2025-04-29 21:01:57 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 21:01:57 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 21:01:57 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 21:01:59 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 21:02:01 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 21:02:02 [INFO] [LOW] [FRONTEND] : Opening Login menu
+2025-04-29 21:02:04 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-29 21:10:22 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 21:10:22 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 21:10:22 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 21:10:22 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:10:22 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:10:22 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 21:10:22 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 21:10:22 [INFO] : Starting development mode
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 21:10:22 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:10:22 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:10:22 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 21:10:22 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 21:10:22 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 21:10:22 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 21:10:22 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:10:22 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:10:22 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:10:22 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:10:22 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 21:10:22 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 21:10:22 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 21:10:22 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 21:10:22 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 21:10:22 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 21:10:22 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 21:10:22 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 21:10:22 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 21:10:22 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 21:10:22 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 21:10:22 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 21:10:24 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 21:10:32 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/register with JSON data: {"username":"asd", "password":"asd"}
+2025-04-29 21:10:32 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/register
+2025-04-29 21:10:32 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-04-29 21:10:32 [INFO] [MIDDLE] [BECKEND] : Processing account creation request.
+2025-04-29 21:10:32 [INFO] [MIDDLE] [BECKEND] : Parsed roles: testing-role
+2025-04-29 21:10:32 [INFO] [MIDDLE] [BECKEND] : UserOpt: Optional.empty
+2025-04-29 21:10:33 [INFO] [MIDDLE] [BECKEND] : Creating user - Username: asd, Roles: testing-role
+2025-04-29 21:10:33 [INFO] [HIGH] [BECKEND] : Používateľ bol úspešne registrovaný
+2025-04-29 21:10:33 [INFO] : POST to http://localhost:8085/api/be/register responded with code: 200
+2025-04-29 21:10:33 [INFO] [MIDDLE] [FRONTEND] : Registration response: {"message":"Používateľ bol úspešne registrovaný","status":200}
+2025-04-29 21:10:33 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 21:11:50 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 21:11:53 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"asd", "password":"asd"}
+2025-04-29 21:11:53 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 21:11:53 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-04-29 21:11:53 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 21:11:53 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj asd!
+2025-04-29 21:11:53 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 21:11:53 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 21:11:53 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 21:14:49 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 21:14:49 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 21:14:49 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 21:14:49 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:14:49 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:14:49 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 21:14:49 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 21:14:49 [INFO] : Starting development mode
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 21:14:49 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:14:49 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:14:49 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 21:14:49 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 21:14:49 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 21:14:49 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 21:14:49 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:14:49 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:14:49 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:14:49 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:14:49 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 21:14:49 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 21:14:49 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 21:14:49 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 21:14:49 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 21:14:49 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 21:14:49 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 21:14:49 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 21:14:49 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 21:14:49 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 21:14:49 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 21:14:49 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 21:14:51 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 21:14:53 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 21:14:55 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 21:14:58 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"asd", "password":"asd"}
+2025-04-29 21:14:58 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 21:14:58 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-04-29 21:14:58 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 21:14:59 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj asd!
+2025-04-29 21:14:59 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 21:14:59 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 21:14:59 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 21:15:56 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 21:15:56 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 21:15:56 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 21:15:56 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:15:56 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:15:56 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 21:15:56 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 21:15:56 [INFO] : Starting development mode
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 21:15:56 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:15:56 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:15:56 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 21:15:56 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 21:15:56 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 21:15:56 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 21:15:56 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:15:56 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:15:56 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:15:56 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:15:56 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 21:15:56 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 21:15:56 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 21:15:56 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 21:15:56 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 21:15:56 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 21:15:56 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 21:15:56 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 21:15:56 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 21:15:56 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 21:15:56 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 21:15:57 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 21:15:58 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 21:16:00 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 21:16:01 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 21:16:04 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"asd", "password":"asd"}
+2025-04-29 21:16:04 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 21:16:04 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-04-29 21:16:04 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 21:16:05 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj asd!
+2025-04-29 21:16:05 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 21:16:05 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 21:16:05 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 21:18:45 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 21:18:45 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 21:18:45 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 21:18:45 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 21:18:45 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 21:18:45 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:18:45 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:18:45 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 21:18:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:18:46 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:18:46 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 21:18:46 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 21:18:46 [INFO] : Starting development mode
+2025-04-29 21:18:46 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 21:18:46 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:18:46 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:18:46 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 21:18:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:18:46 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 21:18:46 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 21:18:46 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 21:18:46 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 21:18:46 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 21:18:46 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:18:46 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:18:46 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:18:46 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 21:18:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:18:46 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:18:46 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 21:18:46 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 21:18:46 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 21:18:46 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 21:18:46 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 21:18:46 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 21:18:46 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 21:18:46 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 21:18:46 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 21:18:46 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 21:18:46 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 21:18:46 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 21:18:47 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 21:18:48 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 21:18:50 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 21:18:52 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"asd", "password":"asd"}
+2025-04-29 21:18:52 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 21:18:52 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-04-29 21:18:52 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 21:18:53 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj asd!
+2025-04-29 21:18:53 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 21:18:53 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 21:18:53 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 21:20:00 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 21:20:00 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 21:20:00 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 21:20:00 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:20:00 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:20:00 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 21:20:00 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 21:20:00 [INFO] : Starting development mode
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 21:20:00 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:20:00 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:20:00 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 21:20:00 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 21:20:00 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 21:20:00 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 21:20:00 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:20:00 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:20:00 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:20:00 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:20:00 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 21:20:00 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 21:20:00 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 21:20:00 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 21:20:00 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 21:20:00 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 21:20:00 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 21:20:00 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 21:20:00 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 21:20:00 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 21:20:00 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 21:20:00 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 21:20:01 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 21:20:06 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 21:20:08 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 21:20:10 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"asd", "password":"asd"}
+2025-04-29 21:20:10 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 21:20:10 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-04-29 21:20:10 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 21:20:11 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj asd!
+2025-04-29 21:20:11 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 21:20:11 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"User was successfully registered","status":200}
+2025-04-29 21:20:11 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 21:30:55 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 21:30:55 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 21:30:55 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 21:30:55 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:30:55 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:30:55 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 21:30:55 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 21:30:55 [INFO] : Starting development mode
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 21:30:55 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:30:55 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:30:55 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 21:30:55 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 21:30:55 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 21:30:55 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 21:30:55 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:30:55 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:30:55 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:30:55 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:30:55 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 21:30:55 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 21:30:55 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 21:30:55 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 21:30:55 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 21:30:55 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 21:30:55 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 21:30:55 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 21:30:55 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 21:30:55 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 21:30:55 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 21:30:55 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 21:30:57 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 21:30:58 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 21:30:58 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/logout with JSON data: null
+2025-04-29 21:30:58 [INFO] : POST to http://localhost:8085/api/logout responded with code: 404
+2025-04-29 21:30:58 [ERROR] : POST request to http://localhost:8085/api/logout failed: http://localhost:8085/api/logout
+2025-04-29 21:31:03 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 21:31:03 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/logout with JSON data: null
+2025-04-29 21:31:03 [INFO] : POST to http://localhost:8085/api/logout responded with code: 404
+2025-04-29 21:31:03 [ERROR] : POST request to http://localhost:8085/api/logout failed: http://localhost:8085/api/logout
+2025-04-29 21:32:09 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 21:32:09 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 21:32:09 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 21:32:09 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:32:09 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:32:09 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 21:32:09 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 21:32:09 [INFO] : Starting development mode
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 21:32:09 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:32:09 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:32:09 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 21:32:09 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 21:32:09 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 21:32:09 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 21:32:09 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:32:09 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:09 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:32:09 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:09 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 21:32:09 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 21:32:09 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 21:32:09 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 21:32:09 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 21:32:09 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 21:32:09 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 21:32:09 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 21:32:09 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 21:32:09 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 21:32:09 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 21:32:10 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 21:32:11 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 21:32:12 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 21:32:12 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/apiapi/be/logout with JSON data: null
+2025-04-29 21:32:12 [INFO] : POST to http://localhost:8085/apiapi/be/logout responded with code: 404
+2025-04-29 21:32:12 [ERROR] : POST request to http://localhost:8085/apiapi/be/logout failed: http://localhost:8085/apiapi/be/logout
+2025-04-29 21:32:46 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-29 21:32:46 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-29 21:32:46 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-29 21:32:46 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:32:46 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:32:46 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-29 21:32:46 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-29 21:32:46 [INFO] : Starting development mode
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-29 21:32:46 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:32:46 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:32:46 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-29 21:32:46 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-29 21:32:46 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-29 21:32:46 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-29 21:32:46 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-29 21:32:46 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:46 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-29 21:32:46 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-29 21:32:46 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-29 21:32:46 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-29 21:32:46 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-29 21:32:46 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-29 21:32:46 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-29 21:32:46 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-29 21:32:46 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-29 21:32:46 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-29 21:32:46 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-29 21:32:46 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-29 21:32:46 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-29 21:32:46 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-29 21:32:47 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-29 21:32:49 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-29 21:32:49 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/logout with JSON data: null
+2025-04-29 21:32:49 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/logout
+2025-04-29 21:32:49 [INFO] [LOW] [REST_API] : Request body: 
+2025-04-29 21:32:49 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-04-29 21:32:49 [INFO] : POST to http://localhost:8085/api/be/logout responded with code: 200
+2025-04-29 21:32:52 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-29 21:32:54 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"asd", "password":"asd"}
+2025-04-29 21:32:54 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-29 21:32:54 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-04-29 21:32:54 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-29 21:32:55 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj asd!
+2025-04-29 21:32:55 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-29 21:32:55 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"Vitaj asd!","status":200}
+2025-04-29 21:32:55 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-29 21:33:11 [INFO] [LOW] [FRONTEND] : Logging out
+2025-04-29 21:33:11 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/logout with JSON data: null
+2025-04-29 21:33:11 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/logout
+2025-04-29 21:33:11 [INFO] [LOW] [REST_API] : Request body: 
+2025-04-29 21:33:11 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-04-29 21:33:11 [INFO] : POST to http://localhost:8085/api/be/logout responded with code: 200
+2025-04-29 21:33:11 [INFO] [LOW] [FRONTEND] : Logout successful!
+2025-04-30 16:35:22 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-04-30 16:35:22 [INFO] [HIGH] [REST_API] : Starting REST API Server
+2025-04-30 16:35:22 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-04-30 16:35:22 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-30 16:35:22 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-30 16:35:22 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-04-30 16:35:22 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-04-30 16:35:22 [INFO] : Starting development mode
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-04-30 16:35:22 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-30 16:35:22 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-30 16:35:22 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-04-30 16:35:22 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : FeatureTableStructure Started
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-04-30 16:35:22 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-04-30 16:35:22 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-04-30 16:35:22 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/health with JSON data: health-check
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-04-30 16:35:22 [INFO] : POST to http://localhost:8085/api/health responded with code: 200
+2025-04-30 16:35:22 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-04-30 16:35:22 [INFO] : GET to http://localhost:8085/api/health responded with code: 200
+2025-04-30 16:35:22 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-04-30 16:35:22 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-04-30 16:35:22 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-04-30 16:35:22 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-04-30 16:35:22 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-04-30 16:35:22 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-04-30 16:35:22 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-04-30 16:35:22 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-04-30 16:35:22 [INFO] : POST to http://localhost:8085/api/be/testConnection responded with code: 200
+2025-04-30 16:35:22 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-04-30 16:35:22 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-04-30 16:35:22 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-04-30 16:35:23 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-04-30 16:35:31 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-30 16:35:38 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"richard", "password":"richard"}
+2025-04-30 16:35:38 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-30 16:35:38 [INFO] [LOW] [REST_API] : Request body: {"username":"richard", "password":"richard"}
+2025-04-30 16:35:38 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-30 16:35:39 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj richard!
+2025-04-30 16:35:39 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-30 16:35:39 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"Vitaj richard!","status":200}
+2025-04-30 16:35:39 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-30 16:36:42 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-04-30 16:36:44 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-04-30 16:36:44 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/logout with JSON data: null
+2025-04-30 16:36:44 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/logout
+2025-04-30 16:36:44 [INFO] [LOW] [REST_API] : Request body: 
+2025-04-30 16:36:44 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-04-30 16:36:44 [INFO] : POST to http://localhost:8085/api/be/logout responded with code: 200
+2025-04-30 16:36:48 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-04-30 16:36:52 [INFO] [HIGH] [REST_API] : Sending POST request to http://localhost:8085/api/be/login/employee with JSON data: {"username":"asd", "password":"asd"}
+2025-04-30 16:36:52 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-04-30 16:36:52 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-04-30 16:36:52 [INFO] [HIGH] [BECKEND] : Starting login
+2025-04-30 16:36:52 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj asd!
+2025-04-30 16:36:52 [INFO] : POST to http://localhost:8085/api/be/login/employee responded with code: 200
+2025-04-30 16:36:52 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"Vitaj asd!","status":200}
+2025-04-30 16:36:52 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-04-30 16:37:01 [INFO] [LOW] [FRONTEND] : Opening Admin Panel
+2025-04-30 16:37:03 [INFO] [LOW] [FRONTEND] : Opening Current Orders view
