@@ -1,10 +1,7 @@
-device:
-  id: "C5"
-  language: "sk"
+device: {id: C5, language: sk}
 login:
-  user: "C5"
-  roles: "customer"
-  tags:
-    - customer
-    - admin
-  status: "false"
+  user: radko
+  roles: customer
+  tags: [customer, admin]
+  status: 'false'
+  role: [admin]

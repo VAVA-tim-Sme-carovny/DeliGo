@@ -19,7 +19,7 @@ public class RestAPIServer {
     private static LoggingAdapter logger;
     private static ConfigLoader deviceConfiguration;
 
-    private final String BASE_URL = "http://localhost:8080/api";
+    private final String BASE_URL = "http://localhost:50000/api";
 
     public RestAPIServer(LoggingAdapter adapter, ConfigLoader config) throws IOException {
         logger = adapter;
@@ -28,7 +28,7 @@ public class RestAPIServer {
         deviceConfiguration = config;
         logger.log(LogType.INFO, LogPriority.HIGH, LogSource.REST_API, "Configuration was loaded");
 
-        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(50000), 0);
 
         // Registrácia kontextov pre backend, frontend a health endpoint
         server.createContext("/api/be", new BackendHandler(this));
@@ -77,10 +77,10 @@ public class RestAPIServer {
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.REST_API, "Running REST API health checks...");
 
         try {
-            String postResponse = RequestUtils.sendPostRequest("http://localhost:8080/api/health", "health-check", logger);
+            String postResponse = RequestUtils.sendPostRequest("http://localhost:50000/api/health", "health-check", logger);
             logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.REST_API, "POST /api/health response: " + postResponse);
 
-            String getResponse = RequestUtils.sendGetRequest("http://localhost:8080/api/health", logger);
+            String getResponse = RequestUtils.sendGetRequest("http://localhost:50000/api/health", logger);
             logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.REST_API, "GET /api/health response: " + getResponse);
 
             if (postResponse.contains("OK") && getResponse.contains("OK")) {

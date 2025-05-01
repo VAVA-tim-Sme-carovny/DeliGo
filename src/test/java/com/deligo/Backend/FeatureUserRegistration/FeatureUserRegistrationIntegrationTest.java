@@ -36,27 +36,44 @@ public class FeatureUserRegistrationIntegrationTest extends com.deligo.Backend.B
     @Test
     void testCreateAccountValidInput() {
         String jsonData = "{\n" +
-                "  \"username\": \"radkko\",\n" +
-                "  \"password\": \"macock\",\n" +
-                "  \"roles\": [\"admin\"],\n" +
+                "  \"username\": \"Mieernko\",\n" +
+                "  \"password\": \"vodnaveza\",\n" +
+                "  \"roles\": [\"CHANGE_ORDER_STATE\"],\n" +
                 "  \"tag\": []\n" +
                 "}";
         String responseJson = featureUserRegister.createAccount(jsonData);
         Response response = gson.fromJson(responseJson, Response.class);
 
         assertEquals(200, response.getStatus(), "Expected status 200 for valid input");
-        assertEquals("Údaje boli zapísané správne", response.getMessage());
+        assertEquals("Používateľ bol úspešne registrovaný", response.getMessage());
     }
 
+ @Test
+        void testCreateAccountInvalidJSON() {
+            String jsonData = "invalid json";
+            String responseJson = featureUserRegister.createAccount(jsonData);
+            Response response = gson.fromJson(responseJson, Response.class);
+
+            assertEquals(500, response.getStatus(), "Expected status 500 for invalid JSON");
+            assertTrue(response.getMessage().contains("Neplatný formát JSON"),
+                    "Expected error message for invalid JSON");
+    }
+
+
     @Test
-    void testCreateAccountInvalidJSON() {
-        String jsonData = "invalid json";
+    void testCreateAccountNoPassword() {
+        String jsonData = "{\n" +
+                "  \"username\": \"Minko\",\n" +
+                "  \"roles\": [\"CHANGE_ORDER_STATE\"],\n" +
+                "  \"tag\": []\n" +
+                "}";
         String responseJson = featureUserRegister.createAccount(jsonData);
         Response response = gson.fromJson(responseJson, Response.class);
 
-        assertEquals(500, response.getStatus(), "Expected status 500 for invalid JSON");
-        assertTrue(response.getMessage().contains("Neplatný formát JSON"),
-                "Expected error message for invalid JSON");
+        assertEquals(500, response.getStatus(), "Expected status 500 for missing password");
+        assertTrue(response.getMessage().contains("Heslo nebolo poskytnuté"),
+                "Expected error message for missing password");
+
     }
 
     @Test
@@ -73,5 +90,27 @@ public class FeatureUserRegistrationIntegrationTest extends com.deligo.Backend.B
         assertEquals(500, response.getStatus(), "Expected status 500 for invalid Roles");
         assertTrue(response.getMessage().contains("Nesprávna rola"), "Expected error message for invalid Roles");
     }
+
+
+
+
+
+    @Test
+    void testCreateAccountMissingUsername() {
+        String jsonData = "{\n" +
+                "  \"password\": \"tajneheslo\",\n" +
+                "  \"roles\": [\"CHANGE_ORDER_STATE\"],\n" +
+                "  \"tag\": []\n" +
+                "}";
+        String responseJson = featureUserRegister.createAccount(jsonData);
+        Response response = gson.fromJson(responseJson, Response.class);
+
+        assertEquals(500, response.getStatus(), "Expected status 500 for missing username");
+        assertTrue(response.getMessage().contains("Chyba pri ukladaní do databázyChyba pri vkladaní entity"),
+                "Expected error message for missing username");
+    }
+
+
+
 
 }

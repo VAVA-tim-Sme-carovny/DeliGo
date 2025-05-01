@@ -36,7 +36,7 @@ public class FeatureOrgDetailsIntegrationTest extends com.deligo.Backend.BaseFea
     void testUpdateOrgDetailsValidInput() {
         String jsonData = "{"
                 + "\"openingTimes\": [[\"08:30\", \"17:00\"], [\"09:00\", \"18:00\"]],"
-                + "\"phoneNumber\": \"09111 222 333\","
+                + "\"phoneNumber\": \"0911 222 333\","
                 + "\"mail\": \"test@example.com\""
                 + "}";
         String responseJson = featureOrgDetails.updateOrgDetails(jsonData);
@@ -48,7 +48,11 @@ public class FeatureOrgDetailsIntegrationTest extends com.deligo.Backend.BaseFea
 
     @Test
     void testUpdateOrgDetailsInvalidJSON() {
-        String jsonData = "invalid json";
+        String jsonData = "{"
+                + "\"openingTimes\": [[\"08:30\", \"17:00\"], [\"09:00\", \"18:00\"]],"
+                + "\"phoneNumber\": \"0911 222 333\","
+
+                + "}";
         String responseJson = featureOrgDetails.updateOrgDetails(jsonData);
         Response response = gson.fromJson(responseJson, Response.class);
 
@@ -76,7 +80,7 @@ public class FeatureOrgDetailsIntegrationTest extends com.deligo.Backend.BaseFea
     void testUpdateOrgDetailsInvalidEmail() {
         String jsonData = "{"
                 + "\"openingTimes\": [[\"08:30\", \"17:00\"]],"
-                + "\"phoneNumber\": \"09111 222 333\","
+                + "\"phoneNumber\": \"0911 222 333\","
                 + "\"mail\": \"invalid-email\""
                 + "}";
         String responseJson = featureOrgDetails.updateOrgDetails(jsonData);

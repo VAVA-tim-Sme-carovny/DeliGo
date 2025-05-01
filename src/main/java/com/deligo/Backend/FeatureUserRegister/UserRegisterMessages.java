@@ -11,7 +11,11 @@ public enum UserRegisterMessages {
     TAGS_PROVIDED("Tagy boli poskytnuté", "Tags were provided"),
     TAGS_NOT_PROVIDED("Žiadne tagy neboli poskytnuté", "No tags were provided"),
     SUCCESS("Používateľ bol úspešne registrovaný", "User was registered successfully"),
-    DB_ERROR("Chyba pri ukladaní do databázy", "Error saving to database");
+    DB_ERROR("Chyba pri ukladaní do databázy", "Error saving to database"),
+    NO_PASSWORD("Heslo nebolo poskytnuté", "Password was not provided"),
+    MULTIPLE_ROLES("Používateľ môže mať iba jednu rolu", "Multiple roles were provided");
+
+
 
 
     private final String skMessage;

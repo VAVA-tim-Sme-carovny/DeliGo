@@ -70,6 +70,20 @@ public class FeatureUserLoginIntegrationTest extends com.deligo.Backend.BaseFeat
     }
 
     @Test
+    void loginEmployeeWrongPassword() {
+        String jsonData = "{\n" +
+                "  \"username\": \"radko\",\n" +
+                "  \"password\": \"nemacock\"\n" +
+                "}";
+        String responseJson = featureUserLogin.loginEmployee(jsonData);
+        LoginResponse response = gson.fromJson(responseJson, LoginResponse.class);
+
+        assertEquals(500, response.getStatus(), "Expected status 500 for wrong password");
+        assertTrue(response.getMessage().contains("Neplatné prihlasovacie údaje"),
+                "Expected error message for wrong password");
+    }
+
+    @Test
     void loginCustomerValidInput() {
         String responseJson = featureUserLogin.loginCustomer();
         DeviceLoginResponse response = gson.fromJson(responseJson, DeviceLoginResponse.class);
@@ -88,5 +102,45 @@ public class FeatureUserLoginIntegrationTest extends com.deligo.Backend.BaseFeat
         assertTrue(response.getMessage().contains("Úspešné odhlásenie!"),
                 "Používateľ bol odhlásený.");
     }
+
+    @Test
+    void loginEmployeeEmptyUsername() {
+        String jsonData = "{\n" +
+                "  \"username\": \"\",\n" +
+                "  \"password\": \"heslo\"\n" +
+                "}";
+        String responseJson = featureUserLogin.loginEmployee(jsonData);
+        LoginResponse response = gson.fromJson(responseJson, LoginResponse.class);
+
+        assertEquals(500, response.getStatus());
+        assertTrue(response.getMessage().contains("Používateľ  nebol nájdený"));
+    }
+
+
+    @Test
+    void loginEmployeeMissingPasswordField() {
+        String jsonData = "{\n" +
+                "  \"username\": \"radko\"\n" +
+                "}";
+        String responseJson = featureUserLogin.loginEmployee(jsonData);
+        LoginResponse response = gson.fromJson(responseJson, LoginResponse.class);
+
+        assertEquals(500, response.getStatus());
+        assertTrue(response.getMessage().contains("Neplatný formát JSON: %s"));
+    }
+
+    @Test
+    void loginEmployeeMissingUserField() {
+        String jsonData = "{\n" +
+                "  \"username\": \"radko\"\n" +
+                "}";
+        String responseJson = featureUserLogin.loginEmployee(jsonData);
+        LoginResponse response = gson.fromJson(responseJson, LoginResponse.class);
+
+        assertEquals(500, response.getStatus());
+        assertTrue(response.getMessage().contains("Neplatný formát JSON: %s"));
+    }
+
+
 
 }

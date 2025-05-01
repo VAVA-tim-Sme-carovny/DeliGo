@@ -62,7 +62,7 @@ public class FeatureUserRegister extends BaseFeature {
 
         //Validácia rolý
         String rolesAsString = "";
-        for (String r : roles) {
+       for (String r : roles) {
             try {
                 Roles role = Roles.fromString(r);
                 if(rolesAsString.isEmpty()) {
