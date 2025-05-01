@@ -55,6 +55,7 @@ public class FeatureReserveController implements InitializableWithParent {
         }));
 
         // Timestamp validácia (napr. 2025-05-01 14:30:00)
+        // TODO: Zmeniť regex na validáciu timestampu
         String timestampRegex = "^\\d{0,4}-?\\d{0,2}-?\\d{0,2}[ T]?\\d{0,2}:?\\d{0,2}:?\\d{0,2}$";
 
         table_fromF.setTextFormatter(new TextFormatter<>(change -> {
