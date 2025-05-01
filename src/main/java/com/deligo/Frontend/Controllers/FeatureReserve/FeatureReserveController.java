@@ -36,8 +36,6 @@ public class FeatureReserveController implements InitializableWithParent {
     private ConfigLoader configLoader;
     private MainPageController mainPageController;
 
-    private int UserId;
-
     public FeatureReserveController(LoggingAdapter logger, ConfigLoader configLoader) {
         this.logger = logger;
         this.configLoader = configLoader;
@@ -93,30 +91,41 @@ public class FeatureReserveController implements InitializableWithParent {
 
                 String name = table_nameF.getText();
                 String surname = table_surnameF.getText();
-                String id = table_idF.getText();
+                int userId = 5;
+//                        Integer.parseInt(configLoader.getConfigValue("device", "id", String.class));
+                int tableId = Integer.parseInt(table_idF.getText());
                 String from = table_fromF.getText();
                 String to = table_toF.getText();
 
-                if (checkData()) {
+                if (!checkData()) {
+                    logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
+                            "Missing data in reservation form");
+                } else {
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
-                            "Reservation created for: " + name + " " + "with id:" + " " + id);
+                            "Reservation created for: " + name + " " + "with id:" + " " + userId);
                     FeatureTableReservation featureTableReservation = new FeatureTableReservation(this.configLoader,this.logger, mainPageController.getServer());
 
-//                    String json = String.format("{\"user_id\":\"%s\", \"surname\":\"%s\", \"id\":\"%s\", \"from\":\"%s\", \"to\":\"%s\"}",
-//                            this.id, surname, id, from, to);
-//                    featureTableReservation.createReservation(json);
+                    String json = String.format(
+                            "{\"userId\":%d, \"tableId\":%d, \"reservedFrom\":\"%s\", \"reservedTo\":\"%s\"}",
+                            userId, tableId, from, to
+                    );
+                    System.out.println("JSON: " + json);
+                    featureTableReservation.createReservation(json);
 
-//                    String response = mainPageController.getServer().sendPostRequest("/be/reserve", json);
-//                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND,
-//                            "Reservation response: " + response);
-//
-//                    if (response.contains("\"status\":200")) {
-//                        logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
-//                                "Reservation successful");
+                    String response = mainPageController.getServer().sendPostRequest("/be/reserve", json);
+                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND,
+                            "Reservation response: " + response);
+
+                    if (response.contains("\"status\":200")) {
+                        logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
+                                "Reservation successful");
 //                         Tu môžeš napr. vyčistiť polia alebo prejsť na inú stránku
-//                    }
-                } else {
-                    System.out.println("⚠️ Missing data in reservation data");
+                    } else {
+                        logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
+                                "Reservation failed!");
+//                        StatusPopupController statusPopupController = new StatusPopupController(logger, );
+//                        statusPopupController.showErrorPopup("Reservation failed!", "Please check your data and try again.");
+                    }
                 }
             });
         }

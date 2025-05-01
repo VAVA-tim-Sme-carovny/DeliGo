@@ -3,6 +3,7 @@ package com.deligo.Frontend.Controllers.MainPage;
 import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
+import com.deligo.Frontend.Controllers.Popups.StatusPopupController;
 import com.deligo.Frontend.Helpers.CustomControllerFactory;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.Views;
@@ -109,6 +110,28 @@ public class MainPageController extends BaseFeature {
         leftPanel.getChildren().clear();
         mainContent.getChildren().clear();
     }
+
+    public void showWarningPopup(String message, int statusCode) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Popups/StatusPopup.fxml"));
+
+            AnchorPane popup = loader.load();
+
+            StatusPopupController controller = loader.getController();
+            controller.showMessage(message, statusCode);
+
+            // Position the popup in the right top of the screen
+            AnchorPane.setTopAnchor(popup, 20.0);
+            AnchorPane.setRightAnchor(popup, 20.0);
+
+            // Add the popup to the main content
+            mainContent.getChildren().add(popup);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
     public RestAPIServer getServer() {

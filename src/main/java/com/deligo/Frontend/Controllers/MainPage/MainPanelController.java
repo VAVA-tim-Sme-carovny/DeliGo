@@ -34,13 +34,17 @@ public class MainPanelController implements InitializableWithParent {
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
+        String deviceId = configLoader.getConfigValue("device", "id", String.class);
+        String user = configLoader.getConfigValue("login", "user", String.class);
+        String role = configLoader.getConfigValue("login", "role", String.class);
+
+//        if (user != null && !user.isEmpty() && role != null && !role.isEmpty()) {
+            BookTableBtn.setVisible(true);
+//        }
+
         if (OrderBtn != null) {
             OrderBtn.setOnAction(event -> {
                 try {
-                    String deviceId = configLoader.getConfigValue("device", "id", String.class);
-                    String user = configLoader.getConfigValue("login", "user", String.class);
-                    String role = configLoader.getConfigValue("login", "role", String.class);
-
                     if(deviceId != null && !deviceId.isEmpty()){
                         String response = mainPageController.getServer().sendPostRequest("api/be/login/customer", null);
                         if(response.contains("\"status\":500")){
@@ -66,12 +70,6 @@ public class MainPanelController implements InitializableWithParent {
 
         if (BookTableBtn != null) {
             BookTableBtn.setOnAction(event -> {
-                String deviceId = configLoader.getConfigValue("device", "id", String.class);
-                String user = configLoader.getConfigValue("login", "user", String.class);
-                String role = configLoader.getConfigValue("login", "role", String.class);
-                System.out.println("Device ID: " + deviceId);
-                System.out.println("User: " + user);
-                System.out.println("Role: " + role);
                 if (deviceId != null && !deviceId.isEmpty()) {
                     logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening BookTable menu");
                     this.openBookTableMenu();
@@ -80,8 +78,10 @@ public class MainPanelController implements InitializableWithParent {
                     this.openBookTableMenu();
                     logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening BookTable menu");
                 } else {
-//                    mainPageController.
-                    this.openBookTableMenu();
+                    logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Login menu");
+                    mainPageController.clearAll();
+                    mainPageController.loadView("/Views/Content/MainPanel/LoginContentPanel.fxml", Views.mainContent);
+                    mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
                 }
             });
         }
