@@ -103,6 +103,7 @@ public class MainPageController extends BaseFeature {
 
 
     public void clearAll() {
+        controllerPanel.getChildren().clear();
         rightPanel.getChildren().clear();
         bottomPanel.getChildren().clear();
         leftPanel.getChildren().clear();
