@@ -11,7 +11,7 @@
 /*Prihlásiť sa tlačítko*/
 #openLogin {
     -fx-font-family: 'Roboto Condensed', sans-serif;
-    /*-fx-background-color: #15191e;*/
+    -fx-background-color: #15191e;
     -fx-text-fill: #fff;
     -fx-font-size: 16px;
     -fx-font-weight: bold;

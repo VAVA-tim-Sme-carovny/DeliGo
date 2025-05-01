@@ -45,7 +45,8 @@
                 <HBox alignment="CENTER">
                     <children>
                         <Button text="%bookTable"
-                        fx:id="BookTableBtn"/>
+                        fx:id="BookTableBtn"
+                        />
                     </children>
                 </HBox>
             </children>

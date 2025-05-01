@@ -6,32 +6,32 @@
 <?import javafx.scene.layout.Region?>
 
 <?import javafx.scene.layout.AnchorPane?>
-<HBox spacing="10"
-      AnchorPane.topAnchor="0.0"
-      AnchorPane.leftAnchor="0.0"
-      AnchorPane.rightAnchor="0.0"
-      AnchorPane.bottomAnchor="0.0"
-      prefHeight="-Infinity"
-      xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.deligo.Frontend.Controllers.Employee.EmployeeTopPanelController"
-      style="-fx-background-color: black; -fx-padding: 10;" >
-    <children>
-
-        <!-- Ľavá strana: objednávky a admin -->
-        <HBox fx:id="buttonContainer" spacing="10">
+        <HBox spacing="10"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              prefHeight="-Infinity"
+              xmlns="http://javafx.com/javafx"
+              xmlns:fx="http://javafx.com/fxml"
+              fx:controller="com.deligo.Frontend.Controllers.Employee.EmployeeTopPanelController"
+              style="-fx-background-color: black; -fx-padding: 10;" >
             <children>
-                <Button text="Aktuálne objednávky" fx:id="ordersButton"/>
-                <Button text="Admin Panel" fx:id="adminButton" visible="false"/>
+
+                <!-- Ľavá strana: objednávky a admin -->
+                <HBox fx:id="buttonContainer" spacing="10">
+                    <children>
+                        <Button text="Aktuálne objednávky" fx:id="ordersButton"/>
+                        <Button text="Admin Panel" fx:id="adminButton" visible="false"/>
+                    </children>
+                </HBox>
+
+                <!-- Medzera (zarovná domov doprava) -->
+                <Region HBox.hgrow="ALWAYS" />
+
+                <!-- Pravá strana -->
+                <Button text="Domov" fx:id="homeBtn" />
+                <Button text="logout" fx:id="logoutBtn" />
+
             </children>
         </HBox>
-
-        <!-- Medzera (zarovná domov doprava) -->
-        <Region HBox.hgrow="ALWAYS" />
-
-        <!-- Pravá strana -->
-        <Button text="Domov" fx:id="homeBtn" />
-        <Button text="logout" fx:id="logoutBtn" />
-
-    </children>
-</HBox>

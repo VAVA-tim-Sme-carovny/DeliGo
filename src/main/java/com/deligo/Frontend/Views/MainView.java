@@ -7,16 +7,19 @@ import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
 import com.deligo.Model.BasicModels.LogType;
 import com.deligo.Model.Views;
+import com.deligo.Utils.UTF8Control;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -63,7 +66,7 @@ public class MainView {
 
     private void initRootLayout() {
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
+            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault(), new UTF8Control());
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
 
@@ -79,16 +82,15 @@ public class MainView {
             rootLayout = (GridPane) root;
 
             // ✅ Môžeme volať metódy na controlleri
-//            controller.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
-//            controller.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
-            controller.clearAll();
-            controller.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.controllerPanel);
+            controller.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
+            controller.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
 
             // Nastav fixnú veľkosť okna
-            Scene scene = new Scene(rootLayout);
+            Scene scene = new Scene(rootLayout, 1920, 1080);
             primaryStage.setScene(scene);
             primaryStage.setTitle("DeliGo - Frontend");
-            primaryStage.centerOnScreen();
+            primaryStage.setResizable(true); // Zakáže zmenu veľkosti okna
+            primaryStage.centerOnScreen();    // Vycentruje okno na obrazovku
             primaryStage.show();
 
         } catch (Exception e) {
@@ -101,23 +103,35 @@ public class MainView {
 
 
 //    // Funkcia na zmenu jazyka
-//    public void loadPage(String pageName) {
-//        try {
-//            // Získa aktuálne nastavený jazyk (napr. sk alebo en)
-//            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
-//
-//            // Načíta FXML s lokalizačným bundle
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
-//            Parent page = loader.load();
-//
-//            // Nastaví FXML do stredu rozloženia
-//            rootLayout.setCenter(page);
-//
-//        } catch (Exception e) {
-//            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
-//                    "Failed to load " + pageName + " FXML: " + e.getMessage());
-//            e.printStackTrace();
-//        }
-//    }
+    @FXML
+    private void switchToEnglish() {
+        System.out.println("Klik na EN");
+        switchLanguage("en");
+    }
+
+    @FXML
+    private void switchToSlovak() {
+        switchLanguage("sk");
+    }
+
+
+
+    public void switchLanguage(String langCode) {
+        try {
+            Locale.setDefault(new Locale(langCode));
+            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault(), new UTF8Control());
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
+            Parent page = loader.load();
+
+//             Nastaví FXML do stredu rozloženia
+
+//            rootLayout.add(page, 1, 1);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

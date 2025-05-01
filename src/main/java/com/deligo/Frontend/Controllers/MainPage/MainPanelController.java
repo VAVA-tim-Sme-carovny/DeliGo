@@ -34,30 +34,22 @@ public class MainPanelController implements InitializableWithParent {
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
-        if (BookTableBtn != null) {
-            BookTableBtn.setOnAction(event -> {
-                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening BookTable menu");
-                mainPageController.clearAll();
-                mainPageController.loadView("/Views/Content/MainPanel/BookTableContentPanel.fxml", Views.mainContent);
-                mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
-            });
-        }
+        String deviceId = configLoader.getConfigValue("device", "id", String.class);
+        String user = configLoader.getConfigValue("login", "user", String.class);
+        String role = configLoader.getConfigValue("login", "role", String.class);
 
-
-
+//        if (user != null && !user.isEmpty() && role != null && !role.isEmpty()) {
+            BookTableBtn.setVisible(true);
+//        }
 
         if (OrderBtn != null) {
             OrderBtn.setOnAction(event -> {
                 try {
-                    String deviceId = configLoader.getConfigValue("device", "id", String.class);
-                    String user = configLoader.getConfigValue("login", "user", String.class);
-                    String role = configLoader.getConfigValue("login", "role", String.class);
-
                     if(deviceId != null && !deviceId.isEmpty()){
                         String response = mainPageController.getServer().sendPostRequest("api/be/login/customer", null);
                         if(response.contains("\"status\":500")){
                             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "There is still one order for this table. Contact waitress!");
-                            // TODO Spravit popup pre spravu
+//                            mainPageController.showWarningPopup("");
                         }else{
                             this.openOrderMenu();
                         }
@@ -76,6 +68,23 @@ public class MainPanelController implements InitializableWithParent {
             });
         }
 
+        if (BookTableBtn != null) {
+            BookTableBtn.setOnAction(event -> {
+                if (deviceId != null && !deviceId.isEmpty()) {
+                    logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening BookTable menu");
+                    this.openBookTableMenu();
+                } else if (user != null && !user.isEmpty() && role.equals("customer")) {
+                    logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening BookTable menu");
+                    this.openBookTableMenu();
+                    logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening BookTable menu");
+                } else {
+                    logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Login menu");
+                    mainPageController.clearAll();
+                    mainPageController.loadView("/Views/Content/MainPanel/LoginContentPanel.fxml", Views.mainContent);
+                    mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
+                }
+            });
+        }
     }
 
     private void openOrderMenu(){
@@ -83,5 +92,10 @@ public class MainPanelController implements InitializableWithParent {
         mainPageController.loadView("/Views/Content/OrderPanel/OrderContentPanel.fxml", Views.mainContent);
         mainPageController.loadView("/Views/Content/OrderPanel/CartRightPanel.fxml", Views.rightPanel);
         mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
+    }
+
+    private void openBookTableMenu(){
+        mainPageController.clearAll();
+        mainPageController.loadView("/Views/Content/Reservation/ReservationTable.fxml", Views.mainContent);
     }
 }
