@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.GridPane;
 
 public class FeatureReserveController implements InitializableWithParent {
@@ -35,6 +36,8 @@ public class FeatureReserveController implements InitializableWithParent {
     private ConfigLoader configLoader;
     private MainPageController mainPageController;
 
+    private int UserId;
+
     public FeatureReserveController(LoggingAdapter logger, ConfigLoader configLoader) {
         this.logger = logger;
         this.configLoader = configLoader;
@@ -44,18 +47,39 @@ public class FeatureReserveController implements InitializableWithParent {
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
+        table_idF.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("\\d*")) {
+                return change;
+            }
+            return null;
+        }));
+
+        // Timestamp validácia (napr. 2025-05-01 14:30:00)
+        String timestampRegex = "^\\d{0,4}-?\\d{0,2}-?\\d{0,2}[ T]?\\d{0,2}:?\\d{0,2}:?\\d{0,2}$";
+
+        table_fromF.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches(timestampRegex)) {
+                return change;
+            }
+            return null;
+        }));
+
+        table_toF.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches(timestampRegex)) {
+                return change;
+            }
+            return null;
+        }));
+
         if (reservation_homeBtn != null) {
             try {
                 reservation_homeBtn.setOnAction(event -> {
-                    System.out.println("Home button clicked");
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
-                            "Returning to main page");
-                    mainPageController.clearAll();
+                            "Returning, deleting all field content");
+                    this.ClearAllFields();
                     mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
                     mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
                     mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
-                    mainPageController.loadView("/Views/Controllers/MainRightPanelController.fxml", Views.rightPanel);
-                    mainPageController.loadView("/Views/Controllers/MainLeftPanelController.fxml", Views.leftPanel);
                 });
             } catch (Exception e) {
                 System.out.println("Zachytená výnimka: " + e.getMessage());
@@ -73,30 +97,31 @@ public class FeatureReserveController implements InitializableWithParent {
                 String to = table_toF.getText();
 
                 if (checkData()) {
-                    System.out.println("Creating reservation for: " + name + " " + surname);
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
-                            "Reservation created for: " + name + " " + surname + " " + id + " from: " + from + " to: " + to);
-//                    createReservation()
+                            "Reservation created for: " + name + " " + "with id:" + " " + id);
+                    FeatureTableReservation featureTableReservation = new FeatureTableReservation(this.configLoader,this.logger, mainPageController.getServer());
 
+//                    String json = String.format("{\"user_id\":\"%s\", \"surname\":\"%s\", \"id\":\"%s\", \"from\":\"%s\", \"to\":\"%s\"}",
+//                            this.id, surname, id, from, to);
+//                    featureTableReservation.createReservation(json);
+
+//                    String response = mainPageController.getServer().sendPostRequest("/be/reserve", json);
+//                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND,
+//                            "Reservation response: " + response);
+//
+//                    if (response.contains("\"status\":200")) {
+//                        logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
+//                                "Reservation successful");
+//                         Tu môžeš napr. vyčistiť polia alebo prejsť na inú stránku
+//                    }
                 } else {
-//                    mainPageController.("Missing data", "Please fill in all fields.");
-                }
-
-                String json = String.format("{\"name\":\"%s\", \"surname\":\"%s\", \"id\":\"%s\", \"from\":\"%s\", \"to\":\"%s\"}",
-                        name, surname, id, from, to);
-
-                String response = mainPageController.getServer().sendPostRequest("/be/reserve", json);
-                logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND,
-                        "Reservation response: " + response);
-
-                if (response.contains("\"status\":200")) {
-                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
-                            "Reservation successful");
-                    // Tu môžeš napr. vyčistiť polia alebo prejsť na inú stránku
+                    System.out.println("⚠️ Missing data in reservation data");
                 }
             });
         }
     }
+
+
 
     private boolean checkData() {
         if (table_nameF.getText().isEmpty() || table_surnameF.getText().isEmpty() ||
@@ -115,6 +140,7 @@ public class FeatureReserveController implements InitializableWithParent {
         table_idF.clear();
         table_fromF.clear();
         table_toF.clear();
+        mainPageController.clearAll();
     }
 
 }
