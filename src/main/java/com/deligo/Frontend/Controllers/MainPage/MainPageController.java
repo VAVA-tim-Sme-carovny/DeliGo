@@ -46,6 +46,14 @@ public class MainPageController extends BaseFeature {
     public void initialize() {
         this.logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, " MainPageController.initialize() called");
 
+        // Perform logout on startup
+        try {
+            String response = server.sendPostRequest("/be/logout", null);
+            this.logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Logout on startup successful");
+        } catch (Exception e) {
+            this.logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Failed to logout on startup: " + e.getMessage());
+        }
+
         loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
         loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
         loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);

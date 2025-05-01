@@ -61,7 +61,7 @@ public class FeatureUserRegister extends BaseFeature {
         List<String> roles = user.getRoles();
 
         //Validácia rolý
-        String rolesAsString = "testing-role";
+        String rolesAsString = "waiter";
 //        for (String r : roles) {
 //            try {
 //                Roles role = Roles.fromString(r);

@@ -34,34 +34,53 @@ public class MainPanelController implements InitializableWithParent {
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
-        if (OrderBtn != null) {
-            OrderBtn.setOnAction(event -> {
-                try {
-                    String deviceId = configLoader.getConfigValue("device", "id", String.class);
-                    String user = configLoader.getConfigValue("login", "user", String.class);
-                    String role = configLoader.getConfigValue("login", "role", String.class);
+        // Check if user is admin or waiter and update button text and behavior
+        String userRole = configLoader.getConfigValue("login", "role", String.class);
+        if (userRole != null) {
+            if (userRole.equals("admin")) {
+                OrderBtn.setText("Admin Panel");
+                OrderBtn.setOnAction(event -> {
+                    logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Admin Panel");
+                    mainPageController.clearAll();
+                    mainPageController.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.mainContent);
+                });
+            } else if (userRole.equals("waiter")) {
+                OrderBtn.setText("Waiter Panel");
+                OrderBtn.setOnAction(event -> {
+                    logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Waiter Panel");
+                    mainPageController.clearAll();
+                    mainPageController.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.mainContent);
+                });
+            } else {
+                if (OrderBtn != null) {
+                    OrderBtn.setOnAction(event -> {
+                        try {
+                            String deviceId = configLoader.getConfigValue("device", "id", String.class);
+                            String user = configLoader.getConfigValue("login", "user", String.class);
+                            String role = configLoader.getConfigValue("login", "role", String.class);
 
-                    if(deviceId != null && !deviceId.isEmpty()){
-                        String response = mainPageController.getServer().sendPostRequest("api/be/login/customer", null);
-                        if(response.contains("\"status\":500")){
-                            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "There is still one order for this table. Contact waitress!");
-//                            mainPageController.showWarningPopup("");
-                        }else{
-                            this.openOrderMenu();
+                            if(deviceId != null && !deviceId.isEmpty()){
+                                String response = mainPageController.getServer().sendPostRequest("api/be/login/customer", null);
+                                if(response.contains("\"status\":500")){
+                                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "There is still one order for this table. Contact waitress!");
+                                }else{
+                                    this.openOrderMenu();
+                                }
+                            } else if (user != null && !user.isEmpty() && role.equals("customer")) {
+                                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Order menu");
+                                this.openOrderMenu();
+                            } else {
+                                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Login menu");
+                                mainPageController.clearAll();
+                                mainPageController.loadView("/Views/Content/MainPanel/LoginContentPanel.fxml", Views.mainContent);
+                                mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
-                    } else if (user != null && !user.isEmpty() && role.equals("customer")) {
-                        logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Order menu");
-                        this.openOrderMenu();
-                    } else {
-                        logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Login menu");
-                        mainPageController.clearAll();
-                        mainPageController.loadView("/Views/Content/MainPanel/LoginContentPanel.fxml", Views.mainContent);
-                        mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+                    });
                 }
-            });
+            }
         }
 
         if (BookTableBtn != null) {
@@ -80,7 +99,6 @@ public class MainPanelController implements InitializableWithParent {
                     this.openBookTableMenu();
                     logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening BookTable menu");
                 } else {
-//                    mainPageController.
                     this.openBookTableMenu();
                 }
             });

@@ -72,14 +72,21 @@ public class FeatureLoginController implements InitializableWithParent {
                     String user = configLoader.getConfigValue("login", "user", String.class);
                     String role = configLoader.getConfigValue("login", "role", String.class);
 
-                    if(user != null && !user.isEmpty() && role.equals("customer")){
-                        mainPageController.clearAll();
-                        mainPageController.loadView("/Views/Content/OrderPanel/OrderContentPanel.fxml", Views.mainContent);
-                        mainPageController.loadView("/Views/Content/OrderPanel/CartRightPanel.fxml", Views.rightPanel);
-                        mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
-                    }else{
-                        mainPageController.clearAll();
-                        mainPageController.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.mainContent);
+                    mainPageController.clearAll();
+                    
+                    if (role != null) {
+                        switch (role) {
+                            case "admin", "waiter" -> {
+                                mainPageController.clearAll();
+                                mainPageController.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.mainContent);
+                            }
+                            case "customer" -> {
+                                mainPageController.loadView("/Views/Content/OrderPanel/OrderContentPanel.fxml", Views.mainContent);
+                                mainPageController.loadView("/Views/Content/OrderPanel/CartRightPanel.fxml", Views.rightPanel);
+                                mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
+                            }
+                            default -> logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Unknown role: " + role);
+                        }
                     }
                 } else {
                     //TODO Warning popup

@@ -26,6 +26,7 @@ public class AdminMenuController implements InitializableWithParent {
     @FXML private Button editFoodMenuBtn;
     @FXML private Button editEmployeesBtn;
     @FXML private Button editInfoBtn;
+    @FXML private Button backButton;
 
     public AdminMenuController(LoggingAdapter logger, MainPageController mainPageController) {
         this.logger = logger;
@@ -65,5 +66,19 @@ public class AdminMenuController implements InitializableWithParent {
             mainPageController.loadView("/Views/Content/AdminPanel/EditInfoContentPanel.fxml", Views.mainContent);
         });
 
+        if (backButton != null) backButton.setOnAction(event -> {
+            this.logger.log(com.deligo.Model.BasicModels.LogType.INFO, com.deligo.Model.BasicModels.LogPriority.LOW, com.deligo.Model.BasicModels.LogSource.FRONTEND, "Going back to main panel");
+            mainPageController.clearAll();
+            mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+            mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
+        });
+    }
+
+    @FXML
+    private void handleBackButton() {
+        this.logger.log(com.deligo.Model.BasicModels.LogType.INFO, com.deligo.Model.BasicModels.LogPriority.LOW, com.deligo.Model.BasicModels.LogSource.FRONTEND, "Going back to main panel");
+        mainPageController.clearAll();
+        mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+        mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
     }
 }
