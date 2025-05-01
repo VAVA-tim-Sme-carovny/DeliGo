@@ -29,15 +29,13 @@ public class FeatureUserManagementIntegrationTest {
     private static FeatureUserManagement featureUserManagement;
     private static Gson gson = new Gson();
 
-    // Simple test implementation of LoggingAdapter
     static class TestLoggingAdapter extends LoggingAdapter {
         public TestLoggingAdapter() {
-            super(null); // Pass null as LoggingWindow
+            super(null);
         }
         
         @Override
         public void log(LogType type, LogPriority priority, LogSource source, String message) {
-            // Just print to console for testing
             System.out.println(String.format("[TEST] %s [%s] [%s]: %s", type, priority, source, message));
         }
     }
@@ -121,7 +119,7 @@ public class FeatureUserManagementIntegrationTest {
     @Test
     void testEditUserWithMismatchedUsername() {
         // This test assumes that a user with ID "1" exists but has a different username
-        String userId = "1"; // Dummy user ID
+        String userId = "1";
         String wrongUsername = "wrong_username";
         
         String jsonData = "{"
@@ -165,56 +163,50 @@ public class FeatureUserManagementIntegrationTest {
             assertEquals("User not found", response.getMessage());
         }
     }
-    
+
     @Test
     void testDeleteUserWithInvalidUserId() {
-        String userId = UUID.randomUUID().toString(); // Random UUID that shouldn't exist
+        String userId = UUID.randomUUID().toString();
         String username = "testuser";
-        
+
         String jsonData = "{"
                 + "\"userId\": \"" + userId + "\","
                 + "\"username\": \"" + username + "\""
                 + "}";
-        
+
         String responseJson = featureUserManagement.deleteUser(jsonData);
         Response response = gson.fromJson(responseJson, Response.class);
-        
         assertEquals(404, response.getStatus(), "Expected status 404 for non-existent user");
         assertEquals("User not found", response.getMessage());
     }
-    
+
     @Test
     void testGetAllUsers() {
         String jsonData = "{}";
         String responseJson = featureUserManagement.getAllUsers(jsonData);
-        
         Type mapType = new TypeToken<Map<String, Object>>(){}.getType();
         Map<String, Object> response = gson.fromJson(responseJson, mapType);
-        
         assertEquals(200, ((Double)response.get("status")).intValue(), "Expected status 200");
         assertEquals("Users retrieved successfully", response.get("message"));
         assertNotNull(response.get("data"), "Data field should not be null");
     }
-    
     @Test
     void testUpdateOrgDetailsWithValidData() {
         String jsonData = "{"
                 + "\"openingTimes\": ["
-                + "[\"08:00\", \"20:00\"], " // Monday
-                + "[\"08:00\", \"20:00\"], " // Tuesday
-                + "[\"08:00\", \"20:00\"], " // Wednesday
-                + "[\"08:00\", \"20:00\"], " // Thursday
-                + "[\"08:00\", \"22:00\"], " // Friday
-                + "[\"10:00\", \"22:00\"], " // Saturday
-                + "[\"Closed\", \"Closed\"]" // Sunday
+                + "[\"08:00\", \"20:00\"], " // Monday-Sunday
+                + "[\"08:00\", \"20:00\"], "
+                + "[\"08:00\", \"20:00\"], "
+                + "[\"08:00\", \"20:00\"], "
+                + "[\"08:00\", \"22:00\"], "
+                + "[\"10:00\", \"22:00\"], "
+                + "[\"Closed\", \"Closed\"]"
                 + "],"
                 + "\"phoneNumber\": \"09111 222 333\","
                 + "\"email\": \"info@deligo.com\""
                 + "}";
-        
         String responseJson = featureUserManagement.updateOrgDetails(jsonData);
         Response response = gson.fromJson(responseJson, Response.class);
-        
         assertEquals(200, response.getStatus(), "Expected status 200 for valid org details");
         assertEquals("Organization details were updated successfully", response.getMessage());
     }
@@ -223,15 +215,15 @@ public class FeatureUserManagementIntegrationTest {
     void testUpdateOrgDetailsWithInvalidPhoneFormat() {
         String jsonData = "{"
                 + "\"openingTimes\": ["
-                + "[\"08:00\", \"20:00\"], " // Monday
-                + "[\"08:00\", \"20:00\"], " // Tuesday
-                + "[\"08:00\", \"20:00\"], " // Wednesday
-                + "[\"08:00\", \"20:00\"], " // Thursday
-                + "[\"08:00\", \"22:00\"], " // Friday
-                + "[\"10:00\", \"22:00\"], " // Saturday
-                + "[\"Closed\", \"Closed\"]" // Sunday
+                + "[\"08:00\", \"20:00\"], " // Monday-Sunday
+                + "[\"08:00\", \"20:00\"], "
+                + "[\"08:00\", \"20:00\"], "
+                + "[\"08:00\", \"20:00\"], "
+                + "[\"08:00\", \"22:00\"], "
+                + "[\"10:00\", \"22:00\"], "
+                + "[\"Closed\", \"Closed\"]"
                 + "],"
-                + "\"phoneNumber\": \"123-456-7890\"," // Invalid format for this system
+                + "\"phoneNumber\": \"123-456-7890\"," // diff
                 + "\"email\": \"info@deligo.com\""
                 + "}";
         
@@ -246,16 +238,16 @@ public class FeatureUserManagementIntegrationTest {
     void testUpdateOrgDetailsWithInvalidEmailFormat() {
         String jsonData = "{"
                 + "\"openingTimes\": ["
-                + "[\"08:00\", \"20:00\"], " // Monday
-                + "[\"08:00\", \"20:00\"], " // Tuesday
-                + "[\"08:00\", \"20:00\"], " // Wednesday
-                + "[\"08:00\", \"20:00\"], " // Thursday
-                + "[\"08:00\", \"22:00\"], " // Friday
-                + "[\"10:00\", \"22:00\"], " // Saturday
-                + "[\"Closed\", \"Closed\"]" // Sunday
+                + "[\"08:00\", \"20:00\"], " // Monday-Sunday
+                + "[\"08:00\", \"20:00\"], "
+                + "[\"08:00\", \"20:00\"], "
+                + "[\"08:00\", \"20:00\"], "
+                + "[\"08:00\", \"22:00\"], "
+                + "[\"10:00\", \"22:00\"], "
+                + "[\"Closed\", \"Closed\"]"
                 + "],"
-                + "\"phoneNumber\": \"09111 222 333\","
-                + "\"email\": \"invalid-email\"" // Invalid email format
+                + "\"phoneNumber\": \"0911 222 333\","
+                + "\"email\": \"invalid-email\"" // diff
                 + "}";
         
         String responseJson = featureUserManagement.updateOrgDetails(jsonData);
