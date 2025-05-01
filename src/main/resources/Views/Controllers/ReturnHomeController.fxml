@@ -8,6 +8,6 @@
       fx:controller="com.deligo.Frontend.Controllers.FeatureLogin.FeatureLoginController"
       alignment="CENTER_RIGHT" spacing="10" style="-fx-padding: 10;">
     <children>
-        <Button text="Domov" fx:id="btnHome" />
+        <Button text="%home" fx:id="btnHome" />
     </children>
 </HBox>

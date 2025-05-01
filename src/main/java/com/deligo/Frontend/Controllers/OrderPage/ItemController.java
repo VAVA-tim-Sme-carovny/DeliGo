@@ -22,9 +22,6 @@ public class ItemController implements InitializableWithParent {
 
     // ✅ Nutné pre FXMLLoader
 
-
-
-
     public void setFoodData(String name, double price, String imagePath, Runnable onClick) {
         nameLabel.setText(name);
         priceLabel.setText(String.format("%.2f €", price));

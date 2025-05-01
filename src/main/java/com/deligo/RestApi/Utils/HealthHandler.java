@@ -1,8 +1,9 @@
-package com.deligo.RestApi.Handlers;
+package com.deligo.RestApi.Utils;
 
 import com.deligo.RestApi.RestAPIServer;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;

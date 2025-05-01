@@ -14,11 +14,11 @@
         <VBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">
             <children>
                 <HBox alignment="CENTER" spacing="10">
-                    <Label text="Meno:" />
+                    <Label text="%name" />
                     <TextField fx:id="usernameField" />
                 </HBox>
                 <HBox alignment="CENTER" spacing="10">
-                    <Label text="Heslo:" />
+                    <Label text="%password" />
                     <PasswordField fx:id="passwordField" />
                 </HBox>
                 <Button fx:id="registerButton" text="Register" />
