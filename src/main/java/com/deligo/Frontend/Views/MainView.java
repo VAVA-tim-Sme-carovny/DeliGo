@@ -6,7 +6,9 @@ import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
 import com.deligo.Model.BasicModels.LogType;
+import com.deligo.Utils.UTF8Control;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
@@ -15,6 +17,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -61,7 +64,7 @@ public class MainView {
 
     private void initRootLayout() {
         try {
-            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
+            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault(), new UTF8Control());
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
 
@@ -84,7 +87,7 @@ public class MainView {
             Scene scene = new Scene(rootLayout, 1920, 1080);
             primaryStage.setScene(scene);
             primaryStage.setTitle("DeliGo - Frontend");
-            primaryStage.setResizable(false); // Zakáže zmenu veľkosti okna
+            primaryStage.setResizable(true); // Zakáže zmenu veľkosti okna
             primaryStage.centerOnScreen();    // Vycentruje okno na obrazovku
             primaryStage.show();
 
@@ -98,16 +101,48 @@ public class MainView {
 
 
 //    // Funkcia na zmenu jazyka
+    @FXML
+    private void switchToEnglish() {
+        System.out.println("Klik na EN");
+        switchLanguage("en");
+    }
+
+    @FXML
+    private void switchToSlovak() {
+        switchLanguage("sk");
+    }
+
+
+
+    public void switchLanguage(String langCode) {
+        try {
+            Locale.setDefault(new Locale(langCode));
+            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault(), new UTF8Control());
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
+            Parent page = loader.load();
+
+//             Nastaví FXML do stredu rozloženia
+
+            rootLayout.setCenter(page);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 //    public void loadPage(String pageName) {
 //        try {
-//            // Získa aktuálne nastavený jazyk (napr. sk alebo en)
-//            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
+//             Získa aktuálne nastavený jazyk (napr. sk alebo en)
+//            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault(), new UTF8Control());
 //
-//            // Načíta FXML s lokalizačným bundle
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
+//             Načíta FXML s lokalizačným bundle
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("Views/main_view.fxml"), bundle);
 //            Parent page = loader.load();
 //
-//            // Nastaví FXML do stredu rozloženia
+//             Nastaví FXML do stredu rozloženia
 //            rootLayout.setCenter(page);
 //
 //        } catch (Exception e) {

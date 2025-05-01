@@ -7,7 +7,6 @@ import com.deligo.Model.BasicModels.Roles;
 
 public class Order {
     private int id;
-    private int userId;
     private Integer userId;
     private int tableId;
     private String deviceId;

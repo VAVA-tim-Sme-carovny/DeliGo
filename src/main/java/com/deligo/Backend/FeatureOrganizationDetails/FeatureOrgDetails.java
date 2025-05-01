@@ -26,7 +26,7 @@ public class FeatureOrgDetails extends BaseFeature {
 
     public FeatureOrgDetails(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
         super(globalConfig, logger, restApiServer);
-        this.orgDetailsDAO = new GenericDAO<>(OrgDetails.class);
+        this.orgDetailsDAO = new GenericDAO<>(OrgDetails.class,"info_board" );
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, 
                 OrgDetailsMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
@@ -35,7 +35,7 @@ public class FeatureOrgDetails extends BaseFeature {
      * Získanie organizačných detailov vrátane otváracích hodín.
      * @return JSON odpoveď s organizačnými detailmi a otváracími hodinami
      */
-    public String getOrgDetails() {
+    public String getOrgDetails(String json) {
         try {
             Optional<OrgDetails> detailsOpt = orgDetailsDAO.getById(1); // Assuming there's only one organization
             if (detailsOpt.isEmpty()) {
@@ -67,7 +67,7 @@ public class FeatureOrgDetails extends BaseFeature {
      * Získanie otváracích hodín.
      * @return JSON odpoveď s otváracími hodinami
      */
-    public String getOpeningHours() {
+    public String getOpeningHours(String json) {
         try {
             Optional<OrgDetails> detailsOpt = orgDetailsDAO.getById(1); // Assuming there's only one organization
             if (detailsOpt.isEmpty()) {

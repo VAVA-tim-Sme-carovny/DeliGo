@@ -10,10 +10,6 @@
             xmlns:fx="http://javafx.com/fxml/1"
             prefWidth="800.0" prefHeight="600.0">
 
-    <padding>
-        <Insets top="10" right="10" bottom="10" left="10"/>
-    </padding>
-
     <top>
         <VBox fx:id="controllerPanel" />
     </top>

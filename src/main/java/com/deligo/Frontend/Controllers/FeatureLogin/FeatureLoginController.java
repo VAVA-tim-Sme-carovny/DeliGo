@@ -3,12 +3,18 @@ package com.deligo.Frontend.Controllers.FeatureLogin;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
+import com.deligo.Frontend.Controllers.Popups.*;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
+import com.deligo.Utils.UTF8Control;
+import com.sun.javafx.iio.gif.GIFImageLoader2;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class FeatureLoginController implements InitializableWithParent {
 
@@ -26,7 +32,7 @@ public class FeatureLoginController implements InitializableWithParent {
     private LoggingAdapter logger;
     private MainPageController mainPageController;
     private ConfigLoader configLoader;
-
+    private ResourceBundle bundle;
 
     @FXML
     private TextField usernameField;
@@ -38,10 +44,15 @@ public class FeatureLoginController implements InitializableWithParent {
     private Button loginButton;
 
 
+
+
     public FeatureLoginController(LoggingAdapter logger, MainPageController mainPageController, ConfigLoader configLoader) {
         this.logger = logger;
         this.mainPageController = mainPageController;
         this.configLoader = configLoader;
+    }
+    public void initialize() {
+        this.bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault(), new UTF8Control());
     }
     @Override
     public void initializeWithParent(Object parentController) {
@@ -84,9 +95,9 @@ public class FeatureLoginController implements InitializableWithParent {
 //                    mainPageController.clearContentPanel();
 //                    mainPageController.clearBottomPanel();
                 } else {
-                    //TODO Warning popup
-                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Invalid credentials!");
-                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, response);
+                    mainPageController.showWarningPopup(bundle.getString("popup.warning.message"), 500);
+//                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Invalid credentials!");
+//                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, response);
 //                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
 //                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
 //                    mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");

@@ -19,43 +19,43 @@ public class BackendConfig {
                 return backend.getFeatureValidateTestConnection().validateTestConnection(data);
             case "/updateLanguage":
                 BaseFeature.updateLanguage(config);
-            
-                
-                // Nove end pointy pre DB 
-                
-                // FeatureOrgDetails - Nove
+
+
+                // Nove end pointy pre DB
+
+            // FeatureOrgDetails - Nove
             case "/org-get":
                 return new Response(backend.getFeatureOrgDetails().getOrgDetails(data), 200);
             case "/org-update":
                 return new Response(backend.getFeatureUserManagement().updateOrgDetails(data), 200);
             case "/org-open":
                 return new Response(backend.getFeatureOrgDetails().getOpeningHours(data), 200);
-                // FeatureOrderManagement paths
+            // FeatureOrderManagement paths
             case "/orders/create":
                 return new Response(backend.getFeatureOrderManagement().createOrder(data), 200);
             case "/orders/update":
-                    return new Response(backend.getFeatureOrderManagement().updateOrder(data), 200);
+                return new Response(backend.getFeatureOrderManagement().updateOrder(data), 200);
             case "/orders/update-status":
-                        return new Response(backend.getFeatureOrderManagement().updateOrderStatus(data), 200);
+                return new Response(backend.getFeatureOrderManagement().updateOrderStatus(data), 200);
             case "/orders/get":
-                        return new Response(backend.getFeatureOrderManagement().getOrderById(data), 200);
+                return new Response(backend.getFeatureOrderManagement().getOrderById(data), 200);
             case "/orders/table":
-                        return new Response(backend.getFeatureOrderManagement().getOrdersByTable(data), 200);
+                return new Response(backend.getFeatureOrderManagement().getOrdersByTable(data), 200);
             case "/orders/pending":
-                        return new Response(backend.getFeatureOrderManagement().getPendingOrders(data), 200);
+                return new Response(backend.getFeatureOrderManagement().getPendingOrders(data), 200);
             case "/orders/delivered":
-                        return new Response(backend.getFeatureOrderManagement().markOrderAsDelivered(data), 200);
+                return new Response(backend.getFeatureOrderManagement().markOrderAsDelivered(data), 200);
             case "/orders/cancel":
-                        return new Response(backend.getFeatureOrderManagement().cancelOrder(data), 200);
-                        
-                        
-                        // Pravdepodobne prec
+                return new Response(backend.getFeatureOrderManagement().cancelOrder(data), 200);
+
+
+            // Pravdepodobne prec
             case "/menu/category":
                 return new Response(backend.getFeatureOrderManagement().getMenuByCategory(data), 200);
             case "/menu/categories":
                 return new Response(backend.getFeatureOrderManagement().getCategories(data), 200);
-                
-                
+
+
             // FeatureTableReservation paths
             case "/reservations/create":
                 return new Response(backend.getFeatureTableReservation().createReservation(data), 200);
@@ -86,8 +86,8 @@ public class BackendConfig {
                 return new Response(backend.getFeatureReview().getReviewById(data), 200);
             case "/reviews/get-all":
                 return new Response(backend.getFeatureReview().getAllReviews(data), 200);
-                
-                
+
+
             // FeatureStatistics
             case "/stats/daily":
                 return new Response(backend.getFeatureStatistics().getDailyStats(data), 200);
@@ -96,9 +96,6 @@ public class BackendConfig {
             // FeatureTableStructure
             case "/tables/getAll":
                 return new Response(backend.getFeatureTableStructure().getAllTables(data), 200);
-
-                
-                
 
 
             // FeatureTableStructure paths
@@ -110,9 +107,9 @@ public class BackendConfig {
                 return new Response(backend.getFeatureTableStructure().deleteTable(data), 200);
             case "/tables/get-all":
                 return new Response(backend.getFeatureTableStructure().getAllTables(data), 200);
-                
-                
-                // Pravdepodobne vymazat
+
+
+            // Pravdepodobne vymazat
             case "/tables/get-by-category":
                 return new Response(backend.getFeatureTableStructure().getTablesByCategory(data), 200);
             case "/tables/categories/add":
@@ -163,7 +160,7 @@ public class BackendConfig {
                 return backend.getFeatureUserLogin().logout();
             default:
                 return "Unknown POST route: " + route;
-                }
+        }
     }
 
     public Object routeGet(String route) {

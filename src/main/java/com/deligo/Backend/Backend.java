@@ -1,20 +1,21 @@
 package com.deligo.Backend;
 
 import com.deligo.Backend.FeatureMenuManagement.FeatureMenuManagement;
+import com.deligo.Backend.FeatureOrderManagement.FeatureOrderManagement;
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
 import com.deligo.Backend.FeatureReview.FeatureReview;
 import com.deligo.Backend.FeatureStatistics.FeatureStatistics;
 import com.deligo.Backend.FeatureTableReservation.FeatureTableReservation;
 import com.deligo.Backend.FeatureTableStructure.FeatureTableStructure;
-import com.deligo.Backend.FeatureMenuManagement.FeatureMenuManagement;
+import com.deligo.Backend.FeatureUserLogin.FeatureUserLogin;
 import com.deligo.Backend.FeatureUserManagement.FeatureUserManagement;
 import com.deligo.Backend.FeatureUserRegistration.FeatureUserRegister;
+import com.deligo.Backend.FeatureValidateTestConnection.FeatureValidateTestConnection;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.DatabaseManager.dao.GenericDAO;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.RestApi.RestAPIServer;
-import com.deligo.Backend.FeatureValidateTestConnection.FeatureValidateTestConnection;
 import com.deligo.Model.User;
 
 /**
@@ -25,13 +26,14 @@ public class Backend {
     public final ConfigLoader config;
 
     private final FeatureValidateTestConnection featureValidateTestConnection;
-    private final FeatureReview featureReview;
-    private final FeatureOrgDetails featureOrgDetails;
-//    Add feature.
+
+    // User features
     private final FeatureUserRegister featureUserRegister;
     private final FeatureUserLogin featureUserLogin;
+    private final FeatureReview featureReview;
+    private final FeatureOrgDetails featureOrgDetails;
 
-    //Admin features
+    // Admin features
     private final FeatureStatistics featureStatistics;
     private final FeatureTableStructure featureTableStructure;
     private final FeatureMenuManagement featureMenuManagement;

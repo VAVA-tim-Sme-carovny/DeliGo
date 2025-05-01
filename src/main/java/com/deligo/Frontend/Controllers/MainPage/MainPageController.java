@@ -3,33 +3,33 @@ package com.deligo.Frontend.Controllers.MainPage;
 import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
+import com.deligo.Frontend.Controllers.Popups.StatusPopupController;
 import com.deligo.Frontend.Helpers.CustomControllerFactory;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.RestApi.RestAPIServer;
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.Node;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 import com.deligo.Model.BasicModels.*;
+import javafx.stage.Modality;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
 public class MainPageController extends BaseFeature {
 
-
-    private final LoggingAdapter logger;
-    private final RestAPIServer server;
-
-    public MainPageController(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
-        super(globalConfig, logger, restApiServer);
-        this.logger = logger;
-        this.server = restApiServer;
-    }
     @FXML
     private AnchorPane mainContent;
 
@@ -45,8 +45,14 @@ public class MainPageController extends BaseFeature {
     @FXML
     private AnchorPane leftPanel;
 
+    private final LoggingAdapter logger;
+    private final RestAPIServer server;
 
-
+    public MainPageController(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
+        super(globalConfig, logger, restApiServer);
+        this.logger = logger;
+        this.server = restApiServer;
+    }
 
     public void initialize() {
         this.logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, " MainPageController.initialize() called");
@@ -118,8 +124,6 @@ public class MainPageController extends BaseFeature {
         }
     }
 
-
-
     public void loadBottomPanel(String fxmlPath, boolean deleteAll) {
         if(deleteAll) {
             this.clearAll();
@@ -151,7 +155,6 @@ public class MainPageController extends BaseFeature {
         }
     }
 
-
     public void loadRightPanel(String fxmlPath, boolean deleteAll) {
         if(deleteAll) {
             this.clearAll();
@@ -177,7 +180,6 @@ public class MainPageController extends BaseFeature {
             e.printStackTrace();
         }
     }
-
 
     public void loadLeftPanel(String fxmlPath, boolean deleteAll) {
         if(deleteAll) {
@@ -205,6 +207,39 @@ public class MainPageController extends BaseFeature {
         }
     }
 
+
+
+    public void showWarningPopup(String message, int statusCode) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Popups/StatusPopup.fxml"));
+
+            AnchorPane popup = loader.load();
+
+            StatusPopupController controller = loader.getController();
+            controller.showMessage(message, statusCode);
+
+            // Position the popup in the right top of the screen
+            AnchorPane.setTopAnchor(popup, 20.0);
+            AnchorPane.setRightAnchor(popup, 20.0);
+
+            // Add the popup to the main content
+            mainContent.getChildren().add(popup);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
+
+    /**
+     * Vymaže všetky panely
+     */
     public void clearAll() {
         rightPanel.getChildren().clear();
         bottomPanel.getChildren().clear();
@@ -227,8 +262,6 @@ public class MainPageController extends BaseFeature {
     public void clearContentPanel() {
         mainContent.getChildren().clear();
     }
-
-
 
     public RestAPIServer getServer() {
         return this.server;

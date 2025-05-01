@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<GridPane  xmlns="http://javafx.com/javafx"
-           xmlns:fx="http://javafx.com/fxml"
-           prefHeight="400.0" prefWidth="600.0"
-           fx:controller="com.deligo.Frontend.Controllers.MainPage.MainTopPanelController"
-           stylesheets="@/css/MainPage/MainTopPanelController.css"
-           id="topPanelBackground">
+<GridPane id="topPanelBackground" prefHeight="400.0" prefWidth="600.0" stylesheets="@/css/MainPage/MainTopPanelController.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.MainPage.MainTopPanelController">
 
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints minWidth="10.0" />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
     </columnConstraints>
     <rowConstraints>
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -24,39 +24,37 @@
     </rowConstraints>
     <!--aa-->
     <children>
-        <Button text="EN" GridPane.columnIndex="1" GridPane.halignment="RIGHT" fx:id="btnEn" mnemonicParsing="false" >
-            <GridPane.margin>
-                <Insets right="15.0" />
-            </GridPane.margin>
-        </Button>
 
-        <Button text="&#xe88e;" fx:id="openInfoBtn" mnemonicParsing="false">
+        <Button fx:id="openInfoBtn" mnemonicParsing="false" text="">
             <GridPane.margin>
                 <Insets left="15.0" />
             </GridPane.margin>
         </Button>
 
-        <Button text="SK" GridPane.columnIndex="1" GridPane.halignment="RIGHT" fx:id="btnSk" mnemonicParsing="false" >
+              <Button fx:id="openRegister" mnemonicParsing="false" text="%register" GridPane.columnIndex="4" GridPane.halignment="RIGHT">
+         <GridPane.margin>
+            <Insets left="15.0" />
+         </GridPane.margin></Button>
+
+              <Button fx:id="openLogin" mnemonicParsing="false" text="%login" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
             <GridPane.margin>
-                <Insets right="85.0" />
+                <Insets left="10.0" />
+            </GridPane.margin>
+        </Button>
+        <Button fx:id="btnEn" mnemonicParsing="false" text="EN" GridPane.columnIndex="6" GridPane.halignment="RIGHT">
+         <GridPane.margin>
+            <Insets left="15.0" right="20.0" />
+         </GridPane.margin></Button>
+
+              <Button fx:id="btnSk" mnemonicParsing="false" text="SK" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+            <GridPane.margin>
+                <Insets left="15.0" />
             </GridPane.margin>
         </Button>
 
-        <Button text="%login" GridPane.columnIndex="1" GridPane.halignment="RIGHT" fx:id="openLogin" mnemonicParsing="false">
+              <Button fx:id="logoutBtn" mnemonicParsing="false" text="Logout" GridPane.columnIndex="4" GridPane.halignment="RIGHT">
             <GridPane.margin>
-                <Insets right="145.0" />
-            </GridPane.margin>
-        </Button>
-
-        <Button text="%register" GridPane.columnIndex="1" GridPane.halignment="RIGHT" fx:id="openRegister" mnemonicParsing="false">
-            <GridPane.margin>
-                <Insets right="205.0" />
-            </GridPane.margin>
-        </Button>
-
-        <Button text="Logout" GridPane.columnIndex="1" GridPane.halignment="RIGHT" fx:id="logoutBtn" mnemonicParsing="false">
-            <GridPane.margin>
-                <Insets right="265.0" />
+                <Insets left="10.0" />
             </GridPane.margin>
         </Button>
     </children>
