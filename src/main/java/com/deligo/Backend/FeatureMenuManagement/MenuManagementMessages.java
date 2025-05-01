@@ -19,7 +19,10 @@ public enum MenuManagementMessages {
     CATEGORY_NOT_FOUND("Kategória nebola nájdená", "Category not found"),
     CATEGORY_ALREADY_EXISTS("Kategória už existuje", "Category already exists"),
     DETAILS_REQUIRED("Detaily sú povinné", "Details are required"),
-    INVALID_REQUEST_FORMAT("Neplatný formát požiadavky", "Invalid request format");
+    INVALID_REQUEST_FORMAT("Neplatný formát požiadavky", "Invalid request format"),
+    ADMIN_REQUIRED("Vyžadujú sa administrátorské práva", "Administrator privileges required"),
+    ITEM_IN_USE("Položka je použitá v otvorených objednávkach a nemôže byť vymazaná", "Item is in use in open orders and cannot be deleted"),
+    CATEGORY_IN_USE("Kategória je použitá v otvorených objednávkach a nemôže byť vymazaná", "Category is in use in open orders and cannot be deleted");
 
     private final String skMessage;
     private final String enMessage;

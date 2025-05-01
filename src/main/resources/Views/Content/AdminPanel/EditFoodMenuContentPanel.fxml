@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.deligo.Frontend.Controllers.Employee.Admin.EditFoodMenuController">
+
+    <children>
+        <SplitPane dividerPositions="0.3" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" 
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <!-- Left side - Categories -->
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <Label text="Categories" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                    <ListView fx:id="categoryListView" VBox.vgrow="ALWAYS"/>
+                    <HBox spacing="10">
+                        <Button fx:id="addCategoryBtn" text="Add Category" onAction="#handleAddCategory"/>
+                        <Button fx:id="editCategoryBtn" text="Edit Category" onAction="#handleEditCategory"/>
+                        <Button fx:id="deleteCategoryBtn" text="Delete Category" onAction="#handleDeleteCategory"/>
+                    </HBox>
+                </VBox>
+                
+                <!-- Right side - Menu Items -->
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <Label text="Menu Items" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                    <TableView fx:id="menuItemTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
+                            <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="200"/>
+                            <TableColumn fx:id="priceColumn" text="Price" prefWidth="100"/>
+                            <TableColumn fx:id="availableColumn" text="Available" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                    <HBox spacing="10">
+                        <Button fx:id="addItemBtn" text="Add Item" onAction="#handleAddItem"/>
+                        <Button fx:id="editItemBtn" text="Edit Item" onAction="#handleEditItem"/>
+                        <Button fx:id="deleteItemBtn" text="Delete Item" onAction="#handleDeleteItem"/>
+                    </HBox>
+                </VBox>
+            </items>
+        </SplitPane>
+        
+        <!-- Popup dialog for adding/editing items -->
+        <StackPane fx:id="dialogContainer" visible="false" AnchorPane.bottomAnchor="0.0" 
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                   style="-fx-background-color: rgba(0, 0, 0, 0.5);">
+            <VBox fx:id="itemDialog" spacing="10" maxWidth="400" maxHeight="500" 
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5;">
+                <Label fx:id="dialogTitle" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="100" prefWidth="100" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="200" prefWidth="200" />
+                    </columnConstraints>
+                    
+                    <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    
+                    <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="descriptionField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    
+                    <Label text="Details:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextArea fx:id="detailsField" GridPane.rowIndex="2" GridPane.columnIndex="1" prefHeight="100"/>
+                    
+                    <Label text="Price:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="priceField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                    
+                    <Label text="Available Count:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="availableCountField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    
+                    <Label text="Categories:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="categoriesComboBox" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                </GridPane>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button fx:id="cancelBtn" text="Cancel" onAction="#handleCancelDialog"/>
+                    <Button fx:id="saveBtn" text="Save" onAction="#handleSaveDialog"/>
+                </HBox>
+            </VBox>
+        </StackPane>
+        
+        <!-- Popup dialog for adding/editing categories -->
+        <StackPane fx:id="categoryDialogContainer" visible="false" AnchorPane.bottomAnchor="0.0" 
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                   style="-fx-background-color: rgba(0, 0, 0, 0.5);">
+            <VBox fx:id="categoryDialog" spacing="10" maxWidth="300" maxHeight="150" 
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5;">
+                <Label fx:id="categoryDialogTitle" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="80" prefWidth="80" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="150" prefWidth="150" />
+                    </columnConstraints>
+                    
+                    <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="categoryNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                </GridPane>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button fx:id="categoryCancelBtn" text="Cancel" onAction="#handleCategoryCancelDialog"/>
+                    <Button fx:id="categorySaveBtn" text="Save" onAction="#handleCategorySaveDialog"/>
+                </HBox>
+            </VBox>
+        </StackPane>
+    </children>
+</AnchorPane>
