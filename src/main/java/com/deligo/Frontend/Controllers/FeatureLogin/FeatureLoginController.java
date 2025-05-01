@@ -3,18 +3,13 @@ package com.deligo.Frontend.Controllers.FeatureLogin;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
-import com.deligo.Frontend.Controllers.Popups.*;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
-import com.deligo.Utils.UTF8Control;
-import com.sun.javafx.iio.gif.GIFImageLoader2;
+import com.deligo.Model.Views;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-import java.util.Locale;
-import java.util.ResourceBundle;
 
 public class FeatureLoginController implements InitializableWithParent {
 
@@ -32,7 +27,7 @@ public class FeatureLoginController implements InitializableWithParent {
     private LoggingAdapter logger;
     private MainPageController mainPageController;
     private ConfigLoader configLoader;
-    private ResourceBundle bundle;
+
 
     @FXML
     private TextField usernameField;
@@ -49,18 +44,16 @@ public class FeatureLoginController implements InitializableWithParent {
         this.mainPageController = mainPageController;
         this.configLoader = configLoader;
     }
-    public void initialize() {
-        this.bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault(), new UTF8Control());
-    }
     @Override
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
         if(btnHome != null) btnHome.setOnAction(event -> {
             this.logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Returning to main page");
-            mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
-            mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
-            mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml", false);
+            mainPageController.clearAll();
+            mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+            mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
+            mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
         });
 
         if (loginButton != null) {
@@ -80,20 +73,18 @@ public class FeatureLoginController implements InitializableWithParent {
                     String role = configLoader.getConfigValue("login", "role", String.class);
 
                     if(user != null && !user.isEmpty() && role.equals("customer")){
-                        mainPageController.loadMainContent("/Views/Content/OrderPanel/OrderContentPanel.fxml", false);
-                        mainPageController.loadRightPanel("/Views/Content/OrderPanel/CartRightPanel.fxml", false);
-                        mainPageController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
-                        mainPageController.clearBottomPanel();
+                        mainPageController.clearAll();
+                        mainPageController.loadView("/Views/Content/OrderPanel/OrderContentPanel.fxml", Views.mainContent);
+                        mainPageController.loadView("/Views/Content/OrderPanel/CartRightPanel.fxml", Views.rightPanel);
+                        mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
                     }else{
-                        mainPageController.clearContentPanel();
-                        mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanel.fxml", false);
+                        mainPageController.clearAll();
+                        mainPageController.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.mainContent);
                     }
-//                    mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
-//                    mainPageController.loadLeftPanel("/Views/Content/EmployeePanel/OrdersLeftPanel.fxml");
                 } else {
-                    mainPageController.showWarningPopup(bundle.getString("popup.warning.message"), 500);
-//                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Invalid credentials!");
-//                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, response);
+                    //TODO Warning popup
+                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Invalid credentials!");
+                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, response);
                 }
             });
         }

@@ -144,8 +144,8 @@ public class BackendConfig {
 
 
             // FeatureUserManagement
-            case "/users/getAll":
-                return new Response(backend.getFeatureUserManagement().getAllUsers("{}"), 200);
+            case "/edit-user":
+                return backend.getFeatureUserManagement().editUser(data);
             case "/get-all-users":
                 return new Response(backend.getFeatureUserManagement().getAllUsers("{}"), 200);
             case "/orgDetails/get":

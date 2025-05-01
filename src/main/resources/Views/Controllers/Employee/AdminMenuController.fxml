@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.deligo.Frontend.Controllers.Employee.Admin.AdminMenuController"
+      spacing="10" prefWidth="200" minWidth="150">
+<!--    <padding>-->
+<!--        <Insets value="10"/>-->
+<!--    </padding>-->
+
+    <Button text="Štatistiky" fx:id="staticticsBtn"/>
+    <Button text="Upraviť stoly" fx:id="editTablesBtn"/>
+    <Button text="Upraviť ponuku" fx:id="editFoodMenuBtn"/>
+    <Button text="Správa zamestnancov" fx:id="editEmployeesBtn"/>
+    <Button text="Úprava info" fx:id="editInfoBtn"/>
+</VBox>

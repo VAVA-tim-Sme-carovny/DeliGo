@@ -6,6 +6,7 @@ import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
 import com.deligo.Model.BasicModels.LogType;
+import com.deligo.Model.Views;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -39,10 +40,10 @@ public class FeatureRegisterController implements InitializableWithParent {
 
         if(btnHome != null) btnHome.setOnAction(event -> {
             this.logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Returning to main page");
-            mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
-            mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
-            mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml", false);
-            mainPageController.clearRightPanel();
+            mainPageController.clearAll();
+            mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+            mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
+            mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
         });
 
         if (registerButton != null) {
@@ -58,14 +59,12 @@ public class FeatureRegisterController implements InitializableWithParent {
 
                 if (response.contains("\"status\":200")) {
                     logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.FRONTEND, "Login successful!");
-                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
-                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
+                    mainPageController.clearAll();
+                    mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+                    mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
                 } else {
                     logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Registration failed!");
-//                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
-//                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-//                    mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
-//                    mainPageController.clearRightPanel();
+
                 }
             });
         }

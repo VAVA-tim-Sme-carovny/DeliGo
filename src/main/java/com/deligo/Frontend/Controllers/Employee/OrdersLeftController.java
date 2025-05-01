@@ -4,6 +4,7 @@ import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels;
+import com.deligo.Model.Views;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -65,7 +66,7 @@ public class OrdersLeftController implements InitializableWithParent {
         // Kliknutie pre detail
         item.setOnMouseClicked(e -> {
             logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND, "Clicked on: " + order.name());
-            mainPageController.loadMainContent("/Views/Content/EmployeePanel/OrderDetailContentPanel.fxml", false);
+            mainPageController.loadView("/Views/Content/EmployeePanel/OrderDetailContentPanel.fxml", Views.mainContent);
         });
 
         return item;

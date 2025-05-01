@@ -4,14 +4,12 @@ import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
-import com.deligo.Frontend.Views.MainView;
-import com.deligo.Utils.UTF8Control;
+import com.deligo.Model.Views;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -28,6 +26,7 @@ public class MainTopPanelController implements InitializableWithParent {
     @FXML private Button logoutBtn;
     @FXML private Button btnEn;
     @FXML private Button btnSk;
+
 
 
     private MainPageController mainController;
@@ -48,24 +47,24 @@ public class MainTopPanelController implements InitializableWithParent {
         String deviceId = configLoader.getConfigValue("device", "id", String.class);
 
 
-//        if (btnSk != null) btnSk.setOnAction(e -> switchLanguage("sk"));
-//        if (btnEn != null) btnEn.setOnAction(e -> switchLanguage("en"));
+        if (btnSk != null) btnSk.setOnAction(e -> this.switchLanguage("sk"));
+        if (btnEn != null) btnEn.setOnAction(e -> this.switchLanguage("en"));
         if (openLogin != null) openLogin.setOnAction(e -> {
             logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "Open login");
-            mainController.loadMainContent("/Views/Content/MainPanel/LoginContentPanel.fxml", false);
-            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
-            mainController.clearBottomPanel();
+            mainController.clearAll();
+            mainController.loadView("/Views/Content/MainPanel/LoginContentPanel.fxml", Views.mainContent);
+            mainController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
         });
         if (openInfoBtn != null) openInfoBtn.setOnAction(e -> {
-            mainController.loadMainContent("/Views/Content/MainPanel/InfoContentPanel.fxml", false);
-            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
-            mainController.clearBottomPanel();
+            mainController.clearAll();
+            mainController.loadView("/Views/Content/MainPanel/InfoContentPanel.fxml", Views.mainContent);
+            mainController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
         });
 
         if (openRegister != null) openRegister.setOnAction(e -> {
-            mainController.loadMainContent("/Views/Content/MainPanel/RegisterContentPanel.fxml", false);
-            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
-            mainController.clearBottomPanel();
+            mainController.clearAll();
+            mainController.loadView("/Views/Content/MainPanel/RegisterContentPanel.fxml", Views.mainContent);
+            mainController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
         });
 
         if (logoutBtn != null) {
@@ -73,9 +72,10 @@ public class MainTopPanelController implements InitializableWithParent {
                 logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, "User clicked logout");
 
                 mainController.getServer().sendPostRequest("/be/logout", null);
+                mainController.clearAll();
                 // Reloadni hlavný panel (alebo choď na login)
-                mainController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
-                mainController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
+                mainController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+                mainController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
             });
         }
         if (user != null && !user.isEmpty() && role != null && !role.isEmpty()) {
@@ -98,6 +98,38 @@ public class MainTopPanelController implements InitializableWithParent {
 
 
 
+    }
+
+
+
+    @FXML
+    private void switchToEnglish() {
+        System.out.println("Klik na EN");
+        switchLanguage("en");
+    }
+
+    @FXML
+    private void switchToSlovak() {
+        switchLanguage("sk");
+    }
+
+
+
+    private void switchLanguage(String langCode) {
+        try {
+            Locale.setDefault(new Locale(langCode));
+            ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/deligo/Frontend/Views/main_page.fxml"), bundle);
+            Parent root = loader.load();
+
+            Stage stage = (Stage) goToCallService.getScene().getWindow();
+
+            stage.getScene().setRoot(root);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
