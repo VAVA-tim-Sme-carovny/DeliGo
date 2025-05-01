@@ -21,15 +21,14 @@ import java.util.regex.Pattern;
 public class FeatureOrgDetails extends BaseFeature {
 
     // Regex pre validáciu telefónneho čísla a emailu
-    private static final Pattern PHONE_PATTERN = Pattern.compile("^(\\+421\\s9\\d{2}\\s\\d{3}\\s\\d{3}|09\\d{2}\\s\\d{3}\\s\\d{3})$");
-    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
-
+    private static final Pattern PHONE_PATTERN = Pattern.compile("^\\+421[1-9][0-9]{8}$");
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
     protected final GenericDAO<OrgDetails> orgDetailsDAO;
     private Gson gson = new Gson();
 
     public FeatureOrgDetails(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
         super(globalConfig, logger, restApiServer);
-        this.orgDetailsDAO = new GenericDAO<>(OrgDetails.class, "info");
+        this.orgDetailsDAO = new GenericDAO<>(OrgDetails.class, "info_board");
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "FeatureOrgDetails Started.");
     }
 
@@ -47,20 +46,21 @@ public class FeatureOrgDetails extends BaseFeature {
 
             String phone = jsonObject.has("phone") ? jsonObject.get("phone").getAsString() : null;
             String email = jsonObject.has("email") ? jsonObject.get("email").getAsString() : null;
-            String openingHours = jsonObject.has("opening_hours") ? jsonObject.get("opening_hours").getAsString() : "";
+//            String openingHours = jsonObject.has("opening_hours") ? jsonObject.get("opening_hours").getAsString() : "";
+            String openingHours = jsonObject.has("opening_hours") ? jsonObject.get("opening_hours").toString() : "";
 
             // Validácia telefónneho čísla
             if (phone != null && !phone.isEmpty() && !PHONE_PATTERN.matcher(phone).matches()) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                         UserManagementMessages.INVALID_PHONE_FORMAT.getMessage(this.getLanguage()));
-                return gson.toJson(new Response("Phone number is in invalid format", 400));
+                return gson.toJson(new Response("Phone number is in invalid format", 500));
             }
 
             // Validácia emailu
             if (email != null && !email.isEmpty() && !EMAIL_PATTERN.matcher(email).matches()) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                         UserManagementMessages.INVALID_EMAIL_FORMAT.getMessage(this.getLanguage()));
-                return gson.toJson(new Response("Email is in invalid format", 400));
+                return gson.toJson(new Response("Email is in invalid format", 500));
             }
 
             // Získaj existujúci záznam
@@ -68,7 +68,7 @@ public class FeatureOrgDetails extends BaseFeature {
             OrgDetails orgDetails;
 
             if (existingDetails.isEmpty()) {
-                orgDetails = new OrgDetails();
+                orgDetails = new OrgDetails(openingHours, phone, email);
             } else {
                 orgDetails = existingDetails.get(0);
             }
@@ -79,7 +79,7 @@ public class FeatureOrgDetails extends BaseFeature {
             orgDetails.setMail(email);
 
             // Ulož do databázy
-            if (orgDetails.getId() > 0) {
+            if (!existingDetails.isEmpty()) {
                 orgDetailsDAO.update(orgDetails.getId(), orgDetails);
             } else {
                 orgDetailsDAO.insert(orgDetails);

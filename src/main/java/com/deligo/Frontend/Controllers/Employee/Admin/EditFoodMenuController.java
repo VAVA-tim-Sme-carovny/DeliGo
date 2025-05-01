@@ -10,7 +10,6 @@ import com.deligo.Model.BasicModels.LogType;
 import com.deligo.Model.Category;
 import com.deligo.Model.MenuItem;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

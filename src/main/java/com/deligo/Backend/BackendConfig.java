@@ -20,7 +20,7 @@ public class BackendConfig {
             case "/updateLanguage":
                 BaseFeature.updateLanguage(config);
             // FeatureOrgDetails
-            case "/org-details":
+            case "/update-info":
                 backend.getFeatureOrgDetails().updateOrgDetails(data);
             // FeatureStatistics
             case "/stats/daily":

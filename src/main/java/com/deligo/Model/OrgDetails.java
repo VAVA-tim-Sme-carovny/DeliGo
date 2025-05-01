@@ -4,25 +4,25 @@ import java.util.List;
 
 public class OrgDetails {
     private int id;
-    private String openingTimes;
+    private String opening_hours;
     private String phone;
     private String email;
 
     public OrgDetails() {
     }
 
-    public OrgDetails(String openingTimes, String phone, String email) {
-        this.openingTimes = openingTimes;
+    public OrgDetails(String opening_hours, String phone, String email) {
+        this.opening_hours = opening_hours;
         this.phone = phone;
         this.email = email;
     }
 
     public String getOpeningTimes() {
-        return openingTimes;
+        return opening_hours;
     }
 
-    public void setOpeningTimes(String openingTimes) {
-        this.openingTimes = openingTimes;
+    public void setOpeningTimes(String opening_hours) {
+        this.opening_hours = opening_hours;
     }
 
     public String getPhoneNumber() {
@@ -52,7 +52,7 @@ public class OrgDetails {
     @Override
     public String toString() {
         return "OrgDetails{" +
-                "openingTimes=" + openingTimes +
+                "opening_hours=" + opening_hours +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 '}';

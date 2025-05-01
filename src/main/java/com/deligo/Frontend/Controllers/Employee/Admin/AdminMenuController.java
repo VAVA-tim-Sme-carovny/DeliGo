@@ -62,7 +62,7 @@ public class AdminMenuController implements InitializableWithParent {
 
         if (editInfoBtn != null) editInfoBtn.setOnAction(event -> {
             this.logger.log(com.deligo.Model.BasicModels.LogType.INFO, com.deligo.Model.BasicModels.LogPriority.LOW, com.deligo.Model.BasicModels.LogSource.FRONTEND, "Opening edit info menu");
-            mainPageController.loadView("/Views/Content/AdminPanel/EditInfoContentPanel.fxml", Views.mainContent);
+            mainPageController.loadView("/Views/Content/AdminPanel/OrgDetailsContent.fxml", Views.mainContent);
         });
 
     }
