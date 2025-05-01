@@ -44,8 +44,6 @@ public class FeatureLoginController implements InitializableWithParent {
     private Button loginButton;
 
 
-
-
     public FeatureLoginController(LoggingAdapter logger, MainPageController mainPageController, ConfigLoader configLoader) {
         this.logger = logger;
         this.mainPageController = mainPageController;
@@ -92,16 +90,10 @@ public class FeatureLoginController implements InitializableWithParent {
                     }
 //                    mainPageController.loadControllerPanel("/Views/Controllers/EmployeeTopPanelController.fxml");
 //                    mainPageController.loadLeftPanel("/Views/Content/EmployeePanel/OrdersLeftPanel.fxml");
-//                    mainPageController.clearContentPanel();
-//                    mainPageController.clearBottomPanel();
                 } else {
                     mainPageController.showWarningPopup(bundle.getString("popup.warning.message"), 500);
 //                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Invalid credentials!");
 //                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, response);
-//                    mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml");
-//                    mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml");
-//                    mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml");
-//                    mainPageController.clearRightPanel();
                 }
             });
         }

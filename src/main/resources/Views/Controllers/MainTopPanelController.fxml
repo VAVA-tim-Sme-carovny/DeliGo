@@ -22,7 +22,6 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
-    <!--aa-->
     <children>
 
         <Button fx:id="openInfoBtn" mnemonicParsing="false" text="">

@@ -14,7 +14,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.GridPane;
 import javafx.scene.Node;
 
 import java.io.IOException;
@@ -34,10 +34,10 @@ public class MainPageController extends BaseFeature {
     private AnchorPane mainContent;
 
     @FXML
-    private VBox controllerPanel;
+    private AnchorPane controllerPanel;
 
     @FXML
-    private VBox rightPanel;
+    private AnchorPane rightPanel;
 
     @FXML
     private AnchorPane bottomPanel;

@@ -13,7 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -28,7 +29,7 @@ public class MainView {
     private final LoggingAdapter logger;
 
     private Stage primaryStage;
-    private BorderPane rootLayout;
+    private GridPane rootLayout;
 
     public MainView(FrontendController controller, LoggingAdapter logger) {
         this.controller = controller;
@@ -77,7 +78,7 @@ public class MainView {
             loader.setController(controller); // Musí byť pred loader.load()
 
             Parent root = loader.load();
-            rootLayout = (BorderPane) root;
+            rootLayout = (GridPane) root;
 
             // ✅ Môžeme volať metódy na controlleri
             controller.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
@@ -124,7 +125,7 @@ public class MainView {
 
 //             Nastaví FXML do stredu rozloženia
 
-            rootLayout.setCenter(page);
+//            rootLayout.add(page, 1, 1);
 
         } catch (IOException e) {
             e.printStackTrace();
