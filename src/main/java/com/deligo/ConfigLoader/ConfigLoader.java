@@ -1,5 +1,6 @@
 package com.deligo.ConfigLoader;
 
+import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.FileInputStream;
@@ -75,6 +76,24 @@ public class ConfigLoader {
     //    List<String> roles = Arrays.asList("customer", "admin");
     //    configLoader.updateConfigValue("login", "tags", roles);
 
+//    public void updateConfigValue(String mainKey, String elementKey, Object newValue) {
+//        Map<String, Object> section = (Map<String, Object>) config.get(mainKey);
+//        if (section != null) {
+//            section.put(elementKey, newValue);
+//        } else {
+//            section = new HashMap<>();
+//            section.put(elementKey, newValue);
+//            config.put(mainKey, section);
+//        }
+//        Yaml yaml = new Yaml();
+//        try (FileWriter writer = new FileWriter(filePath)) {
+//            yaml.dump(config, writer);
+//        } catch (IOException e) {
+//            throw new RuntimeException("Failed to update config: " + e.getMessage());
+//        }
+//    }
+
+
     public void updateConfigValue(String mainKey, String elementKey, Object newValue) {
         Map<String, Object> section = (Map<String, Object>) config.get(mainKey);
         if (section != null) {
@@ -84,11 +103,18 @@ public class ConfigLoader {
             section.put(elementKey, newValue);
             config.put(mainKey, section);
         }
-        Yaml yaml = new Yaml();
+
+        // Nastavenie správneho štýlu výpisu
+        DumperOptions options = new DumperOptions();
+        options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK); // <<< Toto zabezpečí požadovaný výpis
+
+        Yaml yaml = new Yaml(options);
+
         try (FileWriter writer = new FileWriter(filePath)) {
             yaml.dump(config, writer);
         } catch (IOException e) {
             throw new RuntimeException("Failed to update config: " + e.getMessage());
         }
     }
+
 }

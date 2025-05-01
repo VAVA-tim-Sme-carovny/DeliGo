@@ -4,62 +4,57 @@ import java.util.List;
 
 public class OrgDetails {
     private int id;
-    private List<List<String>> openingTimes;
-    private String phoneNumber;
-    private String mail;
+    private String openingTimes;
+    private String phone;
+    private String email;
 
     public OrgDetails() {
     }
 
-    public OrgDetails(List<List<String>> openingTimes, String phoneNumber, String mail) {
+    public OrgDetails(String openingTimes, String phone, String email) {
         this.openingTimes = openingTimes;
-        this.phoneNumber = phoneNumber;
-        this.mail = mail;
+        this.phone = phone;
+        this.email = email;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public List<List<String>> getOpeningTimes() {
+    public String getOpeningTimes() {
         return openingTimes;
     }
 
-    public void setOpeningTimes(List<List<String>> openingTimes) {
+    public void setOpeningTimes(String openingTimes) {
         this.openingTimes = openingTimes;
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber(String phone) {
+        this.phone = phone;
     }
 
     public void setEmail(String email) {
-        this.mail = email; // Make sure 'email' field exists in your class
+        this.email = email;
     }
     
-    public String getMail() {
-        return mail;
+    public int getId() {
+        return id;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public String getMail() {
+        return email;
+    }
+
+    public void setMail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
         return "OrgDetails{" +
-                "id=" + id +
-                ", openingTimes=" + openingTimes +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", mail='" + mail + '\'' +
+                "openingTimes=" + openingTimes +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

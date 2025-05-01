@@ -1,21 +1,18 @@
 package com.deligo.Backend;
 
+import com.deligo.Backend.FeatureEditTables.FeatureEditTables;
 import com.deligo.Backend.FeatureMenuManagement.FeatureMenuManagement;
-import com.deligo.Backend.FeatureOrderManagement.FeatureOrderManagement;
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
-import com.deligo.Backend.FeatureReview.FeatureReview;
 import com.deligo.Backend.FeatureStatistics.FeatureStatistics;
-import com.deligo.Backend.FeatureTableReservation.FeatureTableReservation;
-import com.deligo.Backend.FeatureTableStructure.FeatureTableStructure;
 import com.deligo.Backend.FeatureUserLogin.FeatureUserLogin;
 import com.deligo.Backend.FeatureUserManagement.FeatureUserManagement;
 import com.deligo.Backend.FeatureUserRegistration.FeatureUserRegister;
-import com.deligo.Backend.FeatureValidateTestConnection.FeatureValidateTestConnection;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.DatabaseManager.dao.GenericDAO;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.RestApi.RestAPIServer;
+import com.deligo.Backend.FeatureValidateTestConnection.FeatureValidateTestConnection;
 import com.deligo.Model.User;
 
 /**
@@ -23,24 +20,19 @@ import com.deligo.Model.User;
  */
 public class Backend {
 
-    public final ConfigLoader config;
+    private final ConfigLoader config;
 
     private final FeatureValidateTestConnection featureValidateTestConnection;
-
-    // User features
+    private final FeatureOrgDetails featureOrgDetails;
+//    Add feature.
     private final FeatureUserRegister featureUserRegister;
     private final FeatureUserLogin featureUserLogin;
-    private final FeatureReview featureReview;
-    private final FeatureOrgDetails featureOrgDetails;
 
-    // Admin features
+    //Admin features
     private final FeatureStatistics featureStatistics;
-    private final FeatureTableStructure featureTableStructure;
+    private final FeatureEditTables featureTableStructure;
     private final FeatureMenuManagement featureMenuManagement;
     private final FeatureUserManagement featureUserManagement;
-    private final FeatureOrderManagement featureOrderManagement;
-    private final FeatureTableReservation featureTableReservation;
-
 
 
     /**
@@ -53,18 +45,15 @@ public class Backend {
     public Backend(RestAPIServer apiServer, LoggingAdapter logger, ConfigLoader config) {
         this.config = config;
 
-        RestAPIServer.setBackendConfig(new BackendConfig(this));
+        apiServer.setBackendConfig(new BackendConfig(this));
 
         this.featureValidateTestConnection = new FeatureValidateTestConnection(config, logger, apiServer);
-        this.featureReview = new FeatureReview(config, logger, apiServer);
         this.featureOrgDetails = new FeatureOrgDetails(config, logger, apiServer);
 
         this.featureStatistics = new FeatureStatistics(config, logger, apiServer);
-        this.featureTableStructure = new FeatureTableStructure(config, logger, apiServer);
+        this.featureTableStructure = new FeatureEditTables(config, logger, apiServer);
         this.featureMenuManagement = new FeatureMenuManagement(config, logger, apiServer);
         this.featureUserManagement = new FeatureUserManagement(config, logger, apiServer);
-        this.featureOrderManagement = new FeatureOrderManagement(config, logger, apiServer);
-        this.featureTableReservation = new FeatureTableReservation(config, logger, apiServer);
 
 //      Add feature.
         this.featureUserRegister = new FeatureUserRegister(config, logger, apiServer, new GenericDAO<>(User.class, "users"));
@@ -78,10 +67,6 @@ public class Backend {
         return featureValidateTestConnection;
     }
 
-    public FeatureReview getFeatureReview() {
-        return featureReview;
-    }
-
     public FeatureOrgDetails getFeatureOrgDetails() {
         return featureOrgDetails;
     }
@@ -92,7 +77,7 @@ public class Backend {
         return featureStatistics;
     }
 
-    public FeatureTableStructure getFeatureTableStructure() {
+    public FeatureEditTables getFeatureTableStructure() {
         return featureTableStructure;
     }
     public FeatureUserRegister getFeatureUserRegister() {
@@ -107,142 +92,7 @@ public class Backend {
         return featureUserManagement;
     }
 
-    public FeatureOrderManagement getFeatureOrderManagement() {
-        return featureOrderManagement;
-    }
-
-    public FeatureTableReservation getFeatureTableReservation() {
-        return featureTableReservation;
-    }
-
-    public String updateTable(String json) {
-        return featureTableStructure.addTable(json);
-    }
-
-    public String updateOrgDetails(String json) {
-        return featureUserManagement.updateOrgDetails(json);
-    }
-
-    public String updateOrganizationDetails(String json) {
-        return featureUserManagement.updateOrgDetails(json);
-    }
-
     public FeatureUserLogin getFeatureUserLogin() {
         return featureUserLogin;
-    }
-
-    public String getAvailableTables(String json) {
-        return featureTableReservation.getAvailableTables(json);
-    }
-
-    public String createReservation(String json) {
-        return featureTableReservation.createReservation(json);
-    }
-
-    public String updateReservationStatus(String json) {
-        return featureTableReservation.updateReservationStatus(json);
-    }
-
-    public String getReservationById(String json) {
-        return featureTableReservation.getReservationById(json);
-    }
-
-    public String getReservationsByUser(String json) {
-        return featureTableReservation.getReservationsByUser(json);
-    }
-
-    public String getReservationsByTable(String json) {
-        return featureTableReservation.getReservationsByTable(json);
-    }
-
-    public String cancelReservation(String json) {
-        return featureTableReservation.cancelReservation(json);
-    }
-
-    // FeatureOrderManagement methods
-    public String updateOrder(String json) {
-        return featureOrderManagement.updateOrder(json);
-    }
-
-    public String updateOrderStatus(String json) {
-        return featureOrderManagement.updateOrderStatus(json);
-    }
-
-    public String getOrdersByTable(String json) {
-        return featureOrderManagement.getOrdersByTable(json);
-    }
-
-    public String getMenuByCategory(String json) {
-        return featureOrderManagement.getMenuByCategory(json);
-    }
-
-    public String getCategories(String json) {
-        return featureOrderManagement.getCategories(json);
-    }
-
-    public String getPendingOrders(String json) {
-        return featureOrderManagement.getPendingOrders(json);
-    }
-
-    public String markOrderAsDelivered(String json) {
-        return featureOrderManagement.markOrderAsDelivered(json);
-    }
-
-    public String cancelOrder(String json) {
-        return featureOrderManagement.cancelOrder(json);
-    }
-
-    // FeatureMenuManagement methods
-    public String addMenuItem(String json) {
-        return featureMenuManagement.addItem(json);
-    }
-
-    public String updateMenuItem(String json) {
-        return featureMenuManagement.updateItem(json);
-    }
-
-    public String deleteMenuItem(String json) {
-        return featureMenuManagement.deleteItem(json);
-    }
-
-    public String getAllMenuItems(String json) {
-        return featureMenuManagement.getAllItems(json);
-    }
-
-    public String getMenuItemsByCategory(String json) {
-        return featureMenuManagement.getItemsByCategory(json);
-    }
-
-    public String addMenuCategory(String json) {
-        return featureMenuManagement.addCategory(json);
-    }
-
-    public String updateMenuCategory(String json) {
-        return featureMenuManagement.updateCategory(json);
-    }
-
-    public String deleteMenuCategory(String json) {
-        return featureMenuManagement.deleteCategory(json);
-    }
-
-    public String getAllMenuCategories(String json) {
-        return featureMenuManagement.getAllCategories(json);
-    }
-
-    // FeatureUserManagement methods
-    public String editUser(String json) {
-        return featureUserManagement.editUser(json);
-    }
-
-    public String deleteUser(String json) {
-        return featureUserManagement.deleteUser(json);
-    }
-
-    public String getAllUsers(String json) {
-        return featureUserManagement.getAllUsers(json);
-    }
-
-    public String getOrgDetails(String json) {
-        return featureUserManagement.getOrgDetails(json);
     }
 }

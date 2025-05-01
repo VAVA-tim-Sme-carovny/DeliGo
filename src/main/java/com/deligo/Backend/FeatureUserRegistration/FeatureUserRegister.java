@@ -61,22 +61,7 @@ public class FeatureUserRegister extends BaseFeature {
         List<String> roles = user.getRoles();
 
         //Validácia rolý
-        String rolesAsString = "testing-role";
-//        for (String r : roles) {
-//            try {
-//                Roles role = Roles.fromString(r);
-//                if(rolesAsString.isEmpty()) {
-//                    rolesAsString = role.getRoleName();
-//                }
-//                else {
-//                    rolesAsString = rolesAsString.concat("," + role.getRoleName());
-//                }
-//            } catch (IllegalArgumentException e) {
-//                String msg = UserRegisterMessages.INVALID_ROLE.getMessage(this.getLanguage(), e.getMessage());
-//                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
-//                return gson.toJson(new Response(msg, 500));
-//            }
-//        }
+        String rolesAsString = "customer";
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, "Parsed roles: " + rolesAsString);
 
         //Validácia či user existuje v databaze
