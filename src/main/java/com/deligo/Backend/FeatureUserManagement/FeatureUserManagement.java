@@ -65,24 +65,26 @@ public class FeatureUserManagement extends BaseFeature {
             Map<String, Object> requestData = gson.fromJson(json, mapType);
             String userId = (String) requestData.get("userId");
             String username = (String) requestData.get("username");
-            
-            // Získanie rolí a značiek z požiadavky
-            @SuppressWarnings("unchecked")
-            List<String> roles = (requestData.get("roles") != null) 
-                ? (List<String>) requestData.get("roles") 
-                : new ArrayList<>();
 
+            //TODO neskor dofixovat
+            // Získanie rolí a značiek z požiadavky
+            String newRoles = requestData.get("roles") != null ? requestData.get("roles").toString() : "customer";
             @SuppressWarnings("unchecked")
-            List<String> tags = (requestData.get("tags") != null) 
-                ? (List<String>) requestData.get("tags") 
-                : new ArrayList<>();
+//            List<String> roles = (requestData.get("roles") != null)
+//                ? (List<String>) requestData.get("roles")
+//                : new ArrayList<>();
+//
+//            @SuppressWarnings("unchecked")
+//            List<String> tags = (requestData.get("tags") != null)
+//                ? (List<String>) requestData.get("tags")
+//                : new ArrayList<>();
             
             // Nájdenie používateľa podľa ID
             Optional<User> userOpt = userDAO.findOneByField("id", userId);
             if (!userOpt.isPresent()) {
                 logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.BECKEND, 
                         UserManagementMessages.USER_NOT_FOUND.getMessage(this.getLanguage()));
-                return gson.toJson(new Response("User not found", 404));
+                return gson.toJson(new Response("User not found", 500));
             }
             
             User user = userOpt.get();
@@ -91,11 +93,11 @@ public class FeatureUserManagement extends BaseFeature {
             if (!user.getUsername().equals(username)) {
                 logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.BECKEND, 
                         "Username mismatch");
-                return gson.toJson(new Response("Username does not match with the user ID", 400));
+                return gson.toJson(new Response("Username does not match with the user ID", 500));
             }
             
             // Aktualizácia rolí a značiek
-            user.setRoles("roles"); //TODO FIxnut
+            user.setRoles(newRoles);
 //            user.setTags(tags);
             
             // Aktualizácia používateľa v databáze
@@ -109,7 +111,7 @@ public class FeatureUserManagement extends BaseFeature {
             // Chyba pri parsovaní JSON
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, 
                     UserManagementMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-            return gson.toJson(new Response("Invalid request format", 400));
+            return gson.toJson(new Response("Invalid request format", 500));
         } catch (Exception e) {
             // Iné chyby
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, 

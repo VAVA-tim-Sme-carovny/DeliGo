@@ -23,7 +23,7 @@
             </padding>
 
             <children>
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="CENTER">
                     <children>
                         <Label text="Názov reštaurácie" id="RestaurantNameLabel">
                             <font>
@@ -33,7 +33,7 @@
                     </children>
                 </HBox>
 
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                <HBox alignment="CENTER">
                     <children>
                         <Button text="%order"
                         fx:id="OrderBtn"/>

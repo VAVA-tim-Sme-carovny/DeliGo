@@ -1,3 +1,4 @@
+com\deligo\Frontend\Controllers\MainPage\MainPageController$1.class
 com\deligo\Frontend\Controllers\loginAndRegisterPopUpController.class
 com\deligo\Backend\FeatureUserManagement\FeatureUserManagement$2.class
 com\deligo\Logging\LoggingManager.class
@@ -21,6 +22,7 @@ com\deligo\Backend\FeatureTableStructure\FeatureTableStructure.class
 com\deligo\Model\BasicModels$LogPriority.class
 com\deligo\Logging\Gui\LoggingWindow$2.class
 com\deligo\Frontend\Controllers\infoPopUpController.class
+com\deligo\Model\Views.class
 com\deligo\Backend\FeatureValidateTestConnection\FeatureValidateTestConnection.class
 com\deligo\Backend\FeatureTableStructure\FeatureTableStructure$4.class
 com\deligo\DatabaseManager\PostgresTest.class
@@ -38,6 +40,7 @@ com\deligo\Model\LoginData.class
 com\deligo\DatabaseManager\dao\GenericDAO.class
 com\deligo\DatabaseManager\example\Login.class
 com\deligo\ConfigLoader\ConfigLoader.class
+com\deligo\Model\Role.class
 com\deligo\Backend\FeatureTableStructure\TableStructureMessages.class
 com\deligo\Backend\FeatureStatistics\StatisticsMessages.class
 com\deligo\Frontend\FrontendConfig.class
@@ -91,6 +94,7 @@ com\deligo\Model\OrgDetails.class
 com\deligo\Backend\FeatureMenuManagement\FeatureMenuManagement$1.class
 com\deligo\Backend\FeatureTableStructure\FeatureTableStructure$2.class
 com\deligo\Frontend\Helpers\CustomControllerFactory.class
+com\deligo\Frontend\Controllers\Employee\Admin\EditEmployeesController.class
 com\deligo\Model\Food.class
 com\deligo\MainApp.class
 com\deligo\Backend\FeatureUserManagement\FeatureUserManagement$1.class

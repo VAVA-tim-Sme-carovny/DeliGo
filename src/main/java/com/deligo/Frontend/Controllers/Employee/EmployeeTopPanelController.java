@@ -4,11 +4,10 @@ import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
-import com.deligo.Model.BasicModels;
+import com.deligo.Model.Views;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import com.deligo.Model.BasicModels.*;
-import javafx.scene.layout.HBox;
 
 import java.util.List;
 
@@ -45,21 +44,22 @@ public class EmployeeTopPanelController implements InitializableWithParent {
 
             ordersButton.setOnAction(event -> {
                 logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Current Orders view");
-                mainPageController.loadMainContent("/Views/Content/OrderPanel/CurrentOrdersPanel.fxml", false);
+                mainPageController.loadView("/Views/Content/OrderPanel/CurrentOrdersPanel.fxml", Views.mainContent);
             });
 
             adminButton.setOnAction(event -> {
                 logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Admin Panel");
-                mainPageController.loadMainContent("/Views/Content/AdminPanel/AdminContentPanel.fxml", false);
+                mainPageController.loadView("/Views/Content/AdminPanel/UsersView.fxml", Views.mainContent);
+                mainPageController.loadView("/Views/Controllers/Employee/AdminMenuController.fxml", Views.leftPanel);
             });
 
             logoutBtn.setOnAction(event -> {
                 logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Logging out");
                 String response = mainPageController.getServer().sendPostRequest("/be/logout", null);
                 logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Logout successful!");
-                mainPageController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
-                mainPageController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
-                mainPageController.loadBottomPanel("/Views/Controllers/MainBottomPanelController.fxml", false);
+                mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+                mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
+                mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
             });
         }
     }

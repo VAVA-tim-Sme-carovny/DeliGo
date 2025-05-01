@@ -3,6 +3,8 @@ package com.deligo.Model;
 import java.util.ArrayList;
 import java.util.List;
 import com.deligo.Model.BasicModels.Roles;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 public class User {
     private int id;
@@ -69,23 +71,12 @@ public class User {
         this.password = password;
     }
 
+    public SimpleStringProperty getFxUsername() {
+        return new SimpleStringProperty(username);
+    }
 
-    /*public List<Roles> getUserRoles() {
-        List<Roles> rolesList = new ArrayList<>();
-        if (role == null || role.isEmpty()) {
-            return rolesList;
-        }
-
-        String[] parts = role.split(",");
-        for (String part : parts) {
-            Roles r = Roles.valueOf(part.trim());
-            if (r != null) {
-                rolesList.add(r);
-            }
-        }
-
-        return rolesList;
-    }*/
-
+    public SimpleObjectProperty<Role> getFxRoles() {
+        return new SimpleObjectProperty<>(Role.valueOf(role));
+    }
 
 }

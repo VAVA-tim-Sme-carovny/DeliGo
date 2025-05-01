@@ -4,6 +4,7 @@ import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
+import com.deligo.Model.Views;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -50,19 +51,20 @@ public class MainTopPanelController implements InitializableWithParent {
         if (btnEn != null) btnEn.setOnAction(e -> this.switchLanguage("en"));
         if (openLogin != null) openLogin.setOnAction(e -> {
             logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, "Open login");
-            mainController.loadMainContent("/Views/Content/MainPanel/LoginContentPanel.fxml", false);
-            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
+            mainController.clearAll();
+            mainController.loadView("/Views/Content/MainPanel/LoginContentPanel.fxml", Views.mainContent);
+            mainController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
         });
         if (openInfoBtn != null) openInfoBtn.setOnAction(e -> {
-            mainController.loadMainContent("/Views/Content/MainPanel/InfoContentPanel.fxml", false);
-            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
-            mainController.clearBottomPanel();
+            mainController.clearAll();
+            mainController.loadView("/Views/Content/MainPanel/InfoContentPanel.fxml", Views.mainContent);
+            mainController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
         });
 
         if (openRegister != null) openRegister.setOnAction(e -> {
-            mainController.loadMainContent("/Views/Content/MainPanel/RegisterContentPanel.fxml", false);
-            mainController.loadControllerPanel("/Views/Controllers/ReturnHomeController.fxml", false);
-            mainController.clearBottomPanel();
+            mainController.clearAll();
+            mainController.loadView("/Views/Content/MainPanel/RegisterContentPanel.fxml", Views.mainContent);
+            mainController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
         });
 
         if (logoutBtn != null) {
@@ -70,9 +72,10 @@ public class MainTopPanelController implements InitializableWithParent {
                 logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, "User clicked logout");
 
                 mainController.getServer().sendPostRequest("/be/logout", null);
+                mainController.clearAll();
                 // Reloadni hlavný panel (alebo choď na login)
-                mainController.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
-                mainController.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
+                mainController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+                mainController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
             });
         }
         if (user != null && !user.isEmpty() && role != null && !role.isEmpty()) {

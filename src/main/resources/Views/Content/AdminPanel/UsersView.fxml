@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.deligo.Frontend.Controllers.Employee.Admin.EditEmployeesController">
+
+    <children>
+        <TableView fx:id="userTable" layoutX="10" layoutY="10" prefWidth="600" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="nameColumn" text="Username" prefWidth="200"/>
+                <TableColumn fx:id="roleColumn" text="Role" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

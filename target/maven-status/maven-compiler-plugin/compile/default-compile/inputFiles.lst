@@ -13,6 +13,7 @@ C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\Or
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\Order.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\RestApi\CentralServer\ConsulRegistration.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\User.java
+C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\Views.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\RestApi\RestAPIServer.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\loginAndRegisterPopUpController.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureUserManagement\UserManagementMessages.java
@@ -51,11 +52,13 @@ C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\Fe
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Helpers\CustomControllerFactory.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Logging\LoggingManager.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\Employee\Admin\AdminMenuController.java
+C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\Employee\Admin\EditEmployeesController.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\MainPage\MainBottomPanelController.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\OrderPage\CartItemController.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureMenuManagement\FeatureMenuManagement.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureUserManagement\FeatureUserManagement.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\FrontendConfig.java
+C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\Role.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\infoPopUpController.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\bookTablePopUpController.java
 C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Logging\Adapter\LoggingAdapter.java

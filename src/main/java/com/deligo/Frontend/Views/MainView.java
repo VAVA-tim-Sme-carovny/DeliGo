@@ -6,12 +6,14 @@ import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
 import com.deligo.Model.BasicModels.LogType;
+import com.deligo.Model.Views;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -25,7 +27,7 @@ public class MainView {
     private final LoggingAdapter logger;
 
     private Stage primaryStage;
-    private BorderPane rootLayout;
+    private GridPane rootLayout;
 
     public MainView(FrontendController controller, LoggingAdapter logger) {
         this.controller = controller;
@@ -74,18 +76,19 @@ public class MainView {
             loader.setController(controller); // Musí byť pred loader.load()
 
             Parent root = loader.load();
-            rootLayout = (BorderPane) root;
+            rootLayout = (GridPane) root;
 
             // ✅ Môžeme volať metódy na controlleri
-            controller.loadControllerPanel("/Views/Controllers/MainTopPanelController.fxml", false);
-            controller.loadMainContent("/Views/Content/MainPanel/MainContentPanel.fxml", false);
+//            controller.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
+//            controller.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+            controller.clearAll();
+            controller.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.controllerPanel);
 
             // Nastav fixnú veľkosť okna
-            Scene scene = new Scene(rootLayout, 1920, 1080);
+            Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.setTitle("DeliGo - Frontend");
-            primaryStage.setResizable(false); // Zakáže zmenu veľkosti okna
-            primaryStage.centerOnScreen();    // Vycentruje okno na obrazovku
+            primaryStage.centerOnScreen();
             primaryStage.show();
 
         } catch (Exception e) {
