@@ -14,6 +14,7 @@ import javafx.scene.layout.GridPane;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Objects;
 
 public class FeatureReserveController implements InitializableWithParent {
 
@@ -94,7 +95,45 @@ public class FeatureReserveController implements InitializableWithParent {
                 } else {
                     String name = table_nameF.getText();
                     String surname = table_surnameF.getText();
-                    int userId = Integer.parseInt(configLoader.getConfigValue("device", "id", String.class));
+                    
+                    // Check login status first
+                    Boolean isLoggedIn = configLoader.getConfigValue("login", "status", Boolean.class);
+                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
+                            "Login status: " + isLoggedIn);
+
+                    if (!Boolean.TRUE.equals(isLoggedIn)) {
+                        mainPageController.showWarningPopup("%notloggedin", 500);
+                        return;
+                    }
+
+                    // Get user ID from config
+                    String userId = configLoader.getConfigValue("user", "id", String.class);
+                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
+                            "User ID from config: " + userId);
+
+                    if (userId == null || userId.isEmpty()) {
+                        logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
+                                "User ID is null or empty");
+                        mainPageController.showWarningPopup("%notloggedin", 500);
+                        return;
+                    }
+
+                    // Try getting user ID from alternative location
+                    if (!userId.matches("\\d+")) {
+                        // Try alternative config path
+                        userId = configLoader.getConfigValue("login", "user_id", String.class);
+                        logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
+                                "Alternative User ID from config: " + userId);
+                    }
+
+                    // Validate that userId is a number
+                    if (!userId.matches("\\d+")) {
+                        logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
+                                "Invalid user ID format: " + userId);
+                        mainPageController.showWarningPopup("%invaliduser", 500);
+                        return;
+                    }
+
                     int tableId = Integer.parseInt(table_idF.getText());
                     String text = table_idF.getText();
 
@@ -116,7 +155,7 @@ public class FeatureReserveController implements InitializableWithParent {
                     String DateFrom = fromDate.toString() + " " + fromTime.toString() + ":00";
                     String DateTo = toDate.toString() + " " + newToTime.toString() + ":00";
                     String json = String.format(
-                            "{\"userId\":%d, \"tableId\":%d, \"reservedFrom\":\"%s\", \"reservedTo\":\"%s\"}",
+                            "{\"userId\":%s, \"tableId\":%d, \"reservedFrom\":\"%s\", \"reservedTo\":\"%s\"}",
                             userId, tableId, DateFrom, DateTo
                     );
 

@@ -4,9 +4,10 @@ import java.util.List;
 
 public class Order {
 
-    private int id;
-    private int user_id;
-    private int table_id;
+    private Integer id;
+    private Integer user_id;
+    private Integer table_id;
+    private Integer device_id;
     private String status;
     private String created_at;
     private String order_contain;
@@ -23,24 +24,47 @@ public class Order {
 
     public Order() {}
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public int getUser_id() {
+    public Integer getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(int user_id) {
+    // Alias method for camelCase convention
+    public Integer getUserId() {
+        return getUser_id();
+    }
+
+    public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
 
-    public int getTable_id() {
+    public Integer getTable_id() {
         return table_id;
     }
 
-    public void setTable_id(int table_id) {
+    // Alias method for camelCase convention
+    public Integer getTableId() {
+        return getTable_id();
+    }
+
+    public void setTable_id(Integer table_id) {
         this.table_id = table_id;
+    }
+
+    public Integer getDevice_id() {
+        return device_id;
+    }
+
+    // Alias method for camelCase convention
+    public Integer getDeviceId() {
+        return getDevice_id();
+    }
+
+    public void setDevice_id(Integer device_id) {
+        this.device_id = device_id;
     }
 
     public String getStatus() {
@@ -55,10 +79,14 @@ public class Order {
         return created_at;
     }
 
+    // Alias method for camelCase convention
+    public String getCreatedAt() {
+        return getCreated_at();
+    }
+
     public void setCreated_at(String created_at) {
         this.created_at = created_at;
     }
-
 
     public String getOrder_contain() {
         return order_contain;

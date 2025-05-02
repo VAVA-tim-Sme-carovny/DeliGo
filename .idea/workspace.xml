@@ -8,27 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/Backend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/Backend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/BackendConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/BackendConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureOrderManagement/FeatureOrderManagement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureOrderManagement/OrderManagementMessages.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/OrgDetailsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/OrgDetailsViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureReserve/FeatureReserveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureReserve/FeatureReserveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainBottomPanelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainBottomPanelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Views/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Views/Content/MainPanel/InfoContentPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Views/Content/MainPanel/InfoContentPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/Content/OrderPanel/OrderContentPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/Content/OrderPanel/OrderContentPanel.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Backend/Backend.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Backend/Backend.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Backend/BackendConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Backend/BackendConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Backend/FeatureOrganizationDetails/FeatureOrgDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Backend/FeatureOrganizationDetails/FeatureOrgDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/ConfigLoader/ConfigLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/ConfigLoader/ConfigLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/db/DatabaseConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/DatabaseManager/db/DatabaseConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/MainPage/MainPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/MainPage/MainPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/MainPage/MainTopPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/MainPage/MainTopPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/OrderPage/OrderPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/OrderPage/OrderPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Model/OrgDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Model/OrgDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -55,13 +37,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -150,7 +125,6 @@
                 <option value="-Preport" />
               </list>
             </option>
-            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
@@ -178,7 +152,6 @@
             <option name="goals">
               <list />
             </option>
-            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
