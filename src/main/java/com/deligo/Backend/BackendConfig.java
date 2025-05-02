@@ -56,6 +56,16 @@ public class BackendConfig {
                 return backend.getFeatureMenuManagement().getAllItems("{}");
             case "/menu/getAllCategories":
                 return backend.getFeatureMenuManagement().getAllCategories("{}");
+            case "/menu/addItem":
+                return backend.getFeatureMenuManagement().addItem(data);
+            case "/menu/editItem":
+                return backend.getFeatureMenuManagement().updateItem(data);
+            case "/menu/delItem":
+                return backend.getFeatureMenuManagement().deleteItem(data);
+            case "/menu/addCategory":
+                return backend.getFeatureMenuManagement().addCategory(data);
+            case "/menu/delCategory":
+                return backend.getFeatureMenuManagement().deleteCategory(data);
 
             // FeatureUserManagement
             case "/edit-user":

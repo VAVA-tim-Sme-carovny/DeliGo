@@ -354,12 +354,6 @@ public class FeatureMenuManagement extends BaseFeature {
             MenuItemInsert item = itemOpt.get();
 
 
-            // Kontrola, či položka nie je použitá v nejakej otvorenej objednávke
-            if (isItemInUse(itemId)) {
-                String msg = MenuManagementMessages.ITEM_IN_USE.getMessage(this.getLanguage());
-                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
-                return gson.toJson(new Response(msg, 400));
-            }
 
             // Odstránenie prekladov položky
             List<MenuItemTranslation> translations = menuItemTranslationDAO.findByField("menu_item_id", itemId);
