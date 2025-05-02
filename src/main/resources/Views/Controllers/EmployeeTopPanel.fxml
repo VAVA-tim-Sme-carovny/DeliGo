@@ -21,7 +21,7 @@
         <!-- Ľavá strana: objednávky a admin -->
         <HBox fx:id="buttonContainer" spacing="10">
             <children>
-                <Button text="Aktuálne objednávky" fx:id="ordersButton"/>
+                <Button text="Aktuálne objednávky" fx:id="ordersButton" onAction="#handleOrdersButton"/>
                 <Button text="Admin Panel" fx:id="adminButton" visible="false"/>
             </children>
         </HBox>

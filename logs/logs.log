@@ -17875,3 +17875,200 @@
 2025-05-02 10:31:07 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
 2025-05-02 10:31:07 [INFO] : POST to https://localhost:8085/api/be/logout responded with code: 200
 2025-05-02 10:31:10 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-05-02 10:35:46 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 10:35:46 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-05-02 10:35:46 [INFO] [HIGH] [REST_API] : Starting REST API Server with SSL
+2025-05-02 10:35:46 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 10:35:46 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-05-02 10:35:47 [INFO] : POST to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-05-02 10:35:47 [INFO] : GET to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-05-02 10:35:47 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 10:35:47 [INFO] : Starting development mode
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-05-02 10:35:47 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/health with JSON data: {message:health-check}
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-05-02 10:35:47 [INFO] : POST to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-05-02 10:35:47 [INFO] : GET to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-05-02 10:35:47 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : FeatureReview Started
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : FeatureTableReservation Started
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-05-02 10:35:47 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-05-02 10:35:47 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-05-02 10:35:47 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/health with JSON data: {message:health-check}
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-05-02 10:35:47 [INFO] : POST to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:35:47 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-05-02 10:35:47 [INFO] : GET to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:35:47 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-05-02 10:35:47 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 10:35:47 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-05-02 10:35:47 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-05-02 10:35:47 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-05-02 10:35:47 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-05-02 10:35:47 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 10:35:47 [INFO] : POST to https://localhost:8085/api/be/testConnection responded with code: 200
+2025-05-02 10:35:47 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 10:35:47 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-05-02 10:35:47 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-05-02 10:35:47 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/logout with JSON data: null
+2025-05-02 10:35:47 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/logout
+2025-05-02 10:35:47 [INFO] [LOW] [REST_API] : Request body: 
+2025-05-02 10:35:47 [ERROR] [MIDDLE] [BECKEND] : Nie ste prihlásený, preto sa nemôžete odhlásiť
+2025-05-02 10:35:47 [INFO] : POST to https://localhost:8085/api/be/logout responded with code: 200
+2025-05-02 10:35:47 [INFO] [LOW] [FRONTEND] : Logout on startup successful
+2025-05-02 10:35:48 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 10:35:49 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-05-02 10:35:53 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/login/employee with JSON data: {"username":"asd", "password":"asd"}
+2025-05-02 10:35:53 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-05-02 10:35:53 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-05-02 10:35:53 [INFO] [HIGH] [BECKEND] : Starting login
+2025-05-02 10:35:54 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj asd!
+2025-05-02 10:35:54 [INFO] : POST to https://localhost:8085/api/be/login/employee responded with code: 200
+2025-05-02 10:35:54 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"Vitaj asd!","status":200}
+2025-05-02 10:35:54 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 10:35:57 [INFO] [LOW] [FRONTEND] : Opening Admin Panel
+2025-05-02 10:36:01 [INFO] [LOW] [FRONTEND] : Going to home
+2025-05-02 10:36:03 [INFO] [LOW] [FRONTEND] : Opening Login menu
+2025-05-02 10:36:06 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-05-02 10:36:08 [INFO] [LOW] [FRONTEND] : Opening Admin Panel
+2025-05-02 10:36:12 [INFO] [LOW] [FRONTEND] : Going to home
+2025-05-02 10:36:13 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-05-02 10:36:13 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/logout with JSON data: null
+2025-05-02 10:36:13 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/logout
+2025-05-02 10:36:13 [INFO] [LOW] [REST_API] : Request body: 
+2025-05-02 10:36:13 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 10:36:13 [INFO] : POST to https://localhost:8085/api/be/logout responded with code: 200
+2025-05-02 10:36:16 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-05-02 10:36:18 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/login/employee with JSON data: {"username":"ss", "password":"ss"}
+2025-05-02 10:36:18 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-05-02 10:36:18 [INFO] [LOW] [REST_API] : Request body: {"username":"ss", "password":"ss"}
+2025-05-02 10:36:18 [INFO] [HIGH] [BECKEND] : Starting login
+2025-05-02 10:36:19 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 10:36:19 [INFO] : POST to https://localhost:8085/api/be/login/employee responded with code: 200
+2025-05-02 10:36:19 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"Vitaj ss!","status":200}
+2025-05-02 10:36:19 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 10:36:20 [INFO] [LOW] [FRONTEND] : Opening Order menu
+2025-05-02 10:36:22 [INFO] [LOW] [FRONTEND] : Returning to main page
+2025-05-02 10:36:28 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-05-02 10:36:28 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/logout with JSON data: null
+2025-05-02 10:36:28 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/logout
+2025-05-02 10:36:28 [INFO] [LOW] [REST_API] : Request body: 
+2025-05-02 10:36:28 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 10:36:28 [INFO] : POST to https://localhost:8085/api/be/logout responded with code: 200
+2025-05-02 10:36:34 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-05-02 10:36:39 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/login/employee with JSON data: {"username":"asd", "password":"asd"}
+2025-05-02 10:36:39 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-05-02 10:36:39 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-05-02 10:36:39 [INFO] [HIGH] [BECKEND] : Starting login
+2025-05-02 10:36:39 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj asd!
+2025-05-02 10:36:39 [INFO] : POST to https://localhost:8085/api/be/login/employee responded with code: 200
+2025-05-02 10:36:39 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"Vitaj asd!","status":200}
+2025-05-02 10:36:39 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 10:36:40 [INFO] [LOW] [FRONTEND] : Opening Admin Panel
+2025-05-02 10:44:09 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 10:44:09 [INFO] [HIGH] [REST_API] : Configuration was loaded
+2025-05-02 10:44:09 [INFO] [HIGH] [REST_API] : Starting REST API Server with SSL
+2025-05-02 10:44:09 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : Running REST API health checks...
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-05-02 10:44:09 [INFO] : POST to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : POST /api/health response: POST /health OK!
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-05-02 10:44:09 [INFO] : GET to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : GET /api/health response: GET /health OK!
+2025-05-02 10:44:09 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 10:44:09 [INFO] : Starting development mode
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : Backend Config injected
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : Running REST API health checks from Backend...
+2025-05-02 10:44:09 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/health with JSON data: {message:health-check}
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-05-02 10:44:09 [INFO] : POST to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : POST /health response: POST /health OK!
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-05-02 10:44:09 [INFO] : GET to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : GET /health response: GET /health OK!
+2025-05-02 10:44:09 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : FeatureReview Started
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : FeatureOrgDetails Started.
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : FeatureStatistics Started
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : FeatureMenuManagement Started
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : FeatureUserManagement Started
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : FeatureTableReservation Started
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na registráciu používateľa
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : Spracovanie požiadavky na prihlásenie používateľa
+2025-05-02 10:44:09 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : Frontend Config injected
+2025-05-02 10:44:09 [INFO] [MIDDLE] [FRONTEND] : Running REST API health checks from Frontend...
+2025-05-02 10:44:09 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/health with JSON data: {message:health-check}
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : POST /health checked
+2025-05-02 10:44:09 [INFO] : POST to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:44:09 [INFO] [MIDDLE] [FRONTEND] : POST /health response: POST /health OK!
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : GET /health checked
+2025-05-02 10:44:09 [INFO] : GET to https://localhost:8085/api/health responded with code: 200
+2025-05-02 10:44:09 [INFO] [MIDDLE] [FRONTEND] : GET /health response: GET /health OK!
+2025-05-02 10:44:09 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 10:44:09 [INFO] [MIDDLE] [FRONTEND] : Sending test connection request to Frontend...
+2025-05-02 10:44:09 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/testConnection with JSON data: TEST_CONNECTION
+2025-05-02 10:44:09 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/testConnection
+2025-05-02 10:44:09 [INFO] [LOW] [REST_API] : Request body: TEST_CONNECTION
+2025-05-02 10:44:09 [INFO] [MIDDLE] [BECKEND] : Test connection received: TEST_CONNECTION
+2025-05-02 10:44:09 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 10:44:09 [INFO] : POST to https://localhost:8085/api/be/testConnection responded with code: 200
+2025-05-02 10:44:09 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 10:44:09 [INFO] [HIGH] [FRONTEND] : Starting Frontend Main Window...
+2025-05-02 10:44:10 [INFO] [HIGH] [FRONTEND] :  MainPageController.initialize() called
+2025-05-02 10:44:10 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/logout with JSON data: null
+2025-05-02 10:44:10 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/logout
+2025-05-02 10:44:10 [INFO] [LOW] [REST_API] : Request body: 
+2025-05-02 10:44:10 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 10:44:10 [INFO] : POST to https://localhost:8085/api/be/logout responded with code: 200
+2025-05-02 10:44:10 [INFO] [LOW] [FRONTEND] : Logout on startup successful
+2025-05-02 10:44:10 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 10:44:12 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-05-02 10:44:13 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/login/employee with JSON data: {"username":"ss", "password":"ss"}
+2025-05-02 10:44:13 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-05-02 10:44:13 [INFO] [LOW] [REST_API] : Request body: {"username":"ss", "password":"ss"}
+2025-05-02 10:44:13 [INFO] [HIGH] [BECKEND] : Starting login
+2025-05-02 10:44:14 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 10:44:14 [INFO] : POST to https://localhost:8085/api/be/login/employee responded with code: 200
+2025-05-02 10:44:14 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"Vitaj ss!","status":200}
+2025-05-02 10:44:14 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 10:44:15 [INFO] [HIGH] [FRONTEND] : User clicked logout
+2025-05-02 10:44:15 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/logout with JSON data: null
+2025-05-02 10:44:15 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/logout
+2025-05-02 10:44:15 [INFO] [LOW] [REST_API] : Request body: 
+2025-05-02 10:44:15 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 10:44:15 [INFO] : POST to https://localhost:8085/api/be/logout responded with code: 200
+2025-05-02 10:44:17 [INFO] [MIDDLE] [FRONTEND] : Open login
+2025-05-02 10:44:19 [INFO] [HIGH] [REST_API] : Sending POST request to https://localhost:8085/api/be/login/employee with JSON data: {"username":"asd", "password":"asd"}
+2025-05-02 10:44:19 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: POST /api/be/login/employee
+2025-05-02 10:44:19 [INFO] [LOW] [REST_API] : Request body: {"username":"asd", "password":"asd"}
+2025-05-02 10:44:19 [INFO] [HIGH] [BECKEND] : Starting login
+2025-05-02 10:44:19 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj asd!
+2025-05-02 10:44:19 [INFO] : POST to https://localhost:8085/api/be/login/employee responded with code: 200
+2025-05-02 10:44:19 [INFO] [MIDDLE] [FRONTEND] : Login response: {"message":"Vitaj asd!","status":200}
+2025-05-02 10:44:19 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 10:44:20 [INFO] [LOW] [FRONTEND] : Opening Admin Panel
+2025-05-02 10:44:21 [INFO] [LOW] [FRONTEND] : Opening Current Orders view
+2025-05-02 10:44:21 [INFO] [MIDDLE] [REST_API] : BackendHandler received request: GET /api/be/orders
+2025-05-02 10:44:21 [INFO] : GET to https://localhost:8085/api/be/orders responded with code: 200
+2025-05-02 10:44:21 [ERROR] [HIGH] [FRONTEND] : Failed to load orders: Failed making field 'java.lang.ThreadLocal#threadLocalHashCode' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
+2025-05-02 10:44:21 [ERROR] [HIGH] [FRONTEND] : Response content: Failed making field 'java.lang.ThreadLocal#threadLocalHashCode' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
+2025-05-02 10:44:22 [INFO] [LOW] [FRONTEND] : Returning to previous view
