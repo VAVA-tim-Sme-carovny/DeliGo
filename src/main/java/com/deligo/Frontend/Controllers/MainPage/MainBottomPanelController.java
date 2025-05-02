@@ -4,7 +4,6 @@ import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.InputStream;

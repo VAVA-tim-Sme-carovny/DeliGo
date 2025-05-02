@@ -5,6 +5,7 @@ import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.*;
 import com.deligo.Model.Views;
+import com.deligo.Backend.BaseFeature.BaseFeature;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -119,17 +120,23 @@ public class MainTopPanelController implements InitializableWithParent {
 
     private void switchLanguage(String langCode) {
         try {
+            // Update the language in config.yaml
+            configLoader.updateConfigValue("device", "language", langCode);
+            
+            // Update BaseFeature language
+            BaseFeature.updateLanguage(configLoader);
+            
+            // Set the locale and reload views
             Locale.setDefault(new Locale(langCode));
             ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/deligo/Frontend/Views/main_page.fxml"), bundle);
-            Parent root = loader.load();
+            // Reload all views with the new language
+            mainController.clearAll();
+            mainController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+            mainController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
+            mainController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
 
-            Stage stage = (Stage) goToCallService.getScene().getWindow();
-
-            stage.getScene().setRoot(root);
-
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

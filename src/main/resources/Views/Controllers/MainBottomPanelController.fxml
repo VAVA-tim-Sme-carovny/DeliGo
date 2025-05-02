@@ -8,11 +8,4 @@
             fx:controller="com.deligo.Frontend.Controllers.MainPage.MainBottomPanelController"
             stylesheets="@/css/MainPage/MainBottomPanelController.css"
             id="bottomPanelBackground">
-
-    <children>
-        <Button text="%callStaff"
-                fx:id="callStaffBtn"
-                AnchorPane.rightAnchor="20.0"
-                AnchorPane.bottomAnchor="20.0"/>
-    </children>
 </AnchorPane>

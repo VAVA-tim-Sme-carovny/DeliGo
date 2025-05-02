@@ -70,7 +70,6 @@ public class MainView {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/main_view.fxml"), bundle);
 
-            // ✅ Vytvoríme vlastný controller (lebo nemáme fx:controller vo FXML)
             MainPageController controller = new MainPageController(
                     this.controller.getConfig(),
                     this.logger,
@@ -81,7 +80,6 @@ public class MainView {
             Parent root = loader.load();
             rootLayout = (GridPane) root;
 
-            // ✅ Môžeme volať metódy na controlleri
             controller.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
             controller.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
 
@@ -132,6 +130,13 @@ public class MainView {
             e.printStackTrace();
         }
     }
+
+
+
+    public class MainViewController {
+
+}
+
 
 
 }

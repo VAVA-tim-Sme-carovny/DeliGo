@@ -16,6 +16,7 @@ public class EmployeeTopPanelController implements InitializableWithParent {
     @FXML private Button logoutBtn;
     @FXML private Button ordersButton;
     @FXML private Button adminButton;
+    @FXML private Button homeBtn;
 
     private LoggingAdapter logger;
     private ConfigLoader configLoader;
@@ -42,17 +43,6 @@ public class EmployeeTopPanelController implements InitializableWithParent {
                 adminButton.setVisible(true);
             }
 
-            ordersButton.setOnAction(event -> {
-                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Current Orders view");
-                mainPageController.loadView("/Views/Content/OrderPanel/CurrentOrdersPanel.fxml", Views.mainContent);
-            });
-
-            adminButton.setOnAction(event -> {
-                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Admin Panel");
-                mainPageController.loadView("/Views/Content/AdminPanel/UsersView.fxml", Views.mainContent);
-                mainPageController.loadView("/Views/Controllers/Employee/AdminMenuController.fxml", Views.leftPanel);
-            });
-
             logoutBtn.setOnAction(event -> {
                 logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Logging out");
                 String response = mainPageController.getServer().sendPostRequest("/be/logout", null);
@@ -61,6 +51,23 @@ public class EmployeeTopPanelController implements InitializableWithParent {
                 mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
                 mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
             });
+
+            homeBtn.setOnAction(event -> {
+                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Going to home");
+                mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+                mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
+                mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
+            });
+        }
+    }
+
+    @FXML
+    public void handleOrdersButton() {
+        String role = configLoader.getConfigValue("login", "role", String.class);
+        
+        if (role != null && (role.equals("admin") || role.equals("waiter"))) {
+            logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Current Orders view");
+            mainPageController.loadView("/Views/Content/AdminPanel/AllOrdersView.fxml", Views.mainContent);
         }
     }
 }
