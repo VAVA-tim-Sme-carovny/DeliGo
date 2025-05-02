@@ -6,7 +6,6 @@ import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
 import com.deligo.Model.BasicModels.LogType;
-import com.deligo.Model.Views;
 import com.deligo.Utils.UTF8Control;
 import javafx.application.Platform;
 import javafx.fxml.FXML;

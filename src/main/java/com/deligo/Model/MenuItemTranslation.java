@@ -6,15 +6,17 @@ public class MenuItemTranslation {
     private String language;
     private String name;
     private String description;
+    private String details;
 
     public MenuItemTranslation() {
     }
 
-    public MenuItemTranslation(int menuItemId, String language, String name, String description) {
+    public MenuItemTranslation(int menuItemId, String language, String name, String description, String details) {
         this.menuItemId = menuItemId;
         this.language = language;
         this.name = name;
         this.description = description;
+        this.details = details;
     }
 
     // Getters and Setters
@@ -56,5 +58,13 @@ public class MenuItemTranslation {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 } 

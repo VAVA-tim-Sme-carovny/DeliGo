@@ -1,8 +1,12 @@
 package com.deligo.Frontend.Controllers.Employee.Admin;
 
 import com.deligo.DatabaseManager.dao.GenericDAO;
+import com.deligo.Frontend.Controllers.MainPage.MainPageController;
+import com.deligo.Model.LoginData;
+import com.deligo.Model.Response;
 import com.deligo.Model.Role;
 import com.deligo.Model.User;
+import com.google.gson.Gson;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -21,8 +25,14 @@ public class EditEmployeesController implements Initializable {
     @FXML private TableColumn<User, Integer> idColumn;
     @FXML private TableColumn<User, String> nameColumn;
     @FXML private TableColumn<User, Role> roleColumn;
+    private MainPageController mainPageController;
+    private final Gson gson = new Gson();
 
     private final GenericDAO<User> userDAO = new GenericDAO<>(User.class, "users");
+
+    public EditEmployeesController(MainPageController mainPageController) {
+        this.mainPageController = mainPageController;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -37,14 +47,18 @@ public class EditEmployeesController implements Initializable {
             String newRole = event.getNewValue().toString();
             user.setRoles(newRole);
 
+
             JSONObject data = new JSONObject();
             data.put("userId", user.getId());
             data.put("username", user.getUsername());
             data.put("roles", newRole.toLowerCase());
-            data.put("tags", "");
 
-            // zavolaj backend – predpokladáš správne
-            // mainPageController.getServer().sendPostRequest(...) – doplň sem
+            String responseData  = mainPageController.getServer().sendPostRequest("/be/edit-user", data.toString());
+            Response response = gson.fromJson(responseData, Response.class);
+
+            if(response.getStatus() == 200){
+                loadUsers();
+            }
         });
 
         userTable.setEditable(true);

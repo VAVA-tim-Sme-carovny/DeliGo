@@ -1,17 +1,18 @@
 package com.deligo.Backend.FeatureUserManagement;
 
 import com.deligo.Backend.BaseFeature.BaseFeature;
+import com.deligo.Backend.FeatureUserLogin.UserLoginMessages;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.DatabaseManager.dao.GenericDAO;
 import com.deligo.Logging.Adapter.LoggingAdapter;
+import com.deligo.Model.*;
 import com.deligo.Model.BasicModels.LogPriority;
 import com.deligo.Model.BasicModels.LogSource;
 import com.deligo.Model.BasicModels.LogType;
-import com.deligo.Model.OrgDetails;
-import com.deligo.Model.Response;
-import com.deligo.Model.User;
 import com.deligo.RestApi.RestAPIServer;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
@@ -55,30 +56,21 @@ public class FeatureUserManagement extends BaseFeature {
     /**
      * Upraví existujúceho používateľa, najmä jeho role a značky.
      * 
-     * @param json JSON obsahujúci údaje o používateľovi na úpravu
+     * @param jsonData JSON obsahujúci údaje o používateľovi na úpravu
      * @return JSON odpoveď o výsledku operácie
      */
-    public String editUser(String json) {
+    public String editUser(String jsonData) {
         try {
             // Deserializácia JSON na mapu
-            Type mapType = new TypeToken<Map<String, Object>>(){}.getType();
-            Map<String, Object> requestData = gson.fromJson(json, mapType);
-            String userId = (String) requestData.get("userId");
-            String username = (String) requestData.get("username");
+            JsonObject json = JsonParser.parseString(jsonData).getAsJsonObject();
+
+            int userId = json.get("userId").getAsInt();
+            String username = json.get("username").getAsString();
+            String newRoles = json.has("roles") ? json.get("roles").getAsString() : "customer";
 
             //TODO neskor dofixovat
             // Získanie rolí a značiek z požiadavky
-            String newRoles = requestData.get("roles") != null ? requestData.get("roles").toString() : "customer";
-            @SuppressWarnings("unchecked")
-//            List<String> roles = (requestData.get("roles") != null)
-//                ? (List<String>) requestData.get("roles")
-//                : new ArrayList<>();
-//
-//            @SuppressWarnings("unchecked")
-//            List<String> tags = (requestData.get("tags") != null)
-//                ? (List<String>) requestData.get("tags")
-//                : new ArrayList<>();
-            
+
             // Nájdenie používateľa podľa ID
             Optional<User> userOpt = userDAO.findOneByField("id", userId);
             if (!userOpt.isPresent()) {
@@ -216,102 +208,102 @@ public class FeatureUserManagement extends BaseFeature {
      * @param json JSON obsahujúci detaily organizácie na aktualizáciu
      * @return JSON odpoveď o výsledku operácie
      */
-    public String updateOrgDetails(String json) {
-        try {
-            // Deserializácia JSON na mapu
-            Type mapType = new TypeToken<Map<String, Object>>(){}.getType();
-            Map<String, Object> requestData = gson.fromJson(json, mapType);
-                
-            // Extrakcia a validácia časových údajov
-            @SuppressWarnings("unchecked")
-            List<List<String>> openingTimes = (List<List<String>>) requestData.get("openingTimes");
-            String phoneNumber = (String) requestData.get("phoneNumber");
-            String email = (String) requestData.get("email");
-            
-            // Validácia telefónneho čísla
-            if (phoneNumber != null && !phoneNumber.isEmpty() && !PHONE_PATTERN.matcher(phoneNumber).matches()) {
-                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, 
-                        UserManagementMessages.INVALID_PHONE_FORMAT.getMessage(this.getLanguage()));
-                return gson.toJson(new Response("Phone number is in invalid format", 400));
-            }
-            
-            // Validácia emailu
-            if (email != null && !email.isEmpty() && !EMAIL_PATTERN.matcher(email).matches()) {
-                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, 
-                        UserManagementMessages.INVALID_EMAIL_FORMAT.getMessage(this.getLanguage()));
-                return gson.toJson(new Response("Email is in invalid format", 400));
-            }
-            
-            // Spracovanie otváracích hodín
-            Map<String, String> processedTimes = new HashMap<>();
-            String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-            
-            for (int i = 0; i < Math.min(openingTimes.size(), 7); i++) {
-                List<String> times = openingTimes.get(i);
-                
-                if (times.size() >= 2) {
-                    String openTime = times.get(0);
-                    String closeTime = times.get(1);
-                    
-                    if (openTime == null || closeTime == null) {
-                        processedTimes.put(days[i], "Closed");
-                    } else {
-                        processedTimes.put(days[i], openTime + " - " + closeTime);
-                    }
-                } else {
-                    processedTimes.put(days[i], "Closed");
-                }
-            }
-            
-            // Konverzia mapy na formát List<List<String>>
-            List<List<String>> timesList = new ArrayList<>();
-            for (String day : new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}) {
-                String timeRange = processedTimes.get(day);
-                List<String> dayData = new ArrayList<>();
-                dayData.add(day);
-                dayData.add(timeRange);
-                timesList.add(dayData);
-            }
-            
-            // Vytvorenie alebo aktualizácia detailov organizácie
-            List<OrgDetails> existingDetails = orgDetailsDAO.getAll();
-            OrgDetails orgDetails;
-            
-            if (existingDetails.isEmpty()) {
-                orgDetails = new OrgDetails();
-            } else {
-                orgDetails = existingDetails.get(0);
-            }
-            
-            // Aktualizácia detailov
-            orgDetails.setOpeningTimes(timesList);
-            orgDetails.setPhoneNumber(phoneNumber);
-            orgDetails.setEmail(email);
-            
-            // Uloženie detailov
-            if (orgDetails.getId() > 0) {
-                orgDetailsDAO.update(orgDetails.getId(), orgDetails);
-            } else {
-                orgDetailsDAO.insert(orgDetails);
-            }
-            
-            logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.BECKEND, 
-                    UserManagementMessages.ORG_DETAILS_UPDATED.getMessage(this.getLanguage()));
-            return gson.toJson(new Response("Organization details were updated successfully", 200));
-            
-        } catch (JsonSyntaxException e) {
-            // Chyba pri parsovaní JSON
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, 
-                    UserManagementMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
-            return gson.toJson(new Response("Invalid request format", 400));
-        } catch (Exception e) {
-            // Iné chyby
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, 
-                    UserManagementMessages.ORG_DETAILS_ERROR.getMessage(this.getLanguage()) + ": " + e.getMessage());
-            return gson.toJson(new Response("Error updating organization details: " + e.getMessage(), 500));
-        }
-    }
-    
+//    public String updateOrgDetails(String json) {
+//        try {
+//            // Deserializácia JSON na mapu
+//            Type mapType = new TypeToken<Map<String, Object>>(){}.getType();
+//            Map<String, Object> requestData = gson.fromJson(json, mapType);
+//
+//            // Extrakcia a validácia časových údajov
+//            @SuppressWarnings("unchecked")
+//            List<List<String>> openingTimes = (List<List<String>>) requestData.get("openingTimes");
+//            String phoneNumber = (String) requestData.get("phoneNumber");
+//            String email = (String) requestData.get("email");
+//
+//            // Validácia telefónneho čísla
+//            if (phoneNumber != null && !phoneNumber.isEmpty() && !PHONE_PATTERN.matcher(phoneNumber).matches()) {
+//                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+//                        UserManagementMessages.INVALID_PHONE_FORMAT.getMessage(this.getLanguage()));
+//                return gson.toJson(new Response("Phone number is in invalid format", 400));
+//            }
+//
+//            // Validácia emailu
+//            if (email != null && !email.isEmpty() && !EMAIL_PATTERN.matcher(email).matches()) {
+//                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+//                        UserManagementMessages.INVALID_EMAIL_FORMAT.getMessage(this.getLanguage()));
+//                return gson.toJson(new Response("Email is in invalid format", 400));
+//            }
+//
+//            // Spracovanie otváracích hodín
+//            Map<String, String> processedTimes = new HashMap<>();
+//            String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+//
+//            for (int i = 0; i < Math.min(openingTimes.size(), 7); i++) {
+//                List<String> times = openingTimes.get(i);
+//
+//                if (times.size() >= 2) {
+//                    String openTime = times.get(0);
+//                    String closeTime = times.get(1);
+//
+//                    if (openTime == null || closeTime == null) {
+//                        processedTimes.put(days[i], "Closed");
+//                    } else {
+//                        processedTimes.put(days[i], openTime + " - " + closeTime);
+//                    }
+//                } else {
+//                    processedTimes.put(days[i], "Closed");
+//                }
+//            }
+//
+//            // Konverzia mapy na formát List<List<String>>
+//            List<List<String>> timesList = new ArrayList<>();
+//            for (String day : new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}) {
+//                String timeRange = processedTimes.get(day);
+//                List<String> dayData = new ArrayList<>();
+//                dayData.add(day);
+//                dayData.add(timeRange);
+//                timesList.add(dayData);
+//            }
+//
+//            // Vytvorenie alebo aktualizácia detailov organizácie
+//            List<OrgDetails> existingDetails = orgDetailsDAO.getAll();
+//            OrgDetails orgDetails;
+//
+//            if (existingDetails.isEmpty()) {
+//                orgDetails = new OrgDetails();
+//            } else {
+//                orgDetails = existingDetails.get(0);
+//            }
+//
+//            // Aktualizácia detailov
+//            orgDetails.setOpeningTimes(timesList);
+//            orgDetails.setPhoneNumber(phoneNumber);
+//            orgDetails.setEmail(email);
+//
+//            // Uloženie detailov
+//            if (orgDetails.getId() > 0) {
+//                orgDetailsDAO.update(orgDetails.getId(), orgDetails);
+//            } else {
+//                orgDetailsDAO.insert(orgDetails);
+//            }
+//
+//            logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.BECKEND,
+//                    UserManagementMessages.ORG_DETAILS_UPDATED.getMessage(this.getLanguage()));
+//            return gson.toJson(new Response("Organization details were updated successfully", 200));
+//
+//        } catch (JsonSyntaxException e) {
+//            // Chyba pri parsovaní JSON
+//            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+//                    UserManagementMessages.INVALID_REQUEST_FORMAT.getMessage(this.getLanguage()));
+//            return gson.toJson(new Response("Invalid request format", 400));
+//        } catch (Exception e) {
+//            // Iné chyby
+//            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+//                    UserManagementMessages.ORG_DETAILS_ERROR.getMessage(this.getLanguage()) + ": " + e.getMessage());
+//            return gson.toJson(new Response("Error updating organization details: " + e.getMessage(), 500));
+//        }
+//    }
+//
     /**
      * Získa detaily organizácie.
      * Ak detaily nie sú nastavené, vráti predvolené prázdne hodnoty.

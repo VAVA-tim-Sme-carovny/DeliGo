@@ -9,9 +9,9 @@
 ---
 
 ## Requiremetns
-   
+
 - Java openJDK 21 (not correto or any other version)
-  
+
  - Setup java to enviroment variable JAVA_HOME
 
 - Make sure your Idea Intelij uses 21 version even in run configurations
@@ -157,10 +157,47 @@ cd DeliGo
 
 ---
 
+## 🔒 SSL Configuration
+
+DeliGo supports secure communication between frontend and backend using HTTPS. Follow these steps to enable SSL:
+
+### 1. Generate a Self-Signed Certificate (Development Only)
+
+Run the provided script to generate a self-signed certificate:
+
+```sh
+./generate-certificate.sh
+```
+
+This will create a `deligo.p12` keystore file in the project root directory.
+
+### 2. Configure SSL Settings
+
+The SSL settings are already configured in `config.properties`:
+
+```properties
+# SSL Configuration
+SSL_ENABLED=true
+SSL_KEYSTORE_PATH=deligo.p12
+SSL_KEYSTORE_PASSWORD=deliGoPassword
+```
+
+You can modify these settings if needed.
+
+### 3. Production Deployment
+
+For production environments:
+- Obtain a certificate from a trusted Certificate Authority
+- Update the keystore path and password in `config.properties`
+- Ensure proper certificate validation in the client code
+
+> ⚠️ **Note**: The current implementation includes code to trust all certificates in development mode. This should be removed in production for security reasons.
+
+---
+
 ## 💡 Contributing
 
 1.	Fork the repository
 2.	Create a new feature branch (feature/your-feature)
 3.	Commit your changes
 4.	Push to GitHub and create a Pull Request (PR)
-

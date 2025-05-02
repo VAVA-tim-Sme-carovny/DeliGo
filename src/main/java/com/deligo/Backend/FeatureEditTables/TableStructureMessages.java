@@ -1,4 +1,4 @@
-package com.deligo.Backend.FeatureTableStructure;
+package com.deligo.Backend.FeatureEditTables;
 
 public enum TableStructureMessages {
     PROCESS_NAME("FeatureTableStructure Started", "FeatureTableStructure Started"),

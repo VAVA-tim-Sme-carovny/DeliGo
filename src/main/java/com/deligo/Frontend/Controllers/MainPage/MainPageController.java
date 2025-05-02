@@ -111,6 +111,8 @@ public class MainPageController extends BaseFeature {
         mainContent.getChildren().clear();
     }
 
+
+
     public void showWarningPopup(String message, int statusCode) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Popups/StatusPopup.fxml"));

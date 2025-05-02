@@ -12,13 +12,17 @@ public class BackendConfig {
     public BackendConfig(Backend be) {
         this.backend = be;
     }
-    
+
     public Object routePost(String route, String data) {
         switch (route) {
             case "/testConnection":
                 return backend.getFeatureValidateTestConnection().validateTestConnection(data);
             case "/updateLanguage":
                 BaseFeature.updateLanguage(config);
+            case "/update-info":
+                backend.getFeatureOrgDetails().updateOrgDetails(data);
+            case "/":
+                backend.getFeatureCreateOrder().createOrder(data);
 
 
                 // Nove end pointy pre DB
@@ -89,63 +93,22 @@ public class BackendConfig {
                 return new Response(backend.getFeatureStatistics().getDailyStats(data), 200);
             case "/stats/range":
                 return new Response(backend.getFeatureStatistics().getStatsForRange(data), 200);
+
             // FeatureTableStructure
-            case "/tables/getAll":
-                return new Response(backend.getFeatureTableStructure().getAllTables(data), 200);
+            case "/devices/update":
+                return backend.getFeatureTableStructure().editTable(data);
+            case "/devices/delete":
+                return backend.getFeatureTableStructure().deleteTable(data);
 
-
-            // FeatureTableStructure paths
-            case "/tables/add":
-                return new Response(backend.getFeatureTableStructure().addTable(data), 200);
-            case "/tables/update":
-                return new Response(backend.getFeatureTableStructure().updateTable(data), 200);
-            case "/tables/delete":
-                return new Response(backend.getFeatureTableStructure().deleteTable(data), 200);
-            case "/tables/get-all":
-                return new Response(backend.getFeatureTableStructure().getAllTables(data), 200);
-
-
-            // Pravdepodobne vymazat
-            case "/tables/get-by-category":
-                return new Response(backend.getFeatureTableStructure().getTablesByCategory(data), 200);
-            case "/tables/categories/add":
-                return new Response(backend.getFeatureTableStructure().addCategory(data), 200);
-            case "/tables/categories/update":
-                return new Response(backend.getFeatureTableStructure().updateCategory(data), 200);
-            case "/tables/categories/delete":
-                return new Response(backend.getFeatureTableStructure().deleteCategory(data), 200);
-            case "/tables/categories/get-all":
-                return new Response(backend.getFeatureTableStructure().getAllCategories(data), 200);
-
-
-            // FeatureMenuManagement paths
-            case "/menu/addItem":
-                return new Response(backend.getFeatureMenuManagement().addItem(data), 200);
-            case "/menu/editItem":
-                return new Response(backend.getFeatureMenuManagement().updateItem(data), 200);
-            case "/menu/delItem":
-                return new Response(backend.getFeatureMenuManagement().deleteItem(data), 200);
-            case "/menu/getByCategory":
-                return new Response(backend.getFeatureMenuManagement().getItemsByCategory(data), 200);
-            case "/menu/addCategory":
-                return new Response(backend.getFeatureMenuManagement().addCategory(data), 200);
-            case "/menu/updateCategory":
-                return new Response(backend.getFeatureMenuManagement().updateCategory(data), 200);
-            case "/menu/delCategory":
-                return new Response(backend.getFeatureMenuManagement().deleteCategory(data), 200);
-            case "/menu/getAllCategories":
-                return new Response(backend.getFeatureMenuManagement().getAllCategories(data), 200);
+            // FeatureMenuManagement
             case "/menu/getAllItems":
                 return new Response(backend.getFeatureMenuManagement().getAllItems("{}"), 200);
-
+            case "/menu/getAllCategories":
+                return new Response(backend.getFeatureMenuManagement().getAllCategories("{}"), 200);
 
             // FeatureUserManagement
             case "/edit-user":
                 return backend.getFeatureUserManagement().editUser(data);
-            case "/get-all-users":
-                return new Response(backend.getFeatureUserManagement().getAllUsers("{}"), 200);
-            case "/orgDetails/get":
-                return new Response(backend.getFeatureUserManagement().getOrgDetails("{}"), 200);
             case "/register":
                 return backend.getFeatureUserRegister().createAccount(data);
             case "/login/customer":

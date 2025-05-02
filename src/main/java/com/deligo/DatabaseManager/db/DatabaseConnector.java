@@ -36,7 +36,7 @@ public class DatabaseConnector {
             config.setPassword(ConfigLoader.get("DB_PASSWORD"));
             config.setMaximumPoolSize(10);
             config.setMinimumIdle(2);
-            config.setIdleTimeout(30000);
+            config.setIdleTimeout(3000);
             config.setMaxLifetime(1800000);
             config.setConnectionTimeout(3000);
             config.setConnectionTestQuery("SELECT 1");
