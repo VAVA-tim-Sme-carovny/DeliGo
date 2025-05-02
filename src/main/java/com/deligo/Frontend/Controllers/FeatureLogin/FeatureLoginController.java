@@ -72,21 +72,12 @@ public class FeatureLoginController implements InitializableWithParent {
                     String user = configLoader.getConfigValue("login", "user", String.class);
                     String role = configLoader.getConfigValue("login", "role", String.class);
 
-                    mainPageController.clearAll();
-                    
-                    if (role != null) {
-                        switch (role) {
-                            case "admin", "waiter" -> {
-                                mainPageController.clearAll();
-                                mainPageController.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.mainContent);
-                            }
-                            case "customer" -> {
-                                mainPageController.loadView("/Views/Content/OrderPanel/OrderContentPanel.fxml", Views.mainContent);
-                                mainPageController.loadView("/Views/Content/OrderPanel/CartRightPanel.fxml", Views.rightPanel);
-                                mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
-                            }
-                            default -> logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Unknown role: " + role);
-                        }
+                     mainPageController.clearAll();
+
+                     if (role != null) {
+                            mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+                            mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
+                            mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
                     }
                 } else {
                     //TODO Warning popup

@@ -34,13 +34,18 @@ public class MainPanelController implements InitializableWithParent {
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
-//        if (user != null && !user.isEmpty() && role != null && !role.isEmpty()) {
-        BookTableBtn.setVisible(true);
-//        }
-
         String deviceId = configLoader.getConfigValue("device", "id", String.class);
         String user = configLoader.getConfigValue("login", "user", String.class);
         String role = configLoader.getConfigValue("login", "role", String.class);
+        Boolean isLoggedIn = configLoader.getConfigValue("login", "status", Boolean.class);
+
+        // Disable buttons if not logged in
+        if (OrderBtn != null) {
+            OrderBtn.setDisable(!isLoggedIn);
+        }
+        if (BookTableBtn != null) {
+            BookTableBtn.setDisable(!isLoggedIn);
+        }
 
         // Check if user is admin or waiter and update button text and behavior
         String userRole = configLoader.getConfigValue("login", "role", String.class);
@@ -63,9 +68,6 @@ public class MainPanelController implements InitializableWithParent {
                 if (OrderBtn != null) {
                     OrderBtn.setOnAction(event -> {
                         try {
-                            String deviceId = configLoader.getConfigValue("device", "id", String.class);
-                            String user = configLoader.getConfigValue("login", "user", String.class);
-                            String role = configLoader.getConfigValue("login", "role", String.class);
 
                             if(deviceId != null && !deviceId.isEmpty()){
                                 String response = mainPageController.getServer().sendPostRequest("api/be/login/customer", null);
@@ -112,8 +114,8 @@ public class MainPanelController implements InitializableWithParent {
 
     private void openOrderMenu(){
         mainPageController.clearAll();
-        mainPageController.loadView("/Views/Content/OrderPanel/OrderContentPanel.fxml", Views.mainContent);
         mainPageController.loadView("/Views/Content/OrderPanel/CartRightPanel.fxml", Views.rightPanel);
+        mainPageController.loadView("/Views/Content/OrderPanel/OrderContentPanel.fxml", Views.mainContent);
         mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
     }
 

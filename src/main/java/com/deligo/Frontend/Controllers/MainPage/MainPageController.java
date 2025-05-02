@@ -4,6 +4,7 @@ import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.Popups.StatusPopupController;
+import com.deligo.Frontend.Controllers.OrderPage.OrderCartController;
 import com.deligo.Frontend.Helpers.CustomControllerFactory;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.Views;
@@ -25,9 +26,10 @@ import com.deligo.Model.BasicModels.*;
 
 public class MainPageController extends BaseFeature {
 
-
     private final LoggingAdapter logger;
     private final RestAPIServer server;
+    private Object currentController;
+    private OrderCartController cartController;
 
     public MainPageController(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
         super(globalConfig, logger, restApiServer);
@@ -40,9 +42,6 @@ public class MainPageController extends BaseFeature {
     @FXML private AnchorPane rightPanel;
     @FXML private AnchorPane bottomPanel;
     @FXML private AnchorPane leftPanel;
-
-
-
 
     public void initialize() {
         this.logger.log(LogType.INFO, LogPriority.HIGH, LogSource.FRONTEND, " MainPageController.initialize() called");
@@ -61,7 +60,6 @@ public class MainPageController extends BaseFeature {
     }
 
     public void loadView(String fxmlPath, Views view) {
-
         AnchorPane viewToChange= mainContent;
 
         switch (view) {
@@ -88,13 +86,19 @@ public class MainPageController extends BaseFeature {
             ResourceBundle bundle = ResourceBundle.getBundle("i18n.messages", Locale.getDefault());
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath), bundle);
 
-
             loader.setControllerFactory(
                     new CustomControllerFactory(this, this.logger, this.server, this.globalConfig)
             );
             Node node = loader.load();
 
             Object controller = loader.getController();
+            this.currentController = controller;
+            
+            // Store cart controller if loading cart panel
+            if (fxmlPath.contains("CartRightPanel.fxml")) {
+                this.cartController = (OrderCartController) controller;
+            }
+            
             if (controller instanceof InitializableWithParent) {
                 ((InitializableWithParent) controller).initializeWithParent(this);
             }
@@ -110,6 +114,13 @@ public class MainPageController extends BaseFeature {
         }
     }
 
+    public Object getCurrentController() {
+        return currentController;
+    }
+
+    public OrderCartController getCartController() {
+        return cartController;
+    }
 
     public void clearAll() {
         controllerPanel.getChildren().clear();
@@ -140,10 +151,7 @@ public class MainPageController extends BaseFeature {
         }
     }
 
-
-
     public RestAPIServer getServer() {
         return this.server;
     }
-
 }

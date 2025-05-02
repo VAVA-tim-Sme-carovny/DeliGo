@@ -6,23 +6,29 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 
-<VBox xmlns="http://javafx.com/javafx/21"
+<VBox fx:id="cartRightPanel"
+      xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.deligo.Frontend.Controllers.OrderPage.OrderCartController"
       spacing="10"
-      prefHeight="Infinity">
+      prefWidth="300"
+      style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-width: 0 0 0 1;">
 
     <padding>
         <Insets top="15.0" right="15.0" bottom="15.0" left="15.0"/>
     </padding>
 
+    <Label text="Shopping Cart" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
     <!-- Dynamický zoznam položiek -->
     <VBox fx:id="cartItemsContainer" spacing="10" VBox.vgrow="ALWAYS" />
 
     <!-- Spodná sekcia zarovnaná úplne dolu -->
-    <HBox spacing="20" alignment="CENTER_RIGHT">
-        <Label fx:id="totalPriceLabel" text="Spolu: 0,00 €" />
-        <Button fx:id="confirmBtn" text="Potvrdiť objednávku" />
-    </HBox>
+    <VBox spacing="10">
+        <Label fx:id="totalPriceLabel" text="Spolu: 0,00 €" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <Button fx:id="confirmBtn" text="Potvrdiť objednávku" 
+                style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold;"
+                maxWidth="Infinity"/>
+    </VBox>
 </VBox>
 
