@@ -13,12 +13,13 @@
            fx:controller="com.deligo.Frontend.Controllers.OrderPage.OrderPanelController">
 
    <center>
-      <ScrollPane fitToWidth="true" prefWidth="522.0">
+      <ScrollPane fitToWidth="true" prefWidth="522.0" style="-fx-background: white; -fx-background-color: white;">
          <FlowPane fx:id="contentArea"
                    hgap="20" vgap="20"
-                   prefWrapLength="1200">
+                   prefWrapLength="1200"
+                   alignment="CENTER">
             <padding>
-               <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+               <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
             </padding>
          </FlowPane>
       </ScrollPane>
