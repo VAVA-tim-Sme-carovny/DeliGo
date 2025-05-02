@@ -9,11 +9,10 @@ import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels;
 import com.deligo.Model.Views;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+
+import java.time.LocalDate;
 
 public class FeatureReserveController implements InitializableWithParent {
 
@@ -27,8 +26,8 @@ public class FeatureReserveController implements InitializableWithParent {
     @FXML private TextField table_nameF;
     @FXML private TextField table_surnameF;
     @FXML private TextField table_idF;
-    @FXML private TextField table_fromF;
-    @FXML private TextField table_toF;
+    @FXML private DatePicker table_fromF;
+    @FXML private DatePicker table_toF;
     @FXML private Button reservation_homeBtn;
     @FXML private Button reservation_finishBtn;
 
@@ -45,26 +44,12 @@ public class FeatureReserveController implements InitializableWithParent {
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
+        table_fromF.setValue(java.time.LocalDate.now());
+        table_toF.setValue(java.time.LocalDate.now().plusDays(1));
+
+
         table_idF.setTextFormatter(new TextFormatter<>(change -> {
             if (change.getControlNewText().matches("\\d*")) {
-                return change;
-            }
-            return null;
-        }));
-
-        // Timestamp validácia (napr. 2025-05-01 14:30:00)
-        // TODO: Zmeniť regex na validáciu timestampu
-        String timestampRegex = "^\\d{0,4}-?\\d{0,2}-?\\d{0,2}[ T]?\\d{0,2}:?\\d{0,2}:?\\d{0,2}$";
-
-        table_fromF.setTextFormatter(new TextFormatter<>(change -> {
-            if (change.getControlNewText().matches(timestampRegex)) {
-                return change;
-            }
-            return null;
-        }));
-
-        table_toF.setTextFormatter(new TextFormatter<>(change -> {
-            if (change.getControlNewText().matches(timestampRegex)) {
                 return change;
             }
             return null;
@@ -81,7 +66,6 @@ public class FeatureReserveController implements InitializableWithParent {
                     mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
                 });
             } catch (Exception e) {
-                System.out.println("Zachytená výnimka: " + e.getMessage());
                 e.printStackTrace();
             }
         }
@@ -89,18 +73,21 @@ public class FeatureReserveController implements InitializableWithParent {
         if (reservation_finishBtn != null) {
             reservation_finishBtn.setOnAction(event -> {
 
-                String name = table_nameF.getText();
-                String surname = table_surnameF.getText();
-                int userId = 5;
-//                        Integer.parseInt(configLoader.getConfigValue("device", "id", String.class));
-                int tableId = Integer.parseInt(table_idF.getText());
-                String from = table_fromF.getText();
-                String to = table_toF.getText();
-
                 if (!checkData()) {
-                    logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
-                            "Missing data in reservation form");
+                    mainPageController.showWarningPopup("%missing" , 500);
                 } else {
+                    String name = table_nameF.getText();
+                    String surname = table_surnameF.getText();
+                    int userId = 5;
+//                        Integer.parseInt(configLoader.getConfigValue("device", "id", String.class));
+                    int tableId = Integer.parseInt(table_idF.getText());
+                    String text = table_idF.getText();
+                    LocalDate from = table_fromF.getValue();
+                    LocalDate to = table_toF.getValue();
+
+                    System.out.println("From: " + from);
+                    System.out.println("To: " + to);
+
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
                             "Reservation created for: " + name + " " + "with id:" + " " + userId);
                     FeatureTableReservation featureTableReservation = new FeatureTableReservation(this.configLoader,this.logger, mainPageController.getServer());
@@ -119,12 +106,11 @@ public class FeatureReserveController implements InitializableWithParent {
                     if (response.contains("\"status\":200")) {
                         logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
                                 "Reservation successful");
-//                         Tu môžeš napr. vyčistiť polia alebo prejsť na inú stránku
+                        mainPageController.showWarningPopup("%reservationsucsess", 500);
                     } else {
                         logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
                                 "Reservation failed!");
-//                        StatusPopupController statusPopupController = new StatusPopupController(logger, );
-//                        statusPopupController.showErrorPopup("Reservation failed!", "Please check your data and try again.");
+                        mainPageController.showWarningPopup("%reservationunsucsess", 500);
                     }
                 }
             });
@@ -135,8 +121,8 @@ public class FeatureReserveController implements InitializableWithParent {
 
     private boolean checkData() {
         if (table_nameF.getText().isEmpty() || table_surnameF.getText().isEmpty() ||
-            table_idF.getText().isEmpty() || table_fromF.getText().isEmpty() ||
-            table_toF.getText().isEmpty()) {
+            table_idF.getText().isEmpty() || table_fromF.getValue() == null ||
+            table_toF.getValue() == null) {
             logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
                     "Missing data in reservation form");
             return false;
@@ -148,8 +134,8 @@ public class FeatureReserveController implements InitializableWithParent {
         table_nameF.clear();
         table_surnameF.clear();
         table_idF.clear();
-        table_fromF.clear();
-        table_toF.clear();
+        table_fromF.setValue(null);
+        table_toF.setValue(null);
         mainPageController.clearAll();
     }
 

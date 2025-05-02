@@ -125,7 +125,7 @@ public class MainPageController extends BaseFeature {
             AnchorPane.setRightAnchor(popup, 20.0);
 
             // Add the popup to the main content
-            mainContent.getChildren().add(popup);
+            controllerPanel.getChildren().add(popup);
 
         } catch (IOException e) {
             e.printStackTrace();

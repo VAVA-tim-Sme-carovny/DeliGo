@@ -39,7 +39,8 @@
               <Button fx:id="openRegister" mnemonicParsing="false" text="%register" GridPane.columnIndex="4" GridPane.halignment="RIGHT">
          <GridPane.margin>
             <Insets left="15.0" />
-         </GridPane.margin></Button>
+         </GridPane.margin>
+              </Button>
 
               <Button fx:id="openLogin" mnemonicParsing="false" text="%login" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
             <GridPane.margin>
