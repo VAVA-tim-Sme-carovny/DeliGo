@@ -1,5 +1,6 @@
 package com.deligo.Frontend.Controllers.Employee.Admin;
 
+import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.DatabaseManager.dao.GenericDAO;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
@@ -9,7 +10,10 @@ import com.deligo.Model.BasicModels.LogSource;
 import com.deligo.Model.BasicModels.LogType;
 import com.deligo.Model.Category;
 import com.deligo.Model.MenuItem;
+import com.deligo.Model.MenuItemInsert;
+import com.deligo.Model.MenuItemTranslation;
 import com.google.gson.Gson;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -22,7 +26,6 @@ import javafx.scene.layout.VBox;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.lang.reflect.Type;
 import java.util.*;
 
 public class EditFoodMenuController implements InitializableWithParent {
@@ -32,7 +35,7 @@ public class EditFoodMenuController implements InitializableWithParent {
     @FXML private TableColumn<MenuItem, String> nameColumn;
     @FXML private TableColumn<MenuItem, String> descriptionColumn;
     @FXML private TableColumn<MenuItem, Double> priceColumn;
-    @FXML private TableColumn<MenuItem, Integer> availableColumn;
+    @FXML private TableColumn<MenuItem, Boolean> availableColumn;
 
     @FXML private ListView<String> categoryListView;
 
@@ -51,7 +54,7 @@ public class EditFoodMenuController implements InitializableWithParent {
     @FXML private TextField descriptionField;
     @FXML private TextArea detailsField;
     @FXML private TextField priceField;
-    @FXML private TextField availableCountField;
+    @FXML private CheckBox availableCheckBox;
     @FXML private ComboBox<String> categoriesComboBox;
     @FXML private Button cancelBtn;
     @FXML private Button saveBtn;
@@ -66,6 +69,7 @@ public class EditFoodMenuController implements InitializableWithParent {
 
     private LoggingAdapter logger;
     private MainPageController mainPageController;
+    private ConfigLoader configLoader;
     private final Gson gson = new Gson();
 
     private MenuItem currentItem;
@@ -77,11 +81,13 @@ public class EditFoodMenuController implements InitializableWithParent {
     private ObservableList<String> categories = FXCollections.observableArrayList();
 
     private final GenericDAO<Category> categoryDAO = new GenericDAO<>(Category.class, "categories");
-    private final GenericDAO<MenuItem> menuItemDAO = new GenericDAO<>(MenuItem.class, "menu_items");
+    private final GenericDAO<MenuItemInsert> menuItemDAO = new GenericDAO<>(MenuItemInsert.class, "menu_items");
+    private final GenericDAO<MenuItemTranslation> menuItemTranslationDAO = new GenericDAO<>(MenuItemTranslation.class, "menu_item_translations");
 
-    public EditFoodMenuController(LoggingAdapter logger, MainPageController mainPageController) {
+    public EditFoodMenuController(LoggingAdapter logger, MainPageController mainPageController, ConfigLoader configLoader) {
         this.logger = logger;
         this.mainPageController = mainPageController;
+        this.configLoader = configLoader;
     }
 
     @Override
@@ -95,10 +101,11 @@ public class EditFoodMenuController implements InitializableWithParent {
         nameColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getName()));
         descriptionColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getDescription()));
         priceColumn.setCellValueFactory(data -> new SimpleDoubleProperty(data.getValue().getPrice()).asObject());
-        availableColumn.setCellValueFactory(data -> new SimpleIntegerProperty(data.getValue().getAvailableCount()).asObject());
+        availableColumn.setCellValueFactory(data -> new SimpleBooleanProperty(data.getValue().getIsAvailable()));
 
         // Load data
         loadCategories();
+        loadMenuItemsByCategory(categories.get(0));
 
         // Set up category selection listener
         categoryListView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
@@ -151,6 +158,8 @@ public class EditFoodMenuController implements InitializableWithParent {
         }
     }
 
+
+
     private void loadMenuItemsByCategory(String category) {
         try {
             if (category == null || category.isEmpty()) {
@@ -177,21 +186,31 @@ public class EditFoodMenuController implements InitializableWithParent {
             int categoryId = categoryObj.getId();
 
             // Get menu items by category ID
-            List<MenuItem> itemsList = menuItemDAO.findByField("category_id", categoryId);
+            List<MenuItemInsert> itemsList = menuItemDAO.findByField("category_id", categoryId);
             if (itemsList == null) {
                 itemsList = new ArrayList<>();
             }
-
-            // For backward compatibility, set the categories list for each item
-            for (MenuItem item : itemsList) {
-                if (item != null) {
-                    List<String> categoryNames = new ArrayList<>();
-                    categoryNames.add(category);
-                    item.setCategories(categoryNames);
+            menuItems = FXCollections.observableArrayList();
+            for (MenuItemInsert item : itemsList) {
+                List<MenuItemTranslation> itemTranslationList = menuItemTranslationDAO.findByField("menu_item_id", item.getId());
+                MenuItemTranslation itemTranslation = null;
+                for (MenuItemTranslation itemT : itemTranslationList) {
+                    if ((itemT.getLanguage()).equals("en") || (itemT.getLanguage()).equals("sk"))
+                    {
+                        itemTranslation = itemT;
+                        break;
+                    }
                 }
+
+                if (itemTranslation != null) {
+                    MenuItem theitemnew = new MenuItem(itemTranslation.getName(), item.getCategory_id(), itemTranslation.getDescription(), "", item.isIs_available(), item.getPrice());
+                    theitemnew.setId(item.getId());
+                    menuItems.add(theitemnew);
+
+                }
+
             }
 
-            menuItems = FXCollections.observableArrayList(itemsList);
             menuItemTable.setItems(menuItems);
 
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, 
@@ -213,7 +232,7 @@ public class EditFoodMenuController implements InitializableWithParent {
         descriptionField.clear();
         detailsField.clear();
         priceField.clear();
-        availableCountField.clear();
+        availableCheckBox.setSelected(false);
 
         // Set up categories combo box
         categoriesComboBox.setItems(categories);
@@ -234,7 +253,7 @@ public class EditFoodMenuController implements InitializableWithParent {
             descriptionField.setText(currentItem.getDescription());
             detailsField.setText(currentItem.getDetails());
             priceField.setText(String.valueOf(currentItem.getPrice()));
-            availableCountField.setText(String.valueOf(currentItem.getAvailableCount()));
+            availableCheckBox.setSelected(currentItem.getIsAvailable());
 
             // Set up categories combo box
             categoriesComboBox.setItems(categories);
@@ -381,7 +400,7 @@ public class EditFoodMenuController implements InitializableWithParent {
             String description = descriptionField.getText().trim();
             String details = detailsField.getText().trim();
             String priceText = priceField.getText().trim();
-            String availableCountText = availableCountField.getText().trim();
+            boolean is_available = availableCheckBox.isSelected();
             String category = categoriesComboBox.getValue();
 
             if (name.isEmpty() || details.isEmpty() || priceText.isEmpty() || category == null) {
@@ -393,17 +412,15 @@ public class EditFoodMenuController implements InitializableWithParent {
                 return;
             }
 
-            double price;
-            int availableCount;
+            float price;
 
             try {
-                price = Double.parseDouble(priceText);
-                availableCount = availableCountText.isEmpty() ? 0 : Integer.parseInt(availableCountText);
+                price = Float.parseFloat(priceText);
             } catch (NumberFormatException e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Validation Error");
                 alert.setHeaderText("Invalid Input");
-                alert.setContentText("Price and available count must be valid numbers.");
+                alert.setContentText("Price must be a valid number.");
                 alert.showAndWait();
                 return;
             }
@@ -413,7 +430,7 @@ public class EditFoodMenuController implements InitializableWithParent {
             currentItem.setDescription(description);
             currentItem.setDetails(details);
             currentItem.setPrice(price);
-            currentItem.setAvailableCount(availableCount);
+            currentItem.setIsAvailable(is_available);
 
             List<String> categories = new ArrayList<>();
             categories.add(category);
@@ -447,7 +464,7 @@ public class EditFoodMenuController implements InitializableWithParent {
                 requestData.put("description", description);
                 requestData.put("details", details);
                 requestData.put("price", price);
-                requestData.put("availableCount", availableCount);
+                requestData.put("is_available", is_available);
 
                 JSONArray categoriesArray = new JSONArray();
                 categoriesArray.put(category);

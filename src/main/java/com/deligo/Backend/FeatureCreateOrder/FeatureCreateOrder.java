@@ -11,6 +11,9 @@ import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class FeatureCreateOrder extends BaseFeature {
@@ -19,30 +22,34 @@ public class FeatureCreateOrder extends BaseFeature {
     private final GenericDAO<Order> orderDAO;
     private final GenericDAO<User> userDAO;
     private final GenericDAO<Tables> tableDAO;
-    private final GenericDAO<MenuItem> itemDAO;
+    private final GenericDAO<MenuItemInsert> itemDAO;
 
     public FeatureCreateOrder(ConfigLoader config, LoggingAdapter logger, RestAPIServer server) {
         super(config, logger, server);
         this.orderDAO = new GenericDAO<>(Order.class, "orders");
         this.userDAO = new GenericDAO<>(User.class, "users");
         this.tableDAO = new GenericDAO<>(Tables.class, "tables");
-        this.itemDAO = new GenericDAO<>(MenuItem.class, "menu_items");
+        this.itemDAO = new GenericDAO<>(MenuItemInsert.class, "menu_items");
     }
 
-    public String createOrder(String jsonData) {
+    public String createOrder(String rawJsonData) {
         try {
 
-            Type listType = new TypeToken<List<Map<String, Object>>>(){}.getType();
-            List<Map<String, Object>> items = gson.fromJson(jsonData, listType);
+            JsonObject rootObject = JsonParser.parseString(rawJsonData).getAsJsonObject();
+            JsonArray messageArray = rootObject.getAsJsonArray("message");
 
-            if (items == null || items.isEmpty()) {
+            if (messageArray == null || messageArray.size() == 0) {
                 return gson.toJson(new Response("No items in order", 400));
             }
 
-            // 2. Validácia položiek
+            // Konverzia JSON array na List<Map>
+            Type listType = new TypeToken<List<Map<String, Object>>>(){}.getType();
+            List<Map<String, Object>> items = gson.fromJson(messageArray, listType);
+
+            // Validácia položiek
             for (Map<String, Object> item : items) {
-                int itemId = ((Double) item.get("itemId")).intValue(); // Gson číta číselné hodnoty ako Double
-                Optional<MenuItem> menuItemOpt = itemDAO.findOneByField("id", itemId);
+                int itemId = ((Double) item.get("itemId")).intValue();
+                Optional<MenuItemInsert> menuItemOpt = itemDAO.getById(itemId);
                 if (menuItemOpt.isEmpty()) {
                     return gson.toJson(new Response("Item with ID " + itemId + " not found", 404));
                 }
@@ -60,6 +67,7 @@ public class FeatureCreateOrder extends BaseFeature {
                 }else{
                     int userId = userOpt.get().getId();
                     newOrder.setUser_id(userId);
+                    newOrder.setTable_id(null);
                 }
             }else if(!tableId.isEmpty() || !tableId.equals("null")){
                 Optional<Tables> currentTable = tableDAO.findOneByField("name", tableId);
@@ -83,8 +91,16 @@ public class FeatureCreateOrder extends BaseFeature {
 
              // defaultne nula ak nie je
             newOrder.setStatus(Status.pending.toString());
-            newOrder.setCreated_at(String.valueOf(new Date())); // môžeš nahradiť LocalDateTime atď.
-            newOrder.setOrder_contain(jsonData); // celý JSON ako String
+            LocalDateTime now = LocalDateTime.now();
+
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+            Timestamp timestamp = Timestamp.valueOf(now);
+
+            newOrder.setCreated_at(timestamp);
+
+            newOrder.setOrder_contain(messageArray.toString());
 
             orderDAO.insert(newOrder);
 
