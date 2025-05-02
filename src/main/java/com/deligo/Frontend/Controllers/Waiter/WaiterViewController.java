@@ -87,7 +87,7 @@ public class WaiterViewController implements InitializableWithParent {
 
     private void loadOrders() {
         try {
-            String response = mainPageController.getServer().sendGetRequest("be/orders");
+            String response = mainPageController.getServer().sendGetRequest("/be/orders");
             Type responseType = new TypeToken<Map<String, Object>>() {}.getType();
             Map<String, Object> responseMap = gson.fromJson(response, responseType);
 

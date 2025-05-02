@@ -152,7 +152,7 @@ public class ChangeOrderViewController implements InitializableWithParent {
                     requestData.put("status", newStatus);
                     
                     String response = mainPageController.getServer().sendPostRequest(
-                        "be/orders/update-status",
+                        "/be/orders/update-status",
                         gson.toJson(requestData)
                     );
                     

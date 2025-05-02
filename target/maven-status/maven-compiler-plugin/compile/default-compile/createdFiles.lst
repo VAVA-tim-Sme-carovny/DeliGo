@@ -59,6 +59,7 @@ com/deligo/Backend/FeatureReview/FeatureReview$1.class
 com/deligo/Model/OrgDetails.class
 com/deligo/Model/Order.class
 com/deligo/Frontend/Controllers/Employee/OrdersLeftController$Order.class
+com/deligo/Backend/FeatureCreateOrder/FeatureCreateOrder$2.class
 com/deligo/Frontend/Controllers/Employee/Admin/EditTableController.class
 com/deligo/Backend/FeatureMenuManagement/MenuManagementMessages.class
 com/deligo/RestApi/Utils/RequestUtils.class
@@ -106,14 +107,13 @@ com/deligo/Frontend/Controllers/MainPage/MainPanelController.class
 com/deligo/Backend/FeatureStatistics/FeatureStatistics$2.class
 com/deligo/Backend/FeatureCreateOrder/FeatureCreateOrder.class
 com/deligo/RestApi/Utils/HealthHandler.class
-com/deligo/Backend/FeatureMenuManagement/FeatureMenuManagement$5.class
+com/deligo/Model/Order$1.class
 com/deligo/RestApi/Handlers/HealthHandler.class
 com/deligo/Backend/FeatureMenuManagement/FeatureMenuManagement$4.class
 com/deligo/Backend/FeatureStatistics/FeatureStatistics.class
 com/deligo/Model/MenuItemTranslation.class
 com/deligo/Backend/FeatureEditTables/FeatureEditTables.class
 com/deligo/Backend/FeatureTableReservation/FeatureTableReservation$2.class
-com/deligo/Backend/FeatureMenuManagement/FeatureMenuManagement$6.class
 com/deligo/Model/Tables.class
 com/deligo/Frontend/Controllers/Employee/OrderDetailController.class
 com/deligo/Frontend/Controllers/MainPage/MainPageController.class

@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d72b6a67-34da-4232-bb13-ec9439befb3c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logs.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureReserve/FeatureReserveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/FeatureReserve/FeatureReserveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/Backend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/Backend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureCreateOrder/FeatureCreateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureCreateOrder/FeatureCreateOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureMenuManagement/FeatureMenuManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureMenuManagement/FeatureMenuManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureTableReservation/FeatureTableReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Backend/FeatureTableReservation/FeatureTableReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Admin/ChangeOrderViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Admin/ChangeOrderViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Admin/OrdersViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Admin/OrdersViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/OrderPage/OrderInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/OrderPage/OrderInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Waiter/WaiterViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Frontend/Controllers/Waiter/WaiterViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deligo/Model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deligo/Model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Backend/Backend.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/deligo/Backend/Backend.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/deligo/RestApi/Utils/RequestUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <list id="4c64e40d-01bd-4b82-853b-c60de2588985" name="Changes by samko" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev/main" />
+        <entry key="$PROJECT_DIR$" value="dev/mainWIP2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,41 +59,41 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.PostgresTest.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.FeatureOrgDetailsIntegrationTest.testUpdateOrgDetailsInvalidPhone.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Backend.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Development.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.FrontEnd.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.deligo-app [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.reporting.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.MainApp.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev/mainWIP2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/richa/Documents/DeliGo/src/main/java/com/deligo&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.3725329&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.PostgresTest.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.FeatureOrgDetailsIntegrationTest.testUpdateOrgDetailsInvalidPhone.executor": "Run",
+    "JUnit.FeatureUserRegistrationIntegrationTest.testCreateAccountInvalidRoles.executor": "Run",
+    "Maven.Backend.executor": "Run",
+    "Maven.Development.executor": "Run",
+    "Maven.FrontEnd.executor": "Run",
+    "Maven.Test.executor": "Run",
+    "Maven.deligo-app [clean].executor": "Run",
+    "Maven.reporting.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.MainApp.executor": "Run",
+    "git-widget-placeholder": "dev/mainWIP2-Martin",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/macbook/Desktop/Skola/3year/VAVA/github/DeliGo/src/main/java/com/deligo/Frontend",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3725329",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager" />
@@ -308,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746172855582</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Nieco pridane, idk co">
+      <option name="closed" value="true" />
+      <created>1746173378229</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746173378229</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

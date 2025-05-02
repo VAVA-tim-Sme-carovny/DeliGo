@@ -2,10 +2,10 @@ device:
   id: null
   language: sk
 login:
-  user: ss
+  user: null
   tags:
   - customer
   - admin
-  status: true
-  role: customer
+  status: false
+  role: null
   user_id: '48'

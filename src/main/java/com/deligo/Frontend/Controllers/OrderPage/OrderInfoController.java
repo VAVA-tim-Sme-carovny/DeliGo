@@ -93,7 +93,7 @@ public class OrderInfoController implements InitializableWithParent {
             try {
                 // Send order to server
                 String orderJson = gson.toJson(currentOrder);
-                String response = mainPageController.getServer().sendPostRequest("be/orders", orderJson);
+                String response = mainPageController.getServer().sendPostRequest("/be/orders", orderJson);
                 
                 // Parse response
                 Type responseType = new TypeToken<Map<String, Object>>() {}.getType();

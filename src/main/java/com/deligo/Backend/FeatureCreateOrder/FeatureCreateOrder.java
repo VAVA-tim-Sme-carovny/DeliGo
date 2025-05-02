@@ -32,87 +32,53 @@ public class FeatureCreateOrder extends BaseFeature {
         this.itemDAO = new GenericDAO<>(MenuItemInsert.class, "menu_items");
     }
 
-    public String createOrder(String rawJsonData) {
+    public String createOrder(String json) {
         try {
+            // Parse input JSON
+            Type mapType = new TypeToken<Map<String, Object>>(){}.getType();
+            Map<String, Object> requestData = gson.fromJson(json, mapType);
 
-            JsonObject rootObject = JsonParser.parseString(rawJsonData).getAsJsonObject();
-            JsonArray messageArray = rootObject.getAsJsonArray("message");
-
-            if (messageArray == null || messageArray.size() == 0) {
-                return gson.toJson(new Response("No items in order", 400));
+            // Create new order
+            Order order = new Order();
+            
+            // Set user ID
+            order.setUser_id(((Double) requestData.get("user_id")).intValue());
+            
+            // Set table ID if provided, otherwise set to 0
+            Object tableIdObj = requestData.get("table_id");
+            if (tableIdObj != null) {
+                order.setTable_id(((Double) tableIdObj).intValue());
+            } else {
+                order.setTable_id(0);
             }
+            
+            // Set status
+            order.setStatus((String) requestData.get("status"));
+            
+            // Set created_at as current timestamp in string format
+            order.setCreated_at(new java.sql.Timestamp(System.currentTimeMillis()).toString());
+            
+            // Set order items
+            Type listType = new TypeToken<List<OrderItem>>(){}.getType();
+            List<OrderItem> items = gson.fromJson(gson.toJson(requestData.get("items")), listType);
+            order.setItems(items);
 
-            // Konverzia JSON array na List<Map>
-            Type listType = new TypeToken<List<Map<String, Object>>>(){}.getType();
-            List<Map<String, Object>> items = gson.fromJson(messageArray, listType);
-
-            // Validácia položiek
-            for (Map<String, Object> item : items) {
-                int itemId = ((Double) item.get("itemId")).intValue();
-                Optional<MenuItemInsert> menuItemOpt = itemDAO.getById(itemId);
-                if (menuItemOpt.isEmpty()) {
-                    return gson.toJson(new Response("Item with ID " + itemId + " not found", 404));
-                }
+            // Insert order into database
+            int orderId = orderDAO.insert(order);
+            
+            if (orderId > 0) {
+                logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.BECKEND,
+                        "Order created successfully");
+                return gson.toJson(new Response("Order created successfully", 200));
+            } else {
+                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                        "Failed to create order");
+                return gson.toJson(new Response("Failed to create order", 500));
             }
-
-
-            // Získanie prihlaseného používateľa
-            String tableId = globalConfig.getConfigValue("device", "id", String.class);
-            String username = globalConfig.getConfigValue("login", "user", String.class);
-            Order newOrder = new Order();
-            if(!username.isEmpty() || !username.equals("null")) {
-                Optional<User> userOpt = userDAO.findOneByField("username", username);
-                if (userOpt.isEmpty()) {
-                    return gson.toJson(new Response("Logged-in user not found", 500));
-                }else{
-                    int userId = userOpt.get().getId();
-                    newOrder.setUser_id(userId);
-                    newOrder.setTable_id(null);
-                }
-            }else if(!tableId.isEmpty() || !tableId.equals("null")){
-                Optional<Tables> currentTable = tableDAO.findOneByField("name", tableId);
-                List<Order> existing = orderDAO.findByField("table_id", tableId);
-                for (Order o : existing) {
-                    if ("in progress".equalsIgnoreCase(o.getStatus())) {
-                        return gson.toJson(new Response("Order already in progress for this table", 500));
-                    }
-                }
-                if(!currentTable.isPresent()) {
-                    newOrder.setTable_id(currentTable.get().getId());
-                }else{
-                    return gson.toJson(new Response("This table doesnt exist in DB", 500));
-                }
-
-            }else{
-                logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.BECKEND, "Kokot");
-            }
-
-            // Príprava objednávky
-
-             // defaultne nula ak nie je
-            newOrder.setStatus(Status.pending.toString());
-            LocalDateTime now = LocalDateTime.now();
-
-
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-            Timestamp timestamp = Timestamp.valueOf(now);
-
-            newOrder.setCreated_at(timestamp);
-
-            newOrder.setOrder_contain(messageArray.toString());
-
-            orderDAO.insert(newOrder);
-
-            logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.BECKEND, "Order created successfully");
-            return gson.toJson(new Response("Order created successfully", 200));
-
-        } catch (JsonSyntaxException e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, "Invalid JSON: " + e.getMessage());
-            return gson.toJson(new Response("Invalid JSON format", 400));
         } catch (Exception e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, "Order creation failed: " + e.getMessage());
-            return gson.toJson(new Response("Failed to create order", 500));
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                    "Error creating order: " + e.getMessage());
+            return gson.toJson(new Response("Error creating order: " + e.getMessage(), 500));
         }
     }
 

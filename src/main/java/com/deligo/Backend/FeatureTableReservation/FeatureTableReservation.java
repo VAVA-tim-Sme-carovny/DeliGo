@@ -187,6 +187,32 @@ public class FeatureTableReservation extends BaseFeature {
         }
     }
 
+    public String getAvailableTables(String json) {
+        try {
+            Type mapType = new TypeToken<Map<String, Object>>() {}.getType();
+            Map<String, Object> requestData = gson.fromJson(json, mapType);
+            
+            LocalDateTime from = LocalDateTime.parse(requestData.get("from").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            LocalDateTime to = LocalDateTime.parse(requestData.get("to").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+
+            // Get all tables
+            List<TableStructure> allTables = tableStructureDAO.getAll();
+            
+            // Filter available tables
+            List<TableStructure> availableTables = allTables.stream()
+                .filter(table -> table.isActive() && isTableAvailable(table.getId(), from, to))
+                .collect(Collectors.toList());
+
+            logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
+                    "Retrieved available tables successfully");
+            return gson.toJson(new Response(gson.toJson(availableTables), 200));
+        } catch (Exception e) {
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                    "Failed to get available tables");
+            return gson.toJson(new Response("Failed to get available tables", 500));
+        }
+    }
+
     private boolean isTableAvailable(int tableId, LocalDateTime from, LocalDateTime to) {
         try {
             if (from.isBefore(LocalDateTime.now())) {
@@ -205,7 +231,8 @@ public class FeatureTableReservation extends BaseFeature {
             }
             return true;
         } catch (Exception e) {
-            System.out.println("Error checking table availability: " + e.getMessage());
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                    "Error checking table availability");
             return false;
         }
     }

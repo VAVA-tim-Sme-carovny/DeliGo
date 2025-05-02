@@ -557,4 +557,49 @@ public class FeatureMenuManagement extends BaseFeature {
             return gson.toJson(new Response("Error deleting category: " + e.getMessage(), 500));
         }
     }
+
+    public String getAllItems(String json) {
+        try {
+            // Get all menu items
+            List<MenuItemInsert> menuItems = menuItemDAO.getAll();
+            
+            // Get current language
+            String language = this.getLanguage();
+            
+            // Get all translations for the current language
+            List<MenuItemTranslation> translations = menuItemTranslationDAO.findByField("language", language);
+            
+            // Create a map of item ID to translation for quick lookup
+            Map<Integer, MenuItemTranslation> translationMap = translations.stream()
+                .collect(Collectors.toMap(MenuItemTranslation::getMenuItemId, t -> t));
+            
+            // Combine menu items with their translations
+            List<Map<String, Object>> result = menuItems.stream()
+                .map(item -> {
+                    Map<String, Object> itemMap = new HashMap<>();
+                    itemMap.put("id", item.getId());
+                    itemMap.put("categoryId", item.getCategory_id());
+                    itemMap.put("price", item.getPrice());
+                    itemMap.put("isAvailable", item.isIs_available());
+                    
+                    // Add translation if available
+                    MenuItemTranslation translation = translationMap.get(item.getId());
+                    if (translation != null) {
+                        itemMap.put("name", translation.getName());
+                        itemMap.put("description", translation.getDescription());
+                    }
+                    
+                    return itemMap;
+                })
+                .collect(Collectors.toList());
+            
+            logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
+                    "Retrieved all menu items successfully");
+            return gson.toJson(new Response(gson.toJson(result), 200));
+        } catch (Exception e) {
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                    "Failed to get menu items");
+            return gson.toJson(new Response("Failed to get menu items", 500));
+        }
+    }
 } 

@@ -117,7 +117,7 @@ public class OrdersViewController implements InitializableWithParent {
 
     private void loadOrders() {
         try {
-            String response = mainPageController.getServer().sendGetRequest("be/orders");
+            String response = mainPageController.getServer().sendGetRequest("/be/orders");
             
             Type orderListType = new TypeToken<List<Order>>(){}.getType();
             List<Order> orders = gson.fromJson(response, orderListType);
