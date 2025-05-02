@@ -202,7 +202,7 @@ public class FeatureUserManagementIntegrationTest {
                 + "[\"10:00\", \"22:00\"], "
                 + "[\"Closed\", \"Closed\"]"
                 + "],"
-                + "\"phoneNumber\": \"09111 222 333\","
+                + "\"phoneNumber\": \"0911 222 333\","
                 + "\"email\": \"info@deligo.com\""
                 + "}";
         String responseJson = featureUserManagement.updateOrgDetails(jsonData);
