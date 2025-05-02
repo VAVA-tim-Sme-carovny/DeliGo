@@ -9,10 +9,10 @@ import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.Model.BasicModels;
 import com.deligo.Model.Views;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+
+import java.time.LocalDate;
 
 public class FeatureReserveController implements InitializableWithParent {
 
@@ -26,8 +26,8 @@ public class FeatureReserveController implements InitializableWithParent {
     @FXML private TextField table_nameF;
     @FXML private TextField table_surnameF;
     @FXML private TextField table_idF;
-    @FXML private TextField table_fromF;
-    @FXML private TextField table_toF;
+    @FXML private DatePicker table_fromF;
+    @FXML private DatePicker table_toF;
     @FXML private Button reservation_homeBtn;
     @FXML private Button reservation_finishBtn;
 
@@ -44,21 +44,28 @@ public class FeatureReserveController implements InitializableWithParent {
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
+        table_fromF.setValue(java.time.LocalDate.now());
+        table_toF.setValue(java.time.LocalDate.now().plusDays(1));
+
+
+        table_idF.setTextFormatter(new TextFormatter<>(change -> {
+            if (change.getControlNewText().matches("\\d*")) {
+                return change;
+            }
+            return null;
+        }));
+
         if (reservation_homeBtn != null) {
             try {
                 reservation_homeBtn.setOnAction(event -> {
-                    System.out.println("Home button clicked");
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
-                            "Returning to main page");
-                    mainPageController.clearAll();
+                            "Returning, deleting all field content");
+                    this.ClearAllFields();
                     mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
                     mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
                     mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
-                    mainPageController.loadView("/Views/Controllers/MainRightPanelController.fxml", Views.rightPanel);
-                    mainPageController.loadView("/Views/Controllers/MainLeftPanelController.fxml", Views.leftPanel);
                 });
             } catch (Exception e) {
-                System.out.println("Zachytená výnimka: " + e.getMessage());
                 e.printStackTrace();
             }
         }
@@ -66,42 +73,56 @@ public class FeatureReserveController implements InitializableWithParent {
         if (reservation_finishBtn != null) {
             reservation_finishBtn.setOnAction(event -> {
 
-                String name = table_nameF.getText();
-                String surname = table_surnameF.getText();
-                String id = table_idF.getText();
-                String from = table_fromF.getText();
-                String to = table_toF.getText();
-
-                if (checkData()) {
-                    System.out.println("Creating reservation for: " + name + " " + surname);
-                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
-                            "Reservation created for: " + name + " " + surname + " " + id + " from: " + from + " to: " + to);
-//                    createReservation()
-
+                if (!checkData()) {
+                    mainPageController.showWarningPopup("%missing" , 500);
                 } else {
-//                    mainPageController.("Missing data", "Please fill in all fields.");
-                }
+                    String name = table_nameF.getText();
+                    String surname = table_surnameF.getText();
+                    int userId = 5;
+//                        Integer.parseInt(configLoader.getConfigValue("device", "id", String.class));
+                    int tableId = Integer.parseInt(table_idF.getText());
+                    String text = table_idF.getText();
+                    LocalDate from = table_fromF.getValue();
+                    LocalDate to = table_toF.getValue();
 
-                String json = String.format("{\"name\":\"%s\", \"surname\":\"%s\", \"id\":\"%s\", \"from\":\"%s\", \"to\":\"%s\"}",
-                        name, surname, id, from, to);
+                    System.out.println("From: " + from);
+                    System.out.println("To: " + to);
 
-                String response = mainPageController.getServer().sendPostRequest("/be/reserve", json);
-                logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND,
-                        "Reservation response: " + response);
-
-                if (response.contains("\"status\":200")) {
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
-                            "Reservation successful");
-                    // Tu môžeš napr. vyčistiť polia alebo prejsť na inú stránku
+                            "Reservation created for: " + name + " " + "with id:" + " " + userId);
+                    FeatureTableReservation featureTableReservation = new FeatureTableReservation(this.configLoader,this.logger, mainPageController.getServer());
+
+                    String json = String.format(
+                            "{\"userId\":%d, \"tableId\":%d, \"reservedFrom\":\"%s\", \"reservedTo\":\"%s\"}",
+                            userId, tableId, from, to
+                    );
+                    System.out.println("JSON: " + json);
+                    featureTableReservation.createReservation(json);
+
+                    String response = mainPageController.getServer().sendPostRequest("/be/reserve", json);
+                    logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND,
+                            "Reservation response: " + response);
+
+                    if (response.contains("\"status\":200")) {
+                        logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
+                                "Reservation successful");
+                        mainPageController.showWarningPopup("%reservationsucsess", 500);
+                    } else {
+                        logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
+                                "Reservation failed!");
+                        mainPageController.showWarningPopup("%reservationunsucsess", 500);
+                    }
                 }
             });
         }
     }
 
+
+
     private boolean checkData() {
         if (table_nameF.getText().isEmpty() || table_surnameF.getText().isEmpty() ||
-            table_idF.getText().isEmpty() || table_fromF.getText().isEmpty() ||
-            table_toF.getText().isEmpty()) {
+            table_idF.getText().isEmpty() || table_fromF.getValue() == null ||
+            table_toF.getValue() == null) {
             logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
                     "Missing data in reservation form");
             return false;
@@ -113,8 +134,9 @@ public class FeatureReserveController implements InitializableWithParent {
         table_nameF.clear();
         table_surnameF.clear();
         table_idF.clear();
-        table_fromF.clear();
-        table_toF.clear();
+        table_fromF.setValue(null);
+        table_toF.setValue(null);
+        mainPageController.clearAll();
     }
 
 }

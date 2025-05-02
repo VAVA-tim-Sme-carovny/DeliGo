@@ -39,10 +39,13 @@ public class FeatureTableReservation extends BaseFeature {
             Type mapType = new TypeToken<Map<String, Object>>() {}.getType();
             Map<String, Object> requestData = gson.fromJson(json, mapType);
 
+            System.out.println("Request Data: " + requestData);
             int userId = ((Number) requestData.get("userId")).intValue();
             int tableId = ((Number) requestData.get("tableId")).intValue();
             LocalDateTime reservedFrom = LocalDateTime.parse(requestData.get("reservedFrom").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            System.out.println("Reserved From: " + reservedFrom);
             LocalDateTime reservedTo = LocalDateTime.parse(requestData.get("reservedTo").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            System.out.println("Reserved To: " + reservedTo);
 
             if (reservedFrom.isBefore(LocalDateTime.now())) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,

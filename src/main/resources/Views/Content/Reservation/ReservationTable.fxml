@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
+<?import javafx.scene.control.Button?>
 <GridPane fx:id="table_background" maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="300.0" prefHeight="600.0" prefWidth="600.0" stylesheets="@/css/MainPage/Reservation.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.FeatureReserve.FeatureReserveController">
 
         <Label fx:id="table_title" alignment="CENTER" prefHeight="42.0" text="%tableReservationTitle" textAlignment="CENTER" GridPane.columnSpan="2">
@@ -24,10 +25,7 @@
                 <Insets left="20.0" />
             </padding>
         </Label>
-        <TextField fx:id="table_nameF" GridPane.columnSpan="2" GridPane.rowIndex="2">
-            <GridPane.margin>
-                <Insets bottom="5.0" left="20.0" right="20.0" />
-            </GridPane.margin></TextField>
+        <TextField fx:id="table_nameF" GridPane.columnSpan="2" GridPane.rowIndex="2" />
         <Label fx:id="table_surname" text="%tableReservationSurname" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="3">
             <font>
                 <Font size="15.0" />
@@ -36,10 +34,7 @@
                 <Insets left="20.0" />
             </padding>
         </Label>
-        <TextField fx:id="table_surnameF" GridPane.columnSpan="2" GridPane.rowIndex="4">
-            <GridPane.margin>
-                <Insets bottom="5.0" left="20.0" right="20.0" />
-            </GridPane.margin></TextField>
+        <TextField fx:id="table_surnameF" GridPane.columnSpan="2" GridPane.rowIndex="4" />
         <Label fx:id="table_id" text="%tableReservationID" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5">
             <font>
                 <Font size="15.0" />
@@ -48,11 +43,8 @@
                 <Insets left="20.0" />
             </padding>
         </Label>
-        <TextField fx:id="table_idF" GridPane.columnSpan="2" GridPane.rowIndex="6">
-            <GridPane.margin>
-                <Insets bottom="5.0" left="20.0" right="20.0" />
-            </GridPane.margin></TextField>
-        <Label fx:id="table_from" text="%tableReservationDate" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="7">
+        <TextField fx:id="table_idF" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+        <Label fx:id="table_from" text="%tableReservationDate" GridPane.halignment="CENTER" GridPane.rowIndex="7">
             <font>
                 <Font size="15.0" />
             </font>
@@ -60,11 +52,7 @@
                 <Insets left="20.0" />
             </padding>
         </Label>
-        <TextField fx:id="table_fromF" GridPane.columnSpan="2" GridPane.rowIndex="8">
-            <GridPane.margin>
-                <Insets bottom="5.0" left="20.0" right="20.0" />
-            </GridPane.margin></TextField>
-        <Label fx:id="table_to" text="%tableReservationTime" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="9">
+        <Label fx:id="table_to" text="%tableReservationTime" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
             <font>
                 <Font size="15.0" />
             </font>
@@ -72,24 +60,34 @@
                 <Insets left="20.0" />
             </padding>
         </Label>
-        <TextField fx:id="table_toF" GridPane.columnSpan="2" GridPane.rowIndex="10">
-            <GridPane.margin>
-                <Insets bottom="5.0" left="20.0" right="20.0" />
-            </GridPane.margin></TextField>
+   <DatePicker fx:id="table_fromF" GridPane.rowIndex="8" />
+   <DatePicker fx:id="table_toF" GridPane.columnIndex="1" GridPane.rowIndex="8" />
     <children>
         <Button fx:id="reservation_homeBtn" mnemonicParsing="false" prefHeight="30" prefWidth="120" text="%home" GridPane.halignment="LEFT" GridPane.rowIndex="13">
-            <GridPane.margin>
                 <Insets left="20.0" />
-            </GridPane.margin>
         </Button>
         <Button fx:id="reservation_finishBtn" mnemonicParsing="false" text="%finishOrder" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="13">
-            <GridPane.margin>
                 <Insets right="20.0" />
-            </GridPane.margin>
         </Button>
     </children>
     <columnConstraints>
         <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="50.0" />
         <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
     </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>
