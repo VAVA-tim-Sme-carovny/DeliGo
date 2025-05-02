@@ -21,9 +21,9 @@ public class BackendConfig {
                 BaseFeature.updateLanguage(config);
             // FeatureOrgDetails
             case "/update-info":
-                backend.getFeatureOrgDetails().updateOrgDetails(data);
-            case "/":
-                backend.getFeatureCreateOrder().createOrder(data);
+                return backend.getFeatureOrgDetails().updateOrgDetails(data);
+            case "/create-order":
+                return backend.getFeatureCreateOrder().createOrder(data);
             // FeatureStatistics
             case "/stats/daily":
                 return new Response(backend.getFeatureStatistics().getDailyStats(data), 200);

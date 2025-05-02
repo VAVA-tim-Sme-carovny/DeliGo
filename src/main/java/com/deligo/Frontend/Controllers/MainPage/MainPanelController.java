@@ -48,31 +48,34 @@ public class MainPanelController implements InitializableWithParent {
 
         if (OrderBtn != null) {
             OrderBtn.setOnAction(event -> {
-                try {
-                    String deviceId = configLoader.getConfigValue("device", "id", String.class);
-                    String user = configLoader.getConfigValue("login", "user", String.class);
-                    String role = configLoader.getConfigValue("login", "role", String.class);
-
-                    if(deviceId != null && !deviceId.isEmpty()){
-                        String response = mainPageController.getServer().sendPostRequest("api/be/login/customer", null);
-                        if(response.contains("\"status\":500")){
-                            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "There is still one order for this table. Contact waitress!");
-                            // TODO Spravit popup pre spravu
-                        }else{
-                            this.openOrderMenu();
-                        }
-                    } else if (user != null && !user.isEmpty() && role.equals("customer")) {
-                        logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Order menu");
-                        this.openOrderMenu();
-                    } else {
-                        logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Login menu");
-                        mainPageController.clearAll();
-                        mainPageController.loadView("/Views/Content/MainPanel/LoginContentPanel.fxml", Views.mainContent);
-                        mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                String data = "[{\"itemId\": 1,\"quantity\": 2},{\"itemId\": 5,\"quantity\": 1},{\"itemId\": 10,\"quantity\": 3},{\"itemId\": 15,\"quantity\": 2}]";
+                logger.log(LogType.INFO, null, null, "kokot");
+                mainPageController.getServer().sendPostRequest("/be/create-order", data);
+//                try {
+//                    String deviceId = configLoader.getConfigValue("device", "id", String.class);
+//                    String user = configLoader.getConfigValue("login", "user", String.class);
+//                    String role = configLoader.getConfigValue("login", "role", String.class);
+//
+//                    if(deviceId != null && !deviceId.isEmpty()){
+//                        String response = mainPageController.getServer().sendPostRequest("api/be/login/customer", null);
+//                        if(response.contains("\"status\":500")){
+//                            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "There is still one order for this table. Contact waitress!");
+//                            // TODO Spravit popup pre spravu
+//                        }else{
+//                            this.openOrderMenu();
+//                        }
+//                    } else if (user != null && !user.isEmpty() && role.equals("customer")) {
+//                        logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Order menu");
+//                        this.openOrderMenu();
+//                    } else {
+//                        logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Login menu");
+//                        mainPageController.clearAll();
+//                        mainPageController.loadView("/Views/Content/MainPanel/LoginContentPanel.fxml", Views.mainContent);
+//                        mainPageController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
             });
         }
 
