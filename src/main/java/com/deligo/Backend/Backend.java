@@ -101,5 +101,109 @@ public class Backend {
     }
     public FeatureCreateOrder getFeatureCreateOrder() {
         return featureCreateOrder;
+
+    public String getAvailableTables(String json) {
+        return featureTableReservation.getAvailableTables(json);
+    }
+
+    public String createReservation(String json) {
+        return featureTableReservation.createReservation(json);
+    }
+
+    public String updateReservationStatus(String json) {
+        return featureTableReservation.updateReservationStatus(json);
+    }
+
+    public String getReservationById(String json) {
+        return featureTableReservation.getReservationById(json);
+    }
+
+    public String getReservationsByUser(String json) {
+        return featureTableReservation.getReservationsByUser(json);
+    }
+
+    public String getReservationsByTable(String json) {
+        return featureTableReservation.getReservationsByTable(json);
+    }
+
+    public String cancelReservation(String json) {
+        return featureTableReservation.cancelReservation(json);
+    }
+
+    // FeatureOrderManagement methods
+    public String updateOrder(String json) {
+        return featureOrderManagement.updateOrder(json);
+    }
+
+    public String updateOrderStatus(String json) {
+        return featureOrderManagement.updateOrderStatus(json);
+    }
+
+    public String getOrdersByTable(String json) {
+        return featureOrderManagement.getOrdersByTable(json);
+    }
+
+    public String getMenuByCategory(String json) {
+        return featureOrderManagement.getMenuByCategory(json);
+    }
+
+    public String getCategories(String json) {
+        return featureOrderManagement.getCategories(json);
+    }
+
+    public String getPendingOrders(String json) {
+        return featureOrderManagement.getPendingOrders(json);
+    }
+
+    public String markOrderAsDelivered(String json) {
+        return featureOrderManagement.markOrderAsDelivered(json);
+    }
+
+    public String cancelOrder(String json) {
+        return featureOrderManagement.cancelOrder(json);
+    }
+
+    // FeatureMenuManagement methods
+    public String addMenuItem(String json) {
+        return featureMenuManagement.addItem(json);
+    }
+
+    public String updateMenuItem(String json) {
+        return featureMenuManagement.updateItem(json);
+    }
+
+    public String deleteMenuItem(String json) {
+        return featureMenuManagement.deleteItem(json);
+    }
+
+
+    public String addMenuCategory(String json) {
+        return featureMenuManagement.addCategory(json);
+    }
+
+
+    public String deleteMenuCategory(String json) {
+        return featureMenuManagement.deleteCategory(json);
+    }
+
+    public String getAllMenuCategories(String json) {
+        return featureMenuManagement.getAllCategories(json);
+    }
+
+    // FeatureUserManagement methods
+    public String editUser(String json) {
+        return featureUserManagement.editUser(json);
+    }
+
+    public String deleteUser(String json) {
+        return featureUserManagement.deleteUser(json);
+    }
+
+    public String getAllUsers(String json) {
+        return featureUserManagement.getAllUsers(json);
+    }
+
+    public String getOrgDetails(String json) {
+        return featureUserManagement.getOrgDetails(json);
     }
 }

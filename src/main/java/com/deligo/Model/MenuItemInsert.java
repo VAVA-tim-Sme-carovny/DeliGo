@@ -1,16 +1,19 @@
 package com.deligo.Model;
 
 public class MenuItemInsert {
-    private int category_id;
+    private int id;
     private float price;
     private boolean is_available;
+    private int category_id;
 
     public MenuItemInsert(int category_id, float price, boolean is_available) {
         this.category_id = category_id;
         this.price = price;
         this.is_available = is_available;
     }
+
     public MenuItemInsert() {
+        // Default constructor
     }
 
     public int getCategory_id() {
@@ -21,7 +24,7 @@ public class MenuItemInsert {
         this.category_id = category_id;
     }
 
-    public double getPrice() {
+    public float getPrice() {
         return price;
     }
 
@@ -36,4 +39,5 @@ public class MenuItemInsert {
     public void setIs_available(boolean is_available) {
         this.is_available = is_available;
     }
+    public int getId() {return this.id;}
 }

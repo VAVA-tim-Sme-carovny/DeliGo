@@ -2,21 +2,19 @@ package com.deligo.Model;
 
 public class MenuItemTranslation {
     private int id;
-    private int menuItemId;
+    private int menu_item_id;
     private String language;
     private String name;
     private String description;
-    private String details;
 
     public MenuItemTranslation() {
     }
 
-    public MenuItemTranslation(int menuItemId, String language, String name, String description, String details) {
-        this.menuItemId = menuItemId;
+    public MenuItemTranslation(int menu_item_id, String language, String name, String description) {
+        this.menu_item_id = menu_item_id;
         this.language = language;
         this.name = name;
         this.description = description;
-        this.details = details;
     }
 
     // Getters and Setters
@@ -29,11 +27,11 @@ public class MenuItemTranslation {
     }
 
     public int getMenuItemId() {
-        return menuItemId;
+        return menu_item_id;
     }
 
-    public void setMenuItemId(int menuItemId) {
-        this.menuItemId = menuItemId;
+    public void setMenuItemId(int menu_item_id) {
+        this.menu_item_id = menu_item_id;
     }
 
     public String getLanguage() {
@@ -60,11 +58,4 @@ public class MenuItemTranslation {
         this.description = description;
     }
 
-    public String getDetails() {
-        return details;
-    }
-
-    public void setDetails(String details) {
-        this.details = details;
-    }
 } 

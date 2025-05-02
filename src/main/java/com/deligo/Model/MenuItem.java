@@ -4,9 +4,9 @@ import java.util.List;
 
 public class MenuItem {
     private int id;
-    private int categoryId;
-    private int availableCount;
-    private double price;
+    private int category_id;
+    private boolean is_available;
+    private float price;
 
     // For backward compatibility during transition
     private List<String> categories;
@@ -14,31 +14,33 @@ public class MenuItem {
     private String description;
     private String details;
 
-    public MenuItem() {}
+    public MenuItem() {
+        id = 1;
+    }
 
-    public MenuItem(int categoryId, int availableCount, double price) {
-        this.categoryId = categoryId;
-        this.availableCount = availableCount;
+    public MenuItem(int category_id, boolean is_available, float price) {
+        this.category_id = category_id;
+        this.is_available = is_available;
         this.price = price;
     }
 
     // Constructor with backward compatibility for transition
-    public MenuItem(String name, int categoryId, String description, String details, int availableCount, double price) {
+    public MenuItem(String name, int category_id, String description, String details, boolean is_available, float price) {
         this.name = name;
-        this.categoryId = categoryId;
+        this.category_id = category_id;
         this.description = description;
         this.details = details;
-        this.availableCount = availableCount;
+        this.is_available = is_available;
         this.price = price;
     }
 
     // Constructor with backward compatibility for transition
-    public MenuItem(String name, List<String> categories, String description, String details, int availableCount, double price) {
+    public MenuItem(String name, List<String> categories, String description, String details, boolean is_available, float price) {
         this.name = name;
         this.categories = categories;
         this.description = description;
         this.details = details;
-        this.availableCount = availableCount;
+        this.is_available = is_available;
         this.price = price;
     }
 
@@ -59,11 +61,11 @@ public class MenuItem {
     }
 
     public int getCategoryId() {
-        return categoryId;
+        return category_id;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setCategoryId(int category_id) {
+        this.category_id = category_id;
     }
 
     // For backward compatibility during transition
@@ -92,19 +94,19 @@ public class MenuItem {
         this.details = details;
     }
 
-    public int getAvailableCount() {
-        return availableCount;
+    public boolean getIsAvailable() {
+        return is_available;
     }
 
-    public void setAvailableCount(int availableCount) {
-        this.availableCount = availableCount;
+    public void setIsAvailable(boolean is_available) {
+        this.is_available = is_available;
     }
 
-    public double getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 } 

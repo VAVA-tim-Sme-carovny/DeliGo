@@ -36,11 +36,43 @@ public class BackendConfig {
             case "/devices/delete":
                 return backend.getFeatureTableStructure().deleteTable(data);
 
-            // FeatureMenuManagement
-            case "/menu/getAllItems":
-                return new Response(backend.getFeatureMenuManagement().getAllItems("{}"), 200);
-            case "/menu/getAllCategories":
-                return new Response(backend.getFeatureMenuManagement().getAllCategories("{}"), 200);
+            // FeatureTableStructure paths
+            case "/tables/add":
+                return new Response(backend.getFeatureTableStructure().addTable(data), 200);
+            case "/tables/update":
+                return new Response(backend.getFeatureTableStructure().updateTable(data), 200);
+            case "/tables/delete":
+                return new Response(backend.getFeatureTableStructure().deleteTable(data), 200);
+            case "/tables/get-all":
+                return new Response(backend.getFeatureTableStructure().getAllTables(data), 200);
+
+
+            // Pravdepodobne vymazat
+            case "/tables/get-by-category":
+                return new Response(backend.getFeatureTableStructure().getTablesByCategory(data), 200);
+            case "/tables/categories/add":
+                return new Response(backend.getFeatureTableStructure().addCategory(data), 200);
+            case "/tables/categories/update":
+                return new Response(backend.getFeatureTableStructure().updateCategory(data), 200);
+            case "/tables/categories/delete":
+                return new Response(backend.getFeatureTableStructure().deleteCategory(data), 200);
+            case "/tables/categories/get-all":
+                return new Response(backend.getFeatureTableStructure().getAllCategories(data), 200);
+
+
+            // FeatureMenuManagement paths
+            case "/menu/addItem":
+                return backend.getFeatureMenuManagement().addItem(data);
+            case "/menu/editItem":
+                return backend.getFeatureMenuManagement().updateItem(data);
+            case "/menu/delItem":
+                return backend.getFeatureMenuManagement().deleteItem(data);
+            case "/menu/addCategory":
+                return backend.getFeatureMenuManagement().addCategory(data);
+            case "/menu/delCategory":
+                return backend.getFeatureMenuManagement().deleteCategory(data);
+
+
 
             // FeatureUserManagement
             case "/edit-user":
