@@ -48,6 +48,7 @@ public class FeatureReserveController implements InitializableWithParent {
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
+
         table_fromDate.setValue(java.time.LocalDate.now());
         table_toDate.setValue(java.time.LocalDate.now().plusDays(1));
 
@@ -91,7 +92,7 @@ public class FeatureReserveController implements InitializableWithParent {
             reservation_finishBtn.setOnAction(event -> {
 
                 if (!checkData()) {
-                    mainPageController.showWarningPopup("%missing" , 500);
+                    mainPageController.showWarningPopup("Missing information" , 500);
                 } else {
                     String name = table_nameF.getText();
                     String surname = table_surnameF.getText();
@@ -102,7 +103,7 @@ public class FeatureReserveController implements InitializableWithParent {
                             "Login status: " + isLoggedIn);
 
                     if (!Boolean.TRUE.equals(isLoggedIn)) {
-                        mainPageController.showWarningPopup("%notloggedin", 500);
+                        mainPageController.showWarningPopup("Not Logged In", 500);
                         return;
                     }
 
@@ -114,7 +115,7 @@ public class FeatureReserveController implements InitializableWithParent {
                     if (userId == null || userId.isEmpty()) {
                         logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
                                 "User ID is null or empty");
-                        mainPageController.showWarningPopup("%notloggedin", 500);
+                        mainPageController.showWarningPopup("Not Logged In", 500);
                         return;
                     }
 
@@ -122,7 +123,7 @@ public class FeatureReserveController implements InitializableWithParent {
                     if (!userId.matches("\\d+")) {
                         logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
                                 "Invalid user ID format: " + userId);
-                        mainPageController.showWarningPopup("%invaliduser", 500);
+                        mainPageController.showWarningPopup("Invalid User", 500);
                         return;
                     }
 
@@ -132,17 +133,16 @@ public class FeatureReserveController implements InitializableWithParent {
                     LocalTime fromTime = LocalTime.parse(table_fromTime.getValue());
                     LocalTime toTime = LocalTime.parse(table_toTime.getValue());
                     LocalTime newToTime = toTime.minusMinutes(10);
-                    if (fromTime.isAfter(toTime) || fromTime.equals(toTime)) {
-                        mainPageController.showWarningPopup("%timeerror", 500);
-                        return;
-                    }
+//                    if (fromTime.isAfter(toTime) || fromTime.equals(toTime)) {
+//                        mainPageController.showWarningPopup("Time error", 500);
+//                        return;
+//                    }
 
                     LocalDate fromDate = table_fromDate.getValue();
                     LocalDate toDate = table_toDate.getValue();
 
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
                             "Reservation created for: " + name + " " + surname + " with id:" + " " + userId);
-                    FeatureTableReservation featureTableReservation = new FeatureTableReservation(this.configLoader,this.logger, mainPageController.getServer());
 
                     String DateFrom = fromDate.toString() + " " + fromTime.toString() + ":00";
                     String DateTo = toDate.toString() + " " + newToTime.toString() + ":00";
@@ -151,21 +151,23 @@ public class FeatureReserveController implements InitializableWithParent {
                             userId, tableId, DateFrom, DateTo
                     );
 
-                    featureTableReservation.createReservation(json);
-
-                    String reservationResponse = mainPageController.getServer().sendPostRequest("/be/reserve", json);
+                    String reservationResponse = mainPageController.getServer().sendPostRequest("/be/reservations/create", json);
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND,
                             "Reservation response: " + reservationResponse);
+
+                    System.out.println(reservationResponse);
 
                     if (reservationResponse.contains("\"status\":200")) {
                         logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
                                 "Reservation successful");
-                        mainPageController.showWarningPopup("%reservationsucsess", 500);
+                        mainPageController.showWarningPopup("Reservation was successful", 200);
                         mainPageController.clearAll();
+                        mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+                        mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
                     } else {
                         logger.log(BasicModels.LogType.ERROR, BasicModels.LogPriority.HIGH, BasicModels.LogSource.FRONTEND,
                                 "Reservation failed!");
-                        mainPageController.showWarningPopup("%reservationunsucsess", 500);
+                        mainPageController.showWarningPopup("Reservation was unsuccessful", 500);
                         this.ClearAllFields();
 
                     }

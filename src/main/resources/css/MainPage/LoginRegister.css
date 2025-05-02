@@ -1,8 +1,12 @@
-#loginPanel {
+#loginPanel, #registerPanel {
     -fx-background-color: #2c323c;
     -fx-border-radius: 15px;
     -fx-background-radius: 15px;
     -fx-padding: 10px;
     -fx-border-color: #002132;
     -fx-border-width: 2px;
+}
+#loginPanel .label, #registerPanel .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20px;
 }

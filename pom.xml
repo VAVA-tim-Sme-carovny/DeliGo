@@ -469,7 +469,55 @@
         </profile>
 
 
+        <!-- Profile for creating an executable JAR with dependencies -->
+        <profile>
+            <id>package-jar</id>
+            <build>
+                <plugins>
+                    <!-- Configure the JAR plugin to specify the main class -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>3.3.0</version>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <addClasspath>true</addClasspath>
+                                    <classpathPrefix>lib/</classpathPrefix>
+                                    <mainClass>com.deligo.MainApp</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </plugin>
 
+                    <!-- Assembly plugin to create a JAR with dependencies -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.6.0</version>
+                        <configuration>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <archive>
+                                <manifest>
+                                    <mainClass>com.deligo.MainApp</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>make-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>report</id>
             <build>
@@ -491,21 +539,21 @@
                     </plugin>
 
                     <!-- Checkstyle Report -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>3.1.2</version>
-                        <reportSets>
-                            <reportSet>
-                                <reports>
-                                    <report>checkstyle</report>
-                                </reports>
-                            </reportSet>
-                        </reportSets>
-                        <configuration>
-                            <failOnViolation>false</failOnViolation>
-                        </configuration>
-                    </plugin>
+<!--                    <plugin>-->
+<!--                        <groupId>org.apache.maven.plugins</groupId>-->
+<!--                        <artifactId>maven-checkstyle-plugin</artifactId>-->
+<!--                        <version>3.1.2</version>-->
+<!--                        <reportSets>-->
+<!--                            <reportSet>-->
+<!--                                <reports>-->
+<!--                                    <report>checkstyle</report>-->
+<!--                                </reports>-->
+<!--                            </reportSet>-->
+<!--                        </reportSets>-->
+<!--                        <configuration>-->
+<!--                            <failOnViolation>false</failOnViolation>-->
+<!--                        </configuration>-->
+<!--                    </plugin>-->
 
 
                     <!-- Javadoc report -->

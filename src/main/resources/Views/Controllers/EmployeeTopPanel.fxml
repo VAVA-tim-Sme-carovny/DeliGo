@@ -15,7 +15,9 @@
       xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.deligo.Frontend.Controllers.Employee.EmployeeTopPanelController"
-      style="-fx-background-color: black; -fx-padding: 10;" >
+      stylesheets="@/css/MainPage/EmployeeTopPanel.css"
+      id="topPanel"
+      >
     <children>
 
         <!-- Ľavá strana: objednávky a admin -->

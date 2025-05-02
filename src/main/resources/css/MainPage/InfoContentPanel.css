@@ -6,6 +6,14 @@
     -fx-border-color: #002132;
     -fx-border-width: 2px;
 }
+#phoneLabel, #emailLabel {
+    -fx-font-family: 'Roboto Condensed', sans-serif;
+    -fx-font-size: 20px;
+}
+
+#phoneLabel, #emailLabel, #openingHours {
+    -fx-text-fill: #fff;
+}
 
 #table_title {
     -fx-font-family: 'Roboto Condensed', sans-serif;
@@ -25,7 +33,6 @@
     -fx-background-color: #00a6ef;
     -fx-text-fill: #fff;
     -fx-padding: 8px 10px 8px 10px;
-
 }
 #reservation_homeBtn:hover {
     -fx-background-color: #002132;
@@ -45,4 +52,9 @@
 #reservation_finishBtn:hover {
     -fx-background-color: #004c78;
     -fx-text-fill: #00a6ef;
+}
+#logoutBtn {
+    -fx-background-color: #00a6ef;
+    -fx-text-fill: #fff;
+    -fx-padding: 8px 10px 8px 10px;
 }

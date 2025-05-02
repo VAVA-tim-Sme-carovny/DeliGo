@@ -112,25 +112,6 @@ public class FeatureTableReservationIntegrationTest {
     }
 
     @Test
-    void testUpdateReservationStatus() {
-        Assumptions.assumeTrue(databaseAvailable, "Database is not available, skipping test");
-        
-        String jsonData = "{"
-                + "\"reservationId\": 1,"
-                + "\"status\": \"CONFIRMED\""
-                + "}";
-        
-        String responseJson = featureTableReservation.updateReservationStatus(jsonData);
-        Response response = gson.fromJson(responseJson, Response.class);
-        
-        if (response.getStatus() == 200) {
-            assertEquals("Reservation status updated successfully", response.getMessage());
-        } else if (response.getStatus() == 404) {
-            assertEquals("Reservation not found", response.getMessage());
-        }
-    }
-
-    @Test
     void testGetReservationById() {
         Assumptions.assumeTrue(databaseAvailable, "Database is not available, skipping test");
         
@@ -186,25 +167,7 @@ public class FeatureTableReservationIntegrationTest {
             assertEquals("Reservation not found", response.getMessage());
         }
     }
-
-    @Test
-    void testGetAvailableTables() {
-        Assumptions.assumeTrue(databaseAvailable, "Database is not available, skipping test");
-        
-        String jsonData = "{"
-                + "\"date\": \"2024-03-20\","
-                + "\"time\": \"19:00\","
-                + "\"duration\": 120"
-                + "}";
-        
-        String responseJson = featureTableReservation.getAvailableTables(jsonData);
-        
-        Type mapType = new TypeToken<Map<String, Object>>(){}.getType();
-        Map<String, Object> response = gson.fromJson(responseJson, mapType);
-        
-        assertEquals(200, ((Double)response.get("status")).intValue(), "Expected status 200");
-        assertNotNull(response.get("data"), "Data field should not be null");
-    }
+    
 
     @Test
     void testWithInvalidJson() {
@@ -213,10 +176,9 @@ public class FeatureTableReservationIntegrationTest {
         Response[] responses = new Response[5];
         
         responses[0] = gson.fromJson(featureTableReservation.createReservation(invalidJson), Response.class);
-        responses[1] = gson.fromJson(featureTableReservation.updateReservationStatus(invalidJson), Response.class);
-        responses[2] = gson.fromJson(featureTableReservation.cancelReservation(invalidJson), Response.class);
-        responses[3] = gson.fromJson(featureTableReservation.getReservationsByTable(invalidJson), Response.class);
-        responses[4] = gson.fromJson(featureTableReservation.getReservationsByUser(invalidJson), Response.class);
+        responses[1] = gson.fromJson(featureTableReservation.cancelReservation(invalidJson), Response.class);
+        responses[2] = gson.fromJson(featureTableReservation.getReservationsByTable(invalidJson), Response.class);
+        responses[3] = gson.fromJson(featureTableReservation.getReservationsByUser(invalidJson), Response.class);
         
         for (Response response : responses) {
             assertEquals(400, response.getStatus(), "Expected status 400 for invalid JSON");

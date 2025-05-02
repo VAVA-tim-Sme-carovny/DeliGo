@@ -70,10 +70,17 @@ public class OrgDetailsViewController implements InitializableWithParent {
             String open = time.get("open").getAsString();
             String close = time.get("close").getAsString();
 
+            Label dayLabel = new Label(capitalize(day) + ":");
+            Label openLabel = new Label(open);
+            Label closeLabel = new Label(close);
+            dayLabel.setStyle("-fx-text-fill: white");
+            openLabel.setStyle("-fx-text-fill: white");
+            closeLabel.setStyle("-fx-text-fill: white");
+
             hoursGrid.addRow(row,
-                    new Label(capitalize(day) + ":"),
-                    new Label(open),
-                    new Label(close)
+                    dayLabel,
+                    openLabel,
+                    closeLabel
             );
         }
 

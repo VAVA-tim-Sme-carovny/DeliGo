@@ -100,11 +100,6 @@ public class Backend {
         return featureCreateOrder;
     }
 
-    // Table Reservation methods
-    public String getAvailableTables(String json) {
-        return featureTableReservation.getAvailableTables(json);
-    }
-
     public String createReservation(String json) {
         return featureTableReservation.createReservation(json);
     }

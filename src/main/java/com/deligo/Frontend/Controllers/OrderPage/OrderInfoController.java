@@ -92,24 +92,24 @@ public class OrderInfoController implements InitializableWithParent {
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Submitting order to database");
             try {
                 // Send order to server
-                String orderJson = gson.toJson(currentOrder);
-                String response = mainPageController.getServer().sendPostRequest("/be/orders", orderJson);
-                
-                // Parse response
-                Type responseType = new TypeToken<Map<String, Object>>() {}.getType();
-                Map<String, Object> responseMap = gson.fromJson(response, responseType);
-                
-                if (responseMap.containsKey("status") && (int)responseMap.get("status") == 200) {
-                    logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND, "Order successfully submitted to database");
-                    // Clear the cart after successful order
+//                String orderJson = gson.toJson(currentOrder);
+//                String response = mainPageController.getServer().sendPostRequest("/be/orders", orderJson);
+//
+//                 Parse response
+//                Type responseType = new TypeToken<Map<String, Object>>() {}.getType();
+//                Map<String, Object> responseMap = gson.fromJson(response, responseType);
+//
+//                if (responseMap.containsKey("status") && (int)responseMap.get("status") == 200) {
+//                    logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND, "Order successfully submitted to database");
+//                     Clear the cart after successful order
                     mainPageController.clearAll();
                     mainPageController.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
                     mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
                     mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
-                } else {
-                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, 
-                        "Failed to submit order: " + responseMap.get("message"));
-                }
+//                } else {
+//                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
+//                        "Failed to submit order: " + responseMap.get("message"));
+//                }
             } catch (Exception e) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, 
                     "Error submitting order: " + e.getMessage());

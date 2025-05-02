@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="443.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.FeatureRegister.FeatureRegisterController">
+<BorderPane prefHeight="443.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.deligo.Frontend.Controllers.FeatureRegister.FeatureRegisterController" id="registerPanel" stylesheets="@/css/MainPage/LoginRegister.css">
 
     <center>
         <VBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">

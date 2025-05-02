@@ -26,7 +26,7 @@
 #OrderBtn {
     -fx-font-family: 'Roboto Condensed', sans-serif;
     -fx-background-color: #00FE1E;
-    -fx-text-fill:  #15191e;
+    -fx-text-fill:  #ffffff;
     -fx-font-size: 45px;
     -fx-font-weight: bold;
     -fx-padding: 20px 60px;
@@ -46,7 +46,7 @@
 #BookTableBtn {
     -fx-font-family: 'Roboto Condensed', sans-serif;
     -fx-background-color: #419ddf;
-    -fx-text-fill: #15191e;
+    -fx-text-fill: #ffffff;
     -fx-font-size: 17px;
     -fx-font-weight: bold;
     -fx-padding: 10px 20px;

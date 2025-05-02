@@ -9,7 +9,7 @@ import com.deligo.Model.BasicModels.LogType;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Model.Response;
 import com.deligo.Model.TableReservation;
-import com.deligo.Model.TableStructure;
+import com.deligo.Model.Tables;
 import com.deligo.RestApi.RestAPIServer;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.Gson;
@@ -22,18 +22,17 @@ import java.util.Map;
 import java.util.List;
 import java.util.Optional;
 import java.lang.reflect.Type;
-import java.util.stream.Collectors;
 
 public class FeatureTableReservation extends BaseFeature {
     private final GenericDAO<TableReservation> tableReservationDAO;
-    private final GenericDAO<TableStructure> tableStructureDAO;
+    private final GenericDAO<Tables> tablesDAO;
     private final Gson gson;
 
     public FeatureTableReservation(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
         super(globalConfig, logger, restApiServer);
         this.gson = new Gson();
         this.tableReservationDAO = new GenericDAO<>(TableReservation.class, "reservations");
-        this.tableStructureDAO = new GenericDAO<>(TableStructure.class, "tables");
+        this.tablesDAO = new GenericDAO<>(Tables.class, "tables");
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, 
                 TableReservationMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
@@ -47,20 +46,13 @@ public class FeatureTableReservation extends BaseFeature {
             int tableId = ((Number) requestData.get("tableId")).intValue();
 
             // Validate that the table exists
-            Optional<TableStructure> tableOpt = tableStructureDAO.getById(tableId);
+            Optional<Tables> tableOpt = tablesDAO.getById(tableId);
             if (tableOpt.isEmpty()) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                         TableReservationMessages.TABLE_NOT_FOUND.getMessage(this.getLanguage()));
                 return gson.toJson(new Response(TableReservationMessages.TABLE_NOT_FOUND.getMessage(this.getLanguage()), 400));
             }
 
-            // Validate that the table is active
-            TableStructure table = tableOpt.get();
-            if (!table.isActive()) {
-                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        TableReservationMessages.TABLE_NOT_ACTIVE.getMessage(this.getLanguage()));
-                return gson.toJson(new Response(TableReservationMessages.TABLE_NOT_ACTIVE.getMessage(this.getLanguage()), 400));
-            }
 
             LocalDateTime reservedFrom = LocalDateTime.parse(requestData.get("reservedFrom").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             LocalDateTime reservedTo = LocalDateTime.parse(requestData.get("reservedTo").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
@@ -187,32 +179,6 @@ public class FeatureTableReservation extends BaseFeature {
         }
     }
 
-    public String getAvailableTables(String json) {
-        try {
-            Type mapType = new TypeToken<Map<String, Object>>() {}.getType();
-            Map<String, Object> requestData = gson.fromJson(json, mapType);
-            
-            LocalDateTime from = LocalDateTime.parse(requestData.get("from").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-            LocalDateTime to = LocalDateTime.parse(requestData.get("to").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-
-            // Get all tables
-            List<TableStructure> allTables = tableStructureDAO.getAll();
-            
-            // Filter available tables
-            List<TableStructure> availableTables = allTables.stream()
-                .filter(table -> table.isActive() && isTableAvailable(table.getId(), from, to))
-                .collect(Collectors.toList());
-
-            logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    "Retrieved available tables successfully");
-            return gson.toJson(new Response(gson.toJson(availableTables), 200));
-        } catch (Exception e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    "Failed to get available tables");
-            return gson.toJson(new Response("Failed to get available tables", 500));
-        }
-    }
-
     private boolean isTableAvailable(int tableId, LocalDateTime from, LocalDateTime to) {
         try {
             if (from.isBefore(LocalDateTime.now())) {
@@ -221,11 +187,16 @@ public class FeatureTableReservation extends BaseFeature {
 
             List<TableReservation> existingReservations = tableReservationDAO.findByField("table_id", tableId);
 
+            if (existingReservations.isEmpty()) {
+                return true;
+            }
+
+            System.out.println("From: " + from);
+            System.out.println("To: " + to);
+
+
             for (TableReservation reservation : existingReservations) {
-                if (from.isAfter(reservation.getReservedTo()) ||
-                    to.isBefore(reservation.getReservedFrom()) ||
-                    to.isAfter(reservation.getReservedFrom()) ||
-                    from.isBefore(reservation.getReservedTo())) {
+                if (from.isBefore(reservation.getReservedTo()) && to.isAfter(reservation.getReservedFrom())) {
                     return false;
                 }
             }

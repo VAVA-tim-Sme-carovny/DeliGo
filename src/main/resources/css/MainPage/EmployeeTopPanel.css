@@ -1,0 +1,16 @@
+#homeBtn, #logoutBtn, #ordersButton, #adminButton {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-text-fill: #fff;
+    -fx-font-size: 16px;
+    -fx-padding: 8px 10px 8px 10px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+}
+#topPanel {
+    -fx-background-color: #2c323c;
+    -fx-border-radius: 22px;
+    -fx-background-radius: 22px;
+    -fx-padding: 10px;
+    -fx-border-color: #002132;
+    -fx-border-width: 2px;
+}

@@ -80,7 +80,7 @@ public class FeatureLoginController implements InitializableWithParent {
                             mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
                     }
                 } else {
-                    //TODO Warning popup
+                    mainPageController.showWarningPopup("Invalid credentials", 500);
                     logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Invalid credentials!");
                     logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, response);
                 }
