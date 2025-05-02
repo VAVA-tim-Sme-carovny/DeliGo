@@ -1,0 +1,48 @@
+#InfoPanel {
+    -fx-background-color: #2c323c;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-padding: 10px;
+    -fx-border-color: #002132;
+    -fx-border-width: 2px;
+}
+
+#table_title {
+    -fx-font-family: 'Roboto Condensed', sans-serif;
+    -fx-text-fill: #fff;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+}
+
+#hoursGrid {
+    -fx-font-family: 'Roboto Condensed', sans-serif;
+    -fx-text-fill: #fff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+#reservation_homeBtn {
+    -fx-background-color: #00a6ef;
+    -fx-text-fill: #fff;
+    -fx-padding: 8px 10px 8px 10px;
+
+}
+#reservation_homeBtn:hover {
+    -fx-background-color: #002132;
+}
+#reservation_homeBtn, #reservation_finishBtn {
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-font-family: 'Roboto Condensed', sans-serif;
+    -fx-font-size: 20px;
+    -fx-transition: -fx-background-color 0.3s ease;
+}
+#reservation_finishBtn {
+    -fx-background-color: #00324e;
+    -fx-text-fill: #009de0;
+    -fx-padding: 10px;
+}
+#reservation_finishBtn:hover {
+    -fx-background-color: #004c78;
+    -fx-text-fill: #00a6ef;
+}

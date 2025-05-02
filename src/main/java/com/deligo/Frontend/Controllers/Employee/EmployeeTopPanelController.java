@@ -22,7 +22,6 @@ public class EmployeeTopPanelController implements InitializableWithParent {
     private ConfigLoader configLoader;
     private MainPageController mainPageController;
 
-    // Dummy roly pre testovanie
     private final List<String> userRoles = List.of("employee", "admin");
 
 

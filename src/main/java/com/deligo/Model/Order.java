@@ -1,5 +1,7 @@
 package com.deligo.Model;
 
+import java.util.List;
+
 public class Order {
 
     private int id;
@@ -8,6 +10,16 @@ public class Order {
     private String status;
     private String created_at;
     private String order_contain;
+
+    private List<OrderItem> items;
+
+    public List<OrderItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItem> items) {
+        this.items = items;
+    }
 
     public Order() {}
 

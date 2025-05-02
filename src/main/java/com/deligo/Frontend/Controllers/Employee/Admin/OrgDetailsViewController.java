@@ -24,7 +24,6 @@ public class OrgDetailsViewController implements InitializableWithParent {
     @FXML private Label emailLabel;
     @FXML private GridPane hoursGrid;
 
-    private final Gson gson = new Gson();
     private MainPageController mainPageController;
     private final GenericDAO<OrgDetails> orgDAO = new GenericDAO<>(OrgDetails.class, "info_board");
 
@@ -45,7 +44,6 @@ public class OrgDetailsViewController implements InitializableWithParent {
             System.err.println("Chýbajúce alebo prázdne orgDetails!");
             return;
         }
-//        OrgDetails details = new OrgDetails();
 
         phoneLabel.setText("Tel. číslo: " + details.getPhoneNumber());
         emailLabel.setText("Email: " + details.getMail());
