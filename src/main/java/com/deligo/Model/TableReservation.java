@@ -1,23 +1,26 @@
 package com.deligo.Model;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class TableReservation {
     private int id;
-    private int userId;
-    private int tableId;
-    private LocalDateTime reservedFrom;
-    private LocalDateTime reservedTo;
-    private LocalDateTime createdAt;
-    private String status; // PENDING, CONFIRMED, DENIED, CANCELLED
+    private int user_id;
+    private int table_id;
+    private Timestamp reserved_from;
+    private Timestamp reserved_to;
+    private Timestamp created_at;
 
-    public TableReservation(int userId, int tableId, LocalDateTime reservedFrom, LocalDateTime reservedTo) {
-        this.userId = userId;
-        this.tableId = tableId;
-        this.reservedFrom = reservedFrom;
-        this.reservedTo = reservedTo;
-        this.createdAt = LocalDateTime.now();
-        this.status = "PENDING";
+    public TableReservation(int userId, int tableId, Timestamp reservedFrom, Timestamp reservedTo) {
+        this.user_id = userId;
+        this.table_id = tableId;
+        this.reserved_from = reservedFrom;
+        this.reserved_to = reservedTo;
+        this.created_at = Timestamp.valueOf(LocalDateTime.now());
+    }
+
+    public TableReservation() {
+        // Default constructor
     }
 
     // Getters and Setters
@@ -30,50 +33,43 @@ public class TableReservation {
     }
 
     public int getUserId() {
-        return userId;
+        return user_id;
     }
 
     public void setUserId(int userId) {
-        this.userId = userId;
+        this.user_id = userId;
     }
 
     public int getTableId() {
-        return tableId;
+        return table_id;
     }
 
     public void setTableId(int tableId) {
-        this.tableId = tableId;
+        this.table_id = tableId;
     }
 
     public LocalDateTime getReservedFrom() {
-        return reservedFrom;
+        return reserved_from.toLocalDateTime();
     }
 
     public void setReservedFrom(LocalDateTime reservedFrom) {
-        this.reservedFrom = reservedFrom;
+        this.reserved_from = Timestamp.valueOf(reservedFrom);
     }
 
     public LocalDateTime getReservedTo() {
-        return reservedTo;
+        return reserved_to.toLocalDateTime();
     }
 
     public void setReservedTo(LocalDateTime reservedTo) {
-        this.reservedTo = reservedTo;
+        this.reserved_to = Timestamp.valueOf(reservedTo);
     }
 
     public LocalDateTime getCreatedAt() {
-        return createdAt;
+        return created_at.toLocalDateTime();
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+        this.created_at = Timestamp.valueOf(createdAt);
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-} 
+}

@@ -41,6 +41,10 @@ public class GenericDAO<T> {
 
     // Vloženie nového záznamu (INSERT)
     public int insert(T entity) {
+
+        System.out.println("INSERTING ENTITY: " + entity);
+
+
         Field[] fields = entityClass.getDeclaredFields();
 
         List<String> fieldNames = getFieldNames(fields).stream()

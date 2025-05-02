@@ -10,6 +10,7 @@ public enum TableReservationMessages {
     RESERVATION_CANCEL_ERROR("Chyba pri zrušení rezervácie", "Error while cancelling reservation"),
     RESERVATION_UPDATE_SUCCESS("Rezervácia bola úspešne aktualizovaná", "Reservation was successfully updated"),
     RESERVATION_UPDATE_FAILED("Chyba pri aktualizácii rezervácie", "Error while updating reservation"),
+    RESERVATION_NOT_AVAILIBlE("Rezervácia nie je k dispozícii", "Reservation is not available"),
     INVALID_RESERVATION_TIME("Neplatný čas rezervácie", "Invalid reservation time"),
     INVALID_RESERVATION_DATE("Neplatný dátum rezervácie", "Invalid reservation date"),
     INVALID_RESERVATION_DETAILS("Neplatné detaily rezervácie", "Invalid reservation details"),

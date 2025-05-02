@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -25,7 +26,10 @@
                 <Insets left="20.0" />
             </padding>
         </Label>
-        <TextField fx:id="table_nameF" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+        <TextField fx:id="table_nameF" GridPane.columnSpan="2" GridPane.rowIndex="2">
+      <GridPane.margin>
+         <Insets left="20.0" right="20.0" />
+      </GridPane.margin></TextField>
         <Label fx:id="table_surname" text="%tableReservationSurname" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="3">
             <font>
                 <Font size="15.0" />
@@ -34,7 +38,10 @@
                 <Insets left="20.0" />
             </padding>
         </Label>
-        <TextField fx:id="table_surnameF" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+        <TextField fx:id="table_surnameF" GridPane.columnSpan="2" GridPane.rowIndex="4">
+      <GridPane.margin>
+         <Insets left="20.0" right="20.0" />
+      </GridPane.margin></TextField>
         <Label fx:id="table_id" text="%tableReservationID" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5">
             <font>
                 <Font size="15.0" />
@@ -43,32 +50,27 @@
                 <Insets left="20.0" />
             </padding>
         </Label>
-        <TextField fx:id="table_idF" GridPane.columnSpan="2" GridPane.rowIndex="6" />
-        <Label fx:id="table_from" text="%tableReservationDate" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+        <TextField fx:id="table_idF" GridPane.columnSpan="2" GridPane.rowIndex="6">
+      <GridPane.margin>
+         <Insets left="20.0" right="20.0" />
+      </GridPane.margin></TextField>
+        <Label fx:id="table_from" text="%dateFrom" GridPane.halignment="CENTER" GridPane.rowIndex="7">
             <font>
                 <Font size="15.0" />
             </font>
-            <padding>
-                <Insets left="20.0" />
-            </padding>
         </Label>
-        <Label fx:id="table_to" text="%tableReservationTime" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+        <Label fx:id="table_to" text="%dateTo" GridPane.halignment="CENTER" GridPane.rowIndex="9">
             <font>
                 <Font size="15.0" />
             </font>
-            <padding>
-                <Insets left="20.0" />
-            </padding>
         </Label>
-   <DatePicker fx:id="table_fromF" GridPane.rowIndex="8" />
-   <DatePicker fx:id="table_toF" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+   <DatePicker fx:id="table_fromDate" GridPane.rowIndex="8" />
+   <DatePicker fx:id="table_toDate" GridPane.rowIndex="10" />
+   <ComboBox fx:id="table_fromTime" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+   <ComboBox fx:id="table_toTime" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
     <children>
-        <Button fx:id="reservation_homeBtn" mnemonicParsing="false" prefHeight="30" prefWidth="120" text="%home" GridPane.halignment="LEFT" GridPane.rowIndex="13">
-                <Insets left="20.0" />
-        </Button>
-        <Button fx:id="reservation_finishBtn" mnemonicParsing="false" text="%finishOrder" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="13">
-                <Insets right="20.0" />
-        </Button>
+        <Button fx:id="reservation_homeBtn" mnemonicParsing="false" text="%home" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
+        <Button fx:id="reservation_finishBtn" mnemonicParsing="false" text="%finishOrder" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
     </children>
     <columnConstraints>
         <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="50.0" />
@@ -86,8 +88,8 @@
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
    </rowConstraints>
 </GridPane>

@@ -59,8 +59,6 @@ public class BackendConfig {
             // FeatureTableReservation paths
             case "/reservations/create":
                 return new Response(backend.getFeatureTableReservation().createReservation(data), 200);
-            case "/reservations/update-status":
-                return new Response(backend.getFeatureTableReservation().updateReservationStatus(data), 200);
             case "/reservations/get":
                 return new Response(backend.getFeatureTableReservation().getReservationById(data), 200);
             case "/reservations/user":
@@ -69,8 +67,6 @@ public class BackendConfig {
                 return new Response(backend.getFeatureTableReservation().getReservationsByTable(data), 200);
             case "/reservations/cancel":
                 return new Response(backend.getFeatureTableReservation().cancelReservation(data), 200);
-            case "/reservations/available-tables":
-                return new Response(backend.getFeatureTableReservation().getAvailableTables(data), 200);
             // FeatureReview paths
             case "/reviews/add":
                 return new Response(backend.getFeatureReview().addReview(data), 200);

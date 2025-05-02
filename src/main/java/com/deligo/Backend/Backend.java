@@ -131,16 +131,8 @@ public class Backend {
         return featureUserLogin;
     }
 
-    public String getAvailableTables(String json) {
-        return featureTableReservation.getAvailableTables(json);
-    }
-
     public String createReservation(String json) {
         return featureTableReservation.createReservation(json);
-    }
-
-    public String updateReservationStatus(String json) {
-        return featureTableReservation.updateReservationStatus(json);
     }
 
     public String getReservationById(String json) {

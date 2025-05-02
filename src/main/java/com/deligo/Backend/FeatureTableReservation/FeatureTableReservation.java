@@ -13,6 +13,8 @@ import com.deligo.RestApi.RestAPIServer;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -39,27 +41,28 @@ public class FeatureTableReservation extends BaseFeature {
             Type mapType = new TypeToken<Map<String, Object>>() {}.getType();
             Map<String, Object> requestData = gson.fromJson(json, mapType);
 
-            System.out.println("Request Data: " + requestData);
-            int userId = ((Number) requestData.get("userId")).intValue();
+            int user_Id = ((Number) requestData.get("userId")).intValue();
             int tableId = ((Number) requestData.get("tableId")).intValue();
             LocalDateTime reservedFrom = LocalDateTime.parse(requestData.get("reservedFrom").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-            System.out.println("Reserved From: " + reservedFrom);
             LocalDateTime reservedTo = LocalDateTime.parse(requestData.get("reservedTo").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-            System.out.println("Reserved To: " + reservedTo);
 
+            Timestamp reservedFromTimestamp = Timestamp.valueOf(reservedFrom);
+            Timestamp reservedToTimestamp = Timestamp.valueOf(reservedTo);
+
+
+            // Check if the table is available for the given time slot
             if (reservedFrom.isBefore(LocalDateTime.now())) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                         TableReservationMessages.INVALID_RESERVATION_TIME.getMessage(this.getLanguage()));
                 return gson.toJson(new Response(TableReservationMessages.INVALID_RESERVATION_TIME.getMessage(this.getLanguage()), 400));
-            }
-
-            if (!isTableAvailable(tableId, reservedFrom, reservedTo)) {
+            } else if (!isTableAvailable(tableId, reservedFrom, reservedTo)) {
                 logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                         TableReservationMessages.RESERVATION_ALREADY_EXISTS.getMessage(this.getLanguage()));
                 return gson.toJson(new Response(TableReservationMessages.RESERVATION_ALREADY_EXISTS.getMessage(this.getLanguage()), 400));
             }
 
-            TableReservation reservation = new TableReservation(userId, tableId, reservedFrom, reservedTo);
+            // Create the reservation
+            TableReservation reservation = new TableReservation(user_Id, tableId, reservedFromTimestamp, reservedToTimestamp);
             tableReservationDAO.insert(reservation);
 
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
@@ -73,38 +76,6 @@ public class FeatureTableReservation extends BaseFeature {
             logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
                     TableReservationMessages.RESERVATION_CREATION_FAILED.getMessage(this.getLanguage()));
             return gson.toJson(new Response(TableReservationMessages.RESERVATION_CREATION_FAILED.getMessage(this.getLanguage()), 500));
-        }
-    }
-
-    public String updateReservationStatus(String json) {
-        try {
-            Type mapType = new TypeToken<Map<String, Object>>() {}.getType();
-            Map<String, Object> requestData = gson.fromJson(json, mapType);
-
-            int reservationId = ((Number) requestData.get("reservationId")).intValue();
-            String status = (String) requestData.get("status");
-
-            Optional<TableReservation> optionalReservation = tableReservationDAO.getById(reservationId);
-            if (optionalReservation.isEmpty()) {
-                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                        TableReservationMessages.RESERVATION_NOT_FOUND.getMessage(this.getLanguage()));
-                return gson.toJson(new Response(TableReservationMessages.RESERVATION_NOT_FOUND.getMessage(this.getLanguage()), 404));
-            }
-
-            TableReservation reservation = optionalReservation.get();
-            reservation.setStatus(status);
-            tableReservationDAO.update(reservationId, reservation);
-
-            String successMessage = status.equals("CONFIRMED") ? 
-                TableReservationMessages.RESERVATION_UPDATE_SUCCESS.getMessage(this.getLanguage()) :
-                TableReservationMessages.RESERVATION_CANCELLED_SUCCESS.getMessage(this.getLanguage());
-
-            logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND, successMessage);
-            return gson.toJson(new Response(successMessage, 200));
-        } catch (Exception e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    TableReservationMessages.RESERVATION_UPDATE_FAILED.getMessage(this.getLanguage()));
-            return gson.toJson(new Response(TableReservationMessages.RESERVATION_UPDATE_FAILED.getMessage(this.getLanguage()), 500));
         }
     }
 
@@ -133,7 +104,7 @@ public class FeatureTableReservation extends BaseFeature {
         try {
             Type mapType = new TypeToken<Map<String, Object>>() {}.getType();
             Map<String, Object> requestData = gson.fromJson(json, mapType);
-            int userId = ((Number) requestData.get("userId")).intValue();
+            int userId = ((Number) requestData.get("user_Id")).intValue();
 
             List<TableReservation> reservations = tableReservationDAO.findByField("user_id", userId);
             return gson.toJson(reservations);
@@ -200,50 +171,25 @@ public class FeatureTableReservation extends BaseFeature {
 
     private boolean isTableAvailable(int tableId, LocalDateTime from, LocalDateTime to) {
         try {
+            if (from.isBefore(LocalDateTime.now())) {
+                return false;
+            }
+
             List<TableReservation> existingReservations = tableReservationDAO.findByField("table_id", tableId);
-            
+
             for (TableReservation reservation : existingReservations) {
-                if (reservation.getStatus().equals("CANCELLED")) {
-                    continue;
-                }
-                
-                if ((from.isAfter(reservation.getReservedFrom()) && from.isBefore(reservation.getReservedTo())) ||
-                    (to.isAfter(reservation.getReservedFrom()) && to.isBefore(reservation.getReservedTo())) ||
-                    (from.isBefore(reservation.getReservedFrom()) && to.isAfter(reservation.getReservedTo()))) {
+                if (from.isAfter(reservation.getReservedTo()) ||
+                    to.isBefore(reservation.getReservedFrom()) ||
+                    to.isAfter(reservation.getReservedFrom()) ||
+                    from.isBefore(reservation.getReservedTo())) {
                     return false;
                 }
             }
             return true;
         } catch (Exception e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    TableReservationMessages.RESERVATION_UPDATE_FAILED.getMessage(this.getLanguage()));
+            System.out.println("Error checking table availability: " + e.getMessage());
             return false;
         }
     }
 
-    public String getAvailableTables(String json) {
-        try {
-            Type mapType = new TypeToken<Map<String, Object>>() {}.getType();
-            Map<String, Object> requestData = gson.fromJson(json, mapType);
-
-            LocalDateTime from = LocalDateTime.parse(requestData.get("from").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-            LocalDateTime to = LocalDateTime.parse(requestData.get("to").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-
-            GenericDAO<TableStructure> tableDAO = new GenericDAO<>(TableStructure.class, "tables");
-            List<TableStructure> allTables = tableDAO.getAll();
-
-            List<TableStructure> availableTables = allTables.stream()
-                .filter(table -> table.isActive() && isTableAvailable(table.getId(), from, to))
-                .collect(Collectors.toList());
-
-            logger.log(LogType.INFO, LogPriority.LOW, LogSource.BECKEND,
-                    TableReservationMessages.RESERVATION_UPDATE_SUCCESS.getMessage(this.getLanguage()));
-            return gson.toJson(new Response(gson.toJson(availableTables), 200));
-
-        } catch (Exception e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
-                    TableReservationMessages.RESERVATION_UPDATE_FAILED.getMessage(this.getLanguage()));
-            return gson.toJson(new Response(TableReservationMessages.RESERVATION_UPDATE_FAILED.getMessage(this.getLanguage()), 500));
-        }
-    }
 }
