@@ -1,4 +1,4 @@
-device: {id: null, language: en}
+device: {id: null, language: sk}
 login:
   user: ss
   tags: [customer, admin]

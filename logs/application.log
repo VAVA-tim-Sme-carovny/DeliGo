@@ -9626,3 +9626,233 @@ org.postgresql.util.PSQLException: ERROR: bind message supplies 1 parameters, bu
 2025-05-02 06:35:56 INFO  GlobalLogger:50 - 2025-05-02 06:35:56 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
 2025-05-02 06:36:04 ERROR GlobalLogger:44 - 2025-05-02 06:36:04 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
 2025-05-02 06:36:04 ERROR GlobalLogger:44 - 2025-05-02 06:36:04 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 06:46:42 INFO  GlobalLogger:50 - 2025-05-02 06:46:42 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:46:42 INFO  GlobalLogger:50 - 2025-05-02 06:46:42 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 06:46:42 INFO  GlobalLogger:50 - 2025-05-02 06:46:42 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:46:42 INFO  GlobalLogger:50 - 2025-05-02 06:46:42 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:46:42 INFO  GlobalLogger:50 - 2025-05-02 06:46:42 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:46:42 INFO  GlobalLogger:50 - 2025-05-02 06:46:42 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:46:42 INFO  GlobalLogger:50 - 2025-05-02 06:46:42 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:46:42 INFO  GlobalLogger:50 - 2025-05-02 06:46:42 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:46:42 INFO  GlobalLogger:50 - 2025-05-02 06:46:42 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 06:46:44 INFO  GlobalLogger:50 - 2025-05-02 06:46:44 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:49:22 INFO  GlobalLogger:50 - 2025-05-02 06:49:22 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:49:22 INFO  GlobalLogger:50 - 2025-05-02 06:49:22 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 06:49:22 INFO  GlobalLogger:50 - 2025-05-02 06:49:22 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:49:22 INFO  GlobalLogger:50 - 2025-05-02 06:49:22 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:49:22 INFO  GlobalLogger:50 - 2025-05-02 06:49:22 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:49:22 INFO  GlobalLogger:50 - 2025-05-02 06:49:22 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:49:22 INFO  GlobalLogger:50 - 2025-05-02 06:49:22 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:49:22 INFO  GlobalLogger:50 - 2025-05-02 06:49:22 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:49:22 ERROR GlobalLogger:44 - 2025-05-02 06:49:22 [ERROR] [MIDDLE] [BECKEND] : Nie ste prihlásený, preto sa nemôžete odhlásiť
+2025-05-02 06:49:24 INFO  GlobalLogger:50 - 2025-05-02 06:49:24 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:52:03 INFO  GlobalLogger:50 - 2025-05-02 06:52:03 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:52:03 INFO  GlobalLogger:50 - 2025-05-02 06:52:03 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 06:52:03 INFO  GlobalLogger:50 - 2025-05-02 06:52:03 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:52:03 INFO  GlobalLogger:50 - 2025-05-02 06:52:03 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:52:03 INFO  GlobalLogger:50 - 2025-05-02 06:52:03 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:52:03 INFO  GlobalLogger:50 - 2025-05-02 06:52:03 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:52:03 INFO  GlobalLogger:50 - 2025-05-02 06:52:03 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:52:03 INFO  GlobalLogger:50 - 2025-05-02 06:52:03 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:52:03 ERROR GlobalLogger:44 - 2025-05-02 06:52:03 [ERROR] [MIDDLE] [BECKEND] : Nie ste prihlásený, preto sa nemôžete odhlásiť
+2025-05-02 06:52:06 INFO  GlobalLogger:50 - 2025-05-02 06:52:06 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:53:02 INFO  GlobalLogger:50 - 2025-05-02 06:53:02 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:53:02 INFO  GlobalLogger:50 - 2025-05-02 06:53:02 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 06:53:02 INFO  GlobalLogger:50 - 2025-05-02 06:53:02 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:53:02 INFO  GlobalLogger:50 - 2025-05-02 06:53:02 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:53:02 INFO  GlobalLogger:50 - 2025-05-02 06:53:02 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:53:02 INFO  GlobalLogger:50 - 2025-05-02 06:53:02 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:53:02 INFO  GlobalLogger:50 - 2025-05-02 06:53:02 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:53:02 INFO  GlobalLogger:50 - 2025-05-02 06:53:02 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:53:02 ERROR GlobalLogger:44 - 2025-05-02 06:53:02 [ERROR] [MIDDLE] [BECKEND] : Nie ste prihlásený, preto sa nemôžete odhlásiť
+2025-05-02 06:53:04 INFO  GlobalLogger:50 - 2025-05-02 06:53:04 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:53:08 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:53:08 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:53:08 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:53:08 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:53:08 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:53:08 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:53:08 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:53:09 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:53:09 INFO  GlobalLogger:50 - 2025-05-02 06:53:09 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 06:53:09 INFO  GlobalLogger:50 - 2025-05-02 06:53:09 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 06:53:18 ERROR GlobalLogger:44 - 2025-05-02 06:53:18 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 06:53:18 ERROR GlobalLogger:44 - 2025-05-02 06:53:18 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 06:53:21 ERROR GlobalLogger:44 - 2025-05-02 06:53:21 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 06:53:21 ERROR GlobalLogger:44 - 2025-05-02 06:53:21 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 06:53:21 ERROR GlobalLogger:44 - 2025-05-02 06:53:21 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 06:53:21 ERROR GlobalLogger:44 - 2025-05-02 06:53:21 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 06:53:21 ERROR GlobalLogger:44 - 2025-05-02 06:53:21 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 06:53:21 ERROR GlobalLogger:44 - 2025-05-02 06:53:21 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 06:53:36 ERROR GlobalLogger:44 - 2025-05-02 06:53:36 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 06:53:36 ERROR GlobalLogger:44 - 2025-05-02 06:53:36 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 06:53:45 ERROR GlobalLogger:44 - 2025-05-02 06:53:45 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 06:53:45 ERROR GlobalLogger:44 - 2025-05-02 06:53:45 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 06:55:47 INFO  GlobalLogger:50 - 2025-05-02 06:55:47 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:55:47 INFO  GlobalLogger:50 - 2025-05-02 06:55:47 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 06:55:47 INFO  GlobalLogger:50 - 2025-05-02 06:55:47 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:55:47 INFO  GlobalLogger:50 - 2025-05-02 06:55:47 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:55:48 INFO  GlobalLogger:50 - 2025-05-02 06:55:48 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:55:48 INFO  GlobalLogger:50 - 2025-05-02 06:55:48 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:55:48 INFO  GlobalLogger:50 - 2025-05-02 06:55:48 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:55:48 INFO  GlobalLogger:50 - 2025-05-02 06:55:48 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:55:48 INFO  GlobalLogger:50 - 2025-05-02 06:55:48 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 06:55:50 INFO  GlobalLogger:50 - 2025-05-02 06:55:50 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:56:00 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:56:00 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:56:00 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:56:00 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:56:00 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:56:00 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:56:00 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:56:01 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:56:01 INFO  GlobalLogger:50 - 2025-05-02 06:56:01 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 06:56:01 INFO  GlobalLogger:50 - 2025-05-02 06:56:01 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 06:56:11 ERROR GlobalLogger:44 - 2025-05-02 06:56:11 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 06:56:11 ERROR GlobalLogger:44 - 2025-05-02 06:56:11 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 06:59:45 INFO  GlobalLogger:50 - 2025-05-02 06:59:45 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:59:45 INFO  GlobalLogger:50 - 2025-05-02 06:59:45 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 06:59:45 INFO  GlobalLogger:50 - 2025-05-02 06:59:45 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:59:45 INFO  GlobalLogger:50 - 2025-05-02 06:59:45 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:59:45 INFO  GlobalLogger:50 - 2025-05-02 06:59:45 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:59:45 INFO  GlobalLogger:50 - 2025-05-02 06:59:45 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:59:45 INFO  GlobalLogger:50 - 2025-05-02 06:59:45 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:59:45 INFO  GlobalLogger:50 - 2025-05-02 06:59:45 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:59:45 INFO  GlobalLogger:50 - 2025-05-02 06:59:45 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 06:59:47 INFO  GlobalLogger:50 - 2025-05-02 06:59:47 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:59:51 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:59:51 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:59:51 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:59:51 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:59:51 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:59:51 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:59:51 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:59:52 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:59:52 INFO  GlobalLogger:50 - 2025-05-02 06:59:52 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 06:59:52 INFO  GlobalLogger:50 - 2025-05-02 06:59:52 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 07:00:10 ERROR GlobalLogger:44 - 2025-05-02 07:00:10 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:00:10 ERROR GlobalLogger:44 - 2025-05-02 07:00:10 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:00:11 ERROR GlobalLogger:44 - 2025-05-02 07:00:11 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:00:11 ERROR GlobalLogger:44 - 2025-05-02 07:00:11 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:00:16 ERROR GlobalLogger:44 - 2025-05-02 07:00:16 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:00:16 ERROR GlobalLogger:44 - 2025-05-02 07:00:16 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:01:02 INFO  GlobalLogger:50 - 2025-05-02 07:01:02 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 07:01:02 INFO  GlobalLogger:50 - 2025-05-02 07:01:02 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 07:01:02 INFO  GlobalLogger:50 - 2025-05-02 07:01:02 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 07:01:02 INFO  GlobalLogger:50 - 2025-05-02 07:01:02 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 07:01:02 INFO  GlobalLogger:50 - 2025-05-02 07:01:02 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 07:01:02 INFO  GlobalLogger:50 - 2025-05-02 07:01:02 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 07:01:02 INFO  GlobalLogger:50 - 2025-05-02 07:01:02 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 07:01:02 INFO  GlobalLogger:50 - 2025-05-02 07:01:02 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 07:01:02 INFO  GlobalLogger:50 - 2025-05-02 07:01:02 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 07:01:04 INFO  GlobalLogger:50 - 2025-05-02 07:01:04 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 07:01:08 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 07:01:08 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 07:01:08 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 07:01:08 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 07:01:08 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 07:01:08 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 07:01:08 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 07:01:09 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 07:01:09 INFO  GlobalLogger:50 - 2025-05-02 07:01:09 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 07:01:09 INFO  GlobalLogger:50 - 2025-05-02 07:01:09 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 07:01:19 ERROR GlobalLogger:44 - 2025-05-02 07:01:19 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:01:19 ERROR GlobalLogger:44 - 2025-05-02 07:01:19 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:01:19 ERROR GlobalLogger:44 - 2025-05-02 07:01:19 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:01:19 ERROR GlobalLogger:44 - 2025-05-02 07:01:19 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:02:00 INFO  GlobalLogger:50 - 2025-05-02 07:02:00 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 07:02:00 INFO  GlobalLogger:50 - 2025-05-02 07:02:00 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 07:02:00 INFO  GlobalLogger:50 - 2025-05-02 07:02:00 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 07:02:00 INFO  GlobalLogger:50 - 2025-05-02 07:02:00 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 07:02:00 INFO  GlobalLogger:50 - 2025-05-02 07:02:00 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 07:02:00 INFO  GlobalLogger:50 - 2025-05-02 07:02:00 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 07:02:00 INFO  GlobalLogger:50 - 2025-05-02 07:02:00 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 07:02:00 INFO  GlobalLogger:50 - 2025-05-02 07:02:00 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 07:02:00 INFO  GlobalLogger:50 - 2025-05-02 07:02:00 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 07:02:02 INFO  GlobalLogger:50 - 2025-05-02 07:02:02 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 07:02:07 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 07:02:07 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 07:02:07 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 07:02:07 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 07:02:07 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 07:02:07 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 07:02:07 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 07:02:08 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 07:02:08 INFO  GlobalLogger:50 - 2025-05-02 07:02:08 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 07:02:08 INFO  GlobalLogger:50 - 2025-05-02 07:02:08 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 07:02:17 ERROR GlobalLogger:44 - 2025-05-02 07:02:17 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:02:17 ERROR GlobalLogger:44 - 2025-05-02 07:02:17 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:03:19 INFO  GlobalLogger:50 - 2025-05-02 07:03:19 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 07:03:19 INFO  GlobalLogger:50 - 2025-05-02 07:03:19 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 07:03:19 INFO  GlobalLogger:50 - 2025-05-02 07:03:19 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 07:03:19 INFO  GlobalLogger:50 - 2025-05-02 07:03:19 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 07:03:19 INFO  GlobalLogger:50 - 2025-05-02 07:03:19 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 07:03:19 INFO  GlobalLogger:50 - 2025-05-02 07:03:19 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 07:03:19 INFO  GlobalLogger:50 - 2025-05-02 07:03:19 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 07:03:19 INFO  GlobalLogger:50 - 2025-05-02 07:03:19 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 07:03:19 INFO  GlobalLogger:50 - 2025-05-02 07:03:19 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 07:03:21 INFO  GlobalLogger:50 - 2025-05-02 07:03:21 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 07:03:28 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 07:03:28 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 07:03:28 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 07:03:28 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 07:03:28 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 07:03:28 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 07:03:28 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 07:03:28 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 07:03:29 INFO  GlobalLogger:50 - 2025-05-02 07:03:29 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 07:03:29 INFO  GlobalLogger:50 - 2025-05-02 07:03:29 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 07:03:38 ERROR GlobalLogger:44 - 2025-05-02 07:03:38 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:03:38 ERROR GlobalLogger:44 - 2025-05-02 07:03:38 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:05:35 INFO  GlobalLogger:50 - 2025-05-02 07:05:35 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 07:05:35 INFO  GlobalLogger:50 - 2025-05-02 07:05:35 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 07:05:35 INFO  GlobalLogger:50 - 2025-05-02 07:05:35 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 07:05:35 INFO  GlobalLogger:50 - 2025-05-02 07:05:35 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 07:05:35 INFO  GlobalLogger:50 - 2025-05-02 07:05:35 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 07:05:35 INFO  GlobalLogger:50 - 2025-05-02 07:05:35 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 07:05:35 INFO  GlobalLogger:50 - 2025-05-02 07:05:35 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 07:05:35 INFO  GlobalLogger:50 - 2025-05-02 07:05:35 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 07:05:35 INFO  GlobalLogger:50 - 2025-05-02 07:05:35 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 07:05:38 INFO  GlobalLogger:50 - 2025-05-02 07:05:38 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 07:05:41 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 07:05:41 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 07:05:41 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 07:05:41 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 07:05:41 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 07:05:41 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 07:05:41 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 07:05:42 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 07:05:42 INFO  GlobalLogger:50 - 2025-05-02 07:05:42 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 07:05:42 INFO  GlobalLogger:50 - 2025-05-02 07:05:42 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 07:05:51 ERROR GlobalLogger:44 - 2025-05-02 07:05:51 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:05:51 ERROR GlobalLogger:44 - 2025-05-02 07:05:51 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:08:09 INFO  GlobalLogger:50 - 2025-05-02 07:08:09 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 07:08:09 INFO  GlobalLogger:50 - 2025-05-02 07:08:09 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 07:08:09 INFO  GlobalLogger:50 - 2025-05-02 07:08:09 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 07:08:09 INFO  GlobalLogger:50 - 2025-05-02 07:08:09 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 07:08:09 INFO  GlobalLogger:50 - 2025-05-02 07:08:09 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 07:08:09 INFO  GlobalLogger:50 - 2025-05-02 07:08:09 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 07:08:09 INFO  GlobalLogger:50 - 2025-05-02 07:08:09 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 07:08:09 INFO  GlobalLogger:50 - 2025-05-02 07:08:09 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 07:08:09 INFO  GlobalLogger:50 - 2025-05-02 07:08:09 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 07:08:11 INFO  GlobalLogger:50 - 2025-05-02 07:08:11 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 07:08:16 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 07:08:16 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 07:08:16 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 07:08:16 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 07:08:16 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 07:08:16 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 07:08:16 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 07:08:16 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 07:08:16 INFO  GlobalLogger:50 - 2025-05-02 07:08:16 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 07:08:16 INFO  GlobalLogger:50 - 2025-05-02 07:08:16 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 07:08:23 ERROR GlobalLogger:44 - 2025-05-02 07:08:23 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:08:23 ERROR GlobalLogger:44 - 2025-05-02 07:08:23 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:08:24 ERROR GlobalLogger:44 - 2025-05-02 07:08:24 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:08:24 ERROR GlobalLogger:44 - 2025-05-02 07:08:24 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:08:25 ERROR GlobalLogger:44 - 2025-05-02 07:08:25 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:08:25 ERROR GlobalLogger:44 - 2025-05-02 07:08:25 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:08:28 ERROR GlobalLogger:44 - 2025-05-02 07:08:28 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:08:28 ERROR GlobalLogger:44 - 2025-05-02 07:08:28 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+2025-05-02 07:21:53 ERROR GlobalLogger:44 - 2025-05-02 07:21:53 [ERROR] : POST request to http://localhost:8085/apibe/orders failed: http://localhost:8085/apibe/orders
+2025-05-02 07:21:53 ERROR GlobalLogger:44 - 2025-05-02 07:21:53 [ERROR] [HIGH] [FRONTEND] : Error submitting order: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
