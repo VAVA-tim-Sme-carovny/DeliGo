@@ -1,0 +1,46 @@
+.table-view {
+    -fx-background-color: #2d333b;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 10;
+    -fx-border-color: #4a90e2;
+    -fx-border-radius: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #3a4049;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #2d333b;
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #2f363f;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #2d333b;
+}
+
+.table-view .table-row-cell:filled:selected,
+.table-view .table-row-cell:focused:selected {
+    -fx-background-color: #4a90e2;
+    -fx-text-fill: white;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 8 10;
+}
+
+.table-column {
+    -fx-alignment: CENTER-LEFT;
+}

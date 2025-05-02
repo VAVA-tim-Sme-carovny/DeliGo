@@ -5,14 +5,18 @@
 <?import javafx.geometry.Insets?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.deligo.Frontend.Controllers.Employee.Admin.EditFoodMenuController">
+            fx:controller="com.deligo.Frontend.Controllers.Employee.Admin.EditFoodMenuController"
+       >
+
+
+
 
     <children>
         <SplitPane dividerPositions="0.3" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" 
-                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" translateY="30">
             <items>
                 <!-- Left side - Categories -->
-                <VBox spacing="10">
+                <VBox spacing="10" fx:id="UpperVBox">
                     <padding>
                         <Insets top="10" right="10" bottom="10" left="10"/>
                     </padding>
@@ -54,7 +58,7 @@
                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
                    style="-fx-background-color: rgba(0, 0, 0, 0.5);">
             <VBox fx:id="itemDialog" spacing="10" maxWidth="400" maxHeight="500" 
-                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5;">
+                  style=" -fx-padding: 20; -fx-background-radius: 5;">
                 <Label fx:id="dialogTitle" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
                 <GridPane hgap="10" vgap="10">
                     <columnConstraints>

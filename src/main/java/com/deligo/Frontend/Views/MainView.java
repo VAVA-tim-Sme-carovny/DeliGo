@@ -82,11 +82,13 @@ public class MainView {
             rootLayout = (GridPane) root;
 
             // ✅ Môžeme volať metódy na controlleri
-            controller.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
-            controller.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+            controller.clearAll();
+            controller.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.controllerPanel);
+            controller.loadView("/Views/Controllers/Employee/AdminMenuController.fxml", Views.leftPanel);
+            //controller.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
 
             // Nastav fixnú veľkosť okna
-            Scene scene = new Scene(rootLayout, 1920, 1080);
+            Scene scene = new Scene(rootLayout, 1000, 800);
             primaryStage.setScene(scene);
             primaryStage.setTitle("DeliGo - Frontend");
             primaryStage.setResizable(true); // Zakáže zmenu veľkosti okna

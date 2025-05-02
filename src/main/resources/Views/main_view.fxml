@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.layout.*?>
 
 <GridPane layoutX="-1.0" layoutY="-1.0" minHeight="600.0" minWidth="800.0"
-          xmlns="http://javafx.com/javafx/21"
-          xmlns:fx="http://javafx.com/fxml/1">
+          xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints hgrow="ALWAYS" />
         <ColumnConstraints hgrow="ALWAYS" />
-        <ColumnConstraints hgrow="ALWAYS"/>
+        <ColumnConstraints hgrow="ALWAYS" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints  vgrow="ALWAYS" />
-        <RowConstraints  vgrow="ALWAYS" />
-        <RowConstraints  vgrow="ALWAYS" />
+        <!-- Horný navbar: pevná výška -->
+        <RowConstraints prefHeight="60" vgrow="NEVER" />
+
+        <!-- Stred:  -->
+        <RowConstraints vgrow="ALWAYS" />
+
+        <!-- Spodný panel  -->
+        <RowConstraints prefHeight="50" vgrow="NEVER" />
     </rowConstraints>
+
     <children>
-        <AnchorPane fx:id="controllerPanel" GridPane.columnSpan="3" minWidth="600.0" prefWidth="-Infinity" />
-        <AnchorPane fx:id="leftPanel"  GridPane.rowIndex="1" prefWidth="-Infinity"/>
-        <AnchorPane fx:id="mainContent"  GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="-Infinity" />
-        <AnchorPane fx:id="rightPanel"  GridPane.columnIndex="2" GridPane.rowIndex="1" prefWidth="-Infinity"/>
-        <AnchorPane fx:id="bottomPanel"  GridPane.columnSpan="3" GridPane.rowIndex="2" minWidth="600.0" prefWidth="-Infinity"/>
+        <!-- Navbar -->
+        <AnchorPane fx:id="controllerPanel" prefHeight="60" GridPane.columnSpan="3" />
+
+        <!-- Ľavý panel -->
+        <AnchorPane fx:id="leftPanel" GridPane.rowIndex="1" />
+
+        <!-- Hlavný obsah -->
+        <AnchorPane fx:id="mainContent" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <!-- Pravý panel -->
+        <AnchorPane fx:id="rightPanel" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+        <!-- Spodný panel -->
+        <AnchorPane fx:id="bottomPanel" prefHeight="50" GridPane.columnSpan="3" GridPane.rowIndex="2" />
     </children>
 </GridPane>
+

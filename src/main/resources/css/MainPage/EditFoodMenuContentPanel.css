@@ -1,0 +1,122 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: white;
+}
+
+/* SplitPane divider */
+.split-pane-divider {
+    -fx-background-color: #4a90e2;
+}
+
+/* VBox/HBox spacing padding normalization */
+.vbox, .hbox {
+    -fx-background-color: transparent;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: white;
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: #2d2d2d;
+    -fx-control-inner-background: #2d2d2d;
+    -fx-text-fill: white;
+    -fx-border-color: #4a90e2;
+    -fx-border-radius: 5;
+}
+
+/* TableView styling */
+.table-view {
+    -fx-background-color: #2d333b;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-color: #4a90e2;
+    -fx-border-radius: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #3a4049;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #2d333b;
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #2f363f;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #2d333b;
+}
+
+.table-view .table-row-cell:filled:selected,
+.table-view .table-row-cell:focused:selected {
+    -fx-background-color: #4a90e2;
+    -fx-text-fill: white;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 8 10;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #3b4b5b;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+    -fx-padding: 6 14;
+}
+
+.button:hover {
+    -fx-background-color: #4a90e2;
+}
+
+.button:focused {
+    -fx-border-color: #4a90e2;
+    -fx-border-width: 1;
+}
+
+/* ComboBox */
+.combo-box, .combo-box-base {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: white;
+}
+
+/* Text fields & areas */
+.text-field, .text-area {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: white;
+    -fx-border-color: #4a90e2;
+    -fx-border-radius: 3;
+}
+
+/* Dialog container overlay */
+.stack-pane {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Dialog box */
+#itemDialog, #categoryDialog {
+    -fx-background-color: #2d2d2d;
+    -fx-border-color: #4a90e2;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-text-fill: white;
+}
+
+/* GridPane labels */
+.grid-pane .label {
+    -fx-text-fill: white;
+}
