@@ -65,6 +65,7 @@ com/deligo/RestApi/Utils/RequestUtils.class
 com/deligo/RestApi/RestAPIServer.class
 com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.class
 com/deligo/Frontend/Controllers/FeatureRegister/FeatureRegisterController.class
+com/deligo/Backend/FeatureUserLogin/FeatureUserLogin$UserIdResponse.class
 com/deligo/Backend/FeatureReview/FeatureReview$4.class
 com/deligo/DatabaseManager/example/Register.class
 com/deligo/Frontend/Controllers/FrontendController.class

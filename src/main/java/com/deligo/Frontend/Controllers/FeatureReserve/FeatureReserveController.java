@@ -107,7 +107,7 @@ public class FeatureReserveController implements InitializableWithParent {
                     }
 
                     // Get user ID from config
-                    String userId = configLoader.getConfigValue("user", "id", String.class);
+                    String userId = configLoader.getConfigValue("login", "user_id", String.class);
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
                             "User ID from config: " + userId);
 
@@ -116,14 +116,6 @@ public class FeatureReserveController implements InitializableWithParent {
                                 "User ID is null or empty");
                         mainPageController.showWarningPopup("%notloggedin", 500);
                         return;
-                    }
-
-                    // Try getting user ID from alternative location
-                    if (!userId.matches("\\d+")) {
-                        // Try alternative config path
-                        userId = configLoader.getConfigValue("login", "user_id", String.class);
-                        logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
-                                "Alternative User ID from config: " + userId);
                     }
 
                     // Validate that userId is a number
@@ -149,7 +141,7 @@ public class FeatureReserveController implements InitializableWithParent {
                     LocalDate toDate = table_toDate.getValue();
 
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
-                            "Reservation created for: " + name + " " + "with id:" + " " + userId);
+                            "Reservation created for: " + name + " " + surname + " with id:" + " " + userId);
                     FeatureTableReservation featureTableReservation = new FeatureTableReservation(this.configLoader,this.logger, mainPageController.getServer());
 
                     String DateFrom = fromDate.toString() + " " + fromTime.toString() + ":00";
@@ -161,11 +153,11 @@ public class FeatureReserveController implements InitializableWithParent {
 
                     featureTableReservation.createReservation(json);
 
-                    String response = mainPageController.getServer().sendPostRequest("/be/reserve", json);
+                    String reservationResponse = mainPageController.getServer().sendPostRequest("/be/reserve", json);
                     logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND,
-                            "Reservation response: " + response);
+                            "Reservation response: " + reservationResponse);
 
-                    if (response.contains("\"status\":200")) {
+                    if (reservationResponse.contains("\"status\":200")) {
                         logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND,
                                 "Reservation successful");
                         mainPageController.showWarningPopup("%reservationsucsess", 500);

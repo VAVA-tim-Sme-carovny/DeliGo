@@ -9,6 +9,7 @@ import com.deligo.Model.BasicModels.LogType;
 import com.deligo.ConfigLoader.ConfigLoader;
 import com.deligo.Model.Response;
 import com.deligo.Model.TableReservation;
+import com.deligo.Model.TableStructure;
 import com.deligo.RestApi.RestAPIServer;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.Gson;
@@ -22,16 +23,17 @@ import java.util.List;
 import java.util.Optional;
 import java.lang.reflect.Type;
 import java.util.stream.Collectors;
-import com.deligo.Model.TableStructure;
 
 public class FeatureTableReservation extends BaseFeature {
     private final GenericDAO<TableReservation> tableReservationDAO;
+    private final GenericDAO<TableStructure> tableStructureDAO;
     private final Gson gson;
 
     public FeatureTableReservation(ConfigLoader globalConfig, LoggingAdapter logger, RestAPIServer restApiServer) {
         super(globalConfig, logger, restApiServer);
         this.gson = new Gson();
         this.tableReservationDAO = new GenericDAO<>(TableReservation.class, "reservations");
+        this.tableStructureDAO = new GenericDAO<>(TableStructure.class, "tables");
         logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.BECKEND, 
                 TableReservationMessages.PROCESS_NAME.getMessage(this.getLanguage()));
     }
@@ -43,12 +45,28 @@ public class FeatureTableReservation extends BaseFeature {
 
             int user_Id = ((Number) requestData.get("userId")).intValue();
             int tableId = ((Number) requestData.get("tableId")).intValue();
+
+            // Validate that the table exists
+            Optional<TableStructure> tableOpt = tableStructureDAO.getById(tableId);
+            if (tableOpt.isEmpty()) {
+                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                        TableReservationMessages.TABLE_NOT_FOUND.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(TableReservationMessages.TABLE_NOT_FOUND.getMessage(this.getLanguage()), 400));
+            }
+
+            // Validate that the table is active
+            TableStructure table = tableOpt.get();
+            if (!table.isActive()) {
+                logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND,
+                        TableReservationMessages.TABLE_NOT_ACTIVE.getMessage(this.getLanguage()));
+                return gson.toJson(new Response(TableReservationMessages.TABLE_NOT_ACTIVE.getMessage(this.getLanguage()), 400));
+            }
+
             LocalDateTime reservedFrom = LocalDateTime.parse(requestData.get("reservedFrom").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             LocalDateTime reservedTo = LocalDateTime.parse(requestData.get("reservedTo").toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
             Timestamp reservedFromTimestamp = Timestamp.valueOf(reservedFrom);
             Timestamp reservedToTimestamp = Timestamp.valueOf(reservedTo);
-
 
             // Check if the table is available for the given time slot
             if (reservedFrom.isBefore(LocalDateTime.now())) {

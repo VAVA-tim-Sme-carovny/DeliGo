@@ -15,8 +15,9 @@ public enum TableReservationMessages {
     INVALID_RESERVATION_DATE("Neplatný dátum rezervácie", "Invalid reservation date"),
     INVALID_RESERVATION_DETAILS("Neplatné detaily rezervácie", "Invalid reservation details"),
     INVALID_REQUEST_FORMAT("Neplatný formát požiadavky", "Invalid request format"),
-    INVALID_RESERVATION_ID("Neplatné ID rezervácie", "Invalid reservation ID");
-
+    INVALID_RESERVATION_ID("Neplatné ID rezervácie", "Invalid reservation ID"),
+    TABLE_NOT_FOUND("Stôl s týmto ID neexistuje", "Table with this ID does not exist"),
+    TABLE_NOT_ACTIVE("Tento stôl nie je momentálne aktívny", "This table is currently not active");
 
     private final String skMessage;
     private final String enMessage;

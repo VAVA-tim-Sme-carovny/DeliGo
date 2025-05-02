@@ -7125,3 +7125,150 @@ org.postgresql.util.PSQLException: ERROR: column "name" does not exist
 2025-05-02 10:00:07 INFO  GlobalLogger:50 - 2025-05-02 10:00:07 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
 2025-05-02 10:00:07 INFO  GlobalLogger:50 - 2025-05-02 10:00:07 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
 2025-05-02 10:00:13 ERROR GlobalLogger:44 - 2025-05-02 10:00:13 [ERROR] [HIGH] [FRONTEND] : User ID is null or empty
+2025-05-02 10:03:29 INFO  GlobalLogger:50 - 2025-05-02 10:03:29 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 10:03:29 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 10:03:29 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 10:03:29 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 10:03:29 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 10:03:29 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 10:03:29 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 10:03:29 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 10:03:29 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 10:03:29 INFO  GlobalLogger:50 - 2025-05-02 10:03:29 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 10:03:29 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 10:03:29 INFO  GlobalLogger:50 - 2025-05-02 10:03:29 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 10:03:29 INFO  GlobalLogger:50 - 2025-05-02 10:03:29 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 10:03:29 INFO  GlobalLogger:50 - 2025-05-02 10:03:29 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 10:03:29 INFO  GlobalLogger:50 - 2025-05-02 10:03:29 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 10:03:29 INFO  GlobalLogger:50 - 2025-05-02 10:03:29 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 10:03:29 INFO  GlobalLogger:50 - 2025-05-02 10:03:29 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 10:03:29 INFO  GlobalLogger:50 - 2025-05-02 10:03:29 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 10:03:30 INFO  GlobalLogger:50 - 2025-05-02 10:03:30 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 10:03:35 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 10:03:35 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 10:03:35 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 10:03:35 INFO  GlobalLogger:50 - 2025-05-02 10:03:35 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 10:03:35 INFO  GlobalLogger:50 - 2025-05-02 10:03:35 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 10:04:24 ERROR GlobalLogger:44 - 2025-05-02 10:04:24 [ERROR] [HIGH] [FRONTEND] : Failed to get user ID
+2025-05-02 10:05:49 INFO  GlobalLogger:50 - 2025-05-02 10:05:49 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 10:05:49 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 10:05:49 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 10:05:49 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 10:05:49 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 10:05:49 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 10:05:49 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 10:05:49 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 10:05:49 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 10:05:49 INFO  GlobalLogger:50 - 2025-05-02 10:05:49 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 10:05:50 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 10:05:50 INFO  GlobalLogger:50 - 2025-05-02 10:05:50 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 10:05:50 INFO  GlobalLogger:50 - 2025-05-02 10:05:50 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 10:05:50 INFO  GlobalLogger:50 - 2025-05-02 10:05:50 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 10:05:50 INFO  GlobalLogger:50 - 2025-05-02 10:05:50 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 10:05:50 INFO  GlobalLogger:50 - 2025-05-02 10:05:50 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 10:05:50 INFO  GlobalLogger:50 - 2025-05-02 10:05:50 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 10:05:50 INFO  GlobalLogger:50 - 2025-05-02 10:05:50 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 10:05:51 INFO  GlobalLogger:50 - 2025-05-02 10:05:51 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 10:05:56 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 10:05:56 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 10:05:56 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 10:05:56 INFO  GlobalLogger:50 - 2025-05-02 10:05:56 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 10:05:56 INFO  GlobalLogger:50 - 2025-05-02 10:05:56 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 10:06:02 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 10:06:02 INFO  Class:59 - Pripravujeme SQL INSERT pre entitu: reservations. SQL príkaz: INSERT INTO reservations (user_id, table_id, reserved_from, reserved_to, created_at) VALUES (?, ?, ?, ?, ?) RETURNING id
+2025-05-02 10:06:02 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 10:06:02 ERROR Class:73 - Chyba pri vkladaní do tabuľky: reservations. SQL: INSERT INTO reservations (user_id, table_id, reserved_from, reserved_to, created_at) VALUES (?, ?, ?, ?, ?) RETURNING id. Chyba: ERROR: insert or update on table "reservations" violates foreign key constraint "reservations_table_id_fkey"
+  Detail: Key (table_id)=(2244) is not present in table "tables".
+2025-05-02 10:06:02 ERROR DatabaseException:19 - Chyba pri vkladaní entity
+org.postgresql.util.PSQLException: ERROR: insert or update on table "reservations" violates foreign key constraint "reservations_table_id_fkey"
+  Detail: Key (table_id)=(2244) is not present in table "tables".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194) ~[postgresql-42.7.2.jar:42.7.2]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137) ~[postgresql-42.7.2.jar:42.7.2]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-6.3.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-6.3.0.jar:?]
+	at com.deligo.DatabaseManager.dao.GenericDAO.insert(GenericDAO.java:65) ~[classes/:?]
+	at com.deligo.Backend.FeatureTableReservation.FeatureTableReservation.createReservation(FeatureTableReservation.java:66) ~[classes/:?]
+	at com.deligo.Frontend.Controllers.FeatureReserve.FeatureReserveController.lambda$initializeWithParent$2(FeatureReserveController.java:154) ~[classes/:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49) ~[javafx-base-21-mac-aarch64.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-21-mac-aarch64.jar:?]
+	at javafx.scene.Node.fireEvent(Node.java:8875) ~[javafx-graphics-21-mac-aarch64.jar:?]
+	at javafx.scene.control.Button.fire(Button.java:203) ~[javafx-controls-21-mac-aarch64.jar:?]
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207) ~[javafx-controls-21-mac-aarch64.jar:?]
+	at com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274) ~[javafx-controls-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74) ~[javafx-base-21-mac-aarch64.jar:?]
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54) ~[javafx-base-21-mac-aarch64.jar:?]
+	at javafx.event.Event.fireEvent(Event.java:198) ~[javafx-base-21-mac-aarch64.jar:?]
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3984) ~[javafx-graphics-21-mac-aarch64.jar:?]
+	at javafx.scene.Scene.processMouseEvent(Scene.java:1890) ~[javafx-graphics-21-mac-aarch64.jar:?]
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2708) ~[javafx-graphics-21-mac-aarch64.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:411) ~[javafx-graphics-21-mac-aarch64.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:301) ~[javafx-graphics-21-mac-aarch64.jar:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:450) ~[javafx-graphics-21-mac-aarch64.jar:?]
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424) [javafx-graphics-21-mac-aarch64.jar:?]
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:449) [javafx-graphics-21-mac-aarch64.jar:?]
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:551) [javafx-graphics-21-mac-aarch64.jar:?]
+	at com.sun.glass.ui.View.notifyMouse(View.java:937) [javafx-graphics-21-mac-aarch64.jar:?]
+	at com.sun.glass.ui.mac.MacView.notifyMouse(MacView.java:127) [javafx-graphics-21-mac-aarch64.jar:?]
+2025-05-02 10:06:02 ERROR GlobalLogger:44 - 2025-05-02 10:06:02 [ERROR] [HIGH] [BECKEND] : Chyba pri vytváraní rezervácie
+2025-05-02 10:06:02 ERROR GlobalLogger:44 - 2025-05-02 10:06:02 [ERROR] [HIGH] [FRONTEND] : Reservation failed!
+2025-05-02 10:08:23 INFO  GlobalLogger:50 - 2025-05-02 10:08:23 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 10:08:23 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 10:08:23 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 10:08:23 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 10:08:23 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 10:08:23 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 10:08:23 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 10:08:23 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 10:08:23 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 10:08:23 INFO  GlobalLogger:50 - 2025-05-02 10:08:23 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 10:08:23 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 10:08:23 INFO  GlobalLogger:50 - 2025-05-02 10:08:23 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 10:08:23 INFO  GlobalLogger:50 - 2025-05-02 10:08:23 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 10:08:23 INFO  GlobalLogger:50 - 2025-05-02 10:08:23 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 10:08:23 INFO  GlobalLogger:50 - 2025-05-02 10:08:23 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 10:08:23 INFO  GlobalLogger:50 - 2025-05-02 10:08:23 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 10:08:23 INFO  GlobalLogger:50 - 2025-05-02 10:08:23 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 10:08:23 INFO  GlobalLogger:50 - 2025-05-02 10:08:23 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 10:08:24 INFO  GlobalLogger:50 - 2025-05-02 10:08:24 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 10:08:27 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 10:08:27 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 10:08:28 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 10:08:28 INFO  GlobalLogger:50 - 2025-05-02 10:08:28 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 10:08:28 INFO  GlobalLogger:50 - 2025-05-02 10:08:28 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 10:08:33 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 10:08:33 ERROR GlobalLogger:44 - 2025-05-02 10:08:33 [ERROR] [HIGH] [BECKEND] : Stôl s týmto ID neexistuje
+2025-05-02 10:08:33 ERROR GlobalLogger:44 - 2025-05-02 10:08:33 [ERROR] [HIGH] [FRONTEND] : Reservation failed!
+2025-05-02 10:08:57 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 10:08:57 ERROR GlobalLogger:44 - 2025-05-02 10:08:57 [ERROR] [HIGH] [BECKEND] : Stôl s týmto ID neexistuje
+2025-05-02 10:08:57 ERROR GlobalLogger:44 - 2025-05-02 10:08:57 [ERROR] [HIGH] [FRONTEND] : Reservation failed!
+2025-05-02 10:09:06 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 10:09:06 ERROR GlobalLogger:44 - 2025-05-02 10:09:06 [ERROR] [HIGH] [BECKEND] : Stôl s týmto ID neexistuje
+2025-05-02 10:09:06 ERROR GlobalLogger:44 - 2025-05-02 10:09:06 [ERROR] [HIGH] [FRONTEND] : Reservation failed!

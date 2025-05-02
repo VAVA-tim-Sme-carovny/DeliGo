@@ -8,3 +8,4 @@ login:
   - admin
   status: true
   role: customer
+  user_id: '48'

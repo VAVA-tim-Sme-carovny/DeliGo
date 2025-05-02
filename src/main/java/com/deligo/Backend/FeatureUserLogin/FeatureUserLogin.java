@@ -113,10 +113,53 @@ public class FeatureUserLogin extends BaseFeature {
         globalConfig.updateConfigValue("login", "user", username);
         globalConfig.updateConfigValue("login", "status", true);
         globalConfig.updateConfigValue("login", "role", role);
+        globalConfig.updateConfigValue("login", "user_id", String.valueOf(user.getId()));
 
         String msg = UserLoginMessages.SUCCESS.getMessage(this.getLanguage(), username);
         logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.BECKEND, msg);
         return gson.toJson(new Response(msg, 200));
+    }
+
+    /**
+     * Get user ID by username
+     *
+     * @param jsonData JSON string containing username
+     * @return JSON response with user ID
+     */
+    public String getUserId(String jsonData) {
+        try {
+            LoginData userData = gson.fromJson(jsonData, LoginData.class);
+            String username = userData.getUsername();
+
+            Optional<User> userOpt = userDAO.findOneByField("username", username);
+            if (userOpt.isEmpty()) {
+                String msg = UserLoginMessages.USER_NOT_FOUND.getMessage(this.getLanguage(), username);
+                logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.BECKEND, msg);
+                return gson.toJson(new Response(msg, 500));
+            }
+
+            User user = userOpt.get();
+            return gson.toJson(new UserIdResponse(user.getId(), "User ID retrieved successfully", 200));
+        } catch (JsonSyntaxException e) {
+            String msg = UserLoginMessages.INVALID_JSON.getMessage(this.getLanguage(), e.getMessage());
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.BECKEND, msg);
+            return gson.toJson(new Response(msg, 500));
+        }
+    }
+
+    /**
+     * Response class for user ID endpoint
+     */
+    private static class UserIdResponse {
+        private final int id;
+        private final String message;
+        private final int status;
+
+        public UserIdResponse(int id, String message, int status) {
+            this.id = id;
+            this.message = message;
+            this.status = status;
+        }
     }
 
     /**
