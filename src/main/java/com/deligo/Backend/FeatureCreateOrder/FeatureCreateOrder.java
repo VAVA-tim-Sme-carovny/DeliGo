@@ -11,6 +11,9 @@ import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class FeatureCreateOrder extends BaseFeature {
@@ -64,6 +67,7 @@ public class FeatureCreateOrder extends BaseFeature {
                 }else{
                     int userId = userOpt.get().getId();
                     newOrder.setUser_id(userId);
+                    newOrder.setTable_id(null);
                 }
             }else if(!tableId.isEmpty() || !tableId.equals("null")){
                 Optional<Tables> currentTable = tableDAO.findOneByField("name", tableId);
@@ -87,8 +91,16 @@ public class FeatureCreateOrder extends BaseFeature {
 
              // defaultne nula ak nie je
             newOrder.setStatus(Status.pending.toString());
-            newOrder.setCreated_at(String.valueOf(new Date())); // môžeš nahradiť LocalDateTime atď.
-            newOrder.setOrder_contain(messageArray.toString()); // celý JSON ako String
+            LocalDateTime now = LocalDateTime.now();
+
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+            Timestamp timestamp = Timestamp.valueOf(now);
+
+            newOrder.setCreated_at(timestamp);
+
+            newOrder.setOrder_contain(messageArray.toString());
 
             orderDAO.insert(newOrder);
 

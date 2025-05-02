@@ -1,12 +1,15 @@
 package com.deligo.Model;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 public class Order {
 
     private int id;
-    private int user_id;
-    private int table_id;
+    private Integer user_id;
+    private Integer table_id;
     private String status;
-    private String created_at;
+    private Timestamp created_at;
     private String order_contain;
 
     public Order() {}
@@ -23,11 +26,11 @@ public class Order {
         this.user_id = user_id;
     }
 
-    public int getTable_id() {
+    public Integer getTable_id() {
         return table_id;
     }
 
-    public void setTable_id(int table_id) {
+    public void setTable_id(Integer table_id) {
         this.table_id = table_id;
     }
 
@@ -39,11 +42,11 @@ public class Order {
         this.status = status;
     }
 
-    public String getCreated_at() {
+    public Timestamp getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(String created_at) {
+    public void setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
     }
 

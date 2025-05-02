@@ -10,6 +10,8 @@ public class MenuItemInsert {
         this.price = price;
         this.is_available = is_available;
     }
+    public MenuItemInsert() {
+    }
 
     public int getCategory_id() {
         return category_id;
