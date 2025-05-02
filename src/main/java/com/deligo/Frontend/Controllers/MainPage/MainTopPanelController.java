@@ -56,6 +56,8 @@ public class MainTopPanelController implements InitializableWithParent {
             mainController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);
         });
         if (openInfoBtn != null) openInfoBtn.setOnAction(e -> {
+            String data = "[{\"itemId\": 1,\"quantity\": 2},{\"itemId\": 5,\"quantity\": 1},{\"itemId\": 10,\"quantity\": 3},{\"itemId\": 15,\"quantity\": 2}]";
+//            mainController.getServer().sendPostRequest("/be/create-order",data );
             mainController.clearAll();
             mainController.loadView("/Views/Content/MainPanel/InfoContentPanel.fxml", Views.mainContent);
             mainController.loadView("/Views/Controllers/ReturnHomeController.fxml", Views.controllerPanel);

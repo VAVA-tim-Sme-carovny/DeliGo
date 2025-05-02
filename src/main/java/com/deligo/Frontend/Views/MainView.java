@@ -79,10 +79,10 @@ public class MainView {
             rootLayout = (GridPane) root;
 
             // ✅ Môžeme volať metódy na controlleri
-//            controller.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
-//            controller.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
-            controller.clearAll();
-            controller.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.controllerPanel);
+            controller.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
+            controller.loadView("/Views/Content/MainPanel/MainContentPanel.fxml", Views.mainContent);
+//            controller.clearAll();
+//            controller.loadView("/Views/Controllers/EmployeeTopPanel.fxml", Views.controllerPanel);
 
             // Nastav fixnú veľkosť okna
             Scene scene = new Scene(rootLayout);

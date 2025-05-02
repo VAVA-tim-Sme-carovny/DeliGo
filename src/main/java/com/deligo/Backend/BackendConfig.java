@@ -22,6 +22,8 @@ public class BackendConfig {
             // FeatureOrgDetails
             case "/update-info":
                 backend.getFeatureOrgDetails().updateOrgDetails(data);
+            case "/":
+                backend.getFeatureCreateOrder().createOrder(data);
             // FeatureStatistics
             case "/stats/daily":
                 return new Response(backend.getFeatureStatistics().getDailyStats(data), 200);

@@ -1,109 +1,89 @@
 package com.deligo.Frontend.Controllers.OrderPage;
 
+import com.deligo.DatabaseManager.dao.GenericDAO;
 import com.deligo.Frontend.Controllers.InitializableWithParent;
 import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Logging.Adapter.LoggingAdapter;
-import com.deligo.Model.BasicModels;
-import com.deligo.Model.Food;
+import com.deligo.Model.MenuItemInsert;
+import com.google.gson.Gson;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.layout.FlowPane;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import com.deligo.Model.BasicModels.*;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class OrderPanelController implements InitializableWithParent {
 
-    @FXML private FlowPane contentArea;
+public class OrderPanelController implements Initializable, InitializableWithParent {
 
-    @FXML private Button btnCat1;
-    @FXML private Button btnCat2;
-    @FXML private Button btnCat3;
-    @FXML private Button btnCat4;
-    @FXML private Button btnCat5;
+    @FXML private TableView<MenuItemInsert> menuTable;
+    @FXML private TableColumn<MenuItemInsert, Integer> idColumn;
+    @FXML private TableColumn<MenuItemInsert, Integer> categoryColumn;
+    @FXML private TableColumn<MenuItemInsert, Double> priceColumn;
+    @FXML private TableColumn<MenuItemInsert, Boolean> availabilityColumn;
+    @FXML private TableColumn<MenuItemInsert, Void> actionColumn;
 
     private LoggingAdapter logger;
     private MainPageController mainPageController;
 
-    private final List<Food> foodList = List.of(
-            new Food("Burger", 4.50, "Kat. 1", "/Views/FoodImages/bbbb.jpg"),
-            new Food("Cheeseburger", 5.00, "Kat. 1", "/Views/FoodImages/bbbb.jpg"),
-            new Food("Big Mac", 6.00, "Kat. 1", "/Views/FoodImages/bbbb.jpg"),
-
-            new Food("Fries", 2.00, "Kat. 2", "/Views/FoodImages/bbbb.jpg"),
-            new Food("Curly Fries", 2.50, "Kat. 2", "/Views/FoodImages/bbbb.jpg"),
-
-            new Food("Coca-Cola", 1.80, "Kat. 3", "/Views/FoodImages/bbbb.jpg"),
-            new Food("Fanta", 1.80, "Kat. 3", "/Views/FoodImages/bbbb.jpg"),
-
-            new Food("Zmrzlina", 2.20, "Kat. 4", "/Views/FoodImages/bbbb.jpg"),
-            new Food("Shake", 3.50, "Kat. 5", "/Views/FoodImages/bbbb.jpg")
-    );
+//    private GenericDAO<MenuItemInsert> menuDAO = new GenericDAO<>(MenuItemInsert.class, "menu_items");
+    private final Gson gson = new Gson();
 
     public OrderPanelController(LoggingAdapter logger,  MainPageController mainPageController) {
         this.logger = logger;
         this.mainPageController = mainPageController;
+//        this.menuDAO = new GenericDAO<>(MenuItemInsert.class, "menu_items");
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category_id"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        availabilityColumn.setCellValueFactory(new PropertyValueFactory<>("is_available"));
+        addButtonToTable();
     }
 
     @Override
     public void initializeWithParent(Object parentController) {
         this.mainPageController = (MainPageController) parentController;
 
-        if (btnCat1 != null) {
-            btnCat1.setOnAction(e -> {
-                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Category opened: Kat. 1");
-                showCategory("Kat. 1");
-            });
-        }
-        if (btnCat2 != null) {
-            btnCat2.setOnAction(e -> {
-                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Category opened: Kat. 2");
-                showCategory("Kat. 2");
-            });
-        }
-        if (btnCat3 != null) {
-            btnCat3.setOnAction(e -> {
-                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Category opened: Kat. 3");
-                showCategory("Kat. 3");
-            });
-        }
-        if (btnCat4 != null) {
-            btnCat4.setOnAction(e -> {
-                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Category opened: Kat. 4");
-                showCategory("Kat. 4");
-            });
-        }
-        if (btnCat5 != null) {
-            btnCat5.setOnAction(e -> {
-                this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Category opened: Kat. 5");
-                showCategory("Kat. 5");
-            });
-        }
+//        mainPageController.getServer().sendPostRequest("/be/create-order" , )
 
-        showCategory("Kat. 1"); // predvolene zobrazenie
+//        loadItems(); // načítaj až keď je všetko pripravené
     }
 
-    private void showCategory(String category) {
-        contentArea.getChildren().clear();
-        try {
-            for (Food food : foodList) {
-                if (food.category.equals(category)) {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Content/OrderPanel/OrderItem.fxml"));
-                    Node foodNode = loader.load();
+//    private void loadItems() {
+//        try {
+//            List<MenuItemInsert> items = menuDAO.getAll();
+//            menuTable.setItems(FXCollections.observableArrayList(items));
+//        } catch (Exception e) {
+//            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, "Nepodarilo sa načítať menu položky: " + e.getMessage());
+//            e.printStackTrace();
+//        }
+//    }
 
-                    ItemController controller = loader.getController();
-                    controller.setFoodData(food.name, food.price, food.imagePath, () -> {
-                        // Dummy callback zatiaľ
-                        System.out.println("🛒 Pridané do košíka: " + food.name);
-                        this.logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.LOW, BasicModels.LogSource.FRONTEND, "Food added to cart: " + food.name);
-                    });
+    private void addButtonToTable() {
+        actionColumn.setCellFactory(param -> new TableCell<>() {
+            private final Button addButton = new Button("Pridať");
 
-                    contentArea.getChildren().add(foodNode);
-                }
+            {
+                addButton.setOnAction(event -> {
+                    MenuItemInsert item = getTableView().getItems().get(getIndex());
+                    System.out.println("Pridaný item: " + item.getCategory_id());
+                });
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                setGraphic(empty ? null : addButton);
+            }
+        });
     }
 }
+

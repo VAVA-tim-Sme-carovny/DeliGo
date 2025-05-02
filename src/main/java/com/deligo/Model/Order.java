@@ -1,65 +1,34 @@
 package com.deligo.Model;
 
-import java.util.ArrayList;
-import java.sql.Timestamp;
-import java.util.List;
-import com.deligo.Model.BasicModels.Roles;
-
 public class Order {
+
     private int id;
-    private Integer userId;
-    private int tableId;
-    private String deviceId;
+    private int user_id;
+    private int table_id;
     private String status;
-    private String note;
-    private Timestamp createdAt;
-    private Timestamp updatedAt;
-    private List<OrderItem> items;
+    private String created_at;
+    private String order_contain;
 
-    public Order() {
-    }
+    public Order() {}
 
-    public Order(int userId, int tableId, String deviceId, String status, String note) {
-        this.userId = userId;
-        this.tableId = tableId;
-        this.deviceId = deviceId;
-        this.status = status;
-        this.note = note;
-        this.createdAt = new Timestamp(System.currentTimeMillis());
-        this.updatedAt = new Timestamp(System.currentTimeMillis());
-    }
-
-    // Getters and Setters
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public int getTable_id() {
+        return table_id;
     }
 
-    public int getTableId() {
-        return tableId;
-    }
-
-    public void setTableId(int tableId) {
-        this.tableId = tableId;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
+    public void setTable_id(int table_id) {
+        this.table_id = table_id;
     }
 
     public String getStatus() {
@@ -68,38 +37,23 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status;
-        this.updatedAt = new Timestamp(System.currentTimeMillis());
     }
 
-    public String getNote() {
-        return note;
+    public String getCreated_at() {
+        return created_at;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
+
+    public String getOrder_contain() {
+        return order_contain;
     }
 
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
+    public void setOrder_contain(String order_contain) {
+        this.order_contain = order_contain;
     }
 
-    public Timestamp getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Timestamp updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public List<OrderItem> getItems() {
-        return items;
-    }
-
-    public void setItems(List<OrderItem> items) {
-        this.items = items;
-    }
 }

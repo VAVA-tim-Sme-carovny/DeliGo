@@ -5,6 +5,7 @@ import com.deligo.Backend.FeatureMenuManagement.FeatureMenuManagement;
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
 import com.deligo.Backend.FeatureStatistics.FeatureStatistics;
 import com.deligo.Backend.FeatureUserLogin.FeatureUserLogin;
+import com.deligo.Backend.FeatureCreateOrder.FeatureCreateOrder;
 import com.deligo.Backend.FeatureUserManagement.FeatureUserManagement;
 import com.deligo.Backend.FeatureUserRegistration.FeatureUserRegister;
 import com.deligo.ConfigLoader.ConfigLoader;
@@ -34,6 +35,8 @@ public class Backend {
     private final FeatureMenuManagement featureMenuManagement;
     private final FeatureUserManagement featureUserManagement;
 
+    //Order
+    private final FeatureCreateOrder featureCreateOrder;
 
     /**
      * Creates Backend Instance for application
@@ -58,6 +61,7 @@ public class Backend {
 //      Add feature.
         this.featureUserRegister = new FeatureUserRegister(config, logger, apiServer, new GenericDAO<>(User.class, "users"));
         this.featureUserLogin = new FeatureUserLogin(config, logger, apiServer);
+        this.featureCreateOrder = new FeatureCreateOrder(config, logger, apiServer);
 
         logger.log(LogType.SUCCESS, LogPriority.HIGH, LogSource.BECKEND, "Backend initialized correctly.");
 
@@ -94,5 +98,8 @@ public class Backend {
 
     public FeatureUserLogin getFeatureUserLogin() {
         return featureUserLogin;
+    }
+    public FeatureCreateOrder getFeatureCreateOrder() {
+        return featureCreateOrder;
     }
 }
