@@ -1,80 +1,103 @@
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\OrderPage\OrderPanelController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\RegisterData.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\BackendConfig.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager\db\DatabaseConnector.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager\example\Users.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\Response.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\Backend.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureUserRegistration\UserRegisterMessages.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureTableStructure\FeatureTableStructure.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\RestApi\Handlers\FrontendHandler.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager\exceptions\DatabaseException.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\OrderPage\OrderCartController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\Order.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\RestApi\CentralServer\ConsulRegistration.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\User.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\Views.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\RestApi\RestAPIServer.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\loginAndRegisterPopUpController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureUserManagement\UserManagementMessages.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\MainPage\MainPageController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\RestApi\Handlers\BackendHandler.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Views\MainView.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\Employee\EmployeeTopPanelController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\OrderPage\ItemController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\RestApi\Handlers\HealthHandler.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Frontend.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\MainApp.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager\example\Register.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\TableStructure.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\LoginData.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureValidateTestConnection\FeatureValidateTestConnection.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager\dao\GenericDAO.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureOrganizationDetails\FeatureOrgDetails.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureStatistics\StatisticsMessages.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Logging\Gui\LoggingWindow.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\LoginResponse.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\MenuItem.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureUserLogin\UserLoginMessages.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\Statistic.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\Employee\OrderDetailController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\InitializableWithParent.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\BasicModels.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\RestApi\Utils\RequestUtils.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\Employee\OrdersLeftController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\MainPage\MainTopPanelController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\OrgDetails.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager\example\Login.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Logging\Config\LoggerConfig.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureMenuManagement\MenuManagementMessages.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\ConfigLoader\ConfigLoader.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\FeatureRegister\FeatureRegisterController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Helpers\CustomControllerFactory.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Logging\LoggingManager.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\Employee\Admin\AdminMenuController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\Employee\Admin\EditEmployeesController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\MainPage\MainBottomPanelController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\OrderPage\CartItemController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureMenuManagement\FeatureMenuManagement.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureUserManagement\FeatureUserManagement.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\FrontendConfig.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\Role.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\infoPopUpController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\bookTablePopUpController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Logging\Adapter\LoggingAdapter.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureTableStructure\TableStructureMessages.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager\DatabaseManager.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager\PostgresTest.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureUserRegistration\FeatureUserRegister.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\DeviceLoginResponse.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\MainPage\MainPanelController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Model\Food.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\RestApi\Utils\NetworkUtils.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\DatabaseManager\utils\ConfigLoader.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureStatistics\FeatureStatistics.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\FeatureTestCommunication\FeatureTestCommunication.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureOrganizationDetails\OrgDetailsMessages.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\BaseFeature\BaseFeature.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Backend\FeatureUserLogin\FeatureUserLogin.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\FrontendController.java
-C:\Users\richa\Documents\DeliGo\src\main\java\com\deligo\Frontend\Controllers\FeatureLogin\FeatureLoginController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/OrderPage/OrderPanelController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/DatabaseManager/exceptions/DatabaseException.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/OrgDetails.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/Statistic.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureValidateTestConnection/FeatureValidateTestConnection.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/MenuItemTranslation.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/BaseFeature/BaseFeature.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/FeatureRegister/FeatureRegisterController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/Order.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/InitializableWithParent.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/AdminMenuController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureTableReservation/TableReservationMessages.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/FeatureReserve/FeatureReserveController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureUserManagement/UserManagementMessages.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/LoginResponse.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/Response.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureUserManagement/FeatureUserManagement.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/User.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureCreateOrder/FeatureCreateOrder.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/Status.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Logging/Adapter/LoggingAdapter.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPageController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/TableStructure.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/BasicModels.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/FeatureTestCommunication/FeatureTestCommunication.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureMenuManagement/FeatureMenuManagement.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/Category.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureStatistics/StatisticsMessages.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/Utils/NetworkUtils.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/OrderPage/ItemController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/OrderPage/OrderCartController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureEditTables/TableStructureMessages.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/TableReservation.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/BackendConfig.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/MenuItemInsert.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainBottomPanelController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/CentralServer/ConsulRegistration.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/Utils/NoSqlInjection.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/Role.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Logging/Gui/LoggingWindow.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/ConfigLoader/ConfigLoader.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainPanelController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Helpers/CustomControllerFactory.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureMenuManagement/MenuManagementMessages.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/Utils/JsonData.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/LoginData.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/Food.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureReview/ReviewMessages.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/Employee/OrderDetailController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/MenuItem.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/Handlers/FrontendHandler.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Logging/Config/LoggerConfig.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureOrganizationDetails/FeatureOrgDetails.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/MainPage/MainTopPanelController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureTableReservation/FeatureTableReservation.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/Handlers/BackendHandler.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/OrgDetailsViewController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/bookTablePopUpController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/EditTableController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/Utils/SqlInjectionValidator.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/DatabaseManager/dao/GenericDAO.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/EditOrgDetails.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureUserLogin/FeatureUserLogin.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/Views.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/EditEmployeesController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/DeviceLoginResponse.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/DatabaseManager/example/Register.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/DatabaseManager/DatabaseManager.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureUserRegistration/UserRegisterMessages.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/FrontendController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/FrontendConfig.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/DatabaseManager/db/DatabaseConnector.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/DatabaseManager/PostgresTest.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Frontend.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/Employee/Admin/EditFoodMenuController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/RestAPIServer.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/DatabaseManager/example/Login.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/FeatureLogin/FeatureLoginController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/Popups/StatusPopupController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureEditTables/FeatureEditTables.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureStatistics/FeatureStatistics.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Utils/UTF8Control.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/Utils/HealthHandler.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/RegisterData.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureReview/FeatureReview.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/Utils/RequestUtils.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Logging/LoggingManager.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/Employee/OrdersLeftController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/Review.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/Employee/EmployeeTopPanelController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/OrderPage/CartItemController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Controllers/loginAndRegisterPopUpController.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureUserRegistration/FeatureUserRegister.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/Tables.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/MainApp.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Frontend/Views/MainView.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/DatabaseManager/utils/ConfigLoader.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureUserLogin/UserLoginMessages.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/FeatureOrganizationDetails/OrgDetailsMessages.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Backend/Backend.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/Model/OrderItem.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/RestApi/Handlers/HealthHandler.java
+/Users/benjaminptacek/Library/CloudStorage/OneDrive-SlovenskátechnickáuniverzitavBratislave/Škola/3. Ročník/2. Semester/DeliGo/src/main/java/com/deligo/DatabaseManager/example/Users.java

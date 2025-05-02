@@ -12,9 +12,6 @@ import java.util.Map;
 
 public class MainBottomPanelController implements InitializableWithParent {
 
-    @FXML
-    private Button callStaffBtn;
-
     private MainPageController mainController;
     private LoggingAdapter logger;
 
@@ -26,16 +23,6 @@ public class MainBottomPanelController implements InitializableWithParent {
     public void initializeWithParent(Object parentController) {
         if (parentController instanceof MainPageController) {
             this.mainController = (MainPageController) parentController;
-        }
-
-        if (callStaffBtn != null) {
-            callStaffBtn.setOnAction(e -> {
-                String user = getUserFromConfig();
-
-                logger.log(BasicModels.LogType.INFO, BasicModels.LogPriority.MIDDLE, BasicModels.LogSource.FRONTEND,
-                        "Called staff from table: " + user);
-                System.out.println("✅ Klikol si na testButton! Používateľ: " + user);
-            });
         }
     }
 

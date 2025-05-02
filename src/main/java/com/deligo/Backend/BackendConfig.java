@@ -23,43 +23,6 @@ public class BackendConfig {
                 backend.getFeatureOrgDetails().updateOrgDetails(data);
             case "/":
                 backend.getFeatureCreateOrder().createOrder(data);
-
-
-                // Nove end pointy pre DB
-
-            // FeatureOrgDetails - Nove
-            case "/org-get":
-                return new Response(backend.getFeatureOrgDetails().getOrgDetails(data), 200);
-            case "/org-update":
-                return new Response(backend.getFeatureUserManagement().updateOrgDetails(data), 200);
-            case "/org-open":
-                return new Response(backend.getFeatureOrgDetails().getOpeningHours(data), 200);
-            // FeatureOrderManagement paths
-            case "/orders/create":
-                return new Response(backend.getFeatureOrderManagement().createOrder(data), 200);
-            case "/orders/update":
-                return new Response(backend.getFeatureOrderManagement().updateOrder(data), 200);
-            case "/orders/update-status":
-                return new Response(backend.getFeatureOrderManagement().updateOrderStatus(data), 200);
-            case "/orders/get":
-                return new Response(backend.getFeatureOrderManagement().getOrderById(data), 200);
-            case "/orders/table":
-                return new Response(backend.getFeatureOrderManagement().getOrdersByTable(data), 200);
-            case "/orders/pending":
-                return new Response(backend.getFeatureOrderManagement().getPendingOrders(data), 200);
-            case "/orders/delivered":
-                return new Response(backend.getFeatureOrderManagement().markOrderAsDelivered(data), 200);
-            case "/orders/cancel":
-                return new Response(backend.getFeatureOrderManagement().cancelOrder(data), 200);
-
-
-            // Pravdepodobne prec
-            case "/menu/category":
-                return new Response(backend.getFeatureOrderManagement().getMenuByCategory(data), 200);
-            case "/menu/categories":
-                return new Response(backend.getFeatureOrderManagement().getCategories(data), 200);
-
-
             // FeatureTableReservation paths
             case "/reservations/create":
                 return new Response(backend.getFeatureTableReservation().createReservation(data), 200);
@@ -93,12 +56,6 @@ public class BackendConfig {
                 return new Response(backend.getFeatureStatistics().getDailyStats(data), 200);
             case "/stats/range":
                 return new Response(backend.getFeatureStatistics().getStatsForRange(data), 200);
-
-            // FeatureTableStructure
-            case "/devices/update":
-                return backend.getFeatureTableStructure().editTable(data);
-            case "/devices/delete":
-                return backend.getFeatureTableStructure().deleteTable(data);
 
             // FeatureMenuManagement
             case "/menu/getAllItems":

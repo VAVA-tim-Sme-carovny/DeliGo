@@ -1,12 +1,11 @@
 package com.deligo.Backend;
 
+import com.deligo.Backend.FeatureCreateOrder.FeatureCreateOrder;
 import com.deligo.Backend.FeatureMenuManagement.FeatureMenuManagement;
-import com.deligo.Backend.FeatureOrderManagement.FeatureOrderManagement;
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
 import com.deligo.Backend.FeatureReview.FeatureReview;
 import com.deligo.Backend.FeatureStatistics.FeatureStatistics;
 import com.deligo.Backend.FeatureTableReservation.FeatureTableReservation;
-import com.deligo.Backend.FeatureTableStructure.FeatureTableStructure;
 import com.deligo.Backend.FeatureUserLogin.FeatureUserLogin;
 import com.deligo.Backend.FeatureUserManagement.FeatureUserManagement;
 import com.deligo.Backend.FeatureUserRegistration.FeatureUserRegister;
@@ -34,11 +33,10 @@ public class Backend {
     private final FeatureOrgDetails featureOrgDetails;
 
     // Admin features
+    private final FeatureCreateOrder featureCreateOrder;
     private final FeatureStatistics featureStatistics;
-    private final FeatureTableStructure featureTableStructure;
     private final FeatureMenuManagement featureMenuManagement;
     private final FeatureUserManagement featureUserManagement;
-    private final FeatureOrderManagement featureOrderManagement;
     private final FeatureTableReservation featureTableReservation;
 
 
@@ -58,12 +56,10 @@ public class Backend {
         this.featureValidateTestConnection = new FeatureValidateTestConnection(config, logger, apiServer);
         this.featureReview = new FeatureReview(config, logger, apiServer);
         this.featureOrgDetails = new FeatureOrgDetails(config, logger, apiServer);
-
+        this.featureCreateOrder = new FeatureCreateOrder(config, logger, apiServer);
         this.featureStatistics = new FeatureStatistics(config, logger, apiServer);
-        this.featureTableStructure = new FeatureTableStructure(config, logger, apiServer);
         this.featureMenuManagement = new FeatureMenuManagement(config, logger, apiServer);
         this.featureUserManagement = new FeatureUserManagement(config, logger, apiServer);
-        this.featureOrderManagement = new FeatureOrderManagement(config, logger, apiServer);
         this.featureTableReservation = new FeatureTableReservation(config, logger, apiServer);
 
 //      Add feature.
@@ -92,9 +88,6 @@ public class Backend {
         return featureStatistics;
     }
 
-    public FeatureTableStructure getFeatureTableStructure() {
-        return featureTableStructure;
-    }
     public FeatureUserRegister getFeatureUserRegister() {
         return featureUserRegister;
     }
@@ -107,28 +100,16 @@ public class Backend {
         return featureUserManagement;
     }
 
-    public FeatureOrderManagement getFeatureOrderManagement() {
-        return featureOrderManagement;
-    }
-
     public FeatureTableReservation getFeatureTableReservation() {
         return featureTableReservation;
     }
 
-    public String updateTable(String json) {
-        return featureTableStructure.addTable(json);
-    }
-
-    public String updateOrgDetails(String json) {
-        return featureUserManagement.updateOrgDetails(json);
-    }
-
-    public String updateOrganizationDetails(String json) {
-        return featureUserManagement.updateOrgDetails(json);
-    }
-
     public FeatureUserLogin getFeatureUserLogin() {
         return featureUserLogin;
+    }
+
+    public FeatureCreateOrder getFeatureCreateOrder() {
+        return featureCreateOrder;
     }
 
     public String createReservation(String json) {
@@ -149,39 +130,6 @@ public class Backend {
 
     public String cancelReservation(String json) {
         return featureTableReservation.cancelReservation(json);
-    }
-
-    // FeatureOrderManagement methods
-    public String updateOrder(String json) {
-        return featureOrderManagement.updateOrder(json);
-    }
-
-    public String updateOrderStatus(String json) {
-        return featureOrderManagement.updateOrderStatus(json);
-    }
-
-    public String getOrdersByTable(String json) {
-        return featureOrderManagement.getOrdersByTable(json);
-    }
-
-    public String getMenuByCategory(String json) {
-        return featureOrderManagement.getMenuByCategory(json);
-    }
-
-    public String getCategories(String json) {
-        return featureOrderManagement.getCategories(json);
-    }
-
-    public String getPendingOrders(String json) {
-        return featureOrderManagement.getPendingOrders(json);
-    }
-
-    public String markOrderAsDelivered(String json) {
-        return featureOrderManagement.markOrderAsDelivered(json);
-    }
-
-    public String cancelOrder(String json) {
-        return featureOrderManagement.cancelOrder(json);
     }
 
     // FeatureMenuManagement methods

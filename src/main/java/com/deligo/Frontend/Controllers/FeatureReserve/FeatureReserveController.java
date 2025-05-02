@@ -94,8 +94,7 @@ public class FeatureReserveController implements InitializableWithParent {
                 } else {
                     String name = table_nameF.getText();
                     String surname = table_surnameF.getText();
-                    int userId = 3;
-//                        Integer.parseInt(configLoader.getConfigValue("device", "id", String.class));
+                    int userId = Integer.parseInt(configLoader.getConfigValue("device", "id", String.class));
                     int tableId = Integer.parseInt(table_idF.getText());
                     String text = table_idF.getText();
 

@@ -1,6 +1,10 @@
-device: {id: null, language: sk}
+device:
+  id: null
+  language: sk
 login:
-  user: asd
-  tags: [customer, admin]
+  user: ss
+  tags:
+  - customer
+  - admin
   status: true
-  role: admin
+  role: customer

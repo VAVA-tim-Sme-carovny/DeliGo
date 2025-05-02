@@ -6580,3 +6580,332 @@ org.postgresql.util.PSQLException: ERROR: column "name" does not exist
 2025-05-01 12:52:50 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
 2025-05-01 12:52:50 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
 2025-05-01 12:52:51 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 05:34:24 INFO  GlobalLogger:50 - 2025-05-02 05:34:24 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 05:34:24 INFO  GlobalLogger:50 - 2025-05-02 05:34:24 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 05:34:24 INFO  GlobalLogger:50 - 2025-05-02 05:34:24 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 05:34:24 INFO  GlobalLogger:50 - 2025-05-02 05:34:24 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 05:34:24 INFO  GlobalLogger:50 - 2025-05-02 05:34:24 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 05:34:24 INFO  GlobalLogger:50 - 2025-05-02 05:34:24 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 05:34:24 INFO  GlobalLogger:50 - 2025-05-02 05:34:24 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 05:34:24 INFO  GlobalLogger:50 - 2025-05-02 05:34:24 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 05:34:24 INFO  GlobalLogger:50 - 2025-05-02 05:34:24 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 05:34:38 INFO  GlobalLogger:50 - 2025-05-02 05:34:38 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 05:34:45 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 05:34:45 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 05:34:45 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 05:34:45 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 05:34:45 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 05:34:45 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 05:34:45 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 05:34:45 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 05:34:45 INFO  GlobalLogger:50 - 2025-05-02 05:34:45 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 05:34:45 INFO  GlobalLogger:50 - 2025-05-02 05:34:45 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 05:39:06 INFO  GlobalLogger:50 - 2025-05-02 05:39:06 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 05:39:06 INFO  GlobalLogger:50 - 2025-05-02 05:39:06 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 05:39:06 INFO  GlobalLogger:50 - 2025-05-02 05:39:06 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 05:39:06 INFO  GlobalLogger:50 - 2025-05-02 05:39:06 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 05:39:06 INFO  GlobalLogger:50 - 2025-05-02 05:39:06 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 05:39:06 INFO  GlobalLogger:50 - 2025-05-02 05:39:06 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 05:39:06 INFO  GlobalLogger:50 - 2025-05-02 05:39:06 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 05:39:06 INFO  GlobalLogger:50 - 2025-05-02 05:39:06 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 05:39:07 INFO  GlobalLogger:50 - 2025-05-02 05:39:07 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 05:42:17 INFO  GlobalLogger:50 - 2025-05-02 05:42:17 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 05:42:17 INFO  GlobalLogger:50 - 2025-05-02 05:42:17 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 05:42:17 INFO  GlobalLogger:50 - 2025-05-02 05:42:17 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 05:42:17 INFO  GlobalLogger:50 - 2025-05-02 05:42:17 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 05:42:17 INFO  GlobalLogger:50 - 2025-05-02 05:42:17 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 05:42:17 INFO  GlobalLogger:50 - 2025-05-02 05:42:17 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 05:42:17 INFO  GlobalLogger:50 - 2025-05-02 05:42:17 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 05:42:17 INFO  GlobalLogger:50 - 2025-05-02 05:42:17 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 05:42:19 INFO  GlobalLogger:50 - 2025-05-02 05:42:19 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 05:42:41 INFO  GlobalLogger:50 - 2025-05-02 05:42:41 [SUCCESS] [MIDDLE] [BECKEND] : Úspešné odhlásenie!
+2025-05-02 05:42:57 INFO  GlobalLogger:50 - 2025-05-02 05:42:57 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 05:42:57 INFO  GlobalLogger:50 - 2025-05-02 05:42:57 [SUCCESS] [HIGH] [REST_API] : REST API Server running on http://localhost:8085/api
+2025-05-02 05:42:57 INFO  GlobalLogger:50 - 2025-05-02 05:42:57 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 05:42:57 INFO  GlobalLogger:50 - 2025-05-02 05:42:57 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 05:42:57 INFO  GlobalLogger:50 - 2025-05-02 05:42:57 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 05:42:57 INFO  GlobalLogger:50 - 2025-05-02 05:42:57 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 05:42:57 INFO  GlobalLogger:50 - 2025-05-02 05:42:57 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 05:42:57 INFO  GlobalLogger:50 - 2025-05-02 05:42:57 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 05:42:58 INFO  GlobalLogger:50 - 2025-05-02 05:42:58 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:10:15 INFO  GlobalLogger:50 - 2025-05-02 06:10:15 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:10:15 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:10:15 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:10:15 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:10:15 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:10:15 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:10:15 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:10:15 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:10:15 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:10:16 INFO  GlobalLogger:50 - 2025-05-02 06:10:16 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:10:16 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:10:17 INFO  GlobalLogger:50 - 2025-05-02 06:10:17 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:10:17 INFO  GlobalLogger:50 - 2025-05-02 06:10:17 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:10:17 INFO  GlobalLogger:50 - 2025-05-02 06:10:17 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:10:17 INFO  GlobalLogger:50 - 2025-05-02 06:10:17 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:10:17 INFO  GlobalLogger:50 - 2025-05-02 06:10:17 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:10:17 INFO  GlobalLogger:50 - 2025-05-02 06:10:17 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:10:18 INFO  GlobalLogger:50 - 2025-05-02 06:10:18 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:10:28 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:10:28 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:10:29 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:10:29 INFO  GlobalLogger:50 - 2025-05-02 06:10:29 [SUCCESS] [MIDDLE] [BECKEND] : Vitaj ss!
+2025-05-02 06:10:29 INFO  GlobalLogger:50 - 2025-05-02 06:10:29 [SUCCESS] [HIGH] [FRONTEND] : Login successful!
+2025-05-02 06:16:39 INFO  GlobalLogger:50 - 2025-05-02 06:16:39 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:16:39 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:16:39 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:16:39 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:16:39 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:16:39 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:16:39 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:16:39 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:16:39 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:16:39 INFO  GlobalLogger:50 - 2025-05-02 06:16:39 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:16:39 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:16:39 INFO  GlobalLogger:50 - 2025-05-02 06:16:39 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:16:39 INFO  GlobalLogger:50 - 2025-05-02 06:16:39 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:16:39 INFO  GlobalLogger:50 - 2025-05-02 06:16:39 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:16:39 INFO  GlobalLogger:50 - 2025-05-02 06:16:39 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:16:39 INFO  GlobalLogger:50 - 2025-05-02 06:16:39 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:16:39 INFO  GlobalLogger:50 - 2025-05-02 06:16:39 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:16:40 INFO  GlobalLogger:50 - 2025-05-02 06:16:40 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:18:57 INFO  GlobalLogger:50 - 2025-05-02 06:18:57 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:18:57 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:18:57 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:18:57 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:18:57 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:18:57 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:18:57 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:18:57 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:18:57 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:18:58 INFO  GlobalLogger:50 - 2025-05-02 06:18:58 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:18:58 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:18:58 INFO  GlobalLogger:50 - 2025-05-02 06:18:58 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:18:59 INFO  GlobalLogger:50 - 2025-05-02 06:18:59 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:18:59 INFO  GlobalLogger:50 - 2025-05-02 06:18:59 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:18:59 INFO  GlobalLogger:50 - 2025-05-02 06:18:59 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:18:59 INFO  GlobalLogger:50 - 2025-05-02 06:18:59 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:18:59 INFO  GlobalLogger:50 - 2025-05-02 06:18:59 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:19:00 INFO  GlobalLogger:50 - 2025-05-02 06:19:00 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:19:57 INFO  GlobalLogger:50 - 2025-05-02 06:19:57 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:19:57 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:19:57 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:19:57 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:19:57 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:19:57 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:19:57 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:19:57 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:19:57 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:19:57 INFO  GlobalLogger:50 - 2025-05-02 06:19:57 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:19:57 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:19:58 INFO  GlobalLogger:50 - 2025-05-02 06:19:58 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:19:58 INFO  GlobalLogger:50 - 2025-05-02 06:19:58 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:19:58 INFO  GlobalLogger:50 - 2025-05-02 06:19:58 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:19:58 INFO  GlobalLogger:50 - 2025-05-02 06:19:58 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:19:58 INFO  GlobalLogger:50 - 2025-05-02 06:19:58 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:19:58 INFO  GlobalLogger:50 - 2025-05-02 06:19:58 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:19:59 INFO  GlobalLogger:50 - 2025-05-02 06:19:59 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:20:03 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:20:03 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:20:03 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:21:54 INFO  GlobalLogger:50 - 2025-05-02 06:21:54 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:21:54 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:21:54 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:21:54 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:21:54 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:21:54 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:21:54 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:21:54 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:21:54 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:21:55 INFO  GlobalLogger:50 - 2025-05-02 06:21:55 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:21:55 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:21:56 INFO  GlobalLogger:50 - 2025-05-02 06:21:56 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:21:56 INFO  GlobalLogger:50 - 2025-05-02 06:21:56 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:21:56 INFO  GlobalLogger:50 - 2025-05-02 06:21:56 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:21:56 INFO  GlobalLogger:50 - 2025-05-02 06:21:56 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:21:56 INFO  GlobalLogger:50 - 2025-05-02 06:21:56 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:21:56 INFO  GlobalLogger:50 - 2025-05-02 06:21:56 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:21:57 INFO  GlobalLogger:50 - 2025-05-02 06:21:57 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:22:03 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:22:03 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:22:03 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:25:51 INFO  GlobalLogger:50 - 2025-05-02 06:25:51 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:25:51 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:25:51 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:25:51 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:25:51 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:25:51 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:25:51 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:25:51 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:25:51 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:25:51 INFO  GlobalLogger:50 - 2025-05-02 06:25:51 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:25:52 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:25:52 INFO  GlobalLogger:50 - 2025-05-02 06:25:52 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:25:52 INFO  GlobalLogger:50 - 2025-05-02 06:25:52 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:25:52 INFO  GlobalLogger:50 - 2025-05-02 06:25:52 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:25:52 INFO  GlobalLogger:50 - 2025-05-02 06:25:52 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:25:52 INFO  GlobalLogger:50 - 2025-05-02 06:25:52 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:25:52 INFO  GlobalLogger:50 - 2025-05-02 06:25:52 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:25:53 INFO  GlobalLogger:50 - 2025-05-02 06:25:53 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:26:15 INFO  GlobalLogger:50 - 2025-05-02 06:26:15 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:26:15 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:26:15 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:26:15 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:26:15 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:26:15 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:26:15 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:26:15 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:26:15 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:26:15 INFO  GlobalLogger:50 - 2025-05-02 06:26:15 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:26:15 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:26:16 INFO  GlobalLogger:50 - 2025-05-02 06:26:16 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:26:16 INFO  GlobalLogger:50 - 2025-05-02 06:26:16 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:26:16 INFO  GlobalLogger:50 - 2025-05-02 06:26:16 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:26:16 INFO  GlobalLogger:50 - 2025-05-02 06:26:16 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:26:16 INFO  GlobalLogger:50 - 2025-05-02 06:26:16 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:26:16 INFO  GlobalLogger:50 - 2025-05-02 06:26:16 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:26:17 INFO  GlobalLogger:50 - 2025-05-02 06:26:17 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:33:39 INFO  GlobalLogger:50 - 2025-05-02 06:33:39 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:33:39 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:33:39 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:33:39 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:33:39 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:33:39 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:33:39 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:33:39 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:33:39 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:33:39 INFO  GlobalLogger:50 - 2025-05-02 06:33:39 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:33:39 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:33:39 INFO  GlobalLogger:50 - 2025-05-02 06:33:39 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:33:39 INFO  GlobalLogger:50 - 2025-05-02 06:33:39 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:33:39 INFO  GlobalLogger:50 - 2025-05-02 06:33:39 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:33:39 INFO  GlobalLogger:50 - 2025-05-02 06:33:39 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:33:39 INFO  GlobalLogger:50 - 2025-05-02 06:33:39 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:33:39 INFO  GlobalLogger:50 - 2025-05-02 06:33:39 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:33:40 INFO  GlobalLogger:50 - 2025-05-02 06:33:40 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:41:26 INFO  GlobalLogger:50 - 2025-05-02 06:41:26 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:41:26 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:41:26 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:41:26 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:41:26 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:41:26 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:41:26 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:41:26 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:41:26 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:41:26 INFO  GlobalLogger:50 - 2025-05-02 06:41:26 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:41:27 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:41:27 INFO  GlobalLogger:50 - 2025-05-02 06:41:27 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:41:27 INFO  GlobalLogger:50 - 2025-05-02 06:41:27 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:41:27 INFO  GlobalLogger:50 - 2025-05-02 06:41:27 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:41:27 INFO  GlobalLogger:50 - 2025-05-02 06:41:27 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:41:27 INFO  GlobalLogger:50 - 2025-05-02 06:41:27 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:41:27 INFO  GlobalLogger:50 - 2025-05-02 06:41:27 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:41:28 INFO  GlobalLogger:50 - 2025-05-02 06:41:28 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:41:30 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:41:30 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:41:30 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:45:43 INFO  GlobalLogger:50 - 2025-05-02 06:45:43 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:45:43 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:45:43 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:45:43 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:45:43 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:45:43 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:45:43 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:45:43 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:45:43 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:45:43 INFO  GlobalLogger:50 - 2025-05-02 06:45:43 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:45:43 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:45:44 INFO  GlobalLogger:50 - 2025-05-02 06:45:44 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:45:44 INFO  GlobalLogger:50 - 2025-05-02 06:45:44 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:45:44 INFO  GlobalLogger:50 - 2025-05-02 06:45:44 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:45:44 INFO  GlobalLogger:50 - 2025-05-02 06:45:44 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:45:44 INFO  GlobalLogger:50 - 2025-05-02 06:45:44 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:45:44 INFO  GlobalLogger:50 - 2025-05-02 06:45:44 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:45:45 INFO  GlobalLogger:50 - 2025-05-02 06:45:45 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:45:47 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:45:47 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:45:47 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:46:49 INFO  GlobalLogger:50 - 2025-05-02 06:46:49 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:46:49 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:46:49 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:46:49 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:46:49 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:46:49 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:46:49 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:46:49 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:46:49 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:46:50 INFO  GlobalLogger:50 - 2025-05-02 06:46:50 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:46:50 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:46:51 INFO  GlobalLogger:50 - 2025-05-02 06:46:51 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:46:51 INFO  GlobalLogger:50 - 2025-05-02 06:46:51 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:46:51 INFO  GlobalLogger:50 - 2025-05-02 06:46:51 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:46:51 INFO  GlobalLogger:50 - 2025-05-02 06:46:51 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:46:51 INFO  GlobalLogger:50 - 2025-05-02 06:46:51 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:46:51 INFO  GlobalLogger:50 - 2025-05-02 06:46:51 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:46:52 INFO  GlobalLogger:50 - 2025-05-02 06:46:52 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:46:53 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:46:53 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:46:54 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:47:32 INFO  GlobalLogger:50 - 2025-05-02 06:47:32 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:47:32 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:47:32 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:47:32 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:47:32 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:47:32 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:47:32 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:47:32 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:47:32 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:47:33 INFO  GlobalLogger:50 - 2025-05-02 06:47:33 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:47:33 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:47:34 INFO  GlobalLogger:50 - 2025-05-02 06:47:34 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:47:34 INFO  GlobalLogger:50 - 2025-05-02 06:47:34 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:47:34 INFO  GlobalLogger:50 - 2025-05-02 06:47:34 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:47:34 INFO  GlobalLogger:50 - 2025-05-02 06:47:34 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:47:35 INFO  GlobalLogger:50 - 2025-05-02 06:47:35 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:47:35 INFO  GlobalLogger:50 - 2025-05-02 06:47:35 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:47:35 INFO  GlobalLogger:50 - 2025-05-02 06:47:35 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:47:37 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:47:37 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:47:37 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:50:09 INFO  GlobalLogger:50 - 2025-05-02 06:50:09 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:50:09 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:50:09 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:50:09 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:50:09 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:50:09 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:50:09 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:50:09 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:50:09 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:50:10 INFO  GlobalLogger:50 - 2025-05-02 06:50:10 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:50:10 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:50:10 INFO  GlobalLogger:50 - 2025-05-02 06:50:10 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:50:10 INFO  GlobalLogger:50 - 2025-05-02 06:50:10 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:50:11 INFO  GlobalLogger:50 - 2025-05-02 06:50:11 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:50:11 INFO  GlobalLogger:50 - 2025-05-02 06:50:11 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:50:11 INFO  GlobalLogger:50 - 2025-05-02 06:50:11 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:50:11 INFO  GlobalLogger:50 - 2025-05-02 06:50:11 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:50:11 INFO  GlobalLogger:50 - 2025-05-02 06:50:11 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:50:13 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:50:13 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:50:14 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
+2025-05-02 06:51:07 INFO  GlobalLogger:50 - 2025-05-02 06:51:07 [SUCCESS] [HIGH] [LOGGING] : Logging loaded successfully
+2025-05-02 06:51:07 INFO  ConfigLoader:28 - ✅ Config loaded successfully.
+2025-05-02 06:51:07 INFO  ConfigLoader:51 - 📋 Loaded properties from config.properties:
+2025-05-02 06:51:07 INFO  ConfigLoader:54 -   → DB_URL = jdbc:postgresql://aws-0-eu-central-1.pooler.supabase.com:6543/postgres
+2025-05-02 06:51:07 INFO  ConfigLoader:54 -   → DB_USER = postgres.kcgdzfgoyjlzcxsvghyx
+2025-05-02 06:51:07 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PATH = deligo.p12
+2025-05-02 06:51:07 INFO  ConfigLoader:54 -   → SSL_KEYSTORE_PASSWORD = odjebemsa
+2025-05-02 06:51:07 INFO  ConfigLoader:54 -   → DB_PASSWORD = 72HCrGueeHwL1wcl
+2025-05-02 06:51:07 INFO  ConfigLoader:54 -   → SSL_ENABLED = true
+2025-05-02 06:51:07 INFO  GlobalLogger:50 - 2025-05-02 06:51:07 [SUCCESS] [HIGH] [REST_API] : REST API Server running on https://localhost:8085/api
+2025-05-02 06:51:07 INFO  Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-02 06:51:08 INFO  GlobalLogger:50 - 2025-05-02 06:51:08 [SUCCESS] [HIGH] [REST_API] : REST API health checks passed!
+2025-05-02 06:51:08 INFO  GlobalLogger:50 - 2025-05-02 06:51:08 [SUCCESS] [HIGH] [BECKEND] : REST API health checks passed from Backend!
+2025-05-02 06:51:08 INFO  GlobalLogger:50 - 2025-05-02 06:51:08 [SUCCESS] [HIGH] [BECKEND] : Backend initialized correctly.
+2025-05-02 06:51:08 INFO  GlobalLogger:50 - 2025-05-02 06:51:08 [SUCCESS] [HIGH] [FRONTEND] : REST API health checks passed from Frontend!
+2025-05-02 06:51:08 INFO  GlobalLogger:50 - 2025-05-02 06:51:08 [SUCCESS] [MIDDLE] [BECKEND] : Test connection validated successfully.
+2025-05-02 06:51:08 INFO  GlobalLogger:50 - 2025-05-02 06:51:08 [SUCCESS] [HIGH] [FRONTEND] : FE -> BE communication test passed!
+2025-05-02 06:51:09 INFO  GlobalLogger:50 - 2025-05-02 06:51:09 [SUCCESS] [HIGH] [FRONTEND] : Frontend Main Window launched successfully!
+2025-05-02 06:51:17 INFO  DatabaseConnector:24 - ✅ PostgreSQL driver loaded.
+2025-05-02 06:51:17 INFO  DatabaseConnector:31 - 🛠️ Starting HikariCP initialization...
+2025-05-02 06:51:18 INFO  DatabaseConnector:57 - 👉 Requesting connection from HikariCP...
