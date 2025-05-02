@@ -9,11 +9,11 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.deligo.Frontend.Controllers.Employee.Admin.EditOrgDetails"
             prefHeight="600.0" prefWidth="600.0">
-
     <VBox spacing="20">
-        <padding>
-            <Insets top="20" right="20" bottom="20" left="20"/>
-        </padding>
+        <Button text="Uložiť zmeny" fx:id="saveButtonOrgDetails" maxWidth="200"/>
+<!--        <padding>-->
+<!--            <Insets top="20" right="20" bottom="20" left="20"/>-->
+<!--        </padding>-->
         <Label text="Organizačné informácie">
             <font>
                 <Font size="18"/>
@@ -35,11 +35,11 @@
         <Label text="Otváracie hodiny"/>
 
         <GridPane hgap="10" vgap="10">
-<!--            <columns>-->
-<!--                <ColumnConstraints halignment="RIGHT" />-->
-<!--                <ColumnConstraints />-->
-<!--                <ColumnConstraints />-->
-<!--            </columns>-->
+            <!--            <columns>-->
+            <!--                <ColumnConstraints halignment="RIGHT" />-->
+            <!--                <ColumnConstraints />-->
+            <!--                <ColumnConstraints />-->
+            <!--            </columns>-->
 
             <!-- Dynamické riadky pre každý deň -->
             <Label text="Pondelok" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
@@ -70,7 +70,5 @@
             <TextField fx:id="sunOpen" promptText="od" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
             <TextField fx:id="sunClose" promptText="do" GridPane.rowIndex="6" GridPane.columnIndex="2"/>
         </GridPane>
-
-        <Button text="Uložiť zmeny" fx:id="saveButton" maxWidth="200"/>
     </VBox>
 </AnchorPane>

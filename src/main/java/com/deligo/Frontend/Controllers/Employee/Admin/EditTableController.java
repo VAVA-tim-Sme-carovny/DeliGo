@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EditTableController implements Initializable, InitializableWithParent {
+public class EditTableController implements InitializableWithParent {
 
     @FXML private TextField inputField;
     @FXML private Button submitButton;
@@ -33,11 +33,6 @@ public class EditTableController implements Initializable, InitializableWithPare
         this.globalConfig = globalConfig;
         this.mainPageController = mainPageController;
         this.logger = logger;
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        // nič zatiaľ
     }
 
     @Override
@@ -62,18 +57,16 @@ public class EditTableController implements Initializable, InitializableWithPare
 
                 String responseString = mainPageController.getServer().sendPostRequest("/be/devices/update", data.toString());
 
-                    Response response = gson.fromJson(responseString, Response.class);
+                Response response = gson.fromJson(responseString, Response.class);
 //                    mainPageController.showWarningPopup("nieco", 200);
 
-                    // ak 200 → refresh view alebo správa
-                    if (response.getStatus() == 200) {
-                        logger.log(com.deligo.Model.BasicModels.LogType.SUCCESS,
-                                com.deligo.Model.BasicModels.LogPriority.LOW,
-                                com.deligo.Model.BasicModels.LogSource.FRONTEND,
-                                "Table updated successfully");
-                    }
-
-
+                // ak 200 → refresh view alebo správa
+                if (response.getStatus() == 200) {
+                    logger.log(com.deligo.Model.BasicModels.LogType.SUCCESS,
+                            com.deligo.Model.BasicModels.LogPriority.LOW,
+                            com.deligo.Model.BasicModels.LogSource.FRONTEND,
+                            "Table updated successfully");
+                }
             });
 
             deleteButton.setOnAction(e -> {

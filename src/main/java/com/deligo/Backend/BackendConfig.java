@@ -2,7 +2,6 @@ package com.deligo.Backend;
 
 import com.deligo.Backend.BaseFeature.BaseFeature;
 import com.deligo.ConfigLoader.ConfigLoader;
-import com.deligo.Model.Response;
 
 
 public class BackendConfig {
@@ -20,48 +19,43 @@ public class BackendConfig {
             case "/updateLanguage":
                 BaseFeature.updateLanguage(config);
             case "/update-info":
-                backend.getFeatureOrgDetails().updateOrgDetails(data);
+                return backend.getFeatureOrgDetails().updateOrgDetails(data);
             case "/":
-                backend.getFeatureCreateOrder().createOrder(data);
+                return backend.getFeatureCreateOrder().createOrder(data);
+
             // FeatureTableReservation paths
             case "/reservations/create":
-                return new Response(backend.getFeatureTableReservation().createReservation(data), 200);
+                return backend.getFeatureTableReservation().createReservation(data);
             case "/reservations/get":
-                return new Response(backend.getFeatureTableReservation().getReservationById(data), 200);
+                return backend.getFeatureTableReservation().getReservationById(data);
             case "/reservations/user":
-                return new Response(backend.getFeatureTableReservation().getReservationsByUser(data), 200);
+                return backend.getFeatureTableReservation().getReservationsByUser(data);
             case "/reservations/table":
-                return new Response(backend.getFeatureTableReservation().getReservationsByTable(data), 200);
+                return backend.getFeatureTableReservation().getReservationsByTable(data);
             case "/reservations/cancel":
-                return new Response(backend.getFeatureTableReservation().cancelReservation(data), 200);
+                return backend.getFeatureTableReservation().cancelReservation(data);
+
             // FeatureReview paths
             case "/reviews/add":
-                return new Response(backend.getFeatureReview().addReview(data), 200);
+                return backend.getFeatureReview().addReview(data);
             case "/reviews/update":
-                return new Response(backend.getFeatureReview().updateReview(data), 200);
+                return backend.getFeatureReview().updateReview(data);
             case "/reviews/delete":
-                return new Response(backend.getFeatureReview().removeReview(data), 200);
+                return backend.getFeatureReview().removeReview(data);
             case "/reviews/get-by-user":
-                return new Response(backend.getFeatureReview().getUserReviews(data), 200);
+                return backend.getFeatureReview().getUserReviews(data);
             case "/reviews/get-by-menu-item":
-                return new Response(backend.getFeatureReview().getReviewsByMenuItem(data), 200);
+                return backend.getFeatureReview().getReviewsByMenuItem(data);
             case "/reviews/get-by-id":
-                return new Response(backend.getFeatureReview().getReviewById(data), 200);
+                return backend.getFeatureReview().getReviewById(data);
             case "/reviews/get-all":
-                return new Response(backend.getFeatureReview().getAllReviews(data), 200);
-
-
-            // FeatureStatistics
-            case "/stats/daily":
-                return new Response(backend.getFeatureStatistics().getDailyStats(data), 200);
-            case "/stats/range":
-                return new Response(backend.getFeatureStatistics().getStatsForRange(data), 200);
+                return backend.getFeatureReview().getAllReviews(data);
 
             // FeatureMenuManagement
             case "/menu/getAllItems":
-                return new Response(backend.getFeatureMenuManagement().getAllItems("{}"), 200);
+                return backend.getFeatureMenuManagement().getAllItems("{}");
             case "/menu/getAllCategories":
-                return new Response(backend.getFeatureMenuManagement().getAllCategories("{}"), 200);
+                return backend.getFeatureMenuManagement().getAllCategories("{}");
 
             // FeatureUserManagement
             case "/edit-user":

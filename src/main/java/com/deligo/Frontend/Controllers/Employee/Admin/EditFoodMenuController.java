@@ -149,10 +149,10 @@ public class EditFoodMenuController implements InitializableWithParent {
                 categoryListView.getSelectionModel().select(0);
             }
 
-            logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, 
+            logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND,
                     "Loaded " + categories.size() + " categories");
         } catch (Exception e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, 
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
                     "Error loading categories: " + e.getMessage());
             e.printStackTrace(); // Add stack trace for better debugging
         }
@@ -163,7 +163,7 @@ public class EditFoodMenuController implements InitializableWithParent {
     private void loadMenuItemsByCategory(String category) {
         try {
             if (category == null || category.isEmpty()) {
-                logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND,
                         "Invalid category: null or empty");
                 return;
             }
@@ -171,14 +171,14 @@ public class EditFoodMenuController implements InitializableWithParent {
             // Find the category ID by name
             List<Category> categories = categoryDAO.findByField("name", category);
             if (categories == null || categories.isEmpty()) {
-                logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND,
                         "Category not found: " + category);
                 return;
             }
 
             Category categoryObj = categories.get(0);
             if (categoryObj == null) {
-                logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND,
                         "Category object is null for: " + category);
                 return;
             }
@@ -213,10 +213,10 @@ public class EditFoodMenuController implements InitializableWithParent {
 
             menuItemTable.setItems(menuItems);
 
-            logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, 
+            logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND,
                     "Loaded " + menuItems.size() + " items for category " + category);
         } catch (Exception e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, 
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
                     "Error loading menu items: " + e.getMessage());
             e.printStackTrace(); // Add stack trace for better debugging
         }
@@ -289,7 +289,7 @@ public class EditFoodMenuController implements InitializableWithParent {
                     JSONObject jsonResponse = new JSONObject(response);
 
                     if (jsonResponse.getInt("status") == 200) {
-                        logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                        logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND,
                                 "Item deleted successfully");
 
                         // Refresh the list
@@ -298,7 +298,7 @@ public class EditFoodMenuController implements InitializableWithParent {
                             loadMenuItemsByCategory(category);
                         }
                     } else {
-                        logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                        logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND,
                                 "Failed to delete item: " + jsonResponse.getString("message"));
 
                         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
@@ -308,7 +308,7 @@ public class EditFoodMenuController implements InitializableWithParent {
                         errorAlert.showAndWait();
                     }
                 } catch (Exception e) {
-                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, 
+                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
                             "Error deleting item: " + e.getMessage());
                 }
             }
@@ -364,13 +364,13 @@ public class EditFoodMenuController implements InitializableWithParent {
                     JSONObject jsonResponse = new JSONObject(response);
 
                     if (jsonResponse.getInt("status") == 200) {
-                        logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                        logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND,
                                 "Category deleted successfully");
 
                         // Refresh the list
                         loadCategories();
                     } else {
-                        logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                        logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND,
                                 "Failed to delete category: " + jsonResponse.getString("message"));
 
                         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
@@ -380,7 +380,7 @@ public class EditFoodMenuController implements InitializableWithParent {
                         errorAlert.showAndWait();
                     }
                 } catch (Exception e) {
-                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, 
+                    logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
                             "Error deleting category: " + e.getMessage());
                 }
             }
@@ -444,10 +444,10 @@ public class EditFoodMenuController implements InitializableWithParent {
                 JSONObject jsonResponse = new JSONObject(response);
 
                 if (jsonResponse.getInt("status") == 200) {
-                    logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                    logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND,
                             "Item added successfully");
                 } else {
-                    logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                    logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND,
                             "Failed to add item: " + jsonResponse.getString("message"));
 
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -475,10 +475,10 @@ public class EditFoodMenuController implements InitializableWithParent {
                 JSONObject jsonResponse = new JSONObject(response);
 
                 if (jsonResponse.getInt("status") == 200) {
-                    logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                    logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND,
                             "Item updated successfully");
                 } else {
-                    logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                    logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND,
                             "Failed to update item: " + jsonResponse.getString("message"));
 
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -498,7 +498,7 @@ public class EditFoodMenuController implements InitializableWithParent {
                 loadMenuItemsByCategory(selectedCategory);
             }
         } catch (Exception e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, 
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
                     "Error saving item: " + e.getMessage());
         }
     }
@@ -533,10 +533,10 @@ public class EditFoodMenuController implements InitializableWithParent {
                 JSONObject jsonResponse = new JSONObject(response);
 
                 if (jsonResponse.getInt("status") == 200) {
-                    logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                    logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND,
                             "Category added successfully");
                 } else {
-                    logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                    logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND,
                             "Failed to add category: " + jsonResponse.getString("message"));
 
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -556,10 +556,10 @@ public class EditFoodMenuController implements InitializableWithParent {
                 JSONObject jsonResponse = new JSONObject(response);
 
                 if (jsonResponse.getInt("status") == 200) {
-                    logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                    logger.log(LogType.SUCCESS, LogPriority.MIDDLE, LogSource.FRONTEND,
                             "Category updated successfully");
                 } else {
-                    logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND, 
+                    logger.log(LogType.ERROR, LogPriority.MIDDLE, LogSource.FRONTEND,
                             "Failed to update category: " + jsonResponse.getString("message"));
 
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -575,7 +575,7 @@ public class EditFoodMenuController implements InitializableWithParent {
             categoryDialogContainer.setVisible(false);
             loadCategories();
         } catch (Exception e) {
-            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND, 
+            logger.log(LogType.ERROR, LogPriority.HIGH, LogSource.FRONTEND,
                     "Error saving category: " + e.getMessage());
         }
     }

@@ -16,5 +16,4 @@
     <Button text="Upraviť ponuku" fx:id="editFoodMenuBtn"/>
     <Button text="Správa zamestnancov" fx:id="editEmployeesBtn"/>
     <Button text="Úprava info" fx:id="editInfoBtn"/>
-    <Button text="Back" fx:id="backButton" onAction="#handleBackButton"/>
 </VBox>

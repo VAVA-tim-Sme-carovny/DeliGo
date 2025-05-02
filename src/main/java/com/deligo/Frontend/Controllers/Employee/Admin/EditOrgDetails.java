@@ -23,7 +23,7 @@ public class EditOrgDetails implements InitializableWithParent {
     @FXML private TextField satOpen, satClose;
     @FXML private TextField sunOpen, sunClose;
 
-    @FXML private Button saveButton;
+    @FXML private Button saveButtonOrgDetails;
     private MainPageController mainPageController;
     private LoggingAdapter logger;
     private final Gson gson = new Gson();
@@ -33,13 +33,12 @@ public class EditOrgDetails implements InitializableWithParent {
         this.mainPageController = mainPageController;
     }
 
-
     @Override
     public void initializeWithParent(Object parentController) {
         if (parentController instanceof MainPageController) {
             this.mainPageController = (MainPageController) parentController;
         }
-        saveButton.setOnAction(event -> {
+        saveButtonOrgDetails.setOnAction(event -> {
             JSONObject request = new JSONObject();
 
             request.put("phone", phoneField.getText());
@@ -63,8 +62,6 @@ public class EditOrgDetails implements InitializableWithParent {
             if(response.getStatus() == 200){
                 logger.log(LogType.INFO, LogPriority.MIDDLE, LogSource.FRONTEND, response.getMessage());
             }
-
-
         });
     }
 

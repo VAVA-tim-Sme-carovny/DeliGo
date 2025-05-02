@@ -4,7 +4,6 @@ import com.deligo.Backend.FeatureCreateOrder.FeatureCreateOrder;
 import com.deligo.Backend.FeatureMenuManagement.FeatureMenuManagement;
 import com.deligo.Backend.FeatureOrganizationDetails.FeatureOrgDetails;
 import com.deligo.Backend.FeatureReview.FeatureReview;
-import com.deligo.Backend.FeatureStatistics.FeatureStatistics;
 import com.deligo.Backend.FeatureTableReservation.FeatureTableReservation;
 import com.deligo.Backend.FeatureUserLogin.FeatureUserLogin;
 import com.deligo.Backend.FeatureUserManagement.FeatureUserManagement;
@@ -34,7 +33,6 @@ public class Backend {
 
     // Admin features
     private final FeatureCreateOrder featureCreateOrder;
-    private final FeatureStatistics featureStatistics;
     private final FeatureMenuManagement featureMenuManagement;
     private final FeatureUserManagement featureUserManagement;
     private final FeatureTableReservation featureTableReservation;
@@ -55,7 +53,6 @@ public class Backend {
         this.featureReview = new FeatureReview(config, logger, apiServer);
         this.featureOrgDetails = new FeatureOrgDetails(config, logger, apiServer);
         this.featureCreateOrder = new FeatureCreateOrder(config, logger, apiServer);
-        this.featureStatistics = new FeatureStatistics(config, logger, apiServer);
         this.featureMenuManagement = new FeatureMenuManagement(config, logger, apiServer);
         this.featureUserManagement = new FeatureUserManagement(config, logger, apiServer);
         this.featureTableReservation = new FeatureTableReservation(config, logger, apiServer);
@@ -77,11 +74,6 @@ public class Backend {
 
     public FeatureOrgDetails getFeatureOrgDetails() {
         return featureOrgDetails;
-    }
-
-    //Admin Features
-    public FeatureStatistics getFeatureStatistics() {
-        return featureStatistics;
     }
 
     public FeatureUserRegister getFeatureUserRegister() {

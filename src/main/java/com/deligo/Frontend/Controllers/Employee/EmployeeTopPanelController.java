@@ -50,6 +50,11 @@ public class EmployeeTopPanelController implements InitializableWithParent {
                 mainPageController.loadView("/Views/Controllers/MainTopPanelController.fxml", Views.controllerPanel);
                 mainPageController.loadView("/Views/Controllers/MainBottomPanelController.fxml", Views.bottomPanel);
             });
+            adminButton.setOnAction(event -> {
+                logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Admin Panel");
+                mainPageController.loadView("/Views/Content/AdminPanel/UsersView.fxml", Views.mainContent);
+                mainPageController.loadView("/Views/Controllers/Employee/AdminMenuController.fxml", Views.leftPanel);
+            });
 
             homeBtn.setOnAction(event -> {
                 logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Going to home");
@@ -63,7 +68,7 @@ public class EmployeeTopPanelController implements InitializableWithParent {
     @FXML
     public void handleOrdersButton() {
         String role = configLoader.getConfigValue("login", "role", String.class);
-        
+
         if (role != null && (role.equals("admin") || role.equals("waiter"))) {
             logger.log(LogType.INFO, LogPriority.LOW, LogSource.FRONTEND, "Opening Current Orders view");
             mainPageController.loadView("/Views/Content/AdminPanel/AllOrdersView.fxml", Views.mainContent);
