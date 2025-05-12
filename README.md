@@ -140,11 +140,11 @@ cd DeliGo
 | Role   | Name    |
 |:-------------:|:---------------:|
 | Project Manager      | Martin Stavrovsky                             |
-| SW Testers           | Kristián Skočík, Samo Maliarik                |
+| SW Testers           | Samo Maliarik                                 |
 | IT Architect         | Richard Nemeth                                |
 | System Administrator | Jakub Kelemen                                 |
 | Database Specialist  | Damian Parigal                                |
-| UX/UI Designer       | Michal Kacinec                                |
+| UX/UI Designer       |                                               |
 | Programmers          | Benjamín Ptáček, Marko Govda, Radoslav Muntág |
 
 ---
