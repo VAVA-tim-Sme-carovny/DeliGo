@@ -1,6 +1,7 @@
 package com.deligo.Frontend.Controllers;
 
 import com.deligo.ConfigLoader.ConfigLoader;
+import com.deligo.Frontend.Controllers.MainPage.MainPageController;
 import com.deligo.Frontend.FeatureTestCommunication.FeatureTestCommunication;
 import com.deligo.Logging.Adapter.LoggingAdapter;
 import com.deligo.RestApi.RestAPIServer;
@@ -16,6 +17,7 @@ public class FrontendController {
     private ConfigLoader config;
 
     private FeatureTestCommunication featureTestCommunication;
+    private MainPageController mainPageController;
 
     public FrontendController(RestAPIServer apiServer, LoggingAdapter logger, ConfigLoader config) {
         this.apiServer = apiServer;
@@ -26,10 +28,21 @@ public class FrontendController {
     public void initializeFeatures() {
         featureTestCommunication = new FeatureTestCommunication(this.config, this.logger, this.apiServer);
         featureTestCommunication.testConnection();
+
+        mainPageController = new MainPageController(this.config, this.logger, this.apiServer);
     }
 
     public FeatureTestCommunication getFeatureTestCommunication() {
         return featureTestCommunication;
+    }
+
+
+    public ConfigLoader getConfig() {
+        return config;
+    }
+
+    public RestAPIServer getApiServer() {
+        return apiServer;
     }
 
 }

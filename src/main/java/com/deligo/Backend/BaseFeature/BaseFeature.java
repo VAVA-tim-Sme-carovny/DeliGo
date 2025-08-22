@@ -31,7 +31,7 @@ public abstract class BaseFeature {
     }
 
     public String getLanguage() {
-        return language;
+        return this.globalConfig.getConfigValue("device", "language", String.class);
     }
 
 }

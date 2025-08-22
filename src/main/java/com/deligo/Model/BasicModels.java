@@ -24,4 +24,42 @@ public class BasicModels {
         MAVEN
     }
 
+    public enum Roles {
+        BASIC,
+        ADMIN,
+        CREATE_ORDER,
+        EDIT_ORDER,
+        CHANGE_ORDER_STATE;
+
+        public String getRoleName() {
+            return this.name().toLowerCase();
+        }
+
+        public static Roles fromString(String text) {
+            for (Roles role : Roles.values()) {
+                if (role.getRoleName().equalsIgnoreCase(text)) {
+                    return role;
+                }
+            }
+            throw new IllegalArgumentException(text);
+        }
+    }
+
+    public enum OrderState {
+        PENDING("pending"),
+        PREPARING("preparing"),
+        READY("ready"),
+        DONE("done");
+
+        private final String value;
+
+        OrderState(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    }
+
 }

@@ -24,7 +24,7 @@ public class ConsulRegistration {
             conn.setRequestProperty("Content-Type", "application/json");
 
             // Pridať Basic Auth hlavičku
-            String userCredentials = ":";
+            String userCredentials = "deligoUser:deligoUser";
             String basicAuth = "Basic " + Base64.getEncoder().encodeToString(userCredentials.getBytes());
             conn.setRequestProperty("Authorization", basicAuth);
 

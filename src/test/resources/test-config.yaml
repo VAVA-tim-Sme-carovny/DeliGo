@@ -1,0 +1,14 @@
+# Test configuration for SSL connection test
+
+device:
+  id: "TEST-DEVICE"
+  language: "en"
+
+login:
+  roles: "test"
+
+# This section will be accessed by the DatabaseManager.utils.ConfigLoader
+ssl:
+  enabled: true
+  keystore_path: "deligo.p12"
+  keystore_password: "deliGoPassword"

@@ -3,15 +3,13 @@ package com.deligo.DatabaseManager.example;
 public class Users {
     private int id;
     private String username;
-    private String email;
     private String password;
     private String role;
 
     public Users() {}
 
-    public Users(String username, String email, String password, String role) {
+    public Users(String username, String password, String role) {
         this.username = username;
-        this.email = email;
         this.password = password;
         this.role = role;
     }
@@ -33,13 +31,6 @@ public class Users {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getPassword() {
         return password;

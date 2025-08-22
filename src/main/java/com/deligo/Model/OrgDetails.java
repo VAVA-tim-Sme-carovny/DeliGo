@@ -3,49 +3,58 @@ package com.deligo.Model;
 import java.util.List;
 
 public class OrgDetails {
-    private List<List<String>> openingTimes;
-    private String phoneNumber;
-    private String mail;
+    private int id;
+    private String opening_hours;
+    private String phone;
+    private String email;
 
     public OrgDetails() {
     }
 
-    public OrgDetails(List<List<String>> openingTimes, String phoneNumber, String mail) {
-        this.openingTimes = openingTimes;
-        this.phoneNumber = phoneNumber;
-        this.mail = mail;
+    public OrgDetails(String opening_hours, String phone, String email) {
+        this.opening_hours = opening_hours;
+        this.phone = phone;
+        this.email = email;
     }
 
-    public List<List<String>> getOpeningTimes() {
-        return openingTimes;
+    public String getOpeningTimes() {
+        return opening_hours;
     }
 
-    public void setOpeningTimes(List<List<String>> openingTimes) {
-        this.openingTimes = openingTimes;
+    public void setOpeningTimes(String opening_hours) {
+        this.opening_hours = opening_hours;
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber(String phone) {
+        this.phone = phone;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    public int getId() {
+        return id;
     }
 
     public String getMail() {
-        return mail;
+        return email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setMail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
         return "OrgDetails{" +
-                "openingTimes=" + openingTimes +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", mail='" + mail + '\'' +
+                "opening_hours=" + opening_hours +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

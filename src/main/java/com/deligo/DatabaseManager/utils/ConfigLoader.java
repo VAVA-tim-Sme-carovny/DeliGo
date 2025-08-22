@@ -17,7 +17,7 @@ public class ConfigLoader {
     }
 
     private static void loadConfig() {
-        String configPath = System.getProperty("config.file"); // Možnosť načítať externý súbor
+        String configPath = System.getProperty("config.properties"); // Možnosť načítať externý súbor
         try (InputStream input = (configPath != null) ? new FileInputStream(configPath) :
                 ConfigLoader.class.getClassLoader().getResourceAsStream("config.properties")) {
 
@@ -26,6 +26,7 @@ public class ConfigLoader {
             }
             properties.load(input);
             logger.info("✅ Config loaded successfully.");
+            logAllProperties();
         } catch (IOException e) {
             logger.error("❌ Failed to load config: " + e.getMessage());
             throw new RuntimeException("Could not load config.properties", e);
@@ -43,4 +44,16 @@ public class ConfigLoader {
         }
         return value;
     }
+    private static void logAllProperties() {
+        if (properties.isEmpty()) {
+            logger.warn("⚠️ No properties loaded from config file.");
+        } else {
+            logger.info("📋 Loaded properties from config.properties:");
+            for (String key : properties.stringPropertyNames()) {
+                String value = properties.getProperty(key);
+                logger.info("  → {} = {}", key, value);
+            }
+        }
+    }
+
 }

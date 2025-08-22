@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.deligo.Frontend.Controllers.OrderPage.CartItemController" 
+      spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5px;">
+    <Label fx:id="itemNameLabel" style="-fx-font-size: 14px; -fx-min-width: 150px;"/>
+    <Spinner fx:id="quantitySpinner" style="-fx-max-width: 60px;"/>
+    <Label fx:id="itemPriceLabel" style="-fx-font-size: 14px; -fx-min-width: 60px;"/>
+    <Button fx:id="removeBtn" text="Remove" style="-fx-background-color: #ff4444; -fx-text-fill: white;"/>
+</HBox>

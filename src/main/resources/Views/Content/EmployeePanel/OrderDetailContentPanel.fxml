@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/21"
+            fx:controller="com.deligo.Frontend.Controllers.Employee.OrderDetailController">
+
+    <children>
+        <VBox spacing="15" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20">
+            <children>
+                <Label fx:id="orderNumberLabel" text="Objednávka č. 1" style="-fx-font-size: 20;" />
+                <Label fx:id="tableNumberLabel" text="Stôl č. 5" />
+                <Label fx:id="totalPriceLabel" text="Cena: 15.40 €" />
+
+                <HBox spacing="10">
+                    <Button text="Čaká" onAction="#setPending" />
+                    <Button text="Pripravuje sa" onAction="#setPreparing" />
+                    <Button text="Pripravená" onAction="#setReady" />
+                    <Button text="Vydaná" onAction="#setDone" />
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

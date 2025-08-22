@@ -17,9 +17,6 @@ public class GenericDAO<T> {
     private static final Logger logger = LogManager.getLogger(Class.class);
     private final String tableName;
 
-    public GenericDAO(Class<T> entityClass) {
-        this(entityClass, entityClass.getSimpleName().toLowerCase()); // Predvolený názov tabuľky je názov triedy
-    }
 
     public GenericDAO(Class<T> entityClass, String tableName) {
         this.entityClass = entityClass;
@@ -29,15 +26,25 @@ public class GenericDAO<T> {
     // Získaj pripojenie z DatabaseConnector
     private Connection getConnection() {
         try {
-            return DatabaseConnector.getConnection();
+//            logger.info("👉 Attempting to get a database connection...");
+            Connection conn = DatabaseConnector.getConnection();
+//            logger.info("✅ Successfully obtained a database connection: {}", conn);
+            return conn;
         } catch (SQLException e) {
-            logger.error("Chyba pri získavaní pripojenia k databáze: {}", e.getMessage());
-            throw new DatabaseException("Chyba pri získavaní pripojenia k databáze", e);
+//            logger.error("❌ SQL Exception while obtaining database connection:", e);
+            throw new DatabaseException("SQL error while obtaining database connection", e);
+        } catch (Exception e) {
+//            logger.error("❌ Unexpected error while obtaining database connection:", e);
+            throw new DatabaseException("Unexpected error while obtaining database connection", e);
         }
     }
 
     // Vloženie nového záznamu (INSERT)
     public int insert(T entity) {
+
+        System.out.println("INSERTING ENTITY: " + entity);
+
+
         Field[] fields = entityClass.getDeclaredFields();
 
         List<String> fieldNames = getFieldNames(fields).stream()
